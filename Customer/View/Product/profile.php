@@ -10,7 +10,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-blue-100">
     <!-- nav bar -->
     <div class="flex justify-between items-center">
         <div class="">
