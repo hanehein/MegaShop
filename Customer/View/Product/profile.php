@@ -58,7 +58,7 @@
     </div>
     <div class="w-full h-1 bg-blue-800"></div>
     <!-- body -->
-    <div class="flex justify-between items-center">
+    <div class="flex justify-evenly items-center">
         <div class="w-1/6 h-1/2 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl">
 
             <p class="text-xl font-bold py-3">User Profile</p>
@@ -120,8 +120,8 @@
                 </div>
 
             </div>  
-            <div class="bg-orange-500 w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer">
-                <p class="text-white font-bold">Edit</p>
+            <div class="bg-orange-500 w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300">
+                <p class="text-white font-bold hover:text-black">Edit</p>
             </div>
         </div>
     </div>
