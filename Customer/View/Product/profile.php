@@ -81,6 +81,7 @@
 
             </div>
         </div>
+        <!-- edit -->
         <div class="w-5/12 h-1/2 mx-auto bg-gray-100 shadow-2xl text-center rounded-xl py-4 mt-5">
             <div class="flex  items-center justify-evenly">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-1/6 h-1/6">
@@ -124,6 +125,81 @@
                 <p class="text-white font-bold hover:text-black">Edit</p>
             </div>
         </div>
+        <!-- save -->
+        <div class="w-5/12 h-1/2 mx-auto bg-gray-100 shadow-2xl text-center rounded-xl py-4 mt-5 hidden">
+            <div class="flex  items-center justify-evenly">
+                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-1/6 h-1/6">
+                    <path d="M22.8824 1.56689C11.0449 1.56689 1.44922 11.1625 1.44922 23.0001C1.44922 34.8377 11.0449 44.4333 22.8824 44.4333C34.72 44.4333 44.3156 34.8377 44.3156 23.0001C44.3156 11.1625 34.72 1.56689 22.8824 1.56689Z" stroke="#024486" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.31738 36.6016C6.31738 36.6016 11.0948 30.5017 22.8831 30.5017C34.6714 30.5017 39.451 36.6016 39.451 36.6016M22.8831 23.0001C24.5884 23.0001 26.2239 22.3226 27.4298 21.1168C28.6356 19.9109 29.3131 18.2754 29.3131 16.5701C29.3131 14.8648 28.6356 13.2293 27.4298 12.0234C26.2239 10.8176 24.5884 10.1401 22.8831 10.1401C21.1778 10.1401 19.5423 10.8176 18.3364 12.0234C17.1306 13.2293 16.4531 14.8648 16.4531 16.5701C16.4531 18.2754 17.1306 19.9109 18.3364 21.1168C19.5423 22.3226 21.1778 23.0001 22.8831 23.0001Z" stroke="#024486" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="flex flex-col items-center">
+                    <p class="text-xl font-bold py-6">David</p>
+                    <p class="text-lg font-semibold py-6">Yangon, Myanmar</p>
+                </div>
+            </div>
+            <div class="w-1/2 ml-24 mt-3 ">
+                    <p class="text-xl font-semibold">Name</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                </div>
+                <div class="w-1/2 ml-32 mt-5">
+                    <p class="text-xl font-semibold">Email address</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="email" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                </div>
+                <div class="w-1/2 ml-28 mt-5">
+                    <p class="text-xl font-semibold">Location</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                </div>
+                <div class="w-1/2 ml-36 mt-5">
+                    <p class="text-xl font-semibold">Phone Number</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="number" inputmode="numeric" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                </div>
+            
+            <div class="bg-blue-800 w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300">
+                <p class="text-white font-bold hover:text-black">Save</p>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="bg-blue-800 w-full h-auto mt-10 ">
+        <div class="flex text-white justify-evenly ">
+            <div class="py-5">
+                <p class="text-xl font-semibold">Quick Links</p>
+                <ul class="list-disc mt-3">
+                    <li class="text-lg font-semibold cursor-pointer">About Us</li>
+                    <li class="text-lg font-semibold cursor-pointer">Privacy & Policy</li>
+                </ul>
+            </div>
+            <div class="py-5">
+                <p class="text-xl font-semibold">Help?</p>
+                <ul class="list-disc mt-3">
+                    <li class="text-lg font-semibold cursor-pointer">Payment</li>
+                    <li class="text-lg font-semibold cursor-pointer">FAQ</li>
+                </ul>
+            </div>
+            <div class="py-5">
+                <p class="text-xl font-semibold">Contact Us</p>
+                <ul class="list-disc mt-3">
+                    <li class="flex items-center text-lg font-semibold cursor-pointer"><ion-icon name="phone-portrait" class="text-2xl"></ion-icon> +95777777777</li>
+                    <li class="flex items-center text-lg font-semibold cursor-pointer"><ion-icon name="mail" class="text-2xl"></ion-icon> megashopservice@gmail.com</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="w-2/3 h-0.5 bg-gray-100 mx-auto">
+
+        </div>
+        <div class="text-center mt-3 py-4 text-xl">
+            <p class="text-white font-bold cursor-pointer">@2023 MEGA SHOP All rights reserved</p>
+        </div>
     </div>
 </body>
+
 </html>
