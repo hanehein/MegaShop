@@ -1001,6 +1001,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#024486\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 68 134 / var(--tw-bg-opacity));
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1168,6 +1173,11 @@ video {
 .text-\[\#F68721\] {
   --tw-text-opacity: 1;
   color: rgb(246 135 33 / var(--tw-text-opacity));
+}
+
+.text-\[\#024486\] {
+  --tw-text-opacity: 1;
+  color: rgb(2 68 134 / var(--tw-text-opacity));
 }
 
 .shadow-2xl {
