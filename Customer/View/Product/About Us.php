@@ -8,9 +8,22 @@
     <link rel="stylesheet" href="../resources/lib/tailwind/output.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config ={
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="bg-slate-100 font-sans">
     <!-- nav -->
     <div class="flex justify-between items-center">
         <div class="">
@@ -34,11 +47,11 @@
         </div>
 
         <div class="flex justify-center items-center ">
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">HOME</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">PRODUCTS</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">STORES</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">ABOUT US</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">CONTACT US</p>
+        <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">HOME</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">PRODUCTS</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">STORES</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">ABOUT US</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">CONTACT US</p>
         </div>
         <div class="flex justify-between items-center">
             <div class="px-5">
@@ -56,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-1 bg-blue-800"></div>
+    <div class="w-full h-1 bg-[#024486]"></div>
     <!-- about -->
     <div class="flex flex-col justify-center items-center mt-5">
         <p class="text-2xl font-bold">About Our Website</p>
@@ -113,7 +126,7 @@
 
     </div>
     <!-- footer -->
-    <div class="bg-blue-800 w-full h-auto">
+    <div class="bg-[#024486] w-full h-auto">
         <div class="flex text-white justify-evenly ">
             <div class="py-5">
                 <p class="text-xl font-semibold">Quick Links</p>

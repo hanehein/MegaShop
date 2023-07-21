@@ -8,9 +8,22 @@
     <link rel="stylesheet" href="../resources/lib/tailwind/output.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-blue-100">
+<body class="bg-slate-100 font-sans">
     <!-- nav bar -->
     <div class="flex justify-between items-center">
         <div class="">
@@ -34,11 +47,11 @@
         </div>
 
         <div class="flex justify-center items-center ">
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">HOME</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">PRODUCTS</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">STORES</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">ABOUT US</p>
-            <p class="py-3 px-5 font-bold border-4 border-transparent hover:border-b-blue-800 cursor-pointer">CONTACT US</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">HOME</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">PRODUCTS</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">STORES</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">ABOUT US</p>
+            <p class="py-3 px-5 font-bold border-4 border-transparent text-[#024486] hover:border-b-blue-800 cursor-pointer">CONTACT US</p>
         </div>
         <div class="flex justify-between items-center">
             <div class="px-5">
@@ -56,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-1 bg-blue-800"></div>
+    <div class="w-full h-1 bg-[#024486]"></div>
     <!-- body -->
     <div class="flex justify-evenly items-center">
         <div class="w-1/6 h-1/2 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl">
@@ -120,7 +133,7 @@
                     <input type="number" inputmode="numeric" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
                 </div>
 
-            </div>  
+            </div>
             <div class="bg-orange-500 w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300">
                 <p class="text-white font-bold hover:text-black">Edit</p>
             </div>
@@ -138,37 +151,37 @@
                 </div>
             </div>
             <div class="w-1/2 ml-24 mt-3 ">
-                    <p class="text-xl font-semibold">Name</p>
-                </div>
-                <div class="mt-5 cursor-pointer">
-                    <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
-                </div>
-                <div class="w-1/2 ml-32 mt-5">
-                    <p class="text-xl font-semibold">Email address</p>
-                </div>
-                <div class="mt-5 cursor-pointer">
-                    <input type="email" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
-                </div>
-                <div class="w-1/2 ml-28 mt-5">
-                    <p class="text-xl font-semibold">Location</p>
-                </div>
-                <div class="mt-5 cursor-pointer">
-                    <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
-                </div>
-                <div class="w-1/2 ml-36 mt-5">
-                    <p class="text-xl font-semibold">Phone Number</p>
-                </div>
-                <div class="mt-5 cursor-pointer">
-                    <input type="number" inputmode="numeric" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
-                </div>
-            
-            <div class="bg-blue-800 w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300">
+                <p class="text-xl font-semibold">Name</p>
+            </div>
+            <div class="mt-5 cursor-pointer">
+                <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+            </div>
+            <div class="w-1/2 ml-32 mt-5">
+                <p class="text-xl font-semibold">Email address</p>
+            </div>
+            <div class="mt-5 cursor-pointer">
+                <input type="email" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+            </div>
+            <div class="w-1/2 ml-28 mt-5">
+                <p class="text-xl font-semibold">Location</p>
+            </div>
+            <div class="mt-5 cursor-pointer">
+                <input type="text" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+            </div>
+            <div class="w-1/2 ml-36 mt-5">
+                <p class="text-xl font-semibold">Phone Number</p>
+            </div>
+            <div class="mt-5 cursor-pointer">
+                <input type="number" inputmode="numeric" name="name" id="" class="w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+            </div>
+
+            <div class="bg-[#024486] w-1/12 mt-10 py-2 rounded-lg mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300">
                 <p class="text-white font-bold hover:text-black">Save</p>
             </div>
         </div>
     </div>
     <!-- footer -->
-    <div class="bg-blue-800 w-full h-auto mt-10 ">
+    <div class="bg-[#024486] w-full h-auto mt-10 ">
         <div class="flex text-white justify-evenly ">
             <div class="py-5">
                 <p class="text-xl font-semibold">Quick Links</p>
