@@ -89,35 +89,64 @@
             <span class="bg-blue-800 p-2 text-white rounded-r-md">Search</span>
         </div>
     </div>
-    <section class="flex flex-col justify-center items-center bg-white mt-3">
-        <p>Average Seller Ratings</p>
-        <div class="flex flex-row">
-            <div class="flex flex-col">
-                <h1 class="text-xl font-semibold">94%</h1>
-                <div class="flex flex-row space-x-3">
-                    <p>Positive</p>
-                    <div class="w-[150px] h-[10px] bg-orange-600"></div>
-                    <span>432</span>
+    <section class="bg-white mt-3 space-y-6">
+        <p class="text-lg font-bold ml-[535px]">Average Seller Ratings</p>
+        <div class="flex flex-col justify-between items-center space-y-3">
+            <div class="flex flex-row items-center space-x-11">
+                <div class="flex flex-col space-y-2 items-start">
+                    <h1 class="text-xl font-semibold">94%</h1>
+                    <div class="flex flex-row items-center justify-center space-x-3">
+                        <p>Positive</p>
+                        <div class="bg-gray-500 w-[210px] h-[13px]">
+                            <div class="w-[180px] h-[13px] bg-orange-600"></div>
+                        </div>
+                        <span>432</span>
+                    </div>
+                    <div class="flex flex-row items-center justify-center space-x-3">
+                        <p>Natural</p>
+                        <div class="bg-gray-500 w-[210px] h-[13px]">
+                            <div class="w-[7px] h-[13px] bg-orange-600"></div>
+                        </div>
+                        <span>13</span>
+                    </div>
+                    <div class="flex flex-row items-center justify-center space-x-3">
+                        <p>Negative</p>
+                        <div class="bg-gray-500 w-[210px] h-[13px]">
+                            <div class="w-[12px] h-[13px] bg-orange-600"></div>
+                        </div>
+                        <span>16</span>
+                    </div>
                 </div>
-                <div class="flex flex-row space-x-3">
-                    <p>Natural</p>
-                    <div class="w-[150px] h-[10px] bg-orange-600"></div>
-                    <span>13</span>
-                </div>
-                <div class="flex flex-row space-x-3">
-                    <p>Negative</p>
-                    <div class="w-[150px] h-[10px] bg-orange-600"></div>
-                    <span>16</span>
+                <div class="flex flex-col space-y-2 items-center">
+                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(16)</h1>
+                    <div class="flex flex-row space-x-5">
+                        <p>Positive</p>
+                        <p>Natural</p>
+                        <p>Negative</p>
+                    </div>
                 </div>
             </div>
-            <div class="flex flex-col">
-                <h1 class="font-semibold text-xl">Seller Ratings and Reviews(16)</h1>
-                <p>Positive</p>
-                <p>Natural</p>
-                <p>Negative</p>
+            <div class="border-4 border-blue-200 w-[800px] h-[180px] rounded-md p-3">
+                <div class="flex flex-col space-y-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <img src="" alt="">
+                            <span class="font-thin">Mark Albert</span>
+                        </div>
+                        <p>27 Oct 2022</p>
+                    </div>
+                    <div>
+                        <img src="" alt="">
+                        <span>Positive</span>
+                    </div>
+                    <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way. 
+                        This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily 
+                        commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
+                </div>
             </div>
         </div>
     </section>
+
 </body>
 
 </html>
