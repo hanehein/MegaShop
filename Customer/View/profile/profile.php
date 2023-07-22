@@ -19,9 +19,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-100 font-['Poppins]">
+<body class="bg-slate-100 font-['Poppins] no-scrollbar">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">

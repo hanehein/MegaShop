@@ -18,9 +18,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-100 font-['Poppins]">
+<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">
@@ -46,7 +51,7 @@
         </nav>
     </div>
     <!-- body -->
-    <div class="flex justify-between items-center mt-18">
+    <div class="flex justify-between items-center mt-18 overflow-y-auto">
         <!-- profile section -->
         <div class="w-1/6 h-1/2 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl">
 
@@ -71,7 +76,7 @@
             </div>
         </div>
         <!-- stores -->
-        <div class="w-1/2 h-1/2 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl">
+        <div class="w-1/2 h-1/3 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl overscroll-auto">
             <div class="">
                 <p class="text-2xl text-black font-bold">Followed Stores</p>
             </div>
