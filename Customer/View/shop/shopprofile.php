@@ -92,7 +92,7 @@
     <div class="bg-white mt-3 py-3">
         <div class="grid grid-cols-4 gap-4">
             <div class="border border-r-4 px-5">
-                <h1>Category</h1>
+                <h1  class="font-semibold text-2xl">Category</h1>
                 <p class="text-orange-600">Powerpoints, Switches & Savers</p>
                 <p>Light Bulbs</p>
                 <p>Celling Lights</p>
@@ -102,7 +102,7 @@
                 <p>Cables, Leads & Adapters</p>
                 <p>Outdoor Lighting</p>
                 <hr class="w-[340px] px-5 h-5 text-black text-center mt-4" />
-                <h1>Brand</h1>
+                <h1 class="font-semibold text-2xl">Brand</h1>
                 <input type="checkbox">
                 <span>Philips</span>
                 <input type="checkbox">
@@ -114,9 +114,9 @@
                 <hr class="w-[340px] px-5 h-5 text-black text-center mt-4" />
                 <h1>Price</h1>
                 <div class="flex space-x-2">
-                    <input type="text" value="min" class=" border-black border-2 p-2 rounded-md">
+                    <input type="text" value="min" class=" border-black border-2 p-2 rounded-md w-[100px]">
                     <span>-</span>
-                    <input type="text" value="max" class=" border-black border-2 p-2 rounded-md">
+                    <input type="text" value="max" class=" border-black border-2 p-2 rounded-md w-[100px]">
                 </div>
 
             </div>
