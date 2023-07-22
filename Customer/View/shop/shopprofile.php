@@ -94,9 +94,28 @@
             <div class="border border-r-4 px-5">
                 <h1>Category</h1>
                 <p class="text-orange-600">Powerpoints, Switches & Savers</p>
-                <h1>Category</h1>
-                <h1>Category</h1>
-                <h1>Category</h1>
+                <p>Light Bulbs</p>
+                <p>Celling Lights</p>
+                <p>Exhoust Fans</p>
+                <p>Electrical Circuitry & Parts</p>
+                <p>Lighting Fixtures & Components</p>
+                <p>Cables, Leads & Adapters</p>
+                <p>Outdoor Lighting</p>
+                <hr class="w-[360px] px-5 h-5 text-black text-center mt-4" />
+                <h1>Brand</h1>
+                <input type="checkbox">
+                <span>Philips</span>
+                <input type="checkbox">
+                <span>OSRAM</span>
+                <input type="checkbox">
+                <span>Sylvania</span>
+                <input type="checkbox">
+                <span>Feit Electric</span>
+                <hr class="w-[360px] px-5 h-5 text-black text-center mt-4" />
+                <h1>Price</h1>
+                <input type="text" value="min">
+                <span>-</span>
+                <input type="text" value="max">
             </div>
             <div class="col-span-3 px-5">
                 <div class="flex flex-row justify-between items-center">
@@ -106,7 +125,7 @@
                         <div class="flex space-x-4">
                             <p>Filter By:</p>
                             <p class="bg-orange-600 rounded-2xl px-2 py-1 w-[70px]">Philips</p>
-                            <p class="bg-orange-600 rounded-2xl px-2 py-1 w-[70px]">Philips</p>
+                            <p class="bg-orange-600 rounded-2xl px-2 py-1 w-[70px]">OSRAM</p>
                         </div>
                     </div>
                     <div class="flex space-x-3">
