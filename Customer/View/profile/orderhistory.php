@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followed Stores</title>
+    <title>Order History</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,17 +25,20 @@
     </style>
 </head>
 
-<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar">
+<body class="bg-slate-100 font-['Poppins] no-scrollbar">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">
-            <div class="font-[Wallpoet] text-2xl text-[#003366] leading-none cursor-pointer">
-                <p>MEGA</p>
+            <div class=" md:hidden">
+                <ion-icon name="menu" size="large" class="text-[#024486] hover:text-[#F68721]"></ion-icon>
+            </div>
+            <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
+                <p class="">MEGA</p>
                 <p>SHOP</p>
             </div>
-            <div class="w-auto px-2 py-2">
+            <div class="md:w-auto hidden md:flex px-2 py-2">
                 <ul class="uppercase text-[#003366] text-lg font-semibold flex items-center space-x-5 font-['Poppins'] cursor-pointer">
-                    <li class="border-2 border-transparent px-2 py-2 md:hover:text-[#F68721] hover:border-b-[#003366]"><a href="">Home</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Home</a></li>
                     <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Products</a></li>
                     <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Shops</a></li>
                     <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">About US</a></li>
@@ -61,9 +64,9 @@
 
             <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Followed Stores</p>
+            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
 
@@ -75,58 +78,13 @@
 
             </div>
         </div>
-        <!-- stores -->
-        <div class="w-1/2 h-1/3 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl overscroll-auto">
-            <div class="">
-                <p class="text-2xl text-black font-bold">Followed Stores</p>
-            </div>
-            <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer">
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
+        <div>
 
-            </div>
-            <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer" >
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer">
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-
-            </div>
         </div>
+
+
     </div>
+
     <!-- footer -->
     <div class="bg-[#024486] w-full h-auto mt-10 ">
         <div class="flex text-white justify-evenly ">
@@ -160,7 +118,6 @@
             <p class="text-white font-bold cursor-pointer">@2023 MEGA SHOP All rights reserved</p>
         </div>
     </div>
-
 </body>
 
 </html>
