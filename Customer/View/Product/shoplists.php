@@ -50,7 +50,7 @@
         </div>
         <!-- body box -->
         <div class="container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-5 gap-5 gap-x-0 place-items-center bg-[#F6F6F6] mt-5 ">
-            <div class="w-40 h-20 bg-white rounded-sm shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer hover:w-44 hover:cursor-pointer">
+            <div class="w-40 h-20 bg-white rounded-sm shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
                 <img src="../resources/img/fortnite.jpg" alt="" class="rounded-md">
             </div>
             <div class="w-40 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
