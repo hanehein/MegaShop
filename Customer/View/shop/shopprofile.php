@@ -101,7 +101,7 @@
                 <p>Lighting Fixtures & Components</p>
                 <p>Cables, Leads & Adapters</p>
                 <p>Outdoor Lighting</p>
-                <hr class="w-[360px] px-5 h-5 text-black text-center mt-4" />
+                <hr class="w-[340px] px-5 h-5 text-black text-center mt-4" />
                 <h1>Brand</h1>
                 <input type="checkbox">
                 <span>Philips</span>
@@ -111,11 +111,14 @@
                 <span>Sylvania</span>
                 <input type="checkbox">
                 <span>Feit Electric</span>
-                <hr class="w-[360px] px-5 h-5 text-black text-center mt-4" />
+                <hr class="w-[340px] px-5 h-5 text-black text-center mt-4" />
                 <h1>Price</h1>
-                <input type="text" value="min">
-                <span>-</span>
-                <input type="text" value="max">
+                <div class="flex space-x-2">
+                    <input type="text" value="min" class=" border-black border-2 p-2 rounded-md">
+                    <span>-</span>
+                    <input type="text" value="max" class=" border-black border-2 p-2 rounded-md">
+                </div>
+
             </div>
             <div class="col-span-3 px-5">
                 <div class="flex flex-row justify-between items-center">
