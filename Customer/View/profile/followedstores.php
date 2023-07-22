@@ -26,20 +26,24 @@
 </head>
 
 <body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar">
+    <!-- navbar responsive -->
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">
-            <div class="font-[Wallpoet] text-2xl text-[#003366] leading-none cursor-pointer">
-                <p>MEGA</p>
+            <div class=" md:hidden">
+                <ion-icon name="menu" size="large" class="text-[#024486] hover:text-[#F68721]"></ion-icon>
+            </div>
+            <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
+                <p class="">MEGA</p>
                 <p>SHOP</p>
             </div>
-            <div class="w-auto px-2 py-2">
+            <div class="md:w-auto hidden md:flex px-2 py-2">
                 <ul class="uppercase text-[#003366] text-lg font-semibold flex items-center space-x-5 font-['Poppins'] cursor-pointer">
-                    <li class="border-2 border-transparent px-2 py-2 md:hover:text-[#F68721] hover:border-b-[#003366]"><a href="">Home</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Products</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Shops</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">About US</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Contact US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Home</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Products</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Shops</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">About US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Contact US</a></li>
                 </ul>
             </div>
             <div class="flex items-center justify-center space-x-2 cursor-pointer">

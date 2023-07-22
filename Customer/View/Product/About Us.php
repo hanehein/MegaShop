@@ -27,21 +27,24 @@
 </head>
 
 <body class="bg-slate-100 font-['Poppins'] no-scrollbar">
-    <!-- nav -->
+    <!-- navbar responsive -->
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">
-            <div class="font-[Wallpoet] text-2xl text-[#003366] leading-none cursor-pointer">
-                <p>MEGA</p>
+            <div class=" md:hidden">
+                <ion-icon name="menu" size="large" class="text-[#024486] hover:text-[#F68721]"></ion-icon>
+            </div>
+            <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
+                <p class="">MEGA</p>
                 <p>SHOP</p>
             </div>
-            <div class="w-auto px-2 py-2">
+            <div class="md:w-auto hidden md:flex px-2 py-2">
                 <ul class="uppercase text-[#003366] text-lg font-semibold flex items-center space-x-5 font-['Poppins'] cursor-pointer">
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Home</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Products</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Shops</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">About US</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Contact US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Home</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Products</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Shops</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">About US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Contact US</a></li>
                 </ul>
             </div>
             <div class="flex items-center justify-center space-x-2 cursor-pointer">
@@ -55,8 +58,8 @@
     
     <!-- about -->
     <div class="flex flex-col justify-center items-center mt-20">
-        <p class="text-2xl font-bold">About Our Website</p>
-        <p class="text-xl font-semibold mt-10">Mega Shop is created by a team of 5 developers.</p>
+        <p class="text-xl font-bold">About Our Website</p>
+        <p class="text-lg font-medium mt-10">Mega Shop is created by a team of 5 developers.</p>
     </div>
     <!-- pic -->
     <div class="bg-gray-200 flex items-center justify-center mt-4 py-4">
