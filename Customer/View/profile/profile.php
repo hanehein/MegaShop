@@ -41,11 +41,11 @@
             </div>
             <div class="w-auto px-2 py-2">
                 <ul class="uppercase text-[#003366] text-xs font-semibold flex items-center space-x-5 font-['Inter'] cursor-pointer">
-                    <li class="hover:text-[#F68721]"><a href="">Home</a></li>
-                    <li class="hover:text-[#F68721]"><a href="">Products</a></li>
-                    <li class="hover:text-[#F68721]"><a href="">Shops</a></li>
-                    <li class="hover:text-[#F68721]"><a href="">About US</a></li>
-                    <li class="hover:text-[#F68721]"><a href="">Contact US</a></li>
+                    <li class="border-2 border-transparent hover:text-[#F68721] hover:border-b-blue-800"><a href="">Home</a></li>
+                    <li class="border-2 border-transparent hover:text-[#F68721] hover:border-b-blue-800"><a href="">Products</a></li>
+                    <li class="border-2 border-transparent hover:text-[#F68721] hover:border-b-blue-800"><a href="">Shops</a></li>
+                    <li class="border-2 border-transparent hover:text-[#F68721] hover:border-b-blue-800"><a href="">About US</a></li>
+                    <li class="border-2 border-transparent hover:text-[#F68721] hover:border-b-blue-800"><a href="">Contact US</a></li>
                 </ul>
             </div>
             <div class="flex items-center justify-center space-x-2 cursor-pointer">
