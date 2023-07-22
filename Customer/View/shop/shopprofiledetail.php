@@ -129,18 +129,18 @@
             <div class="border-4 border-blue-200 w-[800px] h-[180px] rounded-md p-3">
                 <div class="flex flex-col space-y-2">
                     <div class="flex justify-between items-center">
-                        <div>
-                            <img src="" alt="">
-                            <span class="font-thin">Mark Albert</span>
+                        <div class="flex space-x-2 items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
+                            <span class="text-grey text-sm font-bold">Mark Albert</span>
                         </div>
-                        <p>27 Oct 2022</p>
+                        <p class="text-grey">27 Oct 2022</p>
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="flex items-center space-x-1">
+                        <ion-icon name="happy-outline" class="text-xl"></ion-icon>
                         <span>Positive</span>
                     </div>
-                    <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way. 
-                        This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily 
+                    <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way.
+                        This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily
                         commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
                 </div>
             </div>
