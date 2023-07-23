@@ -25,7 +25,7 @@ module.exports = {
       "custom-blue": "#024486",
       "custom-grey": "#7B7B7B",
       "custom-orange": "#F68721",
-    }
+    },
   },
   plugins: [],
 };
