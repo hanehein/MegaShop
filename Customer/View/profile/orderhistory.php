@@ -38,11 +38,11 @@
             </div>
             <div class="md:w-auto hidden md:flex px-2 py-2">
                 <ul class="uppercase text-[#003366] text-lg font-semibold flex items-center space-x-5 font-['Poppins'] cursor-pointer">
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Home</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Products</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Shops</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">About US</a></li>
-                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800"><a href="">Contact US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Home</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Products</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Shops</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">About US</a></li>
+                    <li class="border-2 border-transparent px-2 py-2 hover:text-[#F68721] hover:border-b-blue-800 text-sm"><a href="">Contact US</a></li>
                 </ul>
             </div>
             <div class="flex items-center justify-center space-x-2 cursor-pointer">
@@ -78,8 +78,48 @@
 
             </div>
         </div>
-        <div>
+        <div class="w-2/5 items-center flex mx-auto mt-20">
+            <div class="flex flex-col items-center justify-center shadow-2xl">
+                <p class="text-xl font-semibold">
+                    Order History
+                </p>
+                <div class="rounded-lg py-5">
+                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5 h-1/2">
+                        Traffic Star >>>
+                    </div>
+                    <div class="flex">
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/5 ">
 
+                    </div>
+                </div>
+                <div class="rounded-lg py-5">
+                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                        Traffic Star >>>
+                    </div>
+                    <div class="flex">
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4">
+
+                    </div>
+                </div>
+                <div class="rounded-lg py-5">
+                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                        Traffic Star >>>
+                    </div>
+                    <div class="flex">
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4">
+
+                    </div>
+                </div>
+                <div class="rounded-lg py-5">
+                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                        Traffic Star >>>
+                    </div>
+                    <div class="flex">
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4">
+
+                    </div>
+                </div>
+            </div>
         </div>
 
 
