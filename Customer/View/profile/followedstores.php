@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar">
+<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar flex flex-col min-h-screen">
     <!-- navbar responsive -->
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
@@ -132,7 +132,7 @@
         </div>
     </div>
     <!-- footer -->
-    <div class="bg-[#024486] w-full h-auto mt-10 ">
+    <div class="bg-[#024486] w-full h-auto mt-10 sticky top-[100vh]">
         <div class="flex text-white justify-evenly ">
             <div class="py-5">
                 <p class="text-xl font-semibold">Quick Links</p>
