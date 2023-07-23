@@ -44,9 +44,8 @@
 
             </nav>
         </div>
-
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486]">
+        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-10">
             <!-- first one -->
             <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
@@ -66,7 +65,7 @@
                     </ul>
                 </div>
                 <!-- Contact Us -->
-                <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2 border-b-white ">
+                <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden ">
                     <p>Contact Us</p>
                     <ul class="list-disc mt-2 leading-5">
                         <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>

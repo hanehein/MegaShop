@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>order_complete</title>
-    
+
     <link rel="stylesheet" href="../resources/lib/tailwind/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -93,29 +93,69 @@
             </div>
         </nav>
         <!-- second section -->
-        <div class="w-full h-10 flex items-center justify-start bg-gray-400 font-['Poppins'] px-2 space-x-3">
-            <a href=""><span class="text-white text-sm">shopping cart</span></a>
+        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3">
+            <a href=""><span class="text-gray-500 text-sm">shopping cart</span></a>
             <ion-icon name="arrow-redo-circle" class="text-[#F68721]"></ion-icon>
-            <a href=""><span class="text-white text-sm">checkout</span></a>
+            <a href=""><span class="text-gray-500 text-sm">checkout</span></a>
             <ion-icon name="arrow-redo-circle" class="text-[#F68721]"></ion-icon>
             <a href=""><span class="text-blue-800 text-sm ">order complete</span></a>
         </div>
         <!-- third section -->
-        <div class="w-full container mx-auto flex flex-col items-start justify-center font-['Poppins'] bg-blue-400 space-y-2">
+        <div class="w-full container mx-auto flex flex-col items-center md:items-start justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
             <div class="flex items-center justify-center">
-                <p class="text-sm text-[#024486] font-semibold">We received your order. Please make your payment.</p>
+                <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
-            <div class="flex items-center justify-between">
-                <p class="text-sm text-[#024486]">Payable Amount</p>
-                <p class="text-sm text-[#024486]">20,000 MMK</p>
-            </div class="flex items-center justify-between">
-                <button class="bg-[#F68721] rounded-md w-40 px-2p py-2 text-sm text-white"><a href="">Continue Shopping</a></button>
-            <div>
+            <div class="w-[23rem] flex items-center justify-between border-b-2 border-b-orange-400 py-2">
+                <p class="text-sm text-gray-500">Payable Amount</p>
+                <p class="text-sm text-gray-500">20,000 <span>Ks</span></p>
+            </div>
 
+            <div class="w-[23rem] flex items-center justify-between">
+                <button class="bg-[#F68721] shadow-md  w-40 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Continue Shopping</a></button>
+                <button class="bg-[#F68721] shadow-md  w-40 px-2p py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Order Complete</a></button>
+            </div>
+            <!-- invoice card -->
+            <div class="w-[23rem] flex flex-col items-center justify-center bg-gray-200 rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 opacity-35">
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
+                    <p>Product</p>
+                    <p>Product Description</p>
+                    <p>Subtotal</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
+                    <img src="../resources/img/fortnite.jpg" alt="" width="30%">
+                    <p>example</p>
+                    <p>20,000 Ks</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Order ID</p>
+                    <p>#112233</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Payment Method</p>
+                    <p>COD</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Subtotal</p>
+                    <p>20,000 Ks</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Delivery Fees</p>
+                    <p>2,000 Ks</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Total</p>
+                    <p>22,000 Ks</p>
+                </div>
+                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                    <p>Date</p>
+                    <p>July 20, 2023</p>
+                </div>
             </div>
         </div>
+
+
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486]">
+        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-5">
             <!-- first one -->
             <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
