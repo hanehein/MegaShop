@@ -7,7 +7,7 @@
     <title>Followed Stores</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id=<?=time() ?>">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,45 +85,45 @@
                 <p class="text-2xl text-black font-bold">Followed Stores</p>
             </div>
             <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer">
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
                     <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
                     <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
                         <p class="text-white text-2xl font-semibold">Adidas</p>
                     </div>
                 </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer" >
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
                     <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
                     <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
-                        <p class="text-white text-2xl font-semibold">Adidas</p>
-                    </div>
-                </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
-                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
                         <p class="text-white text-2xl font-semibold">Adidas</p>
                     </div>
                 </div>
 
             </div>
             <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer">
-                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-xl">
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
                     <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
                     <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
                         <p class="text-white text-2xl font-semibold">Adidas</p>
                     </div>
                 </div>
-                <div class="w-5/12  bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl">
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
                     <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
-                    <div class="bg-orange-400 w-full mb-0 mt-8  rounded-br-lg rounded-bl-lg py-5">
+                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
+                        <p class="text-white text-2xl font-semibold">Adidas</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex flex-wrap justify-evenly px-10 mt-8 mb-8 cursor-pointer">
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
+                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
+                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
+                        <p class="text-white text-2xl font-semibold">Adidas</p>
+                    </div>
+                </div>
+                <div class="w-5/12 bg-[#024486] rounded-lg ml-5 mr-5 items-center justify-center shadow-2xl border-2 border-solid">
+                    <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
+                    <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
                         <p class="text-white text-2xl font-semibold">Adidas</p>
                     </div>
                 </div>
