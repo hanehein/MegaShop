@@ -44,6 +44,7 @@
                 </a>
             </ul>
         </div>
+        <!--profile-->
         <div class="profile">
             <ul class="flex flex-row space-x-2">
                 <li class="cursor-pointer">
@@ -58,6 +59,7 @@
             </ul>
         </div>
     </div>
+    <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
@@ -78,18 +80,20 @@
             </div>
         </div>
     </div>
+    <!--submenu-->
     <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
         <div class="flex flex-row space-x-2 md:space-x-5">
             <p>Homepage</p>
             <p>All products</p>
             <span>Profile</span>
         </div>
-
+        <!--search-->
         <div class="flex flex-row">
             <input type="text" placeholder="Search in store" class=" border-blue-800 border-2 p-2 rounded-l-md">
             <span class="bg-blue-800 p-2 text-white rounded-r-md">Search</span>
         </div>
     </div>
+    <!--content-->
     <section class="bg-white mt-3 space-y-6 p-5">
         <p class="text-lg font-bold ml-[80px] md:ml-[535px]">Average Seller Ratings</p>
         <div class="flex flex-col justify-between items-center space-y-3">
@@ -131,6 +135,7 @@
                     </div>
                 </div>
             </div>
+            <!--chatbox-->
             <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
                 <div class="flex flex-col space-y-2">
                     <div class="flex justify-between items-center">
@@ -194,6 +199,7 @@
             </div>
         </div>
     </section>
+    <!--product ratings & reviews-->
     <section class="bg-white flex flex-col p-5 mt-5">
         <p class="text-xl font-semibold">Product Ratings & Reviews(345)</p>
         <div class="flex space-x-6 p-5">
@@ -246,6 +252,7 @@
             </div>
         </div>
         <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
+        <!--pages bar-->
         <div class="flex justify-center items-center">
             <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-l-md"></div>
             <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center bg-blue-600">1</div>
