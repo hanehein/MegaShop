@@ -168,7 +168,7 @@
     </div>
     <!-- footer -->
     <div class="bg-[#024486] w-full h-auto mt-10 ">
-        <div class="flex text-white justify-evenly ">
+        <div class="flex text-white  justify-evenly ">
             <div class="py-5">
                 <p class="text-xl font-semibold">Quick Links</p>
                 <ul class="list-disc mt-3">
