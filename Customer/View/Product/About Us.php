@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body class="bg-slate-100 font-['Poppins'] no-scrollbar">
+<body class="bg-slate-100 font-['Poppins'] no-scrollbar flex flex-col min-h-screen">
     <!-- navbar responsive -->
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->

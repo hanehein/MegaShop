@@ -7,7 +7,7 @@
     <title>Order History</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id=<?=time() ?>">
+    <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id=<?= time() ?>">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar">
+<body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar flex flex-col min-h-screen">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
         <nav class="w-full h-14 bg-white flex justify-between items-center px-4 z-50 fixed">
@@ -84,42 +84,42 @@
                 <p class="text-xl font-semibold">
                     Order History
                 </p>
-                <div class="rounded-lg py-3 px-5 bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-around">
                         <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-3 mt-3 rounded-lg">
-                        <div class="bg-blue-100 py-3 text-left px-5">
-                            <p class="font-semibold mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                        <div class="py-3 text-left px-5">
+                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
                         </div>
                     </div>
                 </div>
-                <div class="rounded-lg py-3 px-5 bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-around">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-3 mt-3 rounded-lg">
-                        <div class="bg-blue-100 py-3 text-left px-5">
-                            <p class="font-semibold mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-3 mt-3  rounded-lg">
+                        <div class="py-3 text-left px-5">
+                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
                         </div>
                     </div>
                 </div>
-                <div class="rounded-lg py-3 px-5 bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white rounded-tr-lg rounded-tl-lg px-5">
+                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-around">
                         <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-3 mt-3 rounded-lg">
-                        <div class="bg-blue-100 py-3 text-left px-5">
-                            <p class="font-semibold mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                        <div class="py-3 text-left px-5">
+                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
@@ -134,38 +134,38 @@
 
     <!-- footer -->
     <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-10">
-            <!-- first one -->
-            <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
-                <!-- quicklink -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2">
-                    <p>Quick Links</p>
-                    <ul class="list-disc mt-2">
-                        <li>About Us</li>
-                        <li>Pricacy & Policy</li>
-                    </ul>
-                </div>
-                <!-- Help -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2  border-b-white">
-                    <p>Help?</p>
-                    <ul class="list-disc mt-2">
-                        <li>Payment</li>
-                        <li>FAQ</li>
-                    </ul>
-                </div>
-                <!-- Contact Us -->
-                <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2 border-b-white ">
-                    <p>Contact Us</p>
-                    <ul class="list-disc mt-2 leading-5">
-                        <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
-                        <li><ion-icon name="mail"></ion-icon><span class="ml-2">service@gmail.com</span></li>
-                    </ul>
-                </div>
+        <!-- first one -->
+        <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
+            <!-- quicklink -->
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2">
+                <p>Quick Links</p>
+                <ul class="list-disc mt-2">
+                    <li>About Us</li>
+                    <li>Pricacy & Policy</li>
+                </ul>
             </div>
-            <!-- last one -->
-            <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
-                <p class="text-white text-sm font-semibold">&#64;2023 MEGA SHOP All Rights Reserved.</p>
+            <!-- Help -->
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2  border-b-white">
+                <p>Help?</p>
+                <ul class="list-disc mt-2">
+                    <li>Payment</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+            <!-- Contact Us -->
+            <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2 border-b-white ">
+                <p>Contact Us</p>
+                <ul class="list-disc mt-2 leading-5">
+                    <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
+                    <li><ion-icon name="mail"></ion-icon><span class="ml-2">service@gmail.com</span></li>
+                </ul>
             </div>
         </div>
+        <!-- last one -->
+        <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
+            <p class="text-white text-sm font-semibold">&#64;2023 MEGA SHOP All Rights Reserved.</p>
+        </div>
+    </div>
 </body>
 
 </html>
