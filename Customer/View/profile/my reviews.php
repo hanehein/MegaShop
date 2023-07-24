@@ -66,9 +66,9 @@
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
+            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">My Reviews</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
 
@@ -78,11 +78,11 @@
 
             </div>
         </div>
-        <!-- history -->
+        <!-- reviews -->
         <div class="w-1/2 items-center flex mx-auto mt-20">
             <div class="flex flex-col items-center justify-center">
                 <p class="text-xl font-semibold">
-                    Order History
+                    My Reviews
                 </p>
                 <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
                     <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
@@ -95,6 +95,41 @@
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
+                        </div>
+                        <div class="flex flex-col items-center mr-10">
+                            <p class="text-xl font-semibold mt-5 mb-5">5.0</p>
+                            <div class="text-[#facc15] mt-5 mb-5">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
+                        Traffic Star >>>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                        <div class="py-3 text-left px-5 mr-20">
+                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
+                            <p class="mb-2 mt-2">Color :Blue</p>
+                            <p class="mb-2 mt-2">Size : ###</p>
+                        </div>
+                        <div class="flex flex-col items-center mr-10">
+                            <p class="text-xl font-semibold mt-5 mb-5">5.0</p>
+                            <div class="text-[#facc15] mt-5 mb-5">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,6 +144,16 @@
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
+                        </div>
+                        <div class="flex flex-col items-center mr-10">
+                            <p class="text-xl font-semibold mt-5 mb-5">5.0</p>
+                            <div class="text-[#facc15] mt-5 mb-5">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,6 +168,16 @@
                             <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
                             <p class="mb-2 mt-2">Color :Blue</p>
                             <p class="mb-2 mt-2">Size : ###</p>
+                        </div>
+                        <div class="flex flex-col items-center mr-10">
+                            <p class="text-xl font-semibold mt-5 mb-5">5.0</p>
+                            <div class="text-[#facc15] mt-5 mb-5">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
                         </div>
                     </div>
                 </div>
