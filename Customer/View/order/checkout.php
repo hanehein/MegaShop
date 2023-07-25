@@ -19,6 +19,7 @@
 
 <body class="bg-[#F6F6F6] overflow-x-hidden">
     <div class="w-full h-screen  flex flex-col items-center">
+        <!-- nav bar -->
         <nav class="bg-white border-gray-200 w-full">
             <div class="w-full flex flex-wrap items-center justify-between mx-auto py-2 px-1">
                 <!-- logo -->
@@ -102,137 +103,166 @@
             <a href=""><span class="text-gray-500 text-sm ">order complete</span></a>
         </div>
         <!-- third section -->
-        <div class="w-full container mx-auto flex flex-col items-center md:items-start justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
+        <div class="w-full container mx-auto flex flex-col items-center  justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
             <div class="flex items-center justify-center">
                 <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
         </div>
-        <!-- two box start -->
-        <div class="w-full container mx-auto flex items-center justify-center font-['Poppins'] mt-5 space-x-5">
+        <!-- two flexbox start -->
+        <div class="w-full container mx-auto md:flex items-start justify-center font-['Poppins'] mt-5 grid-cols-1 grid-rows-2 md:space-x-8 ">
             <!-- left flexbox -->
-            <div class="w-1/2 bg-white flex flex-col items-center justify-center text-gray-500 space-y-5">
+            <div class="mid:w-1/2  w-auto h-auto  mid:h-[55rem] mid:flex flex-col items-center justify-center text-gray-500 space-y-5 px-4 py-3 mt-5 ">
+                <div class="">
+                    <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 1</a></button>
+                    <p class="text-sm font-semibold mt-3">Billing & Delivery Address
+                    </p>
+                    <!-- info -->
+                    <div class="w-auto flex items-center justify-center space-x-6 mt-3">
+                        <div class="flex flex-col items-start justify-center space-y-5">
+                            <div>
+                                <label for="name" class="text-sm">Full Name</label>
+                                <div class=" md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <input type="text" placeholder="Type your name" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs">
+                                    <ion-icon name="caret-down" class="text-[#024486]"></ion-icon>
+                                </div>
+                            </div>
 
-                <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 1</a></button>
-                <p class="text-sm">Billing & Delivery Address
-                </p>
+                            <div>
+                                <label for="name" class="text-sm">Country/Region (optional)</label>
+                                <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <input type="text" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs" placeholder="Myanmar" readonly>
+                                </div>
+                            </div>
 
-                <div class="flex items-center justify-center space-x-6">
-                    <div class="flex flex-col items-start justify-center space-y-5">
-                        <div>
-                            <label for="name" class="text-sm">Full Name</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                <input type="text" placeholder="Type your name" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs">
-                                <ion-icon name="caret-down" class="text-[#024486]"></ion-icon>
+                            <div>
+                                <label for="name" class="text-sm">Email Address</label>
+                                <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <input type="email" placeholder="example@gmail.com" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs text-xs">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col items-start justify-center space-y-5">
+                            <div>
+                                <label for="name" class="text-sm">Phone</label>
+                                <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <input type="text" placeholder="Enter Number" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="name" class="text-sm">State/Division</label>
+                                <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <select name="" id="" class="w-48 bg-gray-200 border-none rounded-md text-xs h-10">
+                                        <option value="">Yangon</option>
+                                        <option value="">Bago</option>
+                                        <option value="">Myeik</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="name" class="text-sm">Township</label>
+                                <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md text-xs">
+                                    <select name="" id="" class="w-48 border-none bg-gray-200 rounded-md h-10">
+                                        <option value="1">a</option>
+                                        <option value="2">b</option>
+                                        <option value="3">c</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div>
-                            <label for="name" class="text-sm">Country/Region (optional)</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                <input type="text" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs" placeholder="Myanmar" readonly>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="name" class="text-sm">Email Address</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                <input type="email" placeholder="example@gmail.com" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs text-xs">
-                            </div>
-                        </div>
-                        
                     </div>
-                    <div class="flex flex-col items-start justify-center space-y-3">
+                    <div class="mt-5 flex flex-col space-y-5 md:mx-auto ml-5 ">
                         <div>
-                            <label for="name" class="text-sm">Phone</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                <input type="text" placeholder="Enter Number" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs">
+                            <label for="name" class="text-sm">Address</label>
+                            <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                <textarea name="" id="" cols="30" rows="
+                        3" class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="House number & street address"></textarea>
                             </div>
                         </div>
-
                         <div>
-                            <label for="name" class="text-sm">State/Division</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                <select name="" id="" class="w-48 bg-gray-200 border-none rounded-md text-xs h-10">
-                                    <option value="">Yangon</option>
-                                    <option value="">Bago</option>
-                                    <option value="">Myeik</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="name" class="text-sm">Township</label>
-                            <div class=" w-56 h-12 flex items-center justify-center bg-gray-200 rounded-md text-xs">
-                                <select name="" id="" class="w-48 border-none bg-gray-200 rounded-md h-10">
-                                    <option value="1">a</option>
-                                    <option value="2">b</option>
-                                    <option value="3">c</option>
-                                </select>
+                            <label for="name" class="text-sm">Order Notes (optional)</label>
+                            <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                <textarea name="" id="" cols="30" rows="
+                        3" class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="Note about your order!"></textarea>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <div>
-                    <label for="name" class="text-sm">Address</label>
-                    <div class=" w-[30rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                        <textarea name="" id="" cols="30" rows="
-                        3" class="w-[28rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="House number & street address"></textarea>
-                    </div>
-                </div>
-                <div>
-                    <label for="name" class="text-sm">Order Notes (optional)</label>
-                    <div class=" w-[30rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                        <textarea name="" id="" cols="30" rows="
-                        3" class="w-[28rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="Note about your order!"></textarea>
-                    </div>
-                </div>
+
             </div>
             <!-- right flexbox -->
-            <div class="w-1/2 bg-[#024486] flex flex-col items-center justify-center">
+            <div class="mid:w-1/3 w-auto bg-[#024486] mid:flex flex-col space-y-5 justify-center items-center rounded-md py-3 mt-5 px-4">
                 <div>
-                    hello
+                    <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 2</a></button>
+                    <p class="text-sm text-white mt-3">Your Order and delivery informations
+                    </p>
+                    <!-- invoice card -->
+                    <div class="md:w-[23rem] w-auto flex flex-col items-center justify-center bg-white rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 mt-3">
+                        <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
+                            <p>Product</p>
+                            <p>Product Description</p>
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
+                            <img src="../resources/img/fortnite.jpg" alt="" width="30%">
+                            <p>example</p>
+                            <p>20,000 Ks</p>
+                        </div>
+                        <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                            <p>Subtotal</p>
+                            <p>20,000 Ks</p>
+                        </div>
+                        <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                            <p>Delivery Fees</p>
+                            <p>2,000 Ks</p>
+                        </div>
+                        <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
+                            <p>Total</p>
+                            <p>22,000 Ks</p>
+                        </div>
+                    </div>
+                    <!-- step 3  -->
+                    <div class="w-[23rem] flex flex-col items-start justify-center  border-t-2 border-orange-400 py-5  space-y-5 mt-5">
+                        <div class="flex flex-col space-y-5">
+                            <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 3</a></button>
+                            <p class="text-sm text-white">Please choose your payment method!
+                            </p>
+                        </div>
+                        <div class="flex flex-col space-y-8 text-sm">
+                            <div>
+                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md">
+                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm text-xs" checked>
+                                    <span class="text-gray-500">Cash On Delivery</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md ">
+                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
+                                    <span class="text-gray-500">KBZ Pay</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md ">
+                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
+                                    <span class="text-gray-500">AYA Pay</span>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm">
+                                <span class="text-white text-xs">I have read and agree the terms and conditions.</span>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <button type="submit" class="bg-[#F68721] shadow-md  w-36 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Place Order</a></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, doloribus unde? Harum quo tempore cupiditate fuga accusantium reprehenderit eligendi, non maxime nisi nobis ea obcaecati inventore eaque sequi autem ullam?</p>
+
+
+
             </div>
-
-
-            <!-- invoice card -->
-            <!-- <div class="w-[23rem] flex flex-col items-center justify-center bg-gray-200 rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 opacity-35">
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
-                    <p>Product</p>
-                    <p>Product Description</p>
-                    <p>Subtotal</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
-                    <img src="../resources/img/fortnite.jpg" alt="" width="30%">
-                    <p>example</p>
-                    <p>20,000 Ks</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Order ID</p>
-                    <p>#112233</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Payment Method</p>
-                    <p>COD</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Subtotal</p>
-                    <p>20,000 Ks</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Delivery Fees</p>
-                    <p>2,000 Ks</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Total</p>
-                    <p>22,000 Ks</p>
-                </div>
-                <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
-                    <p>Date</p>
-                    <p>July 20, 2023</p>
-                </div>
-            </div> -->
         </div>
 
         <!-- footer responsive -->
