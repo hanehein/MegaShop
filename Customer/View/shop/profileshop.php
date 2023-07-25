@@ -63,7 +63,7 @@
         </div>
     </div>
     <!--Start product section-->
-    <div class="block sm:grid sm:grid-cols-5 gap-4">
+    <div class="block sm:grid sm:grid-cols-6 gap-4">
         <div class="hidden sm:block border-r-2 border-custom-grey">
 
             <div class="categories-box p-4 border-b-2 border-custom-grey">
@@ -83,7 +83,7 @@
             <div class="brands-box p-4 border-custom-grey border-b-2">
                 <h2 class="text-custom-extra-large">Brands</h2>
                 <ul class="text-custom-medium text-custom-grey px-2">
-                    <li><input type="checkbox "> Philips</li>
+                    <li><input type="checkbox"> Philips</li>
                     <li><input type="checkbox"> OSRAM</li>
                     <li><input type="checkbox"> Sylvania</li>
                     <li><input type="checkbox"> Feit Electric</li>
@@ -101,7 +101,7 @@
             </div>
         </div>
         <!--End left section-->
-        <div class="col-span-4">
+        <div class="col-span-5">
             <div class="px-5 py-2 border-custom-grey border-b-2">
                 <div class="x-3 flex justify-between items-center mb-4">
                     <h1 class="text-custom-blue">Powerpoints, Switches & Savers</h1>
