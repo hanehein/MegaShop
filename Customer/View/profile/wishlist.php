@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order History</title>
+    <title>Wishlist</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id=<?= time() ?>">
@@ -66,11 +66,11 @@
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
+            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
 
             <div class="flex justify-center items-center">
                 <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
@@ -78,54 +78,107 @@
 
             </div>
         </div>
-        <!-- history -->
+        <!-- wishlist -->
         <div class="w-1/2 items-center flex mx-auto mt-20">
-            <div class="flex flex-col items-center justify-center">
+            <div class="flex flex-col items-center justify-center ">
                 <p class="text-xl font-semibold">
-                    Order History
+                    Wishlist
                 </p>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                        Traffic Star >>>
+                <div class="bg-[#d6d3d1] mt-10 rounded-lg mb-10">
+                    <div class="flex justify-around bg-[#003366] w-full rounded-tr-lg rounded-tl-lg px-10 py-10">
+
+                        <p class="text-white text-lg font-bold mr-72">Products</p>
+                        <p class="text-white text-lg font-bold ml-20">Unit Price</p>
+                        <p class="text-white text-lg font-bold">Stock Status</p>
+                        <p class="text-white text-lg font-bold">Action</p>
+
                     </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
+                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
+
+                        <div class="flex items-center justify-between">
+                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                            <div class="py-3 text-left mr-20">
+                                <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                                <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
+                                <p class="mb-2 mt-2">Color :Blue</p>
+                                <p class="mb-2 mt-2">Size : ###</p>
+                            </div>
+
+                            <p class="text-xl font-semibold mr-10">100$</p>
+
+                            <p class="text-xl font-semibold">In Stock</p>
+
+                            <div class="text-sm font-semibold py-3 mr-10 px-3">
+                                <button class="w-auto bg-[#dc2626] px-2 py-2 text-white rounded-lg shadow-xl">Remove</button>
+                            </div>
                         </div>
+
+                    </div>
+                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
+
+                        <div class="flex items-center justify-between">
+                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                            <div class="py-3 text-left mr-20">
+                                <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                                <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
+                                <p class="mb-2 mt-2">Color :Blue</p>
+                                <p class="mb-2 mt-2">Size : ###</p>
+                            </div>
+
+                            <p class="text-xl font-semibold mr-10">100$</p>
+
+                            <p class="text-xl font-semibold">In Stock</p>
+
+                            <div class="text-sm font-semibold py-3 mr-10 px-3">
+                                <button class="w-auto bg-[#dc2626] px-2 py-2 text-white rounded-lg shadow-xl">Remove</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
+
+                        <div class="flex items-center justify-between">
+                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                            <div class="py-3 text-left mr-20">
+                                <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                                <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
+                                <p class="mb-2 mt-2">Color :Blue</p>
+                                <p class="mb-2 mt-2">Size : ###</p>
+                            </div>
+
+                            <p class="text-xl font-semibold mr-10">100$</p>
+
+                            <p class="text-xl font-semibold">In Stock</p>
+
+                            <div class="text-sm font-semibold py-3 mr-10 px-3">
+                                <button class="w-auto bg-[#dc2626] px-2 py-2 text-white rounded-lg shadow-xl">Remove</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
+
+                        <div class="flex items-center justify-between">
+                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                            <div class="py-3 text-left mr-20">
+                                <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                                <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
+                                <p class="mb-2 mt-2">Color :Blue</p>
+                                <p class="mb-2 mt-2">Size : ###</p>
+                            </div>
+
+                            <p class="text-xl font-semibold mr-10">100$</p>
+
+                            <p class="text-xl font-semibold">In Stock</p>
+
+                            <div class="text-sm font-semibold py-3 mr-10 px-3">
+                                <button class="w-auto bg-[#dc2626] px-2 py-2 text-white rounded-lg shadow-xl">Remove</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                        Traffic Star >>>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3 ">
-                        Traffic Star >>>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 

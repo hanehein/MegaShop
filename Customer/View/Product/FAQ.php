@@ -72,36 +72,37 @@
         </div>
     </div>
     <!-- footer -->
-    <div class="bg-[#024486] w-full h-auto mt-10">
-        <div class="flex text-white justify-evenly ">
-            <div class="py-5">
-                <p class="text-xl font-semibold">Quick Links</p>
-                <ul class="list-disc mt-3">
-                    <li class="text-lg font-semibold cursor-pointer">About Us</li>
-                    <li class="text-lg font-semibold cursor-pointer">Privacy & Policy</li>
+    <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-auto">
+        <!-- first one -->
+        <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
+            <!-- quicklink -->
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2">
+                <p>Quick Links</p>
+                <ul class="list-disc mt-2">
+                    <li>About Us</li>
+                    <li>Pricacy & Policy</li>
                 </ul>
             </div>
-            <div class="py-5">
-                <p class="text-xl font-semibold">Help?</p>
-                <ul class="list-disc mt-3">
-                    <li class="text-lg font-semibold cursor-pointer">Payment</li>
-                    <li class="text-lg font-semibold cursor-pointer">FAQ</li>
+            <!-- Help -->
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2  border-b-white">
+                <p>Help?</p>
+                <ul class="list-disc mt-2">
+                    <li>Payment</li>
+                    <li>FAQ</li>
                 </ul>
             </div>
-            <div class="py-5">
-                <p class="text-xl font-semibold">Contact Us</p>
-                <ul class="list-disc mt-3">
-                    <li class="flex items-center text-lg font-semibold cursor-pointer"><ion-icon name="phone-portrait" class="text-2xl"></ion-icon> +95777777777</li>
-                    <li class="flex items-center text-lg font-semibold cursor-pointer"><ion-icon name="mail" class="text-2xl"></ion-icon> megashopservice@gmail.com</li>
+            <!-- Contact Us -->
+            <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2 border-b-white ">
+                <p>Contact Us</p>
+                <ul class="list-disc mt-2 leading-5">
+                    <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
+                    <li><ion-icon name="mail"></ion-icon><span class="ml-2">service@gmail.com</span></li>
                 </ul>
             </div>
-
         </div>
-        <div class="w-2/3 h-0.5 bg-gray-100 mx-auto">
-
-        </div>
-        <div class="text-center mt-3 py-4 text-xl">
-            <p class="text-white font-bold cursor-pointer">@2023 MEGA SHOP All rights reserved</p>
+        <!-- last one -->
+        <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
+            <p class="text-white text-sm font-semibold">&#64;2023 MEGA SHOP All Rights Reserved.</p>
         </div>
     </div>
 </body>

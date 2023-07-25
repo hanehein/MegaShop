@@ -167,11 +167,11 @@
         </div>
     </div>
     <!-- footer -->
-    <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] top-[100vh]">
+    <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-auto">
         <!-- first one -->
         <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
             <!-- quicklink -->
-            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2">
                 <p>Quick Links</p>
                 <ul class="list-disc mt-2">
                     <li>About Us</li>
@@ -179,7 +179,7 @@
                 </ul>
             </div>
             <!-- Help -->
-            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
+            <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2  border-b-white">
                 <p>Help?</p>
                 <ul class="list-disc mt-2">
                     <li>Payment</li>
@@ -187,7 +187,7 @@
                 </ul>
             </div>
             <!-- Contact Us -->
-            <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden ">
+            <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-sm font-semibold px-3 py-2 md:border-hidden border-t-2 border-b-white ">
                 <p>Contact Us</p>
                 <ul class="list-disc mt-2 leading-5">
                     <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
@@ -197,7 +197,7 @@
         </div>
         <!-- last one -->
         <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
-            <p class="text-white text-xs">&#64;2023 MEGA SHOP All Rights Reserved.</p>
+            <p class="text-white text-sm font-semibold">&#64;2023 MEGA SHOP All Rights Reserved.</p>
         </div>
     </div>
 </body>
