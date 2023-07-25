@@ -12,6 +12,7 @@
 </head>
 
 <body class="overflow-x-hidden bg-gray-50 w-full">
+    <!--Start navbar-->
     <div class="overflow-x-hidden header flex flex-row justify-between items-center bg-white py-5 px-5 text-blue-800">
         <ion-icon id="close" name="close-outline" class="text-blue-800 md:hidden sm:flex text-4xl self-end"></ion-icon>
         <div class="logoname font-wallpoet">Mega Shop</div>
@@ -58,6 +59,8 @@
             </ul>
         </div>
     </div>
+    <!--End navbar-->
+    <!--Start shopname box-->
     <div class="flex flex-row bg-white mt-3 w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-4">
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
@@ -78,6 +81,7 @@
             </div>
         </div>
     </div>
+    <!--Start menubox-->
     <div class="container mx-3 bg-white flex flex-row justify-between items-center mt-3 p-3 font-semibold text-lg">
         <div class="flex flex-row space-x-5">
             <p>All products</p>
@@ -89,10 +93,11 @@
             <span class="bg-blue-800 p-2 text-white rounded-r-md">Search</span>
         </div>
     </div>
+    <!--Strat body-->
     <div class="bg-white mt-3 py-3">
         <div class="grid grid-cols-4 gap-4">
             <div class="border border-r-4 px-5">
-                <h1  class="font-semibold text-2xl">Category</h1>
+                <h1 class="font-semibold text-2xl">Category</h1>
                 <p class="text-orange-600">Powerpoints, Switches & Savers</p>
                 <p>Light Bulbs</p>
                 <p>Celling Lights</p>
