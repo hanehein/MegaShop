@@ -1,180 +1,249 @@
-<?php
-
-session_start();
-$result = $_SESSION["users"];
-
-
-?>
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
+    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
+    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div class="min-h-full">
-        <nav class="bg-gray-800">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+<body class="bg-[#F1F2F4]">
+    <section class="grid grid-cols-6">
+        <div class="bg-white min-h-screen">
+            <div class="h-[60px] flex justify-center items-center text-center">
+                <span class="font-bold">MEGA SHOP</span>
+            </div>
+            <div class="menu-lists">
+                <ul>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
+                                Customers
+                            </div>
+                            <div>
+                                <button class="order-down-btn">
+                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
+                                </button>
+                            </div>
                         </div>
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Reports</a>
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
+                        Reviews
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-span-5 rounded-lg shadow-lg overflow-hidden">
+            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
+                <div><span>Dashboard</span></div>
+                <div><span>June 30, 2023</span></div>
+            </nav>
+            <div>
+                <div class="details grid grid-cols-4 space-x-6 p-5">
+
+                    <div class="bg-[#FFDD55] bg-opacity-30 p-5 flex space-x-5 justify-between items-center rounded-lg">
+                        <div class="w-[50px] h-[50px] bg-white flex justify-center items-center rounded-md">
+                            <ion-icon class="text-custom-orange text-[40px] rounded-md" name="cart-outline"></ion-icon>
+                        </div>
+                        <div>
+                            <h2 class="text-custom-grey text-custom-extra-large font-bold">Total Products</h2>
+                            <div class="text-center">
+                                <span>102</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6">
-                            <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                <span class="sr-only">View notifications</span>
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                                </svg>
-                            </button>
 
-                            <!-- Profile dropdown -->
-                            <div class="relative ml-3">
-                                <div>
-                                    <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                        <span class="sr-only">Open user menu</span>
-                                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    </button>
-                                </div>
-
-                                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-
-                                </div>
+                    <div class="bg-[#F68721] bg-opacity-30 p-5 flex space-x-5 justify-between items-center rounded-lg">
+                        <div class="w-[50px] h-[50px] bg-white flex justify-center items-center rounded-md">
+                            <ion-icon class="text-custom-orange text-[40px] rounded-md" name="bag-handle-outline"></ion-icon>
+                        </div>
+                        <div>
+                            <h2 class="text-custom-grey text-custom-extra-large font-bold">Total Orders</h2>
+                            <div class="text-center">
+                                <span>102</span>
                             </div>
                         </div>
                     </div>
-                    <div class="-mr-2 flex md:hidden">
-                        <!-- Mobile menu button -->
-                        <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <!-- Menu open: "hidden", Menu closed: "block" -->
-                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <!-- Menu open: "block", Menu closed: "hidden" -->
-                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden" id="mobile-menu">
-                <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard </a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Reports</a>
-                </div>
-                <div class="border-t border-gray-700 pb-3 pt-4">
-                    <div class="flex items-center px-5">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <div class="bg-[#1EE1E1] bg-opacity-30 p-5 flex space-x-5 justify-between items-center rounded-lg">
+                        <div class="w-[50px] h-[50px] bg-white flex justify-center items-center rounded-md">
+                            <ion-icon class="text-custom-orange text-[40px] rounded-md" name="cash-outline"></ion-icon>
                         </div>
-                        <div class="ml-3">
-                            <div class="text-base font-medium leading-none text-white">Tom Cook</div>
-                            <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+                        <div>
+                            <h2 class="text-custom-grey text-custom-extra-large font-bold">Total Sells</h2>
+                            <div class="text-center">
+                                <span>105200 Ks</span>
+                            </div>
                         </div>
-                        <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                            <span class="sr-only">View notifications</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                            </svg>
-                        </button>
                     </div>
-                    <div class="mt-3 space-y-1 px-2">
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-                        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
+
+                    <div class="bg-[#361EE1] bg-opacity-30 p-5 flex space-x-5 justify-between items-center rounded-lg">
+                        <div class="w-[50px] h-[50px] bg-white flex justify-center items-center rounded-md">
+                            <ion-icon class="text-custom-orange text-[40px] rounded-md" name="people-outline"></ion-icon>
+                        </div>
+                        <div>
+                            <h2 class="text-custom-grey text-custom-extra-large font-bold">Total Customers</h2>
+                            <div class="text-center">
+                                <span>105</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-2 gap-4 p-5">
+                    <div class="recent-order bg-white rounded-lg p-5">
+                        <h2 class="font-bold text-custom-large">Recent Orders</h2>
+                        <table class="min-w-full table-auto">
+                            <thead>
+                                <tr class="border-b border-custom-grey">
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        ID
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Date
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Payment
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Fulfillment
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        #A580
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        June 30, 2023
+                                    </td>
+                                    <td class="px-6 py-4 text-green  text-[#2C7607]">
+                                        Paid
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span class="bg-green-500 p-1 rounded-md text-white font-semibold">Delivered</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        #A581
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        June 30, 2023
+                                    </td>
+                                    <td class="px-6 py-4 text-green  text-custom-grey">
+                                        UnPaid
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span class="bg-custom-orange p-1 rounded-md text-white font-semibold">In
+                                            Progress</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        #A581
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        June 30, 2023
+                                    </td>
+                                    <td class="px-6 py-4 text-green  text-custom-grey">
+                                        UnPaid
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span class="bg-red-500 p-1 rounded-md text-white font-semibold">Cancel</span>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="top-product bg-white rounded-lg shadow-md p-5">
+                        <h2 class="font-bold text-custom-large">Top Products</h2>
+                        <table class="min-w-full table-auto">
+                            <thead>
+                                <tr class="border-b border-custom-grey">
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Title
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Sold
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Amount
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4">
+                                        Homesick New Home Reed Diffuser
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        10
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        120,000 Ks
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        Addias Shoes
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        8
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        157,000 Ks
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        Gray Light Bulb
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        5
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        14,000 Ks
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </nav>
-
-        <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Welcome <?= $_SESSION["username"] ?>,</h1>
-            </div>
-        </header>
-        <main>
-            <h1 class="pl-10 text-lg mt-5 font-semibold float-left mb-10">User Lists</h1>
-            <a href="./user/add.php">
-                <button class="bg-blue-500 float-right mr-10 px-5 mt-5 py-2 text-white rounded-lg">
-                    <ion-icon name="add-circle-outline"></ion-icon> Add Users</button>
-            </a>
-            <div class="mx-auto w-full py-6 sm:px-6 lg:px-8 clear-both">
-                <table class="table-fixed w-full ">
-                    <thead>
-                        <tr class=" border  bg-gray-500 text-white ">
-                            <th class="p-1 text-start">No.</th>
-                            <th class="p-1 text-start">Name</th>
-                            <th class="p-1 text-start">Age</th>
-                            <th class="p-1 text-start">Class</th>
-                            <th class="p-1 text-start">Address</th>
-                            <th class="p-1 text-start">Gender</th>
-                            <th class="p-1 text-start">Mark</th>
-                            <th class="p-1 text-start">Phone</th>
-                            <th class="p-1 text-start">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $count = 0 ?>
-                        <?php foreach ($result as $user) {  ?>
-                            <tr class=" border border-1">
-                                <td class="p-1"><?= ++$count; ?></td>
-                                <td class="p-1"><?= $user["name"]; ?></td>
-                                <td class="p-1"><?= $user["age"]; ?></td>
-                                <td class="p-1"><?= $user["class"]; ?></td>
-                                <td class="p-1"><?= $user["address"]; ?></td>
-                                <td class="p-1">
-                                    <?php if ($user["gender"] == 0) { ?>
-                                        Male
-                                    <?php } ?>
-                                    <?php if ($user["gender"] == 1) { ?>
-                                        Female
-                                    <?php } ?>
-                                </td>
-                                <td class="p-1"><?= $user["mark"]; ?></td>
-                                <td class="p-1"><?= $user["phone"]; ?></td>
-                                <td class="text-center underline">
-                                    <a href="../Controller/UserEditController.php?id=<?= $user["id"] ?>">Edit</a>
-                                </td>
-                            </tr>
-                        <?php  } ?>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
-
-
+        </div>
+    </section>
 </body>
+
 
 </html>

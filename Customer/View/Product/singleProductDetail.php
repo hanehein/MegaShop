@@ -284,7 +284,7 @@
           Product Rating and Reviews (2)
         </h2>
         <!-- start review -->
-        <div class="p-4 shadow-lg rounded-md border border-2 border-custom-blue mb-4">
+        <div class="p-4 shadow-lg rounded-md border-2 border-custom-blue mb-4">
           <div class="flex justify-between items-center">
             <div class="flex space-x-3 items-center mb-3">
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
