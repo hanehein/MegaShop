@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-black overflow-x-hidden">
 <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="flex justify-center">
