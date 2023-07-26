@@ -1,27 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "custom-grey": "#7B7B7B",
+                        "custom-blue": "#024486",
+                        "custom-orange": "#F68721",
+                    },
+                    backgroundColor: {
+                        "custom-milk": "F1F2F4",
+                        "custom-blue": "#024486",
+                        "custom-orange": "#F68721",
+                        "custom-grey": "#7B7B7B",
+                        "custom-sky-blue": "#c9e0f5",
+                        "custom-black-pale": "rgba(0,0,0,0.5)",
+                        "custom-red": "FF0000"
+                    },
+                    fontSize: {
+                        "custom-tiny": "12px",
+                        "custom-medium": "16px",
+                        "custom-large": "18px",
+                        "custom-extra-large": "20px",
+                    },
+                    borderColor: {
+                        "custom-blue": "#024486",
+                        "custom-grey": "#7B7B7B",
+                        "custom-orange": "#F68721",
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="./singleProductDeatil.js" defer></script>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
-<body class="overflow-x-hidden">
-<div class="logoname font-wallpoet">Mega Shop</div>
-    <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-[350px] h-screen transition-transform -translate-x-full" aria-label="Sidebar">
-    
-    <div class="h-full px-3 py-4 overflow-y-auto bg-custom-grey">
-        <div>hello</div>
+<body class="bg-[#F1F2F4]">
+    <section class="grid grid-cols-6">
+        <div class="bg-white min-h-screen">
+            <div class="h-[60px] flex justify-center items-center text-center">
+                <span class="font-bold">MEGA SHOP</span>
+            </div>
+            <div class="menu-lists">
+                <ul>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Dashboard</li>
+                    <li class="px-3 py-4  text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Products</li>
+                    <li class="active px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Orders</li>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Customers</li>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Rating and Reviews</li>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Messages</li>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Setting</li>
+                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        Log Out</li>
+                </ul>
+            </div>
         </div>
-    </aside>
+        <div class="col-span-5 rounded-lg shadow-lg overflow-hidden">
+            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
+                <div><span>Product</span></div>
+                <div><span>June 30, 2023</span></div>
+            </nav>
+
+            <div class="p-5 text-end">
+                <a href="./addproduct.php" class="bg-green-500 rounded-lg border-2 text-white px-3 py-1">
+                    <span><ion-icon name="add-circle-outline" class="text-xl"></ion-icon></span>
+                    Add Product
+                </a>
+            </div>
+            <!--Start table-->
+            <table class="min-w-full table-auto rounded-lg overflow-hidden">
+                <thead>
+                    <tr class="bg-[#66CC33] bg-opacity-50 text-white">
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Product
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Category
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Buy price
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Discount
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Sell price
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Stock
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                            Action
+                        </th>
+                        <th class="px-6 py-3 text-left text-sm text-black font-semibold uppercase tracking-wider">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center space-x-1">
+                                <img src="../resources/img/addidas.jpg" alt="" class="w-[50px] h-[50px]">
+                                <a href="" class="text-blue-500 ">Addidas</a>
+                            </div>
+
+                        </td>
+                        <td class="px-6 py-4 ">
+                            Shoe
+                        </td>
+                        <td class="px-6 py-4">
+                            <span>20000 Ks</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="" class="text-blue-500 underline">2%</a>
+                        </td>
+                        <td class="px-6 py-4 ">
+                            <span>24000 Ks</span>
+                        </td>
+                        <td class="px-6 py-4 ">
+                            <span>20</span>
+                        </td>
+                        <td>
+                            <a href="" class="bg-blue-500 border-2 rounded-lg px-3 py-1">Review</a>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col space-y-2">
+                                <a href="#" class="bg-[#66CC33] rounded-lg px-3 py-1">Edit</a>
+                                <a href="#" class="bg-[#FF0000] rounded-lg px-3 py-1">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--End Row1-->
+                    <tr>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center space-x-1">
+                                <img src="../resources/img/addidas.jpg" alt="" class="w-[50px] h-[50px]">
+                                <a href="" class="text-blue-500 ">Addidas</a>
+                            </div>
+
+                        </td>
+                        <td class="px-6 py-4 ">
+                            Shoe
+                        </td>
+                        <td class="px-6 py-4">
+                            <span>20000 Ks</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="" class="text-blue-500 underline">2%</a>
+                        </td>
+                        <td class="px-6 py-4 ">
+                            <span>24000 Ks</span>
+                        </td>
+                        <td class="px-6 py-4 ">
+                            <span>20</span>
+                        </td>
+                        <td>
+                            <a href="" class="bg-blue-500 border-2 rounded-lg px-3 py-1">Review</a>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col space-y-2">
+                                <a href="" class="bg-[#66CC33] rounded-lg px-3 py-1">Edit</a>
+                                <a href="" class="bg-[#FF0000] rounded-lg px-3 py-1">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+        </div>
+    </section>
 </body>
 
 </html>
+
+<!-- secondary - #66CC33 -->
+<!-- tertiary - #2C7607 -->
