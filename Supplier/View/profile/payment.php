@@ -78,43 +78,35 @@
                 <div><span>Setting</span></div>
                 <div><span>June 30, 2023</span></div>
             </nav>
-            <div class="flex flex-col items-center space-y-5">
-                <span class="text-2xl font-semibold">Supplier Profile</span>
+            <div class="p-5">
+                <div class="flex flex-col items-center space-y-5">
+                    <span class="text-2xl font-semibold">Supplier Profile</span>
 
-                <div class="flex justify-between items-center space-x-96">
-                    <a href="" class="hover:underline">My Profile</a>
-                    <a href="" class="hover:underline">Go Premium</a>
-                </div>
-            </div>
-
-            <div class="w-full h-screen p-5 shadow-lg rounded-lg flex flex-col items-center justify-center space-y-12 bg-white mt-5">
-                <span class="font-semibold">You Chose Diamond Plan To Subscribe</span>
-                <span>You will subscribe to our website for 6 months</span>
-                <span class="text-xs">Total cost : 40,000 Ks </span>
-                <span>Please Choose Your Payment Method</span>
-                <div class="flex justify-between items-center space-x-11">
-                    <!-- <div class="flex w-[150px] px-3 py-1 border-2 bg-[#66CC33] rounded-lg text-white items-center justify-center space-x-2">
-                        <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300">
-                        <label for="kpay">KBZpay</label>
+                    <div class="flex justify-between items-center space-x-96">
+                        <a href="" class="hover:underline">My Profile</a>
+                        <a href="" class="hover:underline">Go Premium</a>
                     </div>
-                    <div class="flex w-[150px] px-3 py-1 border-2 bg-[#66CC33] rounded-lg text-white items-center justify-center space-x-2">
-                        <input type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300">
-                        <label for="ayapay">AYApay</label>
-                    </div> -->
-
-                    <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
-                        <ion-icon name="checkbox-outline"></ion-icon>
-                        KBZpay</button>
-                    <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
-                        <ion-icon name="checkbox-outline"></ion-icon>
-                        AYApay</button>
                 </div>
-                <div class="flex justify-end">
-                    <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
-                        Subscribe</button>
+                <div class="container mx-auto">
+                    <div class="w-auto h-screen p-5 shadow-lg rounded-lg flex flex-col items-center justify-center space-y-12 bg-white mt-5">
+                        <span class="font-semibold">You Chose Diamond Plan To Subscribe</span>
+                        <span>You will subscribe to our website for 6 months</span>
+                        <span class="text-xs">Total cost : 40,000 Ks </span>
+                        <span>Please Choose Your Payment Method</span>
+                        <div class="flex justify-between items-center space-x-11">
+                            <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
+                                <ion-icon name="checkbox-outline"></ion-icon>
+                                KBZpay</button>
+                            <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
+                                <ion-icon name="checkbox-outline"></ion-icon>
+                                AYApay</button>
+                        </div>
+                        <div class="text-end">
+                            <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
+                                Subscribe</button>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
         </div>
     </section>

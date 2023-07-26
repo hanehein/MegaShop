@@ -80,18 +80,20 @@
             <div class="flex flex-col items-center space-y-3">
                 <span class="text-2xl font-semibold">Supplier Profile</span>
 
-                <div class="flex justify-between items-center ">
+                <div class="flex justify-between items-center space-x-96">
                     <a href="">My Profile</a>
                     <a href="">Go Premium</a>
                 </div>
 
                 <!--card body-->
-                <div class="bg-custom-grey w-[600px] h-[800px] shadow-lg p-5 flex flex-col">
-                    <div class="flex justify-between items-center">
-                        <span>Your Photo</span>
-                        <span>Shop Photo</span>
+                <div class="p-5">
+                    <div class="bg-custom-grey w-full h-screen shadow-lg rounded-lg p-5 flex flex-col container mx-auto">
+                        <div class="flex justify-between items-center">
+                            <span>Shop Photo</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!--Start profile edit-->
