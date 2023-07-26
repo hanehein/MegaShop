@@ -35,12 +35,12 @@
                 <p class="text-white text-[23px] text-center">Log In</p>
                 <!-- email -->
                 <form action="">
-                    <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black">
+                    <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
                         <ion-icon name="mail" class="text-white"></ion-icon>
                         <input type="email" name="" id="email" placeholder="Email Address" class="text-sm bg-[#003366] focus:outline-none border-none text-white" />
                     </div>
                     <!-- password -->
-                    <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white  mx-auto mt-8 flex py-1.5 px-4 space-x-3 justify-center items-center rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
+                    <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white  mx-auto mt-8 flex py-1.5 px-4 space-x-3 justify-center items-center rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black border-none">
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
                         <input type="password" name="" id="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" />
                     </div>
