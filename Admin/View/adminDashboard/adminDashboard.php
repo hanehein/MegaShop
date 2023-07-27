@@ -17,7 +17,7 @@
 
 <body class="overflow-x-hidden">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-gray-200 text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800 ">
         <!-- dashboard div -->
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="flex justify-center items-center mt-3">
@@ -134,7 +134,7 @@
             </div>
         </div>
         <!-- data display div -->
-        <div class="w-auto  flex flex-col flex-shrink-0 bg-orange-300 absolute left-64 px-4 py-4">
+        <div class="w-full flex flex-col items-center justify-start bg-gray-200 space-y-5 font-['Poppins']">
             
         </div>
     </div>

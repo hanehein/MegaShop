@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="w-auto h-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table cellpadding="12" class="w-auto table-fixed border-collapse text-white text-center">
+                <table cellpadding="12" class="w-auto table-fixed border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>Id</th>

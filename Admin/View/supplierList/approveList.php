@@ -17,7 +17,7 @@
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex   bg-black text-gray-800 relative ">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r ">
             <div class="flex justify-center items-center mt-3">
@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="w-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table cellspacing="10" cellpadding="15" class=" w-auto table-fixed text-white text-center">
+                <table cellspacing="10" cellpadding="15" class=" w-auto table-fixed text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>Id</th>
