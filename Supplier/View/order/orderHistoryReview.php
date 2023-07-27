@@ -61,13 +61,15 @@
             </div>
         </div>
         <div class="col-span-5">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
+            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80 fixed top-0 w-full">
                 <div><span>Ratings & Reviews</span></div>
                 <div><span>June 30, 2023</span></div>
             </nav>
 
-            <div class="p-5">
+            <div class="p-5 max-h-screen overflow-y-auto">
+                <div class="h-[60px]"></div>
 
+                <!-- start search bar -->
                 <div class="px-5 mb-5 flex justify-between items-center">
                     <div>
                         <input class="w-[400px] p-2 rounded-lg border border-[#66CC33] shadow" type="text" placeholder="Search By ID Number">
@@ -84,6 +86,7 @@
                     </div>
                 </div>
 
+
                 <div>
                     <!-- Orderlists container -->
                     <div class="px-5">
@@ -97,47 +100,55 @@
                                         Order ID
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Name
+                                        Payment Method
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Qty
+                                        Payment Status
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        PricePerItem
+                                        Fulfillment
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Discount
+                                        Customer
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Total Price
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         Date
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Delivery
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        TotalPrice
+                                        Status
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <tr>
-                                    <td class="px-6 py-4 "><span>#112233</span></td>
                                     <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">Instant Coffee Milk</a>
+                                        <a href="" class="underline text-blue-500">#112233</a>
                                     </td>
-                                    <td class="px-6 py-4 "><span>3</span></td>
-                                    <td class="px-6 py-4 "><span>15,000 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>5 %</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 "><span>COD</span></td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Cash On Delivery</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Unpaid</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>In Progress</span>
+                                    </td>
+                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
                                     <td class="px-6 py-4 "><span>42,750 Ks</span></td>
+                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
+                                    <td class="px-6 py-4 flex space-x-3">
+                                        <button class="px-3 py-1 bg-green-400 text-white rounded-md">Confirmed</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                         <!-- end orderlist -->
 
                         <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
+                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
                             <thead>
                                 <tr class="border-b-2 border-custom-grey bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
@@ -145,47 +156,55 @@
                                         Order ID
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Name
+                                        Payment Method
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Qty
+                                        Payment Status
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        PricePerItem
+                                        Fulfillment
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Discount
+                                        Customer
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Total Price
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         Date
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Delivery
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        TotalPrice
+                                        Status
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <tr>
-                                    <td class="px-6 py-4 "><span>#112233</span></td>
                                     <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">Instant Coffee Milk</a>
+                                        <a href="" class="underline text-blue-500">#112233</a>
                                     </td>
-                                    <td class="px-6 py-4 "><span>3</span></td>
-                                    <td class="px-6 py-4 "><span>15,000 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>5 %</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 "><span>COD</span></td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Cash On Delivery</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Unpaid</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>In Progress</span>
+                                    </td>
+                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
                                     <td class="px-6 py-4 "><span>42,750 Ks</span></td>
+                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
+                                    <td class="px-6 py-4 flex space-x-3">
+                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                         <!-- end orderlist -->
 
                         <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
+                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
                             <thead>
                                 <tr class="border-b-2 border-custom-grey bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
@@ -193,88 +212,48 @@
                                         Order ID
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Name
+                                        Payment Method
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Qty
+                                        Payment Status
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        PricePerItem
+                                        Fulfillment
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Discount
+                                        Customer
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Date
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Delivery
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        TotalPrice
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 "><span>#112233</span></td>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">Instant Coffee Milk</a>
-                                    </td>
-                                    <td class="px-6 py-4 "><span>3</span></td>
-                                    <td class="px-6 py-4 "><span>15,000 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>5 %</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 "><span>COD</span></td>
-                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- end orderlist -->
-
-                        <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
-                            <thead>
-                                <tr class="border-b-2 border-custom-grey bg-white">
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        <input type="checkbox">
-                                        Order ID
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Name
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Qty
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        PricePerItem
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Discount
+                                        Total Price
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         Date
                                     </th>
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Delivery
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        TotalPrice
+                                        Status
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 <tr>
-                                    <td class="px-6 py-4 "><span>#112233</span></td>
                                     <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">Instant Coffee Milk</a>
+                                        <a href="" class="underline text-blue-500">#112233</a>
                                     </td>
-                                    <td class="px-6 py-4 "><span>3</span></td>
-                                    <td class="px-6 py-4 "><span>15,000 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>5 %</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 "><span>COD</span></td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Cash On Delivery</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Unpaid</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>In Progress</span>
+                                    </td>
+                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
                                     <td class="px-6 py-4 "><span>42,750 Ks</span></td>
+                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
+                                    <td class="px-6 py-4 flex space-x-3">
+                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
