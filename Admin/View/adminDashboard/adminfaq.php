@@ -164,21 +164,21 @@
 
     <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-36 rounded-lg px-10 py-10 mb-10 ">
         <div class="mt-10 mb-10">
-            <p class="text-2xl font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">Do we provide installation support to the users?</p>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full " value="Do we provide installation support to the users?" disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <p class="text-lg font-medium mt-10 py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">Yes, we provide installation support to the users. Feel free to email us anytime.</p>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-        </div>
-        <div class="mt-10 mb-10">
-            <p class="text-2xl font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">Do we provide installation guide to the users?</p>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <p class="text-lg font-medium mt-10 py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">Yes, we provide installation guide to the users with the packages.</p>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="Yes, we provide installation support to the users. Feel free to email us anytime." disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
         </div>
         <div class="mt-10 mb-10">
-            <p class="text-2xl font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">How much time do we take to get back to the user?</p>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="Do we provide installation guide to the users?" disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <p class="text-lg font-medium mt-10 py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">We reply to the users as soon as possible.</p>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="Yes, we provide installation guide to the users with the packages." disabled></input>
+            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
+        </div>
+        <div class="mt-10 mb-10">
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
+            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="We reply to the users as soon as possible." disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
         </div>
         <div class="mt-10 mb-10">
