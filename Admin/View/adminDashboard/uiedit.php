@@ -18,7 +18,7 @@
 <body class="flex justify-center items-center overflow-x-hidden">
     <!-- sidebar -->
     <div class="w-1/3 min-h-screen flex flex-col flex-auto bg-gray-50 text-gray-800">
-    <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
+        <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="flex justify-center items-center mt-3">
                 <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
                     <p class="">MEGA</p>
@@ -79,7 +79,7 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="list-circle"></ion-icon>
+                                <ion-icon name="list-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Proudcts Lists</span>
                         </a>
@@ -87,7 +87,7 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="cube"></ion-icon>
+                                <ion-icon name="cube"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Order Lists</span>
                         </a>
@@ -95,7 +95,7 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="help-circle"></ion-icon>
+                                <ion-icon name="help-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">FAQ</span>
                         </a>
@@ -108,7 +108,7 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="person-circle"></ion-icon>
+                                <ion-icon name="person-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Admin Profile</span>
                         </a>
@@ -116,15 +116,31 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="apps"></ion-icon>
+                                <ion-icon name="apps"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Web UI</span>
                         </a>
                     </li>
                     <li>
+                    <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
+                        <span class="inline-flex justify-center items-center ml-4">
+                            <ion-icon name="logo-web-component"></ion-icon>
+                        </span>
+                        <span class="ml-2 text-sm font-semibold tracking-wide truncate">Website Form</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <span class="inline-flex justify-center items-center ml-4">
+                            <ion-icon name="albums"></ion-icon>
+                        </span>
+                        <span class="ml-2 text-sm font-semibold tracking-wide truncate">Home Sliders</span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="log-out"></ion-icon>
+                                <ion-icon name="log-out"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Logout</span>
                         </a>
@@ -162,11 +178,11 @@
                 <div class="text-[#003366] mt-2 mb-3">
                     <p>Website Name</p>
                 </div>
-                <input type="text" class="mt-2 mb-3 rounded-lg px-2 w-1/3">
+                <input type="text" class="mt-2 mb-3 rounded-lg px-2 w-1/3" value="Mega Shop">
                 <div class="text-[#003366] mt-2 mb-3">
                     <p>Slogan</p>
                 </div>
-                <input type="text" class="mt-2 mb-3 rounded-lg px-2 w-1/3">
+                <input type="text" class="mt-2 mb-3 rounded-lg px-2 w-1/3" value="Stay Comfortable Trade Smart">
                 <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg float-right mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
             </div>
 
