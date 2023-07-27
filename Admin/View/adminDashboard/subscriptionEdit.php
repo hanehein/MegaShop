@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Profile</title>
+    <title>SubscriptionIncomeEdit</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -147,40 +147,44 @@
                                 <input type="file" id="profile" hidden accept="jpa..png">
                             </div>
                             <span class="text-white text-lg">
-                                Ava Rose
+                                Ms. Merry Jelena
                             </span>
                         </div>
-                        <div class="flex flex-col space-y-8 items-center justify-between w-96">
-                            <div class="flex items-center justify-center space-x-16">
+                        <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
+                            <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
-                                <label class="text-white font-sm" for="adname">Admin Name</label>
+                                <label class="text-white" for="adname">Shop Name</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-
-                            <div class="flex items-center justify-between w-96 space-x-16">
+                            <div class="flex items-center justify-between w-96 space-x-3">
                                 <!-- email -->
-                                <label class="text-white font-sm" for="adname">Email Address</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Subscription Plan</label>
+                                <input type="radio"  name="plan"  value="Gold">
+                                <label class="text-white text-xs font-semibold" for="gold">Gold</label><br>
+                                <input type="radio" name="plan" value="silver">
+                                <label class="text-white text-xs font-semibold" for="silver">Silver</label><br>
+                                <input type="radio"  name="plan"  value="trial">
+                                <label class="text-white text-xs font-semibold" for="trial">Trial</label>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- password -->
-                                <label class="text-white font-sm" for="adname">Password</label>
+                                <label class="text-white" for="adname">Subscription Fees</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- Job -->
-                                <label class="text-white font-sm" for="adname">Job Title</label>
+                                <label class="text-white" for="adname">Duration</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- Bio -->
-                                <label class="text-white font-sm" for="adname">Add your bio</label>
+                                <label class="text-white" for="adname">Created Date</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between space-x-16 w-96">
-                                <!-- signup -->
-                                <p class="text-white font-sm">Create New Account</p>
-                                <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <!-- Bio -->
+                                <label class="text-white" for="adname">End Date</label>
+                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
