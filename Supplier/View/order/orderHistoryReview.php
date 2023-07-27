@@ -19,52 +19,12 @@
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <div class="bg-white min-h-screen">
-            <div class="h-[60px] flex justify-center items-center text-center">
-                <span class="font-bold">MEGA SHOP</span>
-            </div>
-            <div class="menu-lists">
-                <ul>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
-                                Customers
-                            </div>
-                            <div>
-                                <button class="order-down-btn">
-                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
-                        Reviews
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80 fixed top-0 w-full">
-                <div><span>Ratings & Reviews</span></div>
-                <div><span>June 30, 2023</span></div>
-            </nav>
+            <?php
+            $currentMenu = "Orders";
+            include "../components/navbar.php";
+            ?>
 
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
@@ -77,7 +37,7 @@
                     </div>
                     <div>
                         <!-- <div class="bg-[#66CC33] py-2 px-5 text-[14px] font-semibold rounded-md">
-                            <div class="broder-b-2 border-custom-grey">
+                            <div class="broder-b-2 border-slate-500">
                                 <ion-icon name="calendar-outline"></ion-icon>
                                 Sort By Date
                             </div>
@@ -94,7 +54,7 @@
                         <!-- start orderlist -->
                         <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
                             <thead>
-                                <tr class="border-b-2 border-custom-grey bg-white">
+                                <tr class="border-b-2 border-slate-500 bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         <input type="checkbox">
                                         Order ID
@@ -150,7 +110,7 @@
                         <!-- start orderlist -->
                         <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
                             <thead>
-                                <tr class="border-b-2 border-custom-grey bg-white">
+                                <tr class="border-b-2 border-slate-500 bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         <input type="checkbox">
                                         Order ID
@@ -206,7 +166,7 @@
                         <!-- start orderlist -->
                         <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
                             <thead>
-                                <tr class="border-b-2 border-custom-grey bg-white">
+                                <tr class="border-b-2 border-slate-500 bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
                                         <input type="checkbox">
                                         Order ID

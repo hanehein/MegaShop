@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Ratings And Reviews</title>
 
     <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
@@ -19,47 +19,26 @@
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <div class="bg-white min-h-screen">
-            <div class="h-[60px] flex justify-center items-center text-center">
-                <span class="font-bold">MEGA SHOP</span>
-            </div>
-            <div class="menu-lists">
-                <ul>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Dashboard</li>
-                    <li class="active px-3 py-4 text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Orders</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Customers</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Rating and Reviews</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Messages</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Setting</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Log Out</li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-span-5 rounded-lg shadow-lg overflow-hidden">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
-                <div><span>Ratings & Reviews</span></div>
-                <div><span>June 30, 2023</span></div>
-            </nav>
+        <?php include "../components/slideMenu.php"; ?>
+        <div class="col-span-5">
+            <?php
+            $currentMenu = "Ratings & Reviews";
+            include "../components/navbar.php";
+            ?>
 
             <!-- start aye myat noe khin -->
-            <div class="p-5">
+            <div class="p-5 max-h-screen overflow-y-auto">
+                <div class="h-[60px]"></div>
                 <div class="mb-5">
-                    <label class="text-custom-large font-bold mr-4" for="order">Order By</label>
+                    <label class="text-lg font-bold mr-4" for="order">Order By</label>
 
-                    <select class="p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-custom-grey text-medium" id="order">
+                    <select class="p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
                         <option value="">date</option>
                     </select>
                 </div>
 
                 <div>
-                    <span class="font-bold text-custom-tiny">Showing 1 to 5 of 412 results</span>
+                    <span class="font-bold text-sm">Showing 1 to 5 of 412 results</span>
                     <table class="min-w-full table-auto rounded-lg overflow-hidden">
                         <thead>
                             <tr class="bg-[#66CC33] bg-opacity-50 text-white">

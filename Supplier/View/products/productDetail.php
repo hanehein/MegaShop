@@ -19,52 +19,13 @@
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <div class="bg-white min-h-screen">
-            <div class="h-[60px] flex justify-center items-center text-center">
-                <span class="font-bold">MEGA SHOP</span>
-            </div>
-            <div class="menu-lists">
-                <ul>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
-                                Customers
-                            </div>
-                            <div>
-                                <button class="order-down-btn">
-                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
-                        Reviews
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5 relative">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80 fixed top-0 w-full">
-                <div><span>Products</span></div>
-                <div><span>June 30, 2023</span></div>
-            </nav>
+
+            <?php
+            $currentMenu = "Orders";
+            include "../components/navbar.php";
+            ?>
 
             <!-- start aye myat noe khin -->
             <div class="p-5 max-h-screen overflow-y-auto">
@@ -72,13 +33,13 @@
 
                 <!-- product informations -->
                 <div class="p-5 bg-white rounded-md mb-5">
-                    <h2 class="text-custom-extra-large font-semibold border-b border-slate-300">
+                    <h2 class="text-lg font-semibold border-b border-slate-300">
                         Product Details
                     </h2>
                     <div class="details-container py-5">
 
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Product Images</span>
+                            <span class="font-normal text-slate-500">Product Images</span>
                             <!-- Images -->
                             <div class="flex space-x-5 mt-2">
                                 <div>
@@ -97,7 +58,7 @@
                         </div>
 
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Product Name</span>
+                            <span class="font-normal text-slate-500">Product Name</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                 STEP Women Blouse Short Sleeves 007402
                             </p>
@@ -105,14 +66,14 @@
 
                         <div class="flex space-x-5 mb-5">
                             <div>
-                                <span class="font-normal text-custom-grey">Category</span>
+                                <span class="font-normal text-slate-500">Category</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                     Men's Fashion
                                 </p>
                             </div>
 
                             <div>
-                                <span class="font-normal text-custom-grey">Brand</span>
+                                <span class="font-normal text-slate-500">Brand</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                     Nike
                                 </p>
@@ -121,14 +82,14 @@
 
                         <div class="flex space-x-10 mb-5">
                             <div>
-                                <span class="font-normal text-custom-grey">Buy Price</span>
+                                <span class="font-normal text-slate-500">Buy Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                     15000 Ks
                                 </p>
                             </div>
 
                             <div>
-                                <span class="font-normal text-custom-grey">Sell Price</span>
+                                <span class="font-normal text-slate-500">Sell Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                     20000 Ks
                                 </p>
@@ -136,21 +97,21 @@
                         </div>
 
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Discount</span>
+                            <span class="font-normal text-slate-500">Discount</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                 20%
                             </p>
                         </div>
 
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Stock</span>
+                            <span class="font-normal text-slate-500">Stock</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                 200
                             </p>
                         </div>
 
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Discount</span>
+                            <span class="font-normal text-slate-500">Discount</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                 20%
                             </p>
@@ -158,7 +119,7 @@
 
                         <!-- sizes -->
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Sizes</span>
+                            <span class="font-normal text-slate-500">Sizes</span>
                             <div class="mt-2 flex space-x-5">
                                 <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">XL</span>
                                 <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">L</span>
@@ -168,7 +129,7 @@
 
                         <!-- colors -->
                         <div class="mb-5">
-                            <span class="font-normal text-custom-grey">Sizes</span>
+                            <span class="font-normal text-slate-500">Sizes</span>
                             <div class="mt-2 flex space-x-5">
                                 <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">white</span>
                                 <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">black</span>
@@ -179,7 +140,7 @@
                         </div>
 
                         <div class="mb-5">
-                            <label class="font-normal text-custom-grey">Product Description</label>
+                            <label class="font-normal text-slate-500">Product Description</label>
                             <p class="block text-black font-normal w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
                                 The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and
                                 various home accessories, all offering form and function at the same point.We use
@@ -199,7 +160,7 @@
                 <!-- product reviews -->
                 <div class="p-5 bg-white rounded-md">
 
-                    <h2 class="text-custom-extra-large font-semibold border-b border-slate-300 py-3 mb-6">Ratings &
+                    <h2 class="text-lg font-semibold border-b border-slate-300 py-3 mb-6">Ratings &
                         Reviews
                         (3)</h2>
 
