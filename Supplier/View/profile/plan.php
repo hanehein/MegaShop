@@ -53,23 +53,39 @@
                 <span class="font-bold">MEGA SHOP</span>
             </div>
             <div class="menu-lists">
-                <ul>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Dashboard</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Products</li>
-                    <li class="active px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Orders</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Customers</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Rating and Reviews</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Messages</li>
-                    <li class="px-3 py-4 text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Setting</li>
-                    <li class="px-3 py-4 text-custom-grey text-custom-large font-semibold hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        Log Out</li>
+            <ul>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
+                                Customers
+                            </div>
+                            <div>
+                                <button class="order-down-btn">
+                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
+                        Reviews
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
+                    </li>
                 </ul>
             </div>
         </div>

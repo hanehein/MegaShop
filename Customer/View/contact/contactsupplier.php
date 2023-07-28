@@ -176,12 +176,7 @@
       class="bg-orange-500 mt-3 w-[70px] p-1 rounded-md md:ml-[610px] ml-[210px] text-white mb-5 drop-shadow-lg"
     >
       Send
-      <span
-        ><ion-icon
-          class="transform rotate-45 text-white"
-          name="send-outline"
-        ></ion-icon
-      ></span>
+      <ion-icon name="paper-plane-outline"></ion-icon>
     </button>
     <div class="footer bg-blue-800 text-white py-3">
       <div

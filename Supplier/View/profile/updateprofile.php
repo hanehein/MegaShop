@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Update Profile</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -45,12 +45,13 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 
-<body class="bg-[#F1F2F4]">
+<body>
     <section class="grid grid-cols-6">
         <div class="bg-white min-h-screen">
             <div class="h-[60px] flex justify-center items-center text-center">
                 <span class="font-bold">MEGA SHOP</span>
             </div>
+            <!--Start menu-->
             <div class="menu-lists">
                 <ul>
                     <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
@@ -88,11 +89,16 @@
                 </ul>
             </div>
         </div>
+        <!--End menu-->
         <div class="col-span-5">
+            <!--Start navbar-->
             <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
                 <div><span>Ratings & Reviews</span></div>
                 <div><span>June 30, 2023</span></div>
             </nav>
+            <!--End navbar-->
+
+            <!--Start body-->
             <div class="flex flex-col items-center space-y-3">
                 <span class="text-2xl font-semibold">Supplier Profile</span>
 
@@ -100,18 +106,21 @@
                     <a href="">My Profile</a>
                     <a href="">Go Premium</a>
                 </div>
+            </div>
 
-                <!--card body-->
-                <div class="p-5 container mx-auto">
-                    <div class="bg-custom-grey w-full h-auto shadow-lg rounded-lg p-5 ">
-                        <div class="flex flex-col space-y-3 justify-center items-center">  
-                            <span>Shop Photo</span>
-                        </div>
-                        <div class="flex justify-center items-center space-x-64">
+            <div class="container mx-auto p-5">
+                <div class="grid grid-cols-3 w-full h-auto p-5 bg-custom-grey rounded-lg">
+                    <div class="border-r-2 border-black">
+                        <span>Shop Photo</span>
+                    </div>
+                    <div class="col-span-2 ml-5">
+                        <div class="flex justify between items-center space-x-64">
                             <div class="flex flex-col space-y-5">
                                 <span>Shop Name</span>
                                 <input type="text" class="border-2 rounded-lg" required>
                                 <span>Phone</span>
+                                <input type="text" class="border-2 rounded-lg" required>
+                                <span>New Password</span>
                                 <input type="text" class="border-2 rounded-lg" required>
                             </div>
                             <div class="flex flex-col space-y-5">
@@ -119,19 +128,18 @@
                                 <input type="text" class="border-2 rounded-lg">
                                 <span>Email</span>
                                 <input type="text" class="border-2 rounded-lg" required>
+                                <span>Re-enter Password</span>
+                                <input type="text" class="border-2 rounded-lg" required>
                             </div>
                         </div>
-                        <div class="text-end mt-12 px-10 space-x-3">
+                        <div class="text-right mt-5 py-8 px-5 space-x-3">
                             <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Update</button>
                             <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]">Cancel</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <!--Start profile edit-->
-
     </section>
 </body>
 
