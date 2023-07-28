@@ -50,9 +50,12 @@
                 <span class="font-bold">MEGA SHOP</span>
             </div>
             <div class="menu-lists">
-            <ul>
+                <ul>
                     <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
                         <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
+                    </li>
+                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
+                        <ion-icon class="mr-3 text-custom-extra-large" name="cube-outline"></ion-icon> Products
                     </li>
                     <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
                         <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders

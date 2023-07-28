@@ -173,10 +173,10 @@
       </div>
     </div>
     <button
-      class="bg-orange-500 mt-3 w-[70px] p-1 rounded-md md:ml-[610px] ml-[210px] text-white mb-5 drop-shadow-lg"
+      class="bg-orange-500 hover:bg-gray-300 hover:text-black mt-3 w-[70px] p-1 rounded-md md:ml-[610px] ml-[210px] text-white mb-5 drop-shadow-lg"
     >
       Send
-      <ion-icon name="paper-plane-outline"></ion-icon>
+      <ion-icon name="paper-plane-outline" class="hover:text-black"></ion-icon>
     </button>
     <div class="footer bg-blue-800 text-white py-3">
       <div

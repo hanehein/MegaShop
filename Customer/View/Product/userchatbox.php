@@ -42,7 +42,7 @@
           >
             <!--box1-->
             <div
-              class="w-[390px] h-[80px] bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
+              class="w-[390px] h-[80px] hover:scale-95 bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
             >
               <img
                 src="../resources/img/flower.jpg"
@@ -61,7 +61,7 @@
           >
             <!--box2-->
             <div
-              class="w-[390px] h-[80px] bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
+              class="w-[390px] h-[80px] hover:scale-95 bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
             >
               <img
                 src="../resources/img/flower.jpg"
@@ -80,7 +80,7 @@
           >
             <!--box3-->
             <div
-              class="w-[390px] h-[80px] bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
+              class="w-[390px] h-[80px] hover:scale-95 bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
             >
               <img
                 src="../resources/img/flower.jpg"
@@ -99,7 +99,7 @@
           >
             <!--box4-->
             <div
-              class="w-[390px] h-[80px] bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
+              class="w-[390px] h-[80px] hover:scale-95 bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
             >
               <img
                 src="../resources/img/flower.jpg"
@@ -118,7 +118,7 @@
           >
             <!--box5-->
             <div
-              class="w-[390px] h-[80px] bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
+              class="w-[390px] h-[80px] hover:scale-95 bg-white flex space-x-3 border-2 hover:drop-shadow-md p-3"
             >
               <img
                 src="../resources/img/flower.jpg"
@@ -204,9 +204,9 @@
               placeholder="Write message ........"
               class="text-blue-800 border p-3 rounded-md w-[550px]"
             />
-            <button class="bg-orange-600 text-white p-3 rounded-lg">
+            <button class="bg-orange-600  hover:bg-blue-300 text-white p-3 rounded-lg">
               Send
-              <span><ion-icon name="send-outline"></ion-icon></span>
+              <ion-icon name="paper-plane-outline"></ion-icon>
             </button>
           </div>
         </div>
