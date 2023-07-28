@@ -1,0 +1,11 @@
+.mobile-nav{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-btn{
+    color: white;
+}
+
+.search-btn.active{
+    color: "#F68721";
+}
