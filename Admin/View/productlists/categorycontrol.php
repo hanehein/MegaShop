@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Control</title>
+    <title>Category Control</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -166,6 +166,7 @@
                     <option value="">Title</option>
                     <option value="">Created Date</option>
                     
+                    
                 </select>
                 <div class="flex items-center justify-center space-x-3">
 
@@ -188,42 +189,42 @@
                     </thead>
                     <tbody class="">
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Levis</td>
+                            <td>Home Appliances</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Adidas</td>
+                            <td>Men’s Shoe</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>H & M</td>
+                            <td>Men's Wear</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Rolex</td>
+                            <td>Beauty & Personal Care</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Apple</td>
+                            <td>Home & Living</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Gucci</td>
+                            <td>Home Appliances</td>
                             <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
                             <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>

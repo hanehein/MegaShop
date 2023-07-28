@@ -94,7 +94,7 @@
                             <a href="#" class="block py-2 pl-3 pr-4 text-[#024486] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contact Us</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#024486] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Sing In</a>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-[#024486] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Sign In</a>
                         </li>
                     </ul>
                     <div class="md:flex md:items-center md:justify-center cursor-pointer md:ml-6">
@@ -106,7 +106,7 @@
         </nav>
     </div>
     <!-- body -->
-    <div class="flex justify-between items-center mt-18 overflow-y-auto mb-10">
+    <div class="flex flex-col md:flex-row justify-between items-center mt-18 overflow-y-auto mb-10">
         <!-- profile section -->
         <div class="hidden md:w-1/6 h-1/2 mx-auto bg-gray-100 text-center rounded-xl py-4 mt-36 shadow-2xl md:flex flex-row md:flex-col">
 
@@ -114,11 +114,11 @@
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p>
+            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
 
@@ -135,61 +135,62 @@
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:shadow-xl">My Profile</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Followed Stores</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Order History</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">My Reviews</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Wishlist</p>
+                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
+                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
+                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
+                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
             </div>
         </div>
         <!-- history -->
-        <div class="w-1/2 items-center flex mx-auto mt-20">
+        <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
             <div class="flex flex-col items-center justify-center">
                 <p class="text-xl font-semibold">
                     Order History
                 </p>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
+                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
+                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
                         </div>
                     </div>
                 </div>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
+                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
+                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
                         </div>
                     </div>
                 </div>
-                <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3 ">
+                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                         Traffic Star >>>
                     </div>
                     <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-20">
-                            <p class="font-semibold text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2">Color :Blue</p>
-                            <p class="mb-2 mt-2">Size : ###</p>
+                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
+                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
+                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
+                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
 
