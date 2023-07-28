@@ -50,9 +50,8 @@
                 <div>
                     <!-- Orderlists container -->
                     <div class="px-5">
-
                         <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
+                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
                             <thead>
                                 <tr class="border-b-2 border-slate-500 bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
@@ -100,7 +99,7 @@
                                     <td class="px-6 py-4 "><span>42,750 Ks</span></td>
                                     <td class="px-6 py-4 "><span>July 20,2023</span></td>
                                     <td class="px-6 py-4 flex space-x-3">
-                                        <button class="px-3 py-1 bg-green-400 text-white rounded-md">Confirmed</button>
+                                        <button class="px-3 py-1 bg-green-400 text-white rounded-md">Confrimed</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -108,63 +107,7 @@
                         <!-- end orderlist -->
 
                         <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
-                            <thead>
-                                <tr class="border-b-2 border-slate-500 bg-white">
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        <input type="checkbox">
-                                        Order ID
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Method
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Status
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Fulfillment
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Customer
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Total Price
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Date
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">#112233</a>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Unpaid</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>In Progress</span>
-                                    </td>
-                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
-                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 flex space-x-3">
-                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- end orderlist -->
-
-                        <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-3 shadow-md">
+                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
                             <thead>
                                 <tr class="border-b-2 border-slate-500 bg-white">
                                     <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
@@ -219,6 +162,61 @@
                         </table>
                         <!-- end orderlist -->
 
+                        <!-- start orderlist -->
+                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
+                            <thead>
+                                <tr class="border-b-2 border-slate-500 bg-white">
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        <input type="checkbox">
+                                        Order ID
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Payment Method
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Payment Status
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Fulfillment
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Customer
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Total Price
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Date
+                                    </th>
+                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        <a href="" class="underline text-blue-500">#112233</a>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Cash On Delivery</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>Unpaid</span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>In Progress</span>
+                                    </td>
+                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
+                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
+                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
+                                    <td class="px-6 py-4 flex space-x-3">
+                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- end orderlist -->
                     </div>
 
                     <div class="text-end px-5">
