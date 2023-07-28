@@ -23,7 +23,7 @@
         <div class="col-span-5 relative">
 
             <?php
-            $currentMenu = "Orders";
+            $currentMenu = "Products";
             include "../components/navbar.php";
             ?>
 
@@ -38,8 +38,9 @@
                     </h2>
                     <div class="details-container py-5">
 
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Product Images</span>
+                        <!-- start images -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Product Images</span>
                             <!-- Images -->
                             <div class="flex space-x-5 mt-2">
                                 <div>
@@ -57,91 +58,98 @@
                             </div>
                         </div>
 
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Product Name</span>
-                            <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                        <!-- start name -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Product Name</span>
+                            <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                 STEP Women Blouse Short Sleeves 007402
                             </p>
                         </div>
 
-                        <div class="flex space-x-5 mb-5">
+                        <!-- start category and brand -->
+                        <div class="flex space-x-5 mb-8">
                             <div>
-                                <span class="font-normal text-slate-500">Category</span>
-                                <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                                <span class="font-semibold text-slate-500">Category</span>
+                                <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                     Men's Fashion
                                 </p>
                             </div>
 
                             <div>
-                                <span class="font-normal text-slate-500">Brand</span>
-                                <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                                <span class="font-semibold text-slate-500">Brand</span>
+                                <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                     Nike
                                 </p>
                             </div>
                         </div>
 
-                        <div class="flex space-x-10 mb-5">
+                        <!-- start buy price and sell price -->
+                        <div class="flex space-x-10 mb-8">
                             <div>
-                                <span class="font-normal text-slate-500">Buy Price</span>
-                                <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                                <span class="font-semibold text-slate-500">Buy Price</span>
+                                <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                     15000 Ks
                                 </p>
                             </div>
 
                             <div>
-                                <span class="font-normal text-slate-500">Sell Price</span>
-                                <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                                <span class="font-semibold text-slate-500">Sell Price</span>
+                                <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                     20000 Ks
                                 </p>
                             </div>
                         </div>
 
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Discount</span>
-                            <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                        <!-- start discount -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Discount</span>
+                            <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                 20%
                             </p>
                         </div>
 
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Stock</span>
-                            <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                        <!-- start stock -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Stock</span>
+                            <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                 200
                             </p>
                         </div>
 
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Discount</span>
-                            <p class="block text-black font-normal min-w-[200px] w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                        <!-- start discount -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Discount</span>
+                            <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
                                 20%
                             </p>
                         </div>
 
-                        <!-- sizes -->
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Sizes</span>
+                        <!--start sizes -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Sizes</span>
                             <div class="mt-2 flex space-x-5">
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">XL</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">L</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">M</span>
+                                <span class="block text-black font-normal w-fit rounded-md">XL</span>
+                                <span class="block text-black font-normal w-fit rounded-md">L</span>
+                                <span class="block text-black font-normal w-fit rounded-md">M</span>
                             </div>
                         </div>
 
-                        <!-- colors -->
-                        <div class="mb-5">
-                            <span class="font-normal text-slate-500">Sizes</span>
+                        <!--start colors -->
+                        <div class="mb-8">
+                            <span class="font-semibold text-slate-500">Colors</span>
                             <div class="mt-2 flex space-x-5">
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">white</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">black</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">red</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">black</span>
-                                <span class="block text-black font-normal min-w-[100px] w-fit p-2 rounded-md border border-slate-400">yellow</span>
+                                <span class="block text-black font-normal w-fit rounded-md">white</span>
+                                <span class="block text-black font-normal w-fit rounded-md">black</span>
+                                <span class="block text-black font-normal w-fit rounded-md">red</span>
+                                <span class="block text-black font-normal w-fit rounded-md">black</span>
+                                <span class="block text-black font-normal w-fit rounded-md">yellow</span>
                             </div>
                         </div>
 
-                        <div class="mb-5">
-                            <label class="font-normal text-slate-500">Product Description</label>
-                            <p class="block text-black font-normal w-fit px-4 py-2 rounded-md border border-slate-400 mt-2">
+                        <!-- start description -->
+                        <div class="mb-8">
+                            <label class="font-semibold text-slate-500">Product Description</label>
+                            <p class="block text-black font-normal w-fit rounded-md mt-2">
                                 The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and
                                 various home accessories, all offering form and function at the same point.We use
                                 high-strength clamps and joinery techniques specially designed for engineered wood beds.
@@ -149,8 +157,9 @@
                             </p>
                         </div>
 
+                        <!-- start edit btn -->
                         <div class="text-end">
-                            <button class="py-2 px-6 text-white text-custom-large bg-green-600 rounded-md font-semibold">
+                            <button class="p-2 w-[100px] text-white text-lg bg-green-600 rounded-md font-semibold">
                                 <a href="">Edit</a>
                             </button>
                         </div>
@@ -177,10 +186,10 @@
                                 </div>
                             </div>
                             <div>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -225,10 +234,10 @@
                                 </div>
                             </div>
                             <div>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -257,10 +266,10 @@
                                 </div>
                             </div>
                             <div>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
-                                <ion-icon class="text-extra-large text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
                             </div>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima

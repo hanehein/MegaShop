@@ -34,7 +34,7 @@
 
                 <div>
                     <!-- that should be form -->
-                    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="" method="post">
+                    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="" method="post">
 
                         <!-- <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_image">Product
@@ -47,7 +47,7 @@
                             <span id="selected_image_name" class="ml-2 text-gray-600"></span>
                         </div> -->
 
-                        <div class="w-full max-w-md mt-10">
+                        <div class="w-full max-w-md">
                             <div class="mb-5">
                                 <label class="block text-gray-700 text-sm font-bold mb-4" for="product_image">Product
                                     Image:</label>
@@ -63,12 +63,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="mb-5">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_image">Product
-                                Image:</label>
-                            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_image" type="file" accept="image/*">
                         </div>
 
                         <div class="mb-5">
@@ -115,13 +109,13 @@
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_stock">Product
                                 Stock</label>
-                            <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_stock" type="number" step="0.01" placeholder="Enter product price" required>
+                            <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_stock" type="number" step="1" placeholder="Enter product price" required>
                         </div>
 
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_discount">Product
                                 Discount:</label>
-                            <input class="shadow appearance-none border rounded  w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_discount" type="number" step="0.01" placeholder="Enter product price" required>
+                            <input class="shadow appearance-none border rounded  w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_discount" type="number" step="1" placeholder="Enter product price" required>
                         </div>
 
 
@@ -154,10 +148,10 @@
 
                         <div class="flex items-center justify-between">
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                                Submit
+                                Add Your Product
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
             </div>

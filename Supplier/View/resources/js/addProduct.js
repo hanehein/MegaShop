@@ -9,7 +9,8 @@ const rams = ["1GB", "2GB", "3GB"];
 
 addOptionBtn.addEventListener('click', addVariants);
 
-function addVariants() {
+function addVariants(e) {
+    e.preventDefault();
     const optionValue = Number(optionLists.value);
     if (optionValue === 1) {
         //sizes
@@ -63,7 +64,7 @@ function createVariant(variantName, variantLists, variantValue) {
             </button>
             </div>
                 <div class="flex space-x-5 items-center">
-                    <h2 class="block text-gray-700 text-sm font-bold">${variantName} :</h2>
+                    <h2 class="block text-gray-700 text-sm font-bold uppercase">${variantName} :</h2>
                     <div class="flex space-x-6">
                         ${result}
                     </div>
