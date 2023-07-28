@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>order_complete</title>
+    <title>checkout</title>
 
     <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
@@ -149,7 +149,6 @@
                                     <input type="text" placeholder="Enter Number" class="w-48 h-8 border-none bg-gray-200 rounded-md text-xs">
                                 </div>
                             </div>
-
                             <div>
                                 <label for="name" class="text-sm">State/Division</label>
                                 <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
@@ -177,20 +176,18 @@
                             <label for="name" class="text-sm">Address</label>
                             <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
                                 <textarea name="" id="" cols="30" rows="
-                        3" class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="House number & street address"></textarea>
+                        5"  class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="House number & street address" style="resize: none;"></textarea>
                             </div>
                         </div>
                         <div>
                             <label for="name" class="text-sm">Order Notes (optional)</label>
                             <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
                                 <textarea name="" id="" cols="30" rows="
-                        3" class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="Note about your order!"></textarea>
+                        5"  class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs" placeholder="Note about your order!" style="resize: none;"></textarea>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <!-- right flexbox -->
             <div class="mid:w-1/3 w-auto bg-[#024486] mid:flex flex-col space-y-5 justify-center items-center rounded-md py-3 mt-5 px-4">
@@ -224,7 +221,7 @@
                         </div>
                     </div>
                     <!-- step 3  -->
-                    <div class="w-[23rem] flex flex-col items-start justify-center  border-t-2 border-orange-400 py-5  space-y-5 mt-5">
+                    <div class="md:w-[23rem] w-[28rem] flex flex-col items-start justify-center  border-t-2 border-orange-400 py-5  space-y-5 mt-5">
                         <div class="flex flex-col space-y-5">
                             <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 3</a></button>
                             <p class="text-sm text-white">Please choose your payment method!
@@ -232,21 +229,21 @@
                         </div>
                         <div class="flex flex-col space-y-8 text-sm">
                             <div>
-                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md">
-                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm text-xs" checked>
+                                <div class=" w-52 h-12 flex items-center justify-center bg-white rounded-md space-x-9 px-4">
+                                    <input type="checkbox" name="payment" value="0" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm text-xs" checked>
                                     <span class="text-gray-500">Cash On Delivery</span>
                                 </div>
                             </div>
                             <div>
-                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md ">
-                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
-                                    <span class="text-gray-500">KBZ Pay</span>
+                                <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
+                                    <input type="checkbox" name="payment" value="1" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
+                                    <span class="text-gray-500 ml-10">KBZ Pay</span>
                                 </div>
                             </div>
                             <div>
-                                <div class=" w-52 h-12 flex items-center justify-evenly bg-white rounded-md ">
-                                    <input type="checkbox" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
-                                    <span class="text-gray-500">AYA Pay</span>
+                                <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
+                                    <input type="checkbox" name="payment" value="2" placeholder="Type your name" class=" border-none bg-gray-200 rounded-sm tex-500">
+                                    <span class="text-gray-500 ml-10">AYA Pay</span>
                                 </div>
                             </div>
                             <div>
@@ -259,9 +256,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 

@@ -102,7 +102,7 @@
             <a href=""><span class="text-blue-800 text-sm ">order complete</span></a>
         </div>
         <!-- third section -->
-        <div class="w-full container mx-auto flex flex-col items-center md:items-start justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
+        <div class="w-full container mx-auto flex flex-col items-center  justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
             <div class="flex items-center justify-center">
                 <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
