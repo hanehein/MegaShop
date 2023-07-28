@@ -16,55 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/allProduct.css">
+    <link rel="stylesheet" href="../resources/css/home.css">
     <script src="../resources/js/allProduct.js" defer></script>
+    <script src="../resources/js/home.js" defer></script>
 </head>
 
 <body>
-    <!-- START NAVBAR -->
-    <nav class="px-4 sm:px-[0px]">
-        <div class="container mx-auto flex justify-between py-4">
-            <div>
-                <a href="" class="text-2xl font-bold">MEGA SHOP</a>
-            </div>
-            <div class="hidden sm:block">
-                <ul class="flex space-x-6 text-custom-blue font-bold">
-                    <li>Home</li>
-                    <li>Products</li>
-                    <li>Shop Lists</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-            <div class="hidden sm:block">
-                <button class="px-6 py-1 text-white bg-blue-800 rounded-2xl"><a href="">log in</a></button>
-                <button class="px-6 py-1 text-white bg-blue-800 rounded-2xl"><a href="">sign up</a></button>
-            </div>
-            <div class="block sm:hidden">
-                <ion-icon class="text-3xl" name="menu"></ion-icon>
-            </div>
-        </div>
-    </nav>
-    <!-- END NAVBAR -->
-
-    <!-- START category and filter -->
-    <div class="px-4 sm:px-[0px] bg-custom-blue py-4">
-        <div class="container mx-auto flex">
-            <div>
-                <select id="categories" class="bg-inherit border-2 border-white text-white font-bold px-3 py-1">
-                    <option value="">All Categories</option>
-                    <option value="">category 1</option>
-                    <option value="">category 2</option>
-                    <option value="">category 3</option>
-                    <option value="">category 1</option>
-                </select>
-            </div>
-            <div>
-
-            </div>
-            <div></div>
-        </div>
-    </div>
-    <!-- END category and filter -->
+    <?php include "../components/navbarForHome.php"; ?>
 
     <!-- START products SECTION -->
     <section class="relative">
@@ -168,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-4 px-3 py-5">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 px-3 py-5">
                     <!-- start card -->
                     <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
                         <!-- card header -->
@@ -515,46 +473,7 @@
     </section>
     <!-- END product SECTION -->
 
-    <!-- START footer SECTION -->
-    <section class="bg-custom-blue p-3">
-        <div class="container mx-auto">
-            <div class="block sm:border-b-2 sm:border-white sm:flex sm:justify-between mb-2">
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Quick Link</h2>
-                    <ul class="list-disc px-5">
-                        <li>About Us</li>
-                        <li>Privacy & Policy</li>
-                        <li>How To Buy Guide</li>
-                    </ul>
-                </div>
-
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Help ?</h2>
-                    <ul class="list-disc px-5">
-                        <li>Payment</li>
-                        <li>Return & Exchange</li>
-                        <li>FAQ</li>
-                    </ul>
-                </div>
-
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Contact Us</h2>
-                    <ul class="px-5">
-                        <li><ion-icon name="call"></ion-icon> +95777777777</li>
-                        <li><ion-icon name="mail"></ion-icon> example@gmial.com</li>
-                        <li class="space-x-3">
-                            <ion-icon name="logo-facebook"></ion-icon>
-                            <ion-icon name="logo-instagram"></ion-icon>
-                            <ion-icon name="logo-twitter"></ion-icon>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <p class="text-center text-white font-bold">©2023 MEGA SHOP All rights reserved.</p>
-        </div>
-    </section>
-    <!-- END footer SECTION -->
+    <?php include "../components/footer.php"; ?>
 
 </body>
 

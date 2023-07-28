@@ -1,9 +1,11 @@
 <!-- START NAVBAR -->
 <nav>
     <div class="container mx-auto flex justify-between items-center px-2 md:px-6 py-4 z-10">
-        <div>
-            <a href="" class="text-2xl font-bold">MEGA SHOP</a>
-        </div>
+        <!-- logo -->
+        <a href="#" class="flex flex-col items-center justify-center font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
+            <p class="">MEGA</p>
+            <p>SHOP</p>
+        </a>
         <div class="hidden md:block">
             <ul class="flex space-x-6 text-custom-blue font-bold">
                 <li>Home</li>
