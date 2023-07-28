@@ -1,195 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>Order History Review</title>
+
+    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
+    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "custom-grey": "#7B7B7B",
-                        "custom-blue": "#024486",
-                        "custom-orange": "#F68721",
-                    },
-                    backgroundColor: {
-                        "custom-milk": "F1F2F4",
-                        "custom-blue": "#024486",
-                        "custom-orange": "#F68721",
-                        "custom-grey": "#7B7B7B",
-                        "custom-sky-blue": "#c9e0f5",
-                        "custom-black-pale": "rgba(0,0,0,0.5)",
-                        "custom-red": "#FF0000"
-                    },
-                    fontSize: {
-                        "custom-tiny": "12px",
-                        "custom-medium": "16px",
-                        "custom-large": "18px",
-                        "custom-extra-large": "20px",
-                    },
-                    borderColor: {
-                        "custom-blue": "#024486",
-                        "custom-grey": "#7B7B7B",
-                        "custom-orange": "#F68721",
-                        "custom-teal": "#00534F"
-                    },
-                },
-            },
-        };
-    </script>
-    <script src="./singleProductDeatil.js" defer></script>
-    <link rel="stylesheet" href="dashboard.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <script src="../resources/js/addProduct.js" defer></script>
 </head>
 
-<body>
+<body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <div class="bg-white min-h-screen">
-            <div class="h-[60px] flex justify-center items-center text-center">
-                <span class="font-bold">MEGA SHOP</span>
-            </div>
-            <div class="menu-lists">
-            <ul>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
-                                Customers
-                            </div>
-                            <div>
-                                <button class="order-down-btn">
-                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
-                        Reviews
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-span-5 rounded-lg shadow-lg overflow-hidden mb-5">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
-                <div><span>Product</span></div>
-                <div><span>June 30, 2023</span></div>
-            </nav>
+        <?php include "../components/slideMenu.php"; ?>
+        <div class="col-span-5 relative">
 
-            <!--Start product edit-->
-            <span class="py-4 px-6">Add Products</span>
-            <div class="grid grid-cols-5 bg-custom-grey shadow-lg rounded-lg p-5 m-[15px]">
-                <div class="col-span-3">
-                    <div class="flex flex-col space-y-3">
+            <?php
+            $currentMenu = "Orders";
+            include "../components/navbar.php";
+            ?>
 
-                        <!--Start photo section-->
-                        <div class="flex space-x-3">
-                            <div class="w-[150px] h-[200px] border-2">
-                                <img src="../resources/img/addidas.jpg" alt="" class="w-[150px] h-[200px]">
-                            </div>
-                            <div class="w-[150px] h-[200px] border-2">
-                                <ion-icon name="add-outline" class="w-[150px] h-[200px]"></ion-icon>
-                            </div>
-                            <!--End photo section-->
-                        </div>
-                        <!--Start description-->
-                        <span>Description</span>
-                        <input type="text" class="w-[450px] h-[200px] border-2 rounded-lg">
-                        <!--End description-->
+            <!-- start aye myat noe khin -->
+            <div class="p-5 max-h-screen overflow-y-auto">
+                <div class="h-[60px]"></div>
 
-                        <div class="flex space-x-3 items-center">
-                            <div class="flex flex-col space-y-3">
-                                <span>Buy Price</span>
-                                <input type="text" class="px-3 py-1 border-2 rounded-lg" value="15000 Ks" required>
-                            </div>
-                            <div class="flex flex-col space-y-3">
-                                <span>Sell Price</span>
-                                <input type="text" class="px-3 py-1 rounded-lg border-2" value="20000 Ks" required>
-                            </div>
-                        </div>
-                        <div class="flex flex-col space-y-3">
-                            <span>Discount</span>
-                            <input type="text" class="px-3 py-1 rounded-lg border-2 w-[230px]" value="2%">
-                        </div>
-                    </div>
-                </div>
+                <div>
+                    <!-- that should be form -->
+                    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="" method="post">
 
-                <div class="col-span-2">
-                    <div class="flex flex-col space-y-5">
-                        <div class="flex flex-col space-y-1">
-                            <span class="font-semibold text-custom-medium">Product Name</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="Nike Air" required>
+                        <!-- <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_image">Product
+                                Image:</label>
+                            
+                            <label for="product_image"
+                                class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Choose Image
+                            </label>
+                            <span id="selected_image_name" class="ml-2 text-gray-600"></span>
+                        </div> -->
+
+                        <div class="w-full max-w-md mt-10">
+                            <div class="mb-5">
+                                <label class="block text-gray-700 text-sm font-bold mb-4" for="product_image">Product
+                                    Image:</label>
+                                <div class="p-3 rounded-lg shadow-lg">
+                                    <div class="border-2 border-dashed border-gray-400 rounded-lg p-4">
+                                        <div class="mx-auto h-12 w-12 text-gray-600">
+                                            <svg class="h-full w-full" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-center mt-2 text-gray-600">Drag and drop or click to upload</div>
+                                        <input type="file" class="hidden">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flex-col space-y-1">
-                            <span class="font-semibold text-custom-medium">Category</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="Sneaker" required>
+
+                        <div class="mb-5">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_image">Product
+                                Image:</label>
+                            <input class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_image" type="file" accept="image/*">
                         </div>
-                        <div class="flex flex-col space-y-1">
-                            <span class="font-semibold text-custom-medium">Brand</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="Nike" required>
+
+                        <div class="mb-5">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_name">Product
+                                Name:</label>
+                            <input class="shadow border rounded w-1/2 py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline" id="product_name" type="text" placeholder="Enter product name" required>
                         </div>
-                        <div class="flex flex-col space-y-1">
-                            <span class="font-semibold text-custom-medium">Stock</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="20" required>
+
+                        <div class="mb-5">
+                            <div class="flex space-x-10">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="product_category">Product
+                                        Category:</label>
+                                    <select class="shadow rounded w-[300px] py-2 px-3 bg-white border border-slate-300" id="product_category" required>
+                                        <option value="volvo">Men Fashion</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="product_brand">Product
+                                        Brand:</label>
+                                    <select class="shadow rounded w-[300px] py-2 px-3 bg-white border border-slate-300" id="product_brand" required>
+                                        <option value="volvo">Nike</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex flex-col space-y-1">
-                            <span class="font-semibold text-custom-medium">Variants</span>
-                            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="border-2 text-left bg-white font-medium rounded-lg text-sm px-5 py-1" type="button">Add Options like size or color
+
+                        <div class="mb-5">
+                            <div class="flex space-x-10">
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="product_buy_price">Product Buy
+                                        Price:</label>
+                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_buy_price" type="number" step="0.01" placeholder="Enter product price" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="product_sell_price">Product Sell
+                                        Price:</label>
+                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_sell_price" type="number" step="0.01" placeholder="Enter product price" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_stock">Product
+                                Stock</label>
+                            <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_stock" type="number" step="0.01" placeholder="Enter product price" required>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_discount">Product
+                                Discount:</label>
+                            <input class="shadow appearance-none border rounded  w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_discount" type="number" step="0.01" placeholder="Enter product price" required>
+                        </div>
+
+
+                        <div class="mb-5">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_description">Product
+                                Description:</label>
+                            <textarea class="shadow appearance-none border rounded w-1/2 h-[200px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_description" rows="4" placeholder="Enter product description" required></textarea>
+                        </div>
+
+                        <div class="mb-5">
+                            <h2 class="block text-gray-700 text-sm font-bold mb-2">Variants :</h2>
+                            <div class="variant-lists-container mb-2">
+                            </div>
+                            <div class="mb-2">
+                                <div class="flex space-x-3 items-center">
+                                    <select class="option-lists shadow rounded w-[300px] py-2 px-3 bg-white border border-slate-300" id="other_options" required>
+                                        <option value="1">Size</option>
+                                        <option value="2">Color</option>
+                                        <option value="3">RAM</option>
+                                        <option value="4">Other</option>
+                                    </select>
+
+                                    <div>
+                                        <input type="button" class="add-option px-3 py-2 text-white bg-blue-500 rounded-md" value="add option">
+                                    </div>
+                                </div>
+                                <div class="alert-message"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                Submit
                             </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdown" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                <ul class="py-2 hidden text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Size</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Style</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Color</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <span>Option Name</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="Style">
-                            <span>Option Value</span>
-                            <input type="text" class="border-2 px-3 py-1 rounded-lg text-custom-grey" value="Classic">
                         </div>
-                        <button class="bg-white border-2 px-3 py-1 rounded-lg">Add another option</button>
                     </div>
                 </div>
+
             </div>
-            <!--End product edit-->
-            <div class="text-right m-5">
-                <button class="border-2 bg-[#FF0000] text-white rounded-lg px-3 py-1 w-[80px]">Cancel</button>
-                <button class="border-2 bg-[#66CC33] text-white rounded-lg px-3 py-1 w-[80px]">Add</button>
-            </div>
+            <!-- end aye myat noe khin -->
         </div>
-
-
-
     </section>
-
 </body>
 
 </html>
