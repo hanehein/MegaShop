@@ -19,14 +19,14 @@
     <!-- main div -->
     <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
         <!-- dashboard div -->
-        <?php 
-            include "../components/menu.php";
+        <?php
+        include "../components/menu.php";
         ?>
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
-            <form action="">
-                <div class="w-[50rem] h-[43rem] flex items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
 
+            <div class="w-[50rem] h-[43rem] flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
+                <form action="">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <div class="rounded-full w-32 h-32 bg-gray-200">
@@ -66,19 +66,20 @@
                                 <label class="text-white font-sm" for="adname">Add your bio</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between space-x-16 w-96">
-                                <!-- signup -->
-                                <p class="text-white font-sm">Create New Account</p>
-                                <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
-                            </div>
+
+
                             <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
                                 <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Update</button></a>
                             </div>
                         </div>
                     </div>
+                </form>
+                <div class="flex items-center justify-center w-96 mt-8">
+                    <a href="./adminSignup.php"><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
                 </div>
-            </form>
+            </div>
+
 
         </div>
     </div>

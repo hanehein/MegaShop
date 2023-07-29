@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pending list</title>
+    <title>pending suppliers </title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -19,19 +19,23 @@
     <!-- main div -->
     <div class="min-h-screen flex   bg-black text-gray-800 relative ">
         <!-- dashboard div -->
-        <?php 
-            include "../components/menu.php";
+        <?php
+        include "../components/menu.php";
         ?>
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
             <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
                 <div class="flex items-center justify-center space-x-3">
-                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                        <a href=""><button>Approved</button></a>
-                    </div>
-                    <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
-                        <a href=""><button>Pending</button></a>
-                    </div>
+                    <a href="./approveList.php">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                            <button>Approved</button>
+                        </div>
+                    </a>
+                    <a href="./pendingList.php">
+                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
+                            <button>Pending</button>
+                        </div>
+                    </a>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
