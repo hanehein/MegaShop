@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message</title>
-
-    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
-    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-    <script src="../resources/js/addProduct.js" defer></script>
-</head>
+<?php
+$hasJsFile = FALSE;
+include "../components/header.php";
+?>
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
@@ -151,7 +136,7 @@
 
                             </div>
 
-                            <div class="relative">
+                            <div class="relative mt-2">
                                 <input class="p-2 h-[40px] border border-slate-300 rounded-md w-full" type="text" placeholder="search...">
                                 <button class="py-2 px-4 h-[40px] bg-orange-500 text-white absolute top-0 right-0 rounded-tr-md rounded-br-md">
                                     <ion-icon name="send"></ion-icon>
@@ -167,4 +152,4 @@
     </section>
 </body>
 
-</html>
+<?php include "../components/footer.php"; ?>
