@@ -5,37 +5,78 @@
     </a>
     <div class="menu-lists">
         <ul>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="clipboard-outline"></ion-icon> Dashboard
+            <!-- dashboard -->
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../dashboard/dashboard.php">
+                    <ion-icon class="mr-3 text-[18px]" name="clipboard-outline"></ion-icon>
+                    Dashboard
+                </a>
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="bag-handle-outline"></ion-icon> Orders
+
+            <!-- products -->
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../dashboard/dashboard.php">
+                    <ion-icon class="mr-3 text-[18px]" name="gift-outline"></ion-icon>
+                    Products
+                </a>
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <ion-icon class="mr-3 text-[18px]" name="person-outline"></ion-icon>
-                        Customers
-                    </div>
-                    <div>
-                        <button class="order-down-btn">
-                            <ion-icon class="mr-3 text-[18px]" name="caret-down"></ion-icon>
-                        </button>
-                    </div>
+
+            <!-- orders -->
+            <li class="">
+                <div class="capitalize px-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 flex justify-between hover:text-white cursor-pointer">
+                    <span class="block">
+                        <ion-icon class="mr-3 text-[18px]" name="bag-outline"></ion-icon>
+                        Orders
+                    </span>
+                    <button class="menu-btn">
+                        <ion-icon class="mr-3 text-[18px]" name="caret-down"></ion-icon>
+                    </button>
                 </div>
+
+                <ul class="hidden child-menu">
+                    <li>
+                        <a class="block capitalize pl-[30px] pr-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
+                        href="../order/orderHistoryReview.php">
+                            Order History Reviews
+                        </a>
+                    </li>
+                    <li>
+                        <a class="block capitalize pl-[30px] pr-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
+                        href="../order/recentIncomingOrder.php">
+                            Recent Incoming Orders
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="star-half-outline"></ion-icon>Rating and
-                Reviews
+
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="">
+                    <ion-icon class="mr-3 text-[18px]" name="person-outline"></ion-icon>
+                    Customers
+                </a>
+
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="chatbox-outline"></ion-icon> Messages
+
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../reviews/ratingAndReview.php">
+                    <ion-icon class="mr-3 text-[18px]" name="star-half-outline"></ion-icon>
+                    Rating and Reviews
+                </a>
+            </li>
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../message/message.php">
+                    <ion-icon class="mr-3 text-[18px]" name="chatbox-outline"></ion-icon>
+                    Messages
+                </a>
             </li>
             <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
                 <ion-icon class="mr-3 text-[18px]" name="settings-outline"></ion-icon> Setting
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="log-in-outline"></ion-icon> Log Out
+            <li class="">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="">
+                    <ion-icon class="mr-3 text-[18px]" name="log-in-outline"></ion-icon>
+                    Log Out
+                </a>
             </li>
         </ul>
     </div>

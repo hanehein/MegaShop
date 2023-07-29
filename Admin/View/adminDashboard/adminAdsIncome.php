@@ -19,130 +19,24 @@
     <!-- main div -->
     <div class="min-h-screen flex   bg-black text-gray-800 relative ">
         <!-- dashboard div -->
-        <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r ">
-            <div class="flex justify-center items-center mt-3">
-                <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
-                    <p class="">MEGA</p>
-                    <p>SHOP</p>
-                </div>
-            </div>
-            <!-- Menu -->
-            <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
-                <!-- ul list -->
-                <ul class="flex flex-col py-4 space-y-1">
-                    <li class="px-5">
-                        <div class="flex flex-row items-center h-8">
-                            <div class="text-sm font-light tracking-wide text-gray-500">Menu</div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="grid" class=""></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="diamond"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Income</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-                                </svg>
-                            </span>
-                            <span class="ml-2 text-sm tracking-wide truncate font-semibold">Messages</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="people"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Supplier Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="people"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Customer Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="list-circle"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Proudcts Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="cube"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Order Lists</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="help-circle"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">FAQ</span>
-                        </a>
-                    </li>
-                    <li class="px-5">
-                        <div class="flex flex-row items-center h-8">
-                            <div class="text-sm font-light tracking-wide text-gray-500">Settings</div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="person-circle"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Admin Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="apps"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Web UI</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="log-out"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php
+        include "../components/menu.php";
+        ?>
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
             <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
                 <div class="flex items-center justify-center space-x-3">
-                <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                        <a href=""><button>Subscription</button></a>
-                    </div>
-                    <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
-                        <a href=""><button>Advertisement</button></a>
-                    </div>
+                    <a href="./adminSubscriptionIncome.php">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                            <a href=""><button>Subscription</button></a>
+                        </div>
+                    </a>
+                    <a href="./adminAdsIncome.php">
+                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
+                            <a href=""><button>Advertisement</button></a>
+                        </div>
+                    </a>
+
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
@@ -152,7 +46,7 @@
             <div class="w-full flex items-center justify-center space-x-10">
                 <div class="flex items-center justify-center text-xs text-[#66CC33] font-semibold space-x-2">
                     <span>[Feature Photo Ads</span>
-                    <ion-icon name="chevron-forward-circle" ></ion-icon>
+                    <ion-icon name="chevron-forward-circle"></ion-icon>
                     <span>100,000 Ks/per one week]</span>
                 </div>
                 <div class="flex items-center justify-center text-xs text-[#66CC33] font-semibold space-x-2">

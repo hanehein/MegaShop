@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-
-    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
-    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-</head>
+<?php
+$hasJsFile = FALSE;
+include "../components/header.php";
+?>
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <?php include "./components/slideMenu.php" ?>
+        <?php include "../components/slideMenu.php" ?>
 
         <div class="col-span-5">
             <?php
             $currentMenu = "Dashboard";
-            include "./components/navbar.php";
+            include "../components/navbar.php";
             ?>
 
             <div class="p-5 max-h-screen overflow-y-auto">
@@ -112,7 +98,7 @@
                                         Paid
                                     </td>
                                     <td class="px-6 py-4 ">
-                                        <span class="bg-green-500 p-1 rounded-md text-white font-semibold">Delivered</span>
+                                        <span class="bg-green-500 py-1 px-2 rounded-md text-white font-semibold">Delivered</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -126,7 +112,7 @@
                                         UnPaid
                                     </td>
                                     <td class="px-6 py-4 ">
-                                        <span class="bg-orange-500 p-1 rounded-md text-white font-semibold">In
+                                        <span class="bg-orange-500 py-1 px-2 rounded-md text-white font-semibold">In
                                             Progress</span>
                                     </td>
                                 </tr>
@@ -141,7 +127,7 @@
                                         UnPaid
                                     </td>
                                     <td class="px-6 py-4 ">
-                                        <span class="bg-red-500 p-1 rounded-md text-white font-semibold">Cancel</span>
+                                        <span class="bg-red-500 py-1 px-2 rounded-md text-white font-semibold">Cancel</span>
                                     </td>
                                 </tr>
                                 <!-- Add more rows as needed -->
@@ -209,4 +195,4 @@
 </body>
 
 
-</html>
+<?php include "../components/footer.php"; ?>
