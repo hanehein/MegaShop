@@ -133,14 +133,6 @@
                 </ul>
             </div>
         </div>
-        <!-- data display div -->
-        <div class="w-auto  flex flex-col flex-shrink-0 bg-orange-300 absolute left-64 px-4 py-4">
-            <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, fugit neque. Optio consequatur tempore asperiores dolorum qui hic autem facere ducimus, beatae dignissimos ipsum odio nostrum dolore consectetur deserunt corporis!</p>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor odit quas laborum et. Veniam dignissimos sapiente vero repudiandae laborum ex dolor, dolorem nam sit, minus fuga rem quod officiis.</p>
-        </div>
     </div>
 </body>
-
 </html>

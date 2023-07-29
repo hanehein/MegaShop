@@ -30,7 +30,7 @@
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
-                <div class="bg-white rounded-lg shadow-md">
+                <div class="bg-white rounded-lg shadow-md p-5">
                     <h2 class="px-5 py-4 text-xl font-bold border-b border-slate-400 mb-10">
                         Order Details
                     </h2>
@@ -167,7 +167,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="px-5 py-4 flex justify-between mb-10">
+                    <div class="px-5 py-4 flex justify-between mb-5">
                         <div>
                         </div>
 
@@ -186,6 +186,12 @@
                             </div>
 
                         </div>
+                    </div>
+                    <div class="text-end">
+                        <button class="bg-slate-400 text-white font-semibold px-4 py-1 rounded-md active:scale-[1.05]">
+                            <ion-icon class="text-lg" name="print-outline"></ion-icon>
+                            <span>Print Invoice</span>
+                        </button>
                     </div>
                 </div>
             </div>
