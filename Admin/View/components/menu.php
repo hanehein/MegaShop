@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../adminDashboard/adminfaq.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                             <ion-icon name="help-circle"></ion-icon>
                             </span>
