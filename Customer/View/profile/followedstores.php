@@ -170,7 +170,7 @@
         </div>
     </div>
     <!-- footer -->
-    <?php include '../components/responsiveFooter.php';?>
+    <?php include '../components/footer.php';?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </body>
 

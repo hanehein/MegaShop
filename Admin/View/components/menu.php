@@ -78,7 +78,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                        <a href="../productlists/productLists.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="list-circle"></ion-icon>
                             </span>
@@ -86,7 +86,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                        <a href="../orderlists/orderLists.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                        <a href="../adminDashboard/adminFaq.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="help-circle"></ion-icon>
                             </span>
@@ -115,7 +115,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                        <a href="../adminDashboard/uiEdit.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="apps"></ion-icon>
                             </span>
