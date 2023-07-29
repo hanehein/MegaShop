@@ -28,12 +28,12 @@
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./adminSubscriptionIncome.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                            <a href=""><button>Subscription</button></a>
+                            <button>Subscription</button>
                         </div>
                     </a>
                     <a href="./adminAdsIncome.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
-                            <a href=""><button>Advertisement</button></a>
+                            <button>Advertisement</button>
                         </div>
                     </a>
 
@@ -80,7 +80,7 @@
                             <td>1 Week</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -89,7 +89,7 @@
                             <td>2 Weeks</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -98,7 +98,7 @@
                             <td>3 week</td>
                             <td>90,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -107,7 +107,7 @@
                             <td>2 Weeks</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -116,7 +116,7 @@
                             <td>3 week</td>
                             <td>90,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -125,7 +125,7 @@
                             <td>2 Weeks</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -134,7 +134,7 @@
                             <td>3 week</td>
                             <td>90,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -143,7 +143,7 @@
                             <td>1 Week</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -152,7 +152,7 @@
                             <td>2 Weeks</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -161,7 +161,7 @@
                             <td>1 Week</td>
                             <td>100,000 Ks</td>
                             <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href="./adsEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                     </tbody>
