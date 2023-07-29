@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Control</title>
+    <title>Category Control</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -165,7 +165,7 @@
                 <select name="" id="" class="text-black px-5 font-semibold rounded-lg py-2">
                     <option value="">Title</option>
                     <option value="">Created Date</option>
-                    
+
                 </select>
                 <div class="flex items-center justify-center space-x-3">
 
@@ -175,110 +175,21 @@
                 </div>
             </div>
 
-            <div class="w-1/2 h-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs">
-                    <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
-                        <tr>
-                            <th>Title</th>
-                            <th></th>
-                            <th>Created Date</th>
-                            <th>Action</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="">
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Levis</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Adidas</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>H & M</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Rolex</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Apple</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Gucci</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Zara</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Nike</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="w-1/3 h-auto flex flex-col items-start justify-start bg-white font-['Poppins'] rounded-md shadow-sm shadow-black px-2 mt-20">
+
+
+                <div class="w-full h-auto px-3 py-3 flex flex-col">
+                    <p class="text-lg mt-3 mb-3">Category Form</p>
+                    <div class="w-full bg-black h-0.5"></div>
+                    <p class="mt-3 mb-3">Title</p>
+                    <input type="text" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
+                    <button class="w-1/5 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white">Save</button>
+                </div>
+
+
             </div>
-            <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
-            </div>
+
+
         </div>
     </div>
 </body>

@@ -104,22 +104,22 @@
         </nav>
     </div>
     <!-- qna -->
-    <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-20 rounded-lg px-10 py-10 mb-10">
+    <div class="bg-[#D9D9D9] w-2/3 md:w-1/2 mx-auto mt-20 rounded-lg px-5 py-5 md:px-10 md:py-10 mb-10">
         <div class="mt-10 mb-10">
-        <p class="text-2xl font-semibold">Do we provide installation support to the users?</p>
-        <p class="text-lg font-medium mt-10">Yes, we provide installation support to the users. Feel free to email us anytime.</p>
+        <p class="text-lg font-semibold">Do we provide installation support to the users?</p>
+        <p class="text-sm font-medium mt-10">Yes, we provide installation support to the users. Feel free to email us anytime.</p>
         </div>
         <div class="mt-10 mb-10">
-        <p class="text-2xl font-semibold">Do we provide installation guide to the users?</p>
-        <p class="text-lg font-medium mt-10">Yes, we provide installation guide to the users with the packages.</p>
+        <p class="text-lg font-semibold">Do we provide installation guide to the users?</p>
+        <p class="text-sm font-medium mt-10">Yes, we provide installation guide to the users with the packages.</p>
         </div>
         <div class="mt-10 mb-10">
-        <p class="text-2xl font-semibold">How much time do we take to get back to the user?</p>
-        <p class="text-lg font-medium mt-10">We reply to the users as soon as possible.</p>
+        <p class="text-lg font-semibold">How much time do we take to get back to the user?</p>
+        <p class="text-sm font-medium mt-10">We reply to the users as soon as possible.</p>
         </div>
         <div class="mt-10 mb-10">
-        <p class="text-2xl font-semibold">How much time do we take to get back to the user?</p>
-        <p class="text-lg font-medium mt-10">We reply to the users as soon as possible.</p>
+        <p class="text-lg font-semibold">How much time do we take to get back to the user?</p>
+        <p class="text-sm font-medium mt-10">We reply to the users as soon as possible.</p>
         </div>
     </div>
     <!-- footer -->

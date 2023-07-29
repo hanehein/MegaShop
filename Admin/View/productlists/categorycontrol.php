@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Lists</title>
+    <title>Category Control</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -15,10 +15,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="flex justify-center items-center overflow-x-hidden">
-    <!-- sidebar -->
-    <div class="w-1/3 min-h-screen flex flex-col flex-auto bg-gray-50 text-gray-800">
-        <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
+<body class="overflow-x-hidden ">
+    <!-- main div -->
+    <div class="min-h-screen flex   bg-black text-gray-800 relative ">
+        <!-- dashboard div -->
+        <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r ">
             <div class="flex justify-center items-center mt-3">
                 <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
                     <p class="">MEGA</p>
@@ -77,6 +78,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="list-circle"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Proudcts</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="list-circle"></ion-icon>
@@ -85,7 +94,23 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="cube"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Brand</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none  text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 bg-[#003366] text-white">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="cube"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Category</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
                             </span>
@@ -124,22 +149,6 @@
                     <li>
                         <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
                             <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="logo-web-component"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Website Form</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="albums"></ion-icon>
-                            </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Home Sliders</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
-                            <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="log-out"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Logout</span>
@@ -148,137 +157,95 @@
                 </ul>
             </div>
         </div>
-        <!-- nav -->
-        <div class="w-full h-auto flex justify-center items-center bg-[#003366] px-5 py-5 ml-64">
-            <input type="text" class="w-1/3 mx-auto py-2 rounded-lg" placeholder="Search">
-            <p class="text-lg font-semibold text-white mx-auto">
-                28 July 2023
-            </p>
+        <!-- data display div -->
+        <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
+            <div class="w-full flex items-center justify-evenly h-20 bg-[#00336659] space-x-80">
 
-        </div>
-
-        <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-8 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
-                Order by
+                <!-- dropdown -->
                 <select name="" id="" class="text-black px-5 font-semibold rounded-lg py-2">
-                    <option value="">Order ID</option>
-                    <option value="">Product Name</option>
-                    <option value="">Qty</option>
-                    <option value="">Price Per Item</option>
-                    <option value="">Discount</option>
-                    <option value="">Date</option>
-                    <option value="">Total Price</option>
+                    <option value="">Title</option>
+                    <option value="">Created Date</option>
+                    
                     
                 </select>
-                <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="text" name="" id="" class="text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white" placeholder="Search by ID Number ">
+                <div class="flex items-center justify-center space-x-3">
 
+                    <div class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
+                        <a href=""><button>Add Brand</button></a>
+                    </div>
                 </div>
             </div>
-            <div class="w-1/2 h-auto flex items-evenly justify-evenly bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table class=" w-full table-auto border-collapse text-white text-center">
+
+            <div class="w-1/2 h-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
+                <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
-                            <th>Order ID</th>
-                            <th>Product Name</th>
-                            <th>Qty</th>
-                            <th>Price Per Item</th>
-                            <th>Discount</th>
-                            <th>Date</th>
-                            <th>Delivery</th>
-                            <th>Total Price</th>
+                            <th>Title</th>
+                            <th></th>
+                            <th>Created Date</th>
+                            <th>Action</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody class="">
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Home Appliances</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                            
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Men’s Shoe</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Men's Wear</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                          
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Beauty & Personal Care</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Home & Living</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Home Appliances</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
+                            <td>Zara</td>
+                            <td></td>
                             <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
-
+                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                            <td>Nike</td>
+                            <td></td>
+                            <td>09:34 pm, 09 Jun, 2023</td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
+                        </tr>
                     </tbody>
                 </table>
-
             </div>
             <!-- pagination -->
             <div class="w-auto flex items-start justify-center h-10 mb-5">
@@ -314,10 +281,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-   
 </body>
 
 </html>

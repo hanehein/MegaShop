@@ -113,9 +113,9 @@
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p>
+            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Followed Stores</p>
 
             <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
 
