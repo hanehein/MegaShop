@@ -35,16 +35,16 @@
                             <div class="text-sm font-light tracking-wide text-gray-500">Menu</div>
                         </div>
                     </li>
-                    <li>
-                        <a href="../adminDashboard/adminDashboard.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                    <li class="dashboard">
+                        <a href="../adminDashboard/adminDashboard.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="grid" class=""></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Dashboard</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="../adminDashboard/adminSubscriptionIncome.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                    <li class="income">
+                        <a href="../adminDashboard/adminSubscriptionIncome.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="diamond"></ion-icon>
                             </span>
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../message/message.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="../message/message.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
@@ -62,7 +62,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../supplierList/approveList.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="../supplierList/approveList.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="people"></ion-icon>
                             </span>
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../customerList/registeredCustomer.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="../customerList/registeredCustomer.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="people"></ion-icon>
                             </span>
@@ -78,25 +78,25 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="list-circle"></ion-icon>
+                                <ion-icon name="list-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Proudcts Lists</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="cube"></ion-icon>
+                                <ion-icon name="cube"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Order Lists</span>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="help-circle"></ion-icon>
+                                <ion-icon name="help-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">FAQ</span>
                         </a>
@@ -107,25 +107,25 @@
                         </div>
                     </li>
                     <li>
-                        <a href="../adminProfile/adminProfileEdit.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="../adminProfile/adminProfileEdit.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="person-circle"></ion-icon>
+                                <ion-icon name="person-circle"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Admin Profile</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="apps"></ion-icon>
+                                <ion-icon name="apps"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Web UI</span>
                         </a>
                     </li>
                     <li>
-                    <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 active:bg-[#003366] active:border-none active:text-white">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                            <ion-icon name="log-out"></ion-icon>
+                                <ion-icon name="log-out"></ion-icon>
                             </span>
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Logout</span>
                         </a>
@@ -135,4 +135,5 @@
         </div>
     </div>
 </body>
+
 </html>
