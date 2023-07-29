@@ -19,14 +19,14 @@
     <!-- main div -->
     <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
         <!-- dashboard div -->
-        <?php 
-            include "../components/menu.php";
+        <?php
+        include "../components/menu.php";
         ?>
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
-            <form action="">
-                <div class="w-[50rem] h-[43rem] flex items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
 
+            <div class="w-[50rem] h-[43rem] flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
+                <form action="">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <div class="rounded-full w-32 h-32 bg-gray-200">
@@ -48,11 +48,11 @@
                             <div class="flex items-center justify-between w-96 space-x-3">
                                 <!-- email -->
                                 <label class="text-white" for="adname">Subscription Plan</label>
-                                <input type="radio"  name="plan"  value="Gold">
+                                <input type="radio" name="plan" value="Gold">
                                 <label class="text-white text-xs font-semibold" for="gold">Gold</label><br>
                                 <input type="radio" name="plan" value="silver">
                                 <label class="text-white text-xs font-semibold" for="silver">Silver</label><br>
-                                <input type="radio"  name="plan"  value="trial">
+                                <input type="radio" name="plan" value="trial">
                                 <label class="text-white text-xs font-semibold" for="trial">Trial</label>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
@@ -81,9 +81,11 @@
                             </div>
                         </div>
                     </div>
+                </form>
+                <div class="flex  items-center justify-center  w-auto mt-5">
+                    <a href="./adminSubscriptionIncome.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Back</button></a>
                 </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </body>
