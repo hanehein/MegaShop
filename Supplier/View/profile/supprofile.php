@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -47,52 +48,14 @@
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
-        <div class="bg-white min-h-screen">
-            <div class="h-[60px] flex justify-center items-center text-center">
-                <span class="font-bold">MEGA SHOP</span>
-            </div>
-            <div class="menu-lists">
-                <ul>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="clipboard-outline"></ion-icon> Dashboard
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="bag-handle-outline"></ion-icon> Orders
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <ion-icon class="mr-3 text-custom-extra-large" name="person-outline"></ion-icon>
-                                Customers
-                            </div>
-                            <div>
-                                <button class="order-down-btn">
-                                    <ion-icon class="mr-3 text-custom-extra-large" name="caret-down"></ion-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="star-half-outline"></ion-icon>Rating and
-                        Reviews
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="chatbox-outline"></ion-icon> Messages
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="settings-outline"></ion-icon> Setting
-                    </li>
-                    <li class="px-3 py-4 text-custom-medium font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white">
-                        <ion-icon class="mr-3 text-custom-extra-large" name="log-in-outline"></ion-icon> Log Out
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5">
-            <nav class="h-[60px] px-3 items-center flex justify-between bg-[#66CC33] bg-opacity-80">
-                <div><span>Ratings & Reviews</span></div>
-                <div><span>June 30, 2023</span></div>
-            </nav>
+            <?php
+            $currentMenu = "Setting";
+            include "../components/navbar.php";
+            ?>
+            <div class="p-5 max-h-screen overflow-y-auto">
+            <div class="h-[60px]"></div>
             <div class="flex flex-col items-center space-y-3">
                 <span class="text-2xl font-semibold">Supplier Profile</span>
 
@@ -103,22 +66,23 @@
 
                 <!--card body-->
                 <div class="p-5 container mx-auto">
-                    <div class="bg-custom-grey w-full h-auto shadow-lg rounded-lg p-5 ">
-                        <div class="flex flex-col space-y-3 justify-center items-center">  
+                    <div class="bg-white w-full h-auto shadow-lg rounded-lg p-5 ">
+                        <div class="flex flex-col space-y-3 justify-center items-center">
                             <span>Shop Photo</span>
+                            <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" class="w-[100px]">
                         </div>
                         <div class="flex justify-center items-center space-x-64">
                             <div class="flex flex-col space-y-5">
                                 <span>Shop Name</span>
-                                <input type="text" class="border-2 rounded-lg" required>
+                                <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                                 <span>Phone</span>
-                                <input type="text" class="border-2 rounded-lg" required>
+                                <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                             </div>
                             <div class="flex flex-col space-y-5">
                                 <span>Supplier Name</span>
-                                <input type="text" class="border-2 rounded-lg">
+                                <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                                 <span>Email</span>
-                                <input type="text" class="border-2 rounded-lg" required>
+                                <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                             </div>
                         </div>
                         <div class="text-end mt-12 px-10 space-x-3">
@@ -127,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
             </div>
         </div>
         <!--Start profile edit-->
