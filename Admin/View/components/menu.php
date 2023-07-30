@@ -51,7 +51,7 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Income</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="msg">
                         <a href="../message/message.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
                             <span class="ml-2 text-sm tracking-wide truncate font-semibold">Messages</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="supplier">
                         <a href="../supplierList/approveList.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="people"></ion-icon>
@@ -69,7 +69,7 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Supplier Lists</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="customer">
                         <a href="../customerList/registeredCustomer.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="people"></ion-icon>
@@ -77,7 +77,7 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Customer Lists</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="">
                         <a href="../productlists/productLists.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="list-circle"></ion-icon>
@@ -106,7 +106,7 @@
                             <div class="text-sm font-light tracking-wide text-gray-500">Settings</div>
                         </div>
                     </li>
-                    <li>
+                    <li class="profile">
                         <a href="../adminProfile/adminProfileEdit.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="person-circle"></ion-icon>
