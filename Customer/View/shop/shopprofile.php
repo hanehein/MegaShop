@@ -17,52 +17,7 @@
 
 <body class="overflow-x-hidden bg-gray-50 w-full">
     <!--Start navbar-->
-    <div class="container mx-auto overflow-x-hidden header flex flex-row justify-between items-center bg-white py-5 px-5 text-blue-800">
-        <ion-icon id="close" name="close-outline" class="text-blue-800 md:hidden sm:flex text-4xl self-end"></ion-icon>
-        <div class="logoname font-wallpoet">Mega Shop</div>
-        <div class="menu">
-            <ul class="flex flex-col md:flex-row space-x-4 cursor-pointer">
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        HOME
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        PRODUCTS
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        STORES
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        ABOUT US
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        CONTACT US
-                    </li>
-                </a>
-            </ul>
-        </div>
-        <div class="profile">
-            <ul class="flex flex-row space-x-2">
-                <li class="cursor-pointer">
-                    <ion-icon name="cart"></ion-icon><sup>2</sup>
-                </li>
-                <li class="cursor-pointer">
-                    <ion-icon name="person-circle-outline"></ion-icon>
-                </li>
-                <li>
-                    <ion-icon class="flex md:hidden" name="menu-outline" id="menuBtn"></ion-icon>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include "../components/navbarForHome.php"; ?>
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
@@ -253,44 +208,8 @@
         </div>
     </section>
     <!-- START footer SECTION -->
-    <section class="bg-custom-blue p-3 static bottom-0">
-        <div class="container mx-auto">
-            <div class="block sm:border-b-2 sm:border-white sm:flex sm:justify-between mb-2">
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Quick Link</h2>
-                    <ul class="list-disc px-5">
-                        <li>About Us</li>
-                        <li>Privacy & Policy</li>
-                        <li>How To Buy Guide</li>
-                    </ul>
-                </div>
-
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Help ?</h2>
-                    <ul class="list-disc px-5">
-                        <li>Payment</li>
-                        <li>Return & Exchange</li>
-                        <li>FAQ</li>
-                    </ul>
-                </div>
-
-                <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
-                    <h2 class="text-custom-extra-large font-bold">Contact Us</h2>
-                    <ul class="px-5">
-                        <li><ion-icon name="call"></ion-icon> +95777777777</li>
-                        <li><ion-icon name="mail"></ion-icon> example@gmial.com</li>
-                        <li class="space-x-3">
-                            <ion-icon name="logo-facebook"></ion-icon>
-                            <ion-icon name="logo-instagram"></ion-icon>
-                            <ion-icon name="logo-twitter"></ion-icon>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <p class="text-center text-white font-bold">©2023 MEGA SHOP All rights reserved.</p>
-        </div>
-    </section>
+    <!--Start footer-->
+    <?php include "../components/footer.php"; ?>
     <!-- END footer SECTION -->
 
 </body>

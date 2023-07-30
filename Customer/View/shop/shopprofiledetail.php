@@ -12,53 +12,7 @@
 </head>
 
 <body class="overflow-x-hidden bg-gray-50 w-full">
-    <div class="overflow-x-hidden header flex flex-row justify-between items-center bg-white py-5 px-5 text-blue-800">
-        <ion-icon id="close" name="close-outline" class="text-blue-800 md:hidden sm:flex text-4xl self-end"></ion-icon>
-        <div class="logoname font-wallpoet">Mega Shop</div>
-        <div class="menu">
-            <ul class="flex flex-col md:flex-row space-x-4 cursor-pointer">
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        HOME
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        PRODUCTS
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        STORES
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        ABOUT US
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hover:underline transition-all duration-100 delay-75 ease-linear">
-                        CONTACT US
-                    </li>
-                </a>
-            </ul>
-        </div>
-        <!--profile-->
-        <div class="profile">
-            <ul class="flex flex-row space-x-2">
-                <li class="cursor-pointer">
-                    <ion-icon name="cart"></ion-icon><sup>2</sup>
-                </li>
-                <li class="cursor-pointer">
-                    <ion-icon name="person-circle-outline"></ion-icon>
-                </li>
-                <li>
-                    <ion-icon class="flex md:hidden" name="menu-outline" id="menuBtn"></ion-icon>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include "../components/navbarForHome.php"; ?>
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
@@ -265,6 +219,8 @@
             <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-r-md"></div>
         </div>
     </section>
+    <!--Start footer-->
+    <?php include "../components/footer.php"; ?>
 </body>
 
 </html>

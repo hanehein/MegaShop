@@ -1,50 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "custom-grey": "#7B7B7B",
-                        "custom-blue": "#024486",
-                        "custom-orange": "#F68721",
-                    },
-                    backgroundColor: {
-                        "custom-milk": "F1F2F4",
-                        "custom-blue": "#024486",
-                        "custom-orange": "#F68721",
-                        "custom-grey": "#7B7B7B",
-                        "custom-sky-blue": "#c9e0f5",
-                        "custom-black-pale": "rgba(0,0,0,0.5)",
-                        "custom-red": "FF0000"
-                    },
-                    fontSize: {
-                        "custom-tiny": "12px",
-                        "custom-medium": "16px",
-                        "custom-large": "18px",
-                        "custom-extra-large": "20px",
-                    },
-                    borderColor: {
-                        "custom-blue": "#024486",
-                        "custom-grey": "#7B7B7B",
-                        "custom-orange": "#F68721",
-                    },
-                },
-            },
-        };
-    </script>
-    <script src="./singleProductDeatil.js" defer></script>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
+<?php
+$hasJsFile = FALSE;
+include "../components/header.php";
+?>
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
@@ -56,7 +13,7 @@
             include "../components/navbar.php";
             ?>
             <div class="p-5 max-h-screen overflow-y-auto">
-            <div class="h-[60px]"></div>
+                <div class="h-[60px]"></div>
                 <div class="flex flex-col items-center space-y-5">
                     <span class="text-2xl font-semibold">Supplier Profile</span>
 
@@ -90,4 +47,4 @@
     </section>
 </body>
 
-</html>
+<?php include "../components/footer.php" ?>
