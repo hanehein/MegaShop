@@ -77,7 +77,7 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Customer Lists</span>
                         </a>
                     </li>
-                    <li class="">
+                    <li class="products">
                         <a href="../productlists/productLists.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="list-circle"></ion-icon>
@@ -85,7 +85,24 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Proudcts Lists</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="brand">
+                        <a href="../productlists/brandControl.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="pricetag"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Brand</span>
+                        </a>
+                    </li>
+                    <li class="category">
+                        <a href="../productlists/categoryControl.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="pricetags"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Category</span>
+                        </a>
+                    </li>
+
+                    <li class="order">
                         <a href="../orderlists/orderLists.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="cube"></ion-icon>
@@ -93,7 +110,7 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Order Lists</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="faq">
                         <a href="../adminDashboard/adminFaq.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="help-circle"></ion-icon>
@@ -114,12 +131,21 @@
                             <span class="ml-2 text-sm font-semibold tracking-wide truncate">Admin Profile</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="../adminDashboard/uiEdit.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                    
+                    <li class="form">
+                        <a href="../adminDashboard/websiteForm.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
-                                <ion-icon name="apps"></ion-icon>
+                                <ion-icon name="information-circle"></ion-icon>
                             </span>
-                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Web UI</span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Website Form</span>
+                        </a>
+                    </li>
+                    <li class="slider">
+                        <a href="../adminDashboard/homeSlider.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                            <span class="inline-flex justify-center items-center ml-4">
+                                <ion-icon name="albums"></ion-icon>
+                            </span>
+                            <span class="ml-2 text-sm font-semibold tracking-wide truncate">Home Sliders</span>
                         </a>
                     </li>
                     <li>
