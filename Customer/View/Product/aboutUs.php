@@ -27,7 +27,7 @@
     </style>
 </head>
 
-<body class="bg-slate-100 font-['Poppins'] no-scrollbar flex flex-col min-h-screen overflow-auto">
+<body class="bg-slate-100 font-['Poppins']  flex flex-col min-h-screen overflow-x-hidden">
     <!-- navbar responsive -->
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
