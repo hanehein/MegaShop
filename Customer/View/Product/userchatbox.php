@@ -17,9 +17,9 @@
   </head>
   <body class="bg-[#F6F6F6]">
     <div class="container mx-auto shadow-lg rounded-lg">
-      <div class="flex flex-row justify-between">
+      <div class="sm:block md:flex flex-row justify-between">
         <!--Start leftside-->
-        <div class="flex flex-col w-2/6 border-r-2">
+        <div class="sm:block sm:w-full md:flex flex-col md:w-2/6 border-r-2">
           <!--Start searchbox-->
           <div class="border-b-2 py-[26px] px-2 flex">
             <input
@@ -136,7 +136,7 @@
 
         <!--End chat lists-->
         <div class="w-full flex flex-col justify-between">
-          <div class="flex flex-col border-b-2 w-full">
+          <div class="flex flex-col border-b-2 sm:border-blue-600 w-auto">
             <!--Start chatname-->
             <div class="flex flex-row py-2 px-2 items-center">
               <div class="flex items-center space-x-2">
@@ -150,11 +150,11 @@
             </div>
           </div>
           <!--End chatname-->
-          <div class="flex justify-end mb-1 pr-5">
+          <div class="flex justify-end mb-1 pr-5 mt-3">
             <!--chat1-->
             <div class="flex flex-col">
               <div
-                class="ml-2 py-3 px-4 w-[150px] bg-gray-400 rounded-bl-3xl rounded-tl-3xl rounded-br-xl text-white"
+                class="ml-2 py-3 px-4 sm:w-[135px] md:w-[150px] bg-gray-400 rounded-bl-3xl rounded-tl-3xl rounded-br-xl text-white"
               >
                 Hello
               </div>
@@ -166,7 +166,7 @@
             <!--chat2-->
             <div class="flex flex-col">
               <div
-                class="ml-2 py-3 px-4 w-[400px] bg-gray-400 rounded-bl-3xl rounded-tl-3xl rounded-br-xl text-white"
+                class="ml-2 py-3 px-4 sm:w-[280px] md:w-[400px] bg-gray-400 rounded-bl-3xl rounded-tl-3xl rounded-br-xl text-white"
               >
                 the design and build quality of a phone are important factors to
                 assess. Consider factors such as the materials used, the overall
@@ -180,7 +180,7 @@
           <div class="flex justify-start mb-4 pr-5">
             <div class="flex flex-col">
               <div
-                class="ml-2 py-3 px-4 w-[400px] bg-gray-400 rounded-tl-3xl rounded-tr-3xl rounded-br-xl text-white"
+                class="ml-2 py-3 px-4 sm:w-[280px] md:w-[400px] bg-gray-400 rounded-tl-3xl rounded-tr-3xl rounded-br-xl text-white"
               >
                 The phone is an excellent product that we highly recommend to
                 our customers. Its design and build quality are top-notch,
