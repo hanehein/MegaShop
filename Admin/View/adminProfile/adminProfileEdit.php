@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/profile.css">
+    <script src="../resources/js/img.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -30,39 +31,38 @@
                 <form action="">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
-                            <div class="rounded-full w-32 h-32 bg-gray-200">
-                                <label for="profile">
-                                    <img src="../resources/img/undraw_Coffee_Time_45em.png" alt="coffee" width="100%" class="rounded-full h-32">
-                                </label>
-                                <input type="file" id="profile" hidden accept="jpa..png">
-                            </div>
+
+                            <label for="profile">
+                                <img src="../resources/img/profile1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                            </label>
+                            <input type="file" id="profile" hidden accept=".png,.jpg">
                             <span class="text-white text-lg">
                                 Ava Rose
                             </span>
                         </div>
-                        <div class="flex flex-col space-y-8 items-center justify-between w-96">
-                            <div class="flex items-center justify-center space-x-16">
+                        <div class="flex flex-col space-y-8 items-center justify-between w-[26rem]">
+                            <div class="flex items-center justify-center space-x-24">
                                 <!-- name -->
                                 <label class="text-white font-sm" for="adname">Admin Name</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
 
-                            <div class="flex items-center justify-between w-96 space-x-16">
+                            <div class="flex items-center justify-between w-[26rem] space-x-16">
                                 <!-- email -->
                                 <label class="text-white font-sm" for="adname">Email Address</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
+                            <div class="flex items-center justify-between w-[26rem] space-x-16">
                                 <!-- password -->
                                 <label class="text-white font-sm" for="adname">Password</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
+                            <div class="flex items-center justify-between w-[26rem] space-x-16">
                                 <!-- Job -->
                                 <label class="text-white font-sm" for="adname">Job Title</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
+                            <div class="flex items-center justify-between w-[26rem] space-x-16">
                                 <!-- Bio -->
                                 <label class="text-white font-sm" for="adname">Add your bio</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
