@@ -15,7 +15,7 @@
 
             <!-- products -->
             <li class="">
-                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../dashboard/dashboard.php">
+                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../products/product.php">
                     <ion-icon class="mr-3 text-[18px]" name="gift-outline"></ion-icon>
                     Products
                 </a>

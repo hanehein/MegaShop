@@ -15,10 +15,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
   <script src="../resources/js/singleProductDetail.js" defer></script>
 </head>
 
 <body class="bg-body">
+  <?php include "../components/responsiveNav.php"; ?>
   <!-- START Product detail SECTION -->
   <section class="py-4 px-[20px] sm:px-[0px]">
     <div class="container mx-auto">
@@ -340,6 +342,9 @@
     </div>
   </section>
   <!-- END Product Review & Review Section -->
+
+  <!-- footer -->
+  <?php include "../components/footer.php"; ?>
 </body>
 
 

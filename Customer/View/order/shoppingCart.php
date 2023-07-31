@@ -16,29 +16,7 @@
 
 <body>
     <!-- START NAVBAR -->
-    <nav class="px-4 sm:px-[0px] ">
-        <div class="container mx-auto flex justify-between py-4">
-            <div>
-                <a href="" class="text-2xl font-bold">MEGA SHOP</a>
-            </div>
-            <div class="hidden sm:block">
-                <ul class="flex space-x-6 text-custom-blue font-bold">
-                    <li>Home</li>
-                    <li>Products</li>
-                    <li>Shop Lists</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-            <div class="hidden sm:block">
-                <button class="px-6 py-1 text-white bg-blue-800 rounded-2xl"><a href="">log in</a></button>
-                <button class="px-6 py-1 text-white bg-blue-800 rounded-2xl"><a href="">sign up</a></button>
-            </div>
-            <div class="block sm:hidden">
-                <ion-icon class="text-3xl" name="menu"></ion-icon>
-            </div>
-        </div>
-    </nav>
+    
     <!-- END NAVBAR -->
 
     <!-- START Shopping Cart SECTION -->
