@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../resources/css/supplier.css">
     <script src="../resources/js/img.js"></script>
 </head>
 
@@ -26,10 +30,10 @@
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
 
-            <div class="w-[50rem] h-[43rem] flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
-                <form action="">
+            <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
+                <form action="../../Controller/supplierController.php" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
-                    <div class="flex items-center justify-center  space-x-8 mb-3">
+                        <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
                                 <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
@@ -55,33 +59,42 @@
                                 <input type="email" name="email" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Password</label>
-                                <input type="password" name="password" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <!-- <div class="flex items-center justify-between w-96 space-x-16">
-                                
                                 <label class="text-white" for="adname">Shop Address</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div> -->
-                            <!-- <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Supplier's ID</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div> -->
-                            <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Subscribed Plan</label>
-                                <input type="text" name="plan" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="shopAddress" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Subscription Duration</label>
-                                <input type="text" name="duration" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+
+                                <label class="text-white" for="id">Phone</label>
+                                <input type="text" name="phone" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex  items-center justify-center space-x-10 w-auto mt-5">
+                            <div class="flex items-center justify-between w-96 text-xs">
+                                <label class="text-white" for="">Township</label>
+                                <div class="flex  items-center justify-center">
+                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md ">
+                                        <option   value="1">Yankin</option>
+                                        <option  value="2">Dagon</option>
+                                        <option  value="3">Kamayut</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between w-96  text-white font-semibold text-xs">
+                                <label class="text-white" for="">Subscribed Plan</label>
+                                <div class=" flex space-x-3 items-center justify-start">
+                                    <input type="radio" id="basic" name="plan" class="" value="0">
+                                    <label for="basic">Basic</label>
+                                    <input type="radio" id="silver" name="plan" class="" value="1">
+                                    <label for="silver">Silver</label>
+                                    <input type="radio" id="gold" name="plan" class="" value="2">
+                                    <label for="gold">Gold</label>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="">Bank Account</label>
+                                <input type="text" name="bankAcc" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" placeholder="xxxxxxxx">
+                            </div>
+                            <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
-                                <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Update</button></a>
+                               <button type="submit" name="create" class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>
                             </div>
                         </div>
                     </div>

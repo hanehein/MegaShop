@@ -1,3 +1,23 @@
+<?php
+
+include '../../Model/model.php';
+
+$sql = $pdo->prepare(
+    "SELECT *
+    FROM m_products
+   ;
+    "
+);
+
+$sql->execute();
+
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +50,7 @@
             <!-- Menu -->
             <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
                 <!-- ul list -->
-                <?php include '../components/menu.php';?>
+                <?php include '../components/menu.php'; ?>
             </div>
         </div>
         <!-- data display div -->
@@ -56,10 +76,11 @@
 
                 </select>
             </div>
-            <div class="w-1/2 h-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs">
+            <div class="w-1/2 h-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
+                <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs rounded-md">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
+                        <th>No.</th>
                             <th>Title</th>
                             <th>Store</th>
                             <th>Category</th>
@@ -72,86 +93,28 @@
                         </tr>
                     </thead>
                     <tbody class="">
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>
-                                <div class="flex justify-evenly items-center">
-                                    <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2">
-                                    <p>Nike Shoes</p>
-                                </div>
-                            </td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>
-                                <div class="flex justify-evenly items-center">
-                                    <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2">
-                                    <p>Nike Shoes</p>
-                                </div>
-                            </td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>
-                                <div class="flex justify-evenly items-center">
-                                    <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2">
-                                    <p>Nike Shoes</p>
-                                </div>
-                            </td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>
-                                <div class="flex justify-evenly items-center">
-                                    <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2">
-                                    <p>Nike Shoes</p>
-                                </div>
-                            </td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>
-                                <div class="flex justify-evenly items-center">
-                                    <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2">
-                                    <p>Nike Shoes</p>
-                                </div>
-                            </td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
-                        </tr>
+                        <?php $count = 0;?>
+                        <?php foreach ($result as $m_products) { ?>
+
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                            <td><?php echo ++$count; ?></td>
+                                <td>
+                                    <div class="flex justify-evenly items-center">
+                                        <img src="../resources/img/<?php echo $m_products["p_photo1"]; ?>.jpg" class="w-1/4 rounded-lg h-1/2">
+                                        <p><?php echo $m_products["p_name"]; ?></p>
+                                    </div>
+                                </td>
+                                <td><?php echo $m_products["supplier_id"]; ?></td>
+                                
+                                <td><?php echo $m_products["p_category"]; ?></td>
+                                <td><?php echo $m_products["p_brand"]; ?></td>
+                                <td><?php echo $m_products["p_discount"]; ?></td>
+                                <td><?php echo $m_products["p_buy_price"]; ?></td>
+                                <td><?php echo $m_products["p_sell_price"]; ?></td>
+                                <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
+                                <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

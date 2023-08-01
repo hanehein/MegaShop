@@ -1,4 +1,8 @@
 <?php
+session_start();
+$profile = $_SESSION["profile"];
+?>
+<?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -30,15 +34,15 @@ include "../components/header.php";
                         </div>
                         <div class="flex justify-center items-center space-x-64">
                             <div class="flex flex-col space-y-5">
-                                <span>Shop Name</span>
+                                <span>Shop Name:<?= $profile["sup_shop_name"]?></span>
                                 <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
-                                <span>Phone</span>
+                                <span>Phone <?= $profile["sup_phone"]?></span>
                                 <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                             </div>
                             <div class="flex flex-col space-y-5">
-                                <span>Supplier Name</span>
+                                <span>Supplier Name <?= $profile["sup_name"]?></span>
                                 <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
-                                <span>Email</span>
+                                <span>Email <?= $profile["sup_email"]?></span>
                                 <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
                             </div>
                         </div>
