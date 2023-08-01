@@ -65,9 +65,9 @@
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
         </div>
         <div class="mt-10 mb-10">
-            <p class="text-2xl font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">How much time do we take to get back to the user?</p>
+        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <p class="text-lg font-medium mt-10 py-2 px-2 border-black rounded-lg bg-[#FFFFFF]">We reply to the users as soon as possible.</p>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="We reply to the users as soon as possible." disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
         </div>
     </div>
