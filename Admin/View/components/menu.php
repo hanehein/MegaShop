@@ -17,7 +17,7 @@
 
 <body class="overflow-x-hidden">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-gray-200 text-gray-800 relative">
+    <aside class="h-screen w-64 fixed flex flex-auto flex-shrink-0 bg-gray-200 text-gray-800">
         <!-- dashboard div -->
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="flex justify-center items-center mt-3">
@@ -159,7 +159,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </aside>
 </body>
 
 </html>

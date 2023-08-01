@@ -58,11 +58,6 @@
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-[26rem] space-x-16">
-                                <!-- Job -->
-                                <label class="text-white font-sm" for="adname">Job Title</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-[26rem] space-x-16">
                                 <!-- Bio -->
                                 <label class="text-white font-sm" for="adname">Add your bio</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
