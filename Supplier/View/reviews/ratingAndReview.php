@@ -12,7 +12,6 @@ include "../components/header.php";
             include "../components/navbar.php";
             ?>
 
-            <!-- start aye myat noe khin -->
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
                 <div class="mb-5">
@@ -191,7 +190,7 @@ include "../components/header.php";
                 </div>
 
             </div>
-            <!-- end aye myat noe khin -->
+
         </div>
     </section>
 </body>

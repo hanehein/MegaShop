@@ -1,8 +1,8 @@
 <?php
 
-$hostname = "localhost";
+$hostname = "localhost:81/";
 $port = 3307;
-$dbname = "shopping_db";
+$dbname = "megashop_db";
 $uname = "root";
 $pwd = "";
 
