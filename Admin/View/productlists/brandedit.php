@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$brand = $_SESSION["brandedit"];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +38,7 @@
             <!-- Menu -->
             <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
                 <!-- ul list -->
-                <?php include '../components/menu.php';?>
+                <?php include '../components/menu.php'; ?>
             </div>
         </div>
         <!-- data display div -->
@@ -54,16 +62,19 @@
             <div class="w-1/3 h-auto flex flex-col items-start justify-start bg-white font-['Poppins'] rounded-md shadow-sm shadow-black px-2 mt-20">
 
 
-                <div class="w-full h-auto px-3 py-3 flex flex-col">
-                    <p class="text-lg mt-3 mb-3">Brand Form</p>
-                    <div class="w-full bg-black h-0.5"></div>
-                    <p class="mt-3 mb-3">Title</p>
-                    <input type="text" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
-                    <div class="flex justify-start mt-5">
-                        <button class="w-1/5 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white">Save</button>
-                        <button class="w-1/5 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white ml-5">Back</button>
+                <form action="" method="post">
+                    <div class="w-full h-auto px-3 py-3 flex flex-col">
+                        <p class="text-lg mt-3 mb-3">Brand Form</p>
+                        <div class="w-full bg-black h-0.5"></div>
+                        <p class="mt-3 mb-3">Title</p>
+                        <input type="text" name="brand" value="<?php echo $brand[0]["band_name"]; ?>" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
+                        <input type="date" name="date" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
+                        <div class="flex justify-start mt-5">
+                            <button class="w-1/3 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white">Save</button>
+                            <a href="./brandControl.php"><button class="w-1/5 rounded-lg px-2 py-2  mt-3 underline text-black ml-5">Back</button></a>
+                        </div>
                     </div>
-                </div>
+                </form>
 
 
             </div>

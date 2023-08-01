@@ -1,3 +1,20 @@
+<?php 
+
+    include '../../Model/model.php';
+
+    $sql = $pdo->prepare(
+        "SELECT * FROM m_customers WHERE cus_name = 'John';"
+    );
+
+    $sql ->execute();
+
+    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,31 +144,33 @@
             </div>
 
             <div class="flex flex-col mx-auto">
+                <?php foreach ($result as $m_customers) { ?>
+                  
                 <div class="w-1/2 ml-2 md:ml-24 mt-3 ">
                     <p class="text-xl font-semibold">Name</p>
                 </div>
                 <div class="mt-5 cursor-pointer">
-                    <input type="text" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                    <input type="text" name="name" id="" value="<?php echo 'cus_name';?>"class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4" disabled>
                 </div>
                 <div class="w-1/2 ml-10 md:ml-32 mt-5">
                     <p class="text-xl font-semibold">Email address</p>
                 </div>
                 <div class="mt-5 cursor-pointer">
-                    <input type="email" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                    <input type="email" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4" disabled>
                 </div>
                 <div class="w-1/2 ml-2 md:ml-28 mt-5">
                     <p class="text-xl font-semibold">Location</p>
                 </div>
                 <div class="mt-5 cursor-pointer">
-                    <input type="text" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                    <input type="text" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4" disabled>
                 </div>
                 <div class="w-1/2 ml-10 md:ml-36 mt-5">
                     <p class="text-xl font-semibold">Phone Number</p>
                 </div>
                 <div class="mt-5 cursor-pointer">
-                    <input type="number" inputmode="numeric" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4">
+                    <input type="number" inputmode="numeric" name="name" id="" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-2 border-black px-4" disabled>
                 </div>
-
+            <?php }?>
             </div>
             <button class="bg-[#024486] w-1/6 md:w-1/12 mt-10 py-2 rounded-lg mr-16 md:mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300 text-white font-bold hover:text-black">
                 Save
