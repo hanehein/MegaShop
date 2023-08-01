@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +23,8 @@
     <!-- main div -->
     <div class="min-h-screen flex text-gray-800 ">
         <!-- dashboard div -->
-        <?php 
-            include "../components/menu.php";
+        <?php
+        include "../components/menu.php";
         ?>
         <!-- data display div -->
         <div class="w-full flex flex-col items-center justify-start bg-gray-200 space-y-5 font-['Poppins']">

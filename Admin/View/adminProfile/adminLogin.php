@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,18 +38,18 @@
             <div class="mt-10 container md:w-[25rem] mx-auto font-['Poppins']">
                 <p class="text-white text-[23px] text-center">Log In</p>
                 <!-- email -->
-                <form action="">
-                    <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
-                        <ion-icon name="mail" class="text-white"></ion-icon>
-                        <input type="email" name="" id="email" placeholder="Email Address" class="text-sm bg-[#003366] focus:outline-none border-none text-white" />
+                <form action="../../Controller/loginController.php" method="post">
+                    <div class="md:w-[18rem] w-[15rem]  bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
+                        <ion-icon name="person" class="text-white"></ion-icon>
+                        <input type="text" name="userName" placeholder="Enter Name" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required/>
                     </div>
                     <!-- password -->
                     <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white  mx-auto mt-8 flex py-1.5 px-4 space-x-3 justify-center items-center rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black border-none">
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
-                        <input type="password" name="" id="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" />
+                        <input type="password" name="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required/>
                     </div>
                     <!-- login -->
-                    <button type="submit" class="w-32 bg-[#003366] mx-auto mt-8 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
+                    <button type="submit" name="login" class="w-32 bg-[#003366] mx-auto mt-8 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
                         Log In
                     </button>
                 </form>
@@ -53,5 +57,4 @@
         </div>
     </div>
 </body>
-
 </html>
