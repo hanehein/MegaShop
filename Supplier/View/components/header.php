@@ -18,7 +18,7 @@
     <script src="../resources/js/slideMenu.js" defer></script>
     <?php
     if($hasJsFile){
-        echo "<script src='../resources/js/$JsFileName' defer></script>";
+        echo "<script src='../resources/js/$JsFileName.js' defer></script>";
     }
     ?>
 </head>
