@@ -12,4 +12,3 @@ $pdo = new PDO("mysql:host=$hostname;port=$port;dbname=$dbname",
 
 // set error exc
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
