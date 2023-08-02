@@ -28,8 +28,8 @@ if(isset($_POST["create"])){
             pack_id,
             sup_email,
             sup_password,
-            sup_address,
             township,
+            sup_address,
             sup_phone,
             bank_account,
             sup_shop_name,
@@ -73,4 +73,5 @@ if(isset($_POST["create"])){
         Password : $password;
         "
     );
+    header("Location: ../View/supplierList/approveList.php");
 }

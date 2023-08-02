@@ -26,7 +26,7 @@
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
 
-            <div class="w-[50rem] h-[43rem] flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
+            <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
                 <form action="">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                     <div class="flex items-center justify-center  space-x-8 mb-3">
@@ -51,33 +51,38 @@
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- email -->
-                                <label class="text-white" for="adname">Email Address</label>
+                                <label class="text-white" for="adname">Shop Email</label>
                                 <input type="email" name="email" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Password</label>
-                                <input type="password" name="password" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <!-- <div class="flex items-center justify-between w-96 space-x-16">
                                 
-                                <label class="text-white" for="adname">Shop Address</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div> -->
-                            <!-- <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Supplier's ID</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div> -->
-                            <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Subscribed Plan</label>
-                                <input type="text" name="plan" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Phone</label>
+                                <input type="number" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
+                            <div class="flex items-center justify-between w-96 text-xs space-x-16">
+                                <label class="text-white" for="">Township</label>
+                                <div class="flex  items-center justify-center">
+                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md ">
+                                        <option   value="1">Yankin</option>
+                                        <option  value="2">Dagon</option>
+                                        <option  value="3">Kamayut</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between w-96  text-white font-semibold text-xs space-x-16">
+                                <label class="text-white" for="">Plan</label>
+                                <div class=" flex space-x-3 items-center justify-start">
+                                    <input type="radio" id="basic" name="plan" class="" value="0">
+                                    <label for="basic">Basic</label>
+                                    <input type="radio" id="silver" name="plan" class="" value="1">
+                                    <label for="silver">Silver</label>
+                                    <input type="radio" id="gold" name="plan" class="" value="2">
+                                    <label for="gold">Gold</label>
+                                </div>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                               
-                                <label class="text-white" for="adname">Subscription Duration</label>
-                                <input type="text" name="duration" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Bank Account</label>
+                                <input type="text" name="plan" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto mt-5">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
