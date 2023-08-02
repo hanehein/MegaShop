@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors',1);
 if(count($_POST)==0){
-    header("Location: ../../../View/errors/error.php");
+    header("Location: ../../../../View/errors/error.php");
 }else{
     $id = $_POST["id"];
     $sup_name = $_POST["sup_name"];
@@ -12,9 +12,10 @@ if(count($_POST)==0){
     $sup_shop_name = $_POST["sup_shop_name"];
     
     
-    include "../Model/model.php";
+    include "../../Model/model.php";
     $sql = $pdo ->prepare(
-        "UPDATE m_suppliers WHERE sup_name SET
+        "UPDATE m_suppliers WHERE sup_name,sup_email, password,
+        sup_phone,sup_shop_photo, sup_shop_name SET
         sup_name = :sup_name,
         sup_email = :sup_email,
         password = :password,
@@ -35,4 +36,3 @@ if(count($_POST)==0){
         header("Location: ../../supplierProfileController.php");
         
 }
-?>
