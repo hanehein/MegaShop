@@ -1,4 +1,8 @@
 <?php
+session_start();
+$package = $_SESSION["package"];
+?>
+<?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -34,6 +38,16 @@ include "../components/header.php";
                             <div class="px-4 py-6 border-b-2">
                             </div>
                         </div>
+                        <!--DB-->
+                        <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
+                            <span class="font-semibold text-custom-large"><?= $package["pack_name"] ?></span>
+                            <span><?= $package["pack_des"] ?></span>
+                            <span><?= $package["pack_price"] ?> Ks/month for<?= $package["pack_duration"] ?>months</span>
+                            <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
+                            <div class="px-4 py-6 border-b-2">
+                            </div>
+                        </div>
+
                         <!--Start card2-->
                         <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
                             <span class="font-semibold text-custom-large">Gold</span>
