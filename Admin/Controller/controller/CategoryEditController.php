@@ -22,7 +22,4 @@ if (!isset($id)) {
 
     header("Location: ../../View/productlists/categoryEdit.php");
 
-
-
-
 }

@@ -1,3 +1,18 @@
+<?php
+
+include '../../Model/model.php';
+
+$sql = $pdo->prepare(
+    "SELECT * FROM m_products WHERE p_approved = 1;"
+);
+
+$sql->execute();
+
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,6 +74,7 @@
                 <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
+                        <th>No.</th>
                             <th>Title</th>
                             <th>Store</th>
                             <th>Category</th>
@@ -66,71 +82,34 @@
                             <th>Discount(%)</th>
                             <th>Buy Price</th>
                             <th>Selling Price</th>
+                           
                             
                            
                         </tr>
                     </thead>
                     <tbody class="">
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><div class="flex justify-evenly items-center">
-                            <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2"><p>Nike Shoes</p>
-                            </div></td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><div class="flex justify-evenly items-center">
-                            <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2"><p>Nike Shoes</p>
-                            </div></td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><div class="flex justify-evenly items-center">
-                            <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2"><p>Nike Shoes</p>
-                            </div></td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><div class="flex justify-evenly items-center">
-                            <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2"><p>Nike Shoes</p>
-                            </div></td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><div class="flex justify-evenly items-center">
-                            <img src="../resources/img/nike shoe.jpg" class="w-1/4 rounded-lg h-1/2"><p>Nike Shoes</p>
-                            </div></td>
-                            <td>Success Shop</td>
-                            <td>Men Shoes</td>
-                            <td>Nike</td>
-                            <td>10</td>
-                            <td>12500</td>
-                            <td>15000</td>
-                            
-                        </tr>
+                    <?php $count = 0; ?>
+                        <?php foreach ($result as $m_products) { ?>
+
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                                <td><?php echo ++$count; ?></td>
+                                <td>
+                                    <div class="flex justify-evenly items-center">
+                                        <img src="../resources/img/<?php echo $m_products["p_photo1"]; ?>.jpg" class="w-1/4 rounded-lg h-1/2">
+                                        <p><?php echo $m_products["p_name"]; ?></p>
+                                    </div>
+                                </td>
+                                <td><?php echo $m_products["supplier_id"]; ?></td>
+
+                                <td><?php echo $m_products["p_category"]; ?></td>
+                                <td><?php echo $m_products["p_brand"]; ?></td>
+                                <td><?php echo $m_products["p_discount"]; ?></td>
+                                <td><?php echo $m_products["p_buy_price"]; ?></td>
+                                <td><?php echo $m_products["p_sell_price"]; ?></td>
+                                
+                            </tr>
+                        <?php } ?>
+                        
                     </tbody>
                 </table>
             </div>

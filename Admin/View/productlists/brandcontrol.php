@@ -61,9 +61,9 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </select>
                 <div class="flex items-center justify-center space-x-3">
 
-                    <div class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
-                        <a href=""><button>Add Brand</button></a>
-                    </div>
+
+                    <a href="./brandAdd.php"><button class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">Add Brand</button></a>
+
                 </div>
             </div>
 
@@ -82,10 +82,10 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <?php $count = 0; ?>
                         <?php foreach ($result as $m_brand) { ?>
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                                <td><?php echo ++$count;?></td>
-                                <td><?php echo $m_brand["band_name"];?></td>
-                                <td><?php echo $m_brand["create_date"];?></td>
-                                <td><a href="../../Controller/controller/BrandEditController.php?id=<?php echo $m_brand["id"];?>"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                                <td><?php echo ++$count; ?></td>
+                                <td><?php echo $m_brand["band_name"]; ?></td>
+                                <td><?php echo $m_brand["create_date"]; ?></td>
+                                <td><a href="../../Controller/controller/BrandEditController.php?id=<?php echo $m_brand["id"]; ?>"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                                 <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                             </tr>
                         <?php  } ?>

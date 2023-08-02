@@ -12,7 +12,7 @@ $brand = $_SESSION["brandedit"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Control</title>
+    <title>Brand Edit</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -62,17 +62,15 @@ $brand = $_SESSION["brandedit"];
             <div class="w-1/3 h-auto flex flex-col items-start justify-start bg-white font-['Poppins'] rounded-md shadow-sm shadow-black px-2 mt-20">
 
 
-                <form action="" method="post">
+                <form action="../../Controller/controller/BrandUpdateController.php" method="post">
                     <div class="w-full h-auto px-3 py-3 flex flex-col">
                         <p class="text-lg mt-3 mb-3">Brand Form</p>
                         <div class="w-full bg-black h-0.5"></div>
                         <p class="mt-3 mb-3">Title</p>
-                        <input type="text" name="brand" value="<?php echo $brand[0]["band_name"]; ?>" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
-                        <input type="date" name="date" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3">
-                        <div class="flex justify-start mt-5">
-                            <button class="w-1/3 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white">Save</button>
-                            <a href="./brandControl.php"><button class="w-1/5 rounded-lg px-2 py-2  mt-3 underline text-black ml-5">Back</button></a>
-                        </div>
+                        <input type="hidden" name="id" value="<?php echo $brand[0]["id"]; ?>">
+                        <input type="text" name="brand" value="<?php echo $brand[0]["band_name"]; ?>" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3" required>
+                        <input type="date" name="date" class="border-2 px-3 py-1 w-auto h-1/2 rounded-md mt-3" required>
+                        <button class="w-1/3 rounded-lg px-2 py-2 bg-[#1E6AE1] mt-3 text-white">Update</button>
                     </div>
                 </form>
 

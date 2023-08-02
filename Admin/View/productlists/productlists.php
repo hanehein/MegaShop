@@ -1,18 +1,16 @@
-<?php
-
+<?php 
 include '../../Model/model.php';
 
 $sql = $pdo->prepare(
-    "SELECT *
-    FROM m_products
-   ;
-    "
+    "SELECT * FROM m_products 
+    INNER JOiN `m_category`
+    ON `m_products`.`p_category` = `m_category`.id
+    WHERE `p_approved` = 0;"
 );
 
 $sql->execute();
 
 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 
@@ -80,7 +78,7 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                 <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs rounded-md">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
-                        <th>No.</th>
+                            <th>No.</th>
                             <th>Title</th>
                             <th>Store</th>
                             <th>Category</th>
@@ -93,11 +91,11 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                         </tr>
                     </thead>
                     <tbody class="">
-                        <?php $count = 0;?>
+                        <?php $count = 0; ?>
                         <?php foreach ($result as $m_products) { ?>
 
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><?php echo ++$count; ?></td>
+                                <td><?php echo ++$count; ?></td>
                                 <td>
                                     <div class="flex justify-evenly items-center">
                                         <img src="../resources/img/<?php echo $m_products["p_photo1"]; ?>.jpg" class="w-1/4 rounded-lg h-1/2">
@@ -105,8 +103,8 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                 </td>
                                 <td><?php echo $m_products["supplier_id"]; ?></td>
-                                
-                                <td><?php echo $m_products["p_category"]; ?></td>
+
+                                <td><?php echo $m_products["cat_name"]; ?></td>
                                 <td><?php echo $m_products["p_brand"]; ?></td>
                                 <td><?php echo $m_products["p_discount"]; ?></td>
                                 <td><?php echo $m_products["p_buy_price"]; ?></td>
