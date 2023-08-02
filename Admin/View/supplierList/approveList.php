@@ -38,22 +38,32 @@
                         </div>
                     </a>
                 </div>
-                <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                <div class="flex items-center justify-center space-x-3">
+                    <a href="./createSupplier.php">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                            <button>Create Supplier Account</button>
+                        </div>
+                    </a>
+                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <input type="date" name="" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    </div>
                 </div>
+
             </div>
-            <div class="w-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
+            <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
                 <table cellspacing="10" cellpadding="15" class=" w-auto table-fixed text-white text-center text-xs">
-                    <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
+                    <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16 w-auto">
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Email</th>
+                            <th>Shop Email</th>
+                            <th>Shop Name</th>
                             <th>Created Date</th>
                             <th>Plan</th>
-                            <th>Duration</th>
+                            <th>Township</th>
+                            <th>View Count</th>
+                            <th>Phone</th>
                             <th>Edit</th>
-                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody class="">
@@ -61,101 +71,121 @@
                             <td>1</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>2</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
-                            <<td>Silver</td>
-                                <td>3 Months</td>
-                                <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                                <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
+                            <td>Silver</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
+                            <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>3</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>4</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>5</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>6</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>7</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>8</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-12 border-b-2 border-b-white hover:bg-[#00336618]">
                             <td>9</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                         <tr class="h-14 hover:bg-[#00336618]">
                             <td>10</td>
                             <td>Lily Deep</td>
                             <td>lilydeep@gmail.com</td>
+                            <td>Top Notch</td>
                             <td>25 July,2023</td>
                             <td>Silver</td>
-                            <td>3 Months</td>
+                            <td>Yankin</td>
+                            <td>0</td>
+                            <td>09444555666</td>
                             <td><a href="./supplierLIstEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
                         </tr>
                     </tbody>
                 </table>

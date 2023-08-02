@@ -1,3 +1,19 @@
+<?php
+
+include '../../Model/model.php';
+
+$sql = $pdo->prepare(
+    "SELECT * FROM m_brand;"
+);
+
+$sql->execute();
+
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +46,7 @@
             <!-- Menu -->
             <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
                 <!-- ul list -->
-                <?php include '../components/menu.php';?>
+                <?php include '../components/menu.php'; ?>
             </div>
         </div>
         <!-- data display div -->
@@ -41,7 +57,7 @@
                 <select name="" id="" class="text-black px-5 font-semibold rounded-lg py-2">
                     <option value="">Title</option>
                     <option value="">Created Date</option>
-                    
+
                 </select>
                 <div class="flex items-center justify-center space-x-3">
 
@@ -55,70 +71,24 @@
                 <table cellpadding="14" class="w-full table-auto border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
+                            <th>No.</th>
                             <th>Title</th>
-                            <th></th>
                             <th>Created Date</th>
                             <th>Action</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody class="">
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Levis</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Adidas</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>H & M</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Rolex</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Apple</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Gucci</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Zara</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>Nike</td>
-                            <td></td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td><a href="./brandEdit.php"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
-                        </tr>
+                        <?php $count = 0; ?>
+                        <?php foreach ($result as $m_brand) { ?>
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                                <td><?php echo ++$count;?></td>
+                                <td><?php echo $m_brand["band_name"];?></td>
+                                <td><?php echo $m_brand["create_date"];?></td>
+                                <td><a href="../../Controller/controller/BrandEditController.php?id=<?php echo $m_brand["id"];?>"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                                <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
+                            </tr>
+                        <?php  } ?>
                     </tbody>
                 </table>
             </div>

@@ -31,7 +31,7 @@
                 <div class="h-[60px]"></div>
 
                 <div class="text-end mb-3">
-                    <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]"> 
+                    <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
                         <a href="./addproduct.php">
                             <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
                         </a>
@@ -66,172 +66,60 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex space-x-4">
-                                        <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                        <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>Women Fashion</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Nike</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10%</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>8,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2">
-                                        <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Edit</a>
-                                        </button>
-                                        <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Remove</a>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex space-x-4">
-                                        <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                        <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>Women Fashion</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Nike</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10%</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>8,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2">
-                                        <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Edit</a>
-                                        </button>
-                                        <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Remove</a>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex space-x-4">
-                                        <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                        <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>Women Fashion</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Nike</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10%</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>8,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2">
-                                        <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Edit</a>
-                                        </button>
-                                        <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Remove</a>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex space-x-4">
-                                        <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                        <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>Women Fashion</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Nike</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10%</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>8,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2">
-                                        <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Edit</a>
-                                        </button>
-                                        <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Remove</a>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex space-x-4">
-                                        <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                        <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>Women Fashion</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Nike</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10%</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>8,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>10,000 MMK</span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2">
-                                        <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Edit</a>
-                                        </button>
-                                        <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                            <a href="">Remove</a>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            
+                            <?php
+                            include "../../Controller/products/productController.php";
+                            ?>
+                            <?php for ($x = 0; $x <= count($products) - 1; $x++) {
+                                $product = $products[$x]; ?>
+
+                                <tr>
+                                    <td class="px-6 py-4 ">
+                                        <div class="flex space-x-4">
+                                            <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
+                                            <a href="" class="text-blue-500 underline">
+                                                <?= $product["name"]; ?>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>
+                                            <?= $product["category"]; ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $product["brand"]; ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $product["discount"] ?> %
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $product["sellprice"] ?> MMK
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $product["buyprice"] ?> MMK
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex space-x-2">
+                                            <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
+                                                <a href="">Edit</a>
+                                            </button>
+                                            <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
+                                                <a href="">Remove</a>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php }; ?>
+
+
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
