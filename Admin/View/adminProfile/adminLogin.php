@@ -1,5 +1,6 @@
 <?php
 session_start();
+$error =  $_SESSION["loginError"];
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +49,11 @@ session_start();
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
                         <input type="password" name="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required/>
                     </div>
+                    <div class="md:w-[18rem] w-[15rem] text-white text-xs font-semibold  mx-auto mt-3 flex  justify-start items-center">
+                        <p><?= $error ?></p>
+                    </div>
                     <!-- login -->
-                    <button type="submit" name="login" class="w-32 bg-[#003366] mx-auto mt-8 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
+                    <button type="submit" name="login" class="w-32 bg-[#003366] mx-auto mt-5 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
                         Log In
                     </button>
                 </form>
