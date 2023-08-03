@@ -38,9 +38,6 @@
                                 <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" hidden accept=".png,.jpg">
-                            <span class="text-white text-lg uppercase font-semibold">
-                                High Cultured
-                            </span>
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">

@@ -1,3 +1,12 @@
+<?php
+session_start();
+$supEdit = $_SESSION["supEdit"];
+print_r($supEdit);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,66 +36,75 @@
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="">
+                <form action="" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
-                    <div class="flex items-center justify-center  space-x-8 mb-3">
+                        <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
                                 <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
-                            <input type="file" id="profile" hidden accept=".png,.jpg">
-                            <span class="text-white text-lg uppercase font-semibold">
-                                High Cultured
-                            </span>
+                            <input type="file" id="profile" hidden accept=".png,.jpg" value="">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
                                 <label class="text-white" for="adname">Shop Name</label>
-                                <input type="text" name="shopName" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
                                 <label class="text-white" for="adname">Supplier Name</label>
-                                <input type="text" name="supplierName" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="supplierName" value="<?php echo $supEdit[0]["sup_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- email -->
                                 <label class="text-white" for="adname">Shop Email</label>
-                                <input type="email" name="email" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="email" name="email" value="<?php echo $supEdit[0]["sup_email"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                
+
                                 <label class="text-white" for="adname">Phone</label>
-                                <input type="number" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="number" name="phone" value="<?php echo $supEdit[0]["sup_phone"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 text-xs space-x-16">
                                 <label class="text-white" for="">Township</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md ">
-                                        <option   value="1">Yankin</option>
-                                        <option  value="2">Dagon</option>
-                                        <option  value="3">Kamayut</option>
+                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
+                                        <option <?php
+                                                if ($supEdit[0]["township"] == "Yankin") { ?> selected <?php }
+                                                                                                    ?> value="1">Yankin</option>
+                                        <option <?php
+                                                if ($supEdit[0]["township"] == "Dagon") { ?> selected <?php }
+                                                                                                ?> value="2">Dagon</option>
+                                        <option <?php
+                                                if ($supEdit[0]["township"] == "Kamayut") { ?> selected <?php }
+                                                                                                    ?> value="3">Kamayut</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="flex items-center justify-between w-96  text-white font-semibold text-xs space-x-16">
                                 <label class="text-white" for="">Plan</label>
                                 <div class=" flex space-x-3 items-center justify-start">
-                                    <input type="radio" id="basic" name="plan" class="" value="0">
+                                    <input <?php
+                                            if ($supEdit[0]["pack_id"] == "0") { ?> selected <?php }
+                                                                                            ?> type="radio" id="basic" name="plan" class="" value="0">
                                     <label for="basic">Basic</label>
-                                    <input type="radio" id="silver" name="plan" class="" value="1">
+                                    <input <?php
+                                            if ($supEdit[0]["pack_id"] == "1") { ?> selected <?php }
+                                                                                            ?> type="radio" id="silver" name="plan" class="" value="1">
                                     <label for="silver">Silver</label>
-                                    <input type="radio" id="gold" name="plan" class="" value="2">
+                                    <input <?php
+                                            if ($supEdit[0]["pack_id"] == "2") { ?> selected <?php }
+                                                                                            ?> type="radio" id="gold" name="plan" class="" value="2">
                                     <label for="gold">Gold</label>
                                 </div>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="adname">Bank Account</label>
-                                <input type="text" name="plan" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input value="<?php echo $supEdit[0]["bank_account"] ?>" type="text" name="plan" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto mt-5">
-                                <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
-                                <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Update</button></a>
+                                <a href="../../Controller/deleteController.php?id=<?= $supEdit[0]["id"] ?>"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Delete</button></a>
+                                <button type="submit" class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Update</button>
                             </div>
                         </div>
                     </div>

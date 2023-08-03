@@ -14,7 +14,7 @@ if(isset($_POST["create"])){
     $phone = $_POST["phone"];
     $shopAddress = $_POST["shopAddress"];
     $bankAcc = $_POST["bankAcc"];
-
+    $approve = 1;
     //generate password
     
     $password = getpwd(8);
@@ -33,7 +33,8 @@ if(isset($_POST["create"])){
             sup_phone,
             bank_account,
             sup_shop_name,
-            create_date
+            create_date,
+            sup_approve
         ) 
         VALUES
         (
@@ -46,7 +47,8 @@ if(isset($_POST["create"])){
             :phone,
             :bankAcc,
             :shopName,
-            :createdDate
+            :createdDate,
+            :approve
         )
     ");
 
@@ -60,6 +62,7 @@ if(isset($_POST["create"])){
     $sql->bindValue(":address",$shopAddress);
     $sql->bindValue(":bankAcc",$bankAcc);
     $sql->bindValue(":createdDate",date("Y-m-d"));
+    $sql->bindValue(":approve",$approve);
     $sql->execute();
     //send merchant to reister mail
     $domain = $_SERVER['SEVER_NAME'];
@@ -68,10 +71,11 @@ if(isset($_POST["create"])){
         $email,
         "Your Account",
         "<h2>Here is your shop account</h2>
-        Username : $supplierName;
+        Username : $supplierName
         <br/>
-        Password : $password;
+        Password : $password
         "
     );
-    header("Location: ../View/supplierList/approveList.php");
+    header("Location: ../../View/supplierList/approveList.php");
+    
 }
