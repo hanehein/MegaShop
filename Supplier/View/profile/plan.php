@@ -1,6 +1,5 @@
 <?php
-session_start();
-$package = $_SESSION["package"];
+include "../../Controller/planController.php";
 ?>
 <?php
 $hasJsFile = FALSE;
@@ -28,46 +27,18 @@ include "../components/header.php";
 
                     <!--card body-->
                     <div class="flex justify-between items-center space-x-10">
-                        <!--Start card1-->
-                        <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
-                            <span class="font-semibold text-custom-large">Silver</span>
-                            <span>Everything you need to create a store,
-                                and process payments.</span>
-                            <span>20,000 Ks/month for 3 months</span>
-                            <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
-                            <div class="px-4 py-6 border-b-2">
-                            </div>
-                        </div>
-                        <!--DB-->
-                        <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
-                            <span class="font-semibold text-custom-large"><?= $package["pack_name"] ?></span>
-                            <span><?= $package["pack_des"] ?></span>
-                            <span><?= $package["pack_price"] ?> Ks/month for<?= $package["pack_duration"] ?>months</span>
-                            <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
-                            <div class="px-4 py-6 border-b-2">
-                            </div>
-                        </div>
+                        <!--Start card-->
+                        <?php foreach ($package as $pack) { ?>
+                            <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
 
-                        <!--Start card2-->
-                        <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
-                            <span class="font-semibold text-custom-large">Gold</span>
-                            <span>Everything you need to create a store,
-                                and process payments.</span>
-                            <span>40,000 Ks/month for 6 months</span>
-                            <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Gold Plan</a>
-                            <div class="px-4 py-6 border-b-2">
+                                <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
+                                <span><?= $pack["pack_des"] ?></span>
+                                <span><?= $pack["pack_price"] ?>Ks/month for<?= $pack["pack_duration"] ?>months</span>
+                                <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
+                                <div class="px-4 py-6 border-b-2">
+                                </div>
                             </div>
-                        </div>
-                        <!--Start card3-->
-                        <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
-                            <span class="font-semibold text-custom-large">Diamond</span>
-                            <span>Everything you need to create a store,
-                                and process payments.</span>
-                            <span>60,000 Ks/month for 12 months</span>
-                            <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Diamond Plan</a>
-                            <div class="px-4 py-6 border-b-2">
-                            </div>
-                        </div>
+                        <?php } ?>
 
                     </div>
                     <!--Start plan detail-->
