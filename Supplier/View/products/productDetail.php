@@ -1,4 +1,6 @@
 <?php
+session_start();
+$product = $_SESSION["product_detail"];
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -28,19 +30,17 @@ include "../components/header.php";
                         <div class="mb-8">
                             <span class="font-semibold text-slate-500">Product Images</span>
                             <!-- Images -->
-                            <div class="flex space-x-5 mt-2">
-                                <div>
-                                    <img class="h-[70px]" src="https://e0.pxfuel.com/wallpapers/743/919/desktop-wallpaper-classic-coca-cola-3d-coke.jpg" alt="product-img" />
-                                </div>
-                                <div>
-                                    <img class="h-[70px]" src="https://e0.pxfuel.com/wallpapers/743/919/desktop-wallpaper-classic-coca-cola-3d-coke.jpg" alt="product-img" />
-                                </div>
-                                <div>
-                                    <img class="h-[70px]" src="https://e0.pxfuel.com/wallpapers/743/919/desktop-wallpaper-classic-coca-cola-3d-coke.jpg" alt="product-img" />
-                                </div>
-                                <div>
-                                    <img class="h-[70px]" src="https://e0.pxfuel.com/wallpapers/743/919/desktop-wallpaper-classic-coca-cola-3d-coke.jpg" alt="product-img" />
-                                </div>
+                            <div class="flex flex-wrap mt-2">
+                                <?php for ($i = 1; $i <= $product["max_photo"]; $i++) {
+                                    if (!is_null($product["p_photo$i"])) {
+                                ?>
+                                    <div class="w-[200px] min-h-[200px] p-4 mr-5 rounded-md shadow-lg">
+                                        <img class="w-full" src="../../../<?= $product["p_photo$i"] ?>" alt="product-img" />
+                                    </div>
+                                <?php
+                                    }
+                                };
+                                ?>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@ include "../components/header.php";
                         <div class="mb-8">
                             <span class="font-semibold text-slate-500">Product Name</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                STEP Women Blouse Short Sleeves 007402
+                                <?= $product["p_name"] ?>
                             </p>
                         </div>
 
@@ -57,14 +57,14 @@ include "../components/header.php";
                             <div>
                                 <span class="font-semibold text-slate-500">Category</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    Men's Fashion
+                                    <?= $product["cat_name"] ?>
                                 </p>
                             </div>
 
                             <div>
                                 <span class="font-semibold text-slate-500">Brand</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    Nike
+                                    <?= $product["band_name"] ?>
                                 </p>
                             </div>
                         </div>
@@ -74,14 +74,14 @@ include "../components/header.php";
                             <div>
                                 <span class="font-semibold text-slate-500">Buy Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    15000 Ks
+                                    <?= $product["p_sell_price"] ?> MMK
                                 </p>
                             </div>
 
                             <div>
                                 <span class="font-semibold text-slate-500">Sell Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    20000 Ks
+                                    <?= $product["p_buy_price"] ?> Ks
                                 </p>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ include "../components/header.php";
                         <div class="mb-8">
                             <span class="font-semibold text-slate-500">Discount</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                20%
+                                <?= $product["p_discount"] ?> %
                             </p>
                         </div>
 
@@ -98,15 +98,7 @@ include "../components/header.php";
                         <div class="mb-8">
                             <span class="font-semibold text-slate-500">Stock</span>
                             <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                200
-                            </p>
-                        </div>
-
-                        <!-- start discount -->
-                        <div class="mb-8">
-                            <span class="font-semibold text-slate-500">Discount</span>
-                            <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                20%
+                                <?= $product["p_stock"] ?>
                             </p>
                         </div>
 
@@ -136,10 +128,7 @@ include "../components/header.php";
                         <div class="mb-8">
                             <label class="font-semibold text-slate-500">Product Description</label>
                             <p class="block text-black font-normal w-fit rounded-md mt-2">
-                                The minimalist collaboration features chairs, lightening, Shelves, Sofas, Desks and
-                                various home accessories, all offering form and function at the same point.We use
-                                high-strength clamps and joinery techniques specially designed for engineered wood beds.
-                                Ergo, no irksome creaks - and you can sleep like a baby, well into adulthood!
+                                <?= $product["p_description"] ?>
                             </p>
                         </div>
 
