@@ -62,7 +62,7 @@ $brand = $_SESSION["brandedit"];
             <div class="w-1/3 h-auto flex flex-col items-start justify-start bg-white font-['Poppins'] rounded-md shadow-sm shadow-black px-2 mt-20">
 
 
-                <form action="../../Controller/controller/BrandUpdateController.php" method="post">
+                <form action="../../Controller/brandUpdateController.php" method="post">
                     <div class="w-full h-auto px-3 py-3 flex flex-col">
                         <p class="text-lg mt-3 mb-3">Brand Form</p>
                         <div class="w-full bg-black h-0.5"></div>
