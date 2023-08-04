@@ -1,3 +1,20 @@
+<?php 
+include '../../Model/model.php';
+
+$sql = $pdo->prepare(
+    "SELECT *
+    FROM `t_orders`
+    INNER JOIN `t_c_payment` ON `t_orders`.`cpay_id` = `t_c_payment`.id
+    "
+);
+
+$sql->execute();
+
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,9 +92,10 @@
                         </tr>
                     </thead>
                     <tbody class="">
+                    <?php foreach ($result as $t_orders) { ?>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
+                            <td>#<?php echo $t_orders["order_id"]; ?></td>
+                            <td><?php echo $t_orders["order_id"]; ?></td>
                             <td>3</td>
                             <td>15,000 MMK</td>
                             <td>5%</td>
@@ -87,78 +105,7 @@
 
                             
                         </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                          
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
+                        <?php } ?>
 
                     </tbody>
                 </table>

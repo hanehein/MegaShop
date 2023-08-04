@@ -23,6 +23,4 @@ if (!isset($id)) {
     header("Location: ../../View/productlists/brandEdit.php");
 
 
-
-
 }

@@ -31,16 +31,13 @@
         <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="../../Controller/supplierController.php" method="post">
+                <form action="../../Controller//supplierAccCreateController.php" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
                                 <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" hidden accept=".png,.jpg">
-                            <span class="text-white text-lg uppercase font-semibold">
-                                High Cultured
-                            </span>
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">
@@ -59,7 +56,7 @@
                                 <input type="email" name="email" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="adname">Shop Address</label>
+                                <label class="text-white" for="">Shop Address</label>
                                 <input type="text" name="shopAddress" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
@@ -94,7 +91,7 @@
                             </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
-                               <button type="submit" name="create" class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>
+                               <button type="submit" name="create" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>
                             </div>
                         </div>
                     </div>
