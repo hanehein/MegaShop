@@ -8,9 +8,11 @@ if(count($_POST) == 0) {
     if (isset($_POST["login"])) {
         $userName = $_POST["userName"];
         $password = $_POST["password"];
-    
+        $email = $_POST["email"];
+        $bio = $_POST["bio"];
+        $phone = $_POST["phone"];
         include "../Model/model.php";
-    
+        
         $sql = $pdo->prepare(
             "SELECT * FROM m_admin WHERE admin_name=:name"
         );

@@ -59,8 +59,8 @@ include "../../Controller/supplierListController.php";
                 </div>
 
             </div>
-            <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black mr-3">
-                <table cellspacing="10" cellpadding="15" class=" w-auto table-fixed text-white text-center text-xs">
+            <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black mr-12">
+                <table cellspacing="" cellpadding="10" class=" w-auto table-fixed text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16 w-auto">
                         <tr>
                             <th>No.</th>
@@ -93,11 +93,13 @@ include "../../Controller/supplierListController.php";
                             <td> <?= $supplier["sup_shop_name"] ?></td>
                             <td> <?= $supplier["sup_email"] ?></td>
                             <td> <?php
-                                if($supplier["pack_id"]==0) echo "Basic";
-                                else if ($supplier["pack_id"]==1)echo "Silver";
+                                if($supplier["pack_id"] == 0) echo "Basic";
+                                else if ($supplier["pack_id"] == 1) echo "Silver";
                                 else echo "Gold";
                             ?></td>
-                            <td> <?= $supplier["township"] ?></td>
+                            <td> <?php if($supplier["township"]==1) echo "Yankin";
+                                else if ($supplier["township"]==2)echo "Dagon";
+                                else echo "Kamayut"; ?></td>
                             <td> <?= $supplier["view_count"] ?></td>
                             <td> <?= $supplier["sup_phone"] ?></td>
                             <th> <?= $supplier["bank_account"] ?></th>
@@ -109,7 +111,7 @@ include "../../Controller/supplierListController.php";
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-center justify-center h-10 mb-5 mr-3">
+            <div class="w-auto flex items-center justify-center h-10 mb-5 mr-12">
                 <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
                     <a href=""><button>1</button></a>
                 </div>
