@@ -16,6 +16,6 @@ if(!isset($id)){
     $sql->bindValue(":id",$id);
     $sql->execute();
     // $supLists = $sql->fetchAll(PDO::FETCH_ASSOC);
-    header("Location: ../View/supplierList/supplierEdit.php");
+    header("Location: ../View/supplierList/approveList.php");
 }
     

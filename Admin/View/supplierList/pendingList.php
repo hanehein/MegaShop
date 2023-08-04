@@ -63,7 +63,7 @@ include "../../Controller/supplierPendingListController.php";
                 </div>
             </div>
             <div class="w-auto h-auto flex items-end justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black mr-16">
-                <table cellpadding="15" class="w-auto table-fixed border-collapse text-white text-center text-xs">
+                <table cellpadding="10" class="w-auto table-fixed border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>No.</th>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$error =  $_SESSION["loginError"];
+// $error =  $_SESSION["loginError"];
 ?>
 
 <!DOCTYPE html>
@@ -38,20 +38,26 @@ $error =  $_SESSION["loginError"];
             <!-- Sign in section -->
             <div class="mt-10 container md:w-[25rem] mx-auto font-['Poppins']">
                 <p class="text-white text-[23px] text-center">Log In</p>
-                <!-- email -->
+
                 <form action="../../Controller/loginController.php" method="post">
                     <div class="md:w-[18rem] w-[15rem]  bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
                         <ion-icon name="person" class="text-white"></ion-icon>
-                        <input type="text" name="userName" placeholder="Enter Name" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required/>
+                        <input type="text" name="userName" placeholder="Enter Name" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required />
                     </div>
+                    <!-- email -->
+                    <input type="hidden" name="email" placeholder="" class="text-sm bg-[#003366] focus:outline-none border-none text-white"  />
+                    <!-- phone -->
+                    <input type="hidden" name="phone" placeholder="" class="text-sm bg-[#003366] focus:outline-none border-none text-white"  />
+                     <!-- add bio -->
+                    <input type="hidden" name="bio" placeholder="" class="text-sm bg-[#003366] focus:outline-none border-none text-white"  />
+                    
+                    
                     <!-- password -->
                     <div class="md:w-[18rem] w-[15rem] bg-[#003366] border border-white  mx-auto mt-8 flex py-1.5 px-4 space-x-3 justify-center items-center rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black border-none">
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
-                        <input type="password" name="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required/>
+                        <input type="password" name="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required />
                     </div>
-                    <div class="md:w-[18rem] w-[15rem] text-white text-xs font-semibold  mx-auto mt-3 flex  justify-start items-center">
-                        <p><?= $error ?></p>
-                    </div>
+
                     <!-- login -->
                     <button type="submit" name="login" class="w-32 bg-[#003366] mx-auto mt-5 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
                         Log In
@@ -61,4 +67,5 @@ $error =  $_SESSION["loginError"];
         </div>
     </div>
 </body>
+
 </html>

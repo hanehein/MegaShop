@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 
 ini_set('display_errors', 1);
 session_start();
@@ -9,13 +10,10 @@ if (!isset($id)) {
 } else {
     include "../Model/model.php";
     $sql = $pdo->prepare("
-        SELECT * FROM m_suppliers WHERE id = :id
+        SELECT * FROM m_admin WHERE id = :id
     ");
     $sql->bindValue(":id", $id);
     $sql->execute();
-    $_SESSION["approveEdit"] = $sql->fetchAll(PDO::FETCH_ASSOC);
-    header("Location: ../View/supplierList/approveEdit.php");
+    $_SESSION["adminSignup"] = $sql->fetchAll(PDO::FETCH_ASSOC);
+    header("Location: ../View/adminProfile/adminSignup.php");
 }
-
-
-
