@@ -2,8 +2,7 @@
 include "../../Controller/setting/supplierProfileController.php"
 ?>
 <?php
-$hasJsFile = TRUE;
-$jsFileNames = ["profile"];
+$hasJsFile = FALSE;
 include "../components/header.php";
 ?>
 
@@ -26,14 +25,12 @@ include "../components/header.php";
                     </div>
 
                     <!--card body-->
+                    <form action="../../Controller/setting/updateProfileController.php" method="post">
                     <div class="p-5 container mx-auto">
                         <div class="bg-white w-full h-auto shadow-lg rounded-lg p-5 ">
                             <div class="flex flex-col space-y-3 justify-center items-center">
                                 <span>Shop Photo</span>
-                                <label for="shop_photo">
                                     <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="shopImg" class="w-[100px]">
-                                </label>
-                                <input type="file" name="image" id="shop_photo" accept=".jpeg,.png" class="hidden">
                             </div>
                             <div class="flex justify-center items-center space-x-64">
                                 <div class="flex flex-col space-y-5">
@@ -51,9 +48,10 @@ include "../components/header.php";
                                 </div>
                             </div>
                         <?php } ?>
+                        </form>
                         <div class="text-end mt-12 px-10 space-x-3">
-                            <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Update</button>
-                            <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]">Cancel</button>
+                            <button name="update" class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Update</button>
+                            <button name="cancel" class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]">Cancel</button>
                         </div>
                         </div>
                     </div>

@@ -37,6 +37,6 @@ if(count($_POST) == 0){
     $sql->bindValue(":id", $id);
     $sql->execute();
 
-    header("Location: ./DashboardController.php");
+    header("Location:./../../View/profile/supprofile.php");
 
 }

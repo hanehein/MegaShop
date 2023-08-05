@@ -1,4 +1,4 @@
-document.getElementById('photo').onchange = function (evt) {
+document.getElementById('shop_photo').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
     files = tgt.files;
 

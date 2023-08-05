@@ -33,7 +33,7 @@ include "../components/header.php";
 
                                 <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
                                 <span><?= $pack["pack_des"] ?></span>
-                                <span><?= $pack["pack_price"] ?>Ks/month for<?= $pack["pack_duration"] ?>months</span>
+                                <span><?= $pack["pack_price"] ?>Ks/month for <?= $pack["pack_duration"] ?> months</span>
                                 <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
                                 <div class="px-4 py-6 border-b-2">
                                 </div>

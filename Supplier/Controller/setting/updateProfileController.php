@@ -33,6 +33,6 @@ if(count($_POST)==0){
         $sql->bindValue(":sup_shop_name", $sup_shop_name);
         $sql->execute();
         $_SESSION["profile"] = $sql->fetchAll(PDO::FETCH_ASSOC);
-        header("Location: ../../../../View/profile/supprofile.php");
+        // header("Location: ../../../../View/profile/updateProfile.php");
         
 }

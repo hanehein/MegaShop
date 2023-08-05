@@ -1,5 +1,9 @@
+<!-- <?php
+include "../../Controller/setting/updateProfileController.php"
+?> -->
 <?php
-$hasJsFile = FALSE;
+$hasJsFile = TRUE;
+$jsFileNames = ["profile"];
 include "../components/header.php";
 ?>
 
@@ -32,7 +36,10 @@ include "../components/header.php";
                     <div class="grid grid-cols-3 w-full h-auto p-5 bg-white rounded-lg">
                         <div class="border-r-2 border-black">
                             <span>Shop Photo</span>
-                            <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" class="w-[100px]">
+                            <label for="shop_photo">
+                                    <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="shopImg" class="w-[100px]">
+                                </label>
+                                <input type="file" name="image" id="shop_photo" accept=".jpeg,.png" class="hidden">
 
                         </div>
                         <div class="col-span-2 ml-5">
