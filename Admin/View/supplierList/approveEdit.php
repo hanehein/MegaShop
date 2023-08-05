@@ -24,15 +24,15 @@ $approveEdit = $_SESSION["approveEdit"];
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800 ">
         <!-- dashboard div -->
         <?php
-        // include "../components/menu.php";
+        include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
+        <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200 ">
 
-            <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
+            <div class="w-[38rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
                 <form action="../../Controller/approveEditController.php" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
@@ -42,9 +42,9 @@ $approveEdit = $_SESSION["approveEdit"];
                             <input type="file" id="profile" hidden accept=".png,.jpg">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
+                            <input type="hidden" class="hidden" name="id" value="<?php echo $approveEdit[0]["id"] ?>">
+                            <input type="hidden" class="hidden" name="password" value="<?php echo $approveEdit[0]["sup_password"] ?>">
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <input type="hidden" name="id" value="<?php echo $approveEdit[0]["id"] ?>">
-                                <input type="hidden" name="password" value="<?php echo $approveEdit[0]["sup_password"] ?>">
                                 <!-- name -->
                                 <label class="text-white" for="adname">Shop Name</label>
                                 <input type="text" value="<?php echo $approveEdit[0]["sup_shop_name"] ?>" name="shopName" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
@@ -73,14 +73,17 @@ $approveEdit = $_SESSION["approveEdit"];
                                 <div class="flex  items-center justify-center">
                                     <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 1) { echo "Yankin" ?> selected <?php }
-                                                                                                            ?> value="" name="township">Yankin</option>
+                                                if ($approveEdit[0]["township"] == 1) {
+                                                    echo "Yankin" ?> selected <?php }
+                                                                                ?> value="" name="township">Yankin</option>
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 2) { echo "Dagon" ?> selected <?php }
-                                                                                                            ?> value="" name="township">Dagon</option>
+                                                if ($approveEdit[0]["township"] == 2) {
+                                                    echo "Dagon" ?> selected <?php }
+                                                                                ?> value="" name="township">Dagon</option>
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 3) { echo "Kamayut" ?> selected <?php }
-                                                                                                            ?> value="" name="township">Kamayut</option>
+                                                if ($approveEdit[0]["township"] == 3) {
+                                                    echo "Kamayut" ?> selected <?php }
+                                                                                ?> value="" name="township">Kamayut</option>
                                     </select>
                                 </div>
                             </div>
@@ -88,16 +91,19 @@ $approveEdit = $_SESSION["approveEdit"];
                                 <label class="text-white" for="">Subscribed Plan</label>
                                 <div class=" flex space-x-3 items-center justify-start">
                                     <input type="radio" id="" name="plan" class="" value="0" <?php
-                                                                                            if ($supEdit[0]["pack_id"] == 0) { echo "Basic" ?> checked <?php }
-                                                                                                                                            ?>>
+                                                                                                if ($approveEdit[0]["pack_id"] == 0) {
+                                                                                                    echo "Basic" ?> checked <?php }
+                                                                                                                            ?>>
                                     <label for="plan_basic">Basic</label>
                                     <input type="radio" id="plan_silver" name="plan" class="" value="1" <?php
-                                                                                            if ($supEdit[0]["pack_id"] == 1) { echo "Basic" ?> checked <?php }
-                                                                                                                                            ?>>
+                                                                                                        if ($approveEdit[0]["pack_id"] == 1) {
+                                                                                                            echo "Silver" ?> checked <?php }
+                                                                                                                                        ?>>
                                     <label for="plan_sliver">Silver</label>
                                     <input type="radio" id="plan_gold" name="plan" class="" value="2" <?php
-                                                                                                    if ($supEdit[0]["pack_id"] == 2) { echo "Gold" ?>  checked <?php }
-                                                                                                                                                    ?>>
+                                                                                                        if ($approveEdit[0]["pack_id"] == 2) {
+                                                                                                            echo "Gold" ?> checked <?php }
+                                                                                                                                    ?>>
                                     <label for="plan_gold">Gold</label>
                                 </div>
                             </div>

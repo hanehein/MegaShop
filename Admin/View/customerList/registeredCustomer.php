@@ -30,8 +30,8 @@ include "../../Controller/customerListController.php";
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-end justify-center bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-center h-20  space-x-80">
+        <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins']  ">
+            <div class="w-5/6 flex items-center justify-center h-20  space-x-80">
                 <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     <button>Registered Customers</button>
                 </div>
@@ -39,7 +39,7 @@ include "../../Controller/customerListController.php";
                     <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                 </div>
             </div>
-            <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black m-20">
+            <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
                 <table cellspacing="" cellpadding="10" class=" w-auto table-fixed text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16 w-auto">
                         <tr>
@@ -90,7 +90,7 @@ include "../../Controller/customerListController.php";
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-center justify-center h-10 mb-5 m-20">
+            <div class="w-auto flex items-center justify-center h-10 mb-5 ">
                 <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
                     <a href=""><button>1</button></a>
                 </div>
