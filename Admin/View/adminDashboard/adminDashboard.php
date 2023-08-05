@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 // session_start();
-// include "../../Controller/dashboardController.php";
+include "../../Controller/dashboardController.php";
 // print_r($admin);
 ?>
 <!DOCTYPE html>
@@ -32,9 +32,9 @@ ini_set('display_errors', 1);
         <!-- data display div -->
         <div class="w-full flex flex-col items-center justify-start bg-gray-200 space-y-5 font-['Poppins']">
             <!-- 1st sectioin -->
-            <!-- <button class="flex items-center justify-center bg-[#003366] w-auto h-10 rounded-md text-white font-xs font-semibold px-4 py-2 space-x-2">
+            <button class="flex items-center justify-center bg-[#003366] w-auto h-10 rounded-md text-white font-xs font-semibold px-4 py-2 space-x-2">
                 <p>Welcome</p> <p><?=$admin[0]["admin_name"]?></p>
-            </button> -->
+            </button>
             <div class="flex  items-center justify-end w-full h-auto mt-3 space-x-7 px-4">
                 <!-- 1 card -->
                 <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white">

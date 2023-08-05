@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-// session_start();
-include "../../Controller/dashboardController.php";
+// include "../../Controller/dashboardController.php";
 // print_r($admin);
 ?>
 <!DOCTYPE html>
@@ -31,9 +30,6 @@ include "../../Controller/dashboardController.php";
                     <p class="">MEGA</p>
                     <p>SHOP</p>
                 </div>
-            </div>
-            <div class="flex items-center justify-center  w-auto h-8  text-[#66CC33] font-xs font-semibold  py-2 space-x-2 mt-3">
-                <p>Welcome</p> <p><?=$admin[0]["admin_name"]?></p>
             </div>
             <!-- Menu -->
             <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
