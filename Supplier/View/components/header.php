@@ -15,10 +15,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <script src="../resources/lib/jquery3.6.0.js"></script>
     <script src="../resources/js/slideMenu.js" defer></script>
     <?php
     if($hasJsFile){
-        echo "<script src='../resources/js/$JsFileName.js' defer></script>";
+        foreach ($jsFileNames as $jsFileName) {
+            echo "<script src='../resources/js/$jsFileName.js' defer></script>";
+        }
     }
     ?>
 </head>

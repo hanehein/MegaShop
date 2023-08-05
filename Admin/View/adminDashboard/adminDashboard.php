@@ -1,5 +1,8 @@
 <?php
-session_start();
+ini_set('display_errors', 1);
+// session_start();
+include "../../Controller/dashboardController.php";
+// print_r($admin);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +30,15 @@ session_start();
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col items-center justify-start bg-gray-200 space-y-5 font-['Poppins']">
+        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200 space-y-5 font-['Poppins'] bg-red-300">
             <!-- 1st sectioin -->
-            <div class="flex  items-center justify-end w-full h-auto mt-3 space-x-7 px-4">
+            <button class="flex items-center justify-center bg-[#003366] w-auto h-10 rounded-md text-white font-xs font-semibold px-4 py-2 space-x-2 mt-3">
+                <p>Welcome</p> <p><?=$admin[0]["admin_name"]?></p>
+            </button>
+            <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  bg-white">
                 <!-- 1 card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white">
-                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2">
+                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white rounded-md">
+                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2 rounded-md">
                         <!-- circle -->
                         <div class="w-24 h-24 flex flex-col items-center justify-center rounded-full border-8 border-[#00336698]">
                             <p class="text-sm text-[#003366] text-center">Total</p>
@@ -40,15 +46,15 @@ session_start();
                             <p class="text-sm text-[#003366] text-center">Shops</p>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2">
+                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2 rounded-md">
                         <p class="text-white text-sm">Gold Plan</p>
                         <p class="text-white text-base">10 shops</p>
                     </div>
-                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2">
+                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2 rounded-md">
                         <p class="text-white text-sm">Silver Plan</p>
                         <p class="text-white text-base">10 shops</p>
                     </div>
-                    <div class="w-full h-16 bg-blue-200 flex flex-col items-center justify-center  space-y-2">
+                    <div class="w-full h-16 bg-blue-200 flex flex-col items-center justify-center  space-y-2 rounded-md">
                         <p class="text-white text-sm">Free Trial</p>
                         <p class="text-white text-sm">5 shops</p>
                     </div>
@@ -160,11 +166,11 @@ session_start();
                 </div>
             </div>
             <!-- 2nd section -->
-            <div class="flex items-center justify-center w-[50rem] h-52 bg-white mt-3 rounded-md">
+            <div class="flex items-center justify-center w-[65rem] h-52 bg-white mt-3 rounded-md">
 
             </div>
             <!-- 3rd section -->
-            <div class="w-full flex items-center justify-center  mt-3 space-x-5 py-3">
+            <div class="w-[65rem] flex items-center justify-center  mt-3 space-x-5 py-3 bg-white">
                 <!-- left graph -->
                 <div class="w-[25rem] flex flex-col items-center justify-center bg-white">
                     <table cellpadding="12" class="w-[25rem] table-fixed border-collapse text-[#003366] text-center text-xs">

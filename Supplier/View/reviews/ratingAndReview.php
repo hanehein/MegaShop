@@ -1,7 +1,11 @@
+<?php include "../../Controller/reviews/reviewListsController.php" ?>
+
+<!-- Start header -->
 <?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
+<!-- End header -->
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
@@ -19,6 +23,7 @@ include "../components/header.php";
 
                     <select class="p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
                         <option value="">date</option>
+                        <option value="">rating</option>
                     </select>
                 </div>
 
@@ -26,6 +31,7 @@ include "../components/header.php";
                     <span class="font-bold text-sm">Showing 1 to 5 of 412 results</span>
                     <table class="min-w-full table-auto rounded-lg overflow-hidden">
                         <thead>
+
                             <tr class="bg-[#66CC33] bg-opacity-50 text-white">
                                 <th class="px-6 py-3 text-left text-sm font-medium text-black font-semibold uppercase tracking-wider">
                                     User
@@ -45,121 +51,35 @@ include "../components/header.php";
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <a href="" class="text-blue-500 underline">Mark Albert</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    5
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when
-                                        an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>04:04 am, 10 Jun, 23</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <a href="" class="text-blue-500 underline">Mark Albert</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    5
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when
-                                        an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>04:04 am, 10 Jun, 23</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <a href="" class="text-blue-500 underline">Mark Albert</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    5
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when
-                                        an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>04:04 am, 10 Jun, 23</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <a href="" class="text-blue-500 underline">Mark Albert</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    5
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when
-                                        an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>04:04 am, 10 Jun, 23</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <a href="" class="text-blue-500 underline">Mark Albert</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    5
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when
-                                        an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen
-                                        book. It has survived not only five centuries, but also the leap into electronic
-                                        typesetting, remaining
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="" class="text-blue-500 underline">Women's Casual Long Sleeve Lapel ...</a>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <span>04:04 am, 10 Jun, 23</span>
-                                </td>
-                            </tr>
+                            <?php foreach ($reviewLists as $review) { ?>
+                                <tr>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $review["cus_name"] ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>
+                                            <?= $review["rating"] ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span>
+                                            <?= $review["review"] ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <a href="../../Controller/products/productDetailController.php?product_id=<?= $review["p_id"] ?>" class="text-blue-500 underline">
+                                            <?= $review["p_name"] ?>
+                                        </a>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <span>
+                                            <?= $review["create_date"] ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>

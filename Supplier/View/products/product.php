@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html>
+<?php include "../../Controller/products/productListsController.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Lists</title>
-
-    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
-    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-</head>
+<!-- Start header -->
+<?php
+$hasJsFile = TRUE;
+$jsFileNames = ["searchProduct"];
+include "../components/header.php";
+?>
+<!-- End header -->
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
         <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5">
             <?php
-            $currentMenu = "Products";
+            $currentMenu = "Product Lists";
             include "../components/navbar.php";
             ?>
 
@@ -30,12 +21,17 @@
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
-                <div class="text-end mb-3">
-                    <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
-                        <a href="./addproduct.php">
-                            <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
-                        </a>
-                    </button>
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <input id="searchInput" class="p-2 w-[500px] h-[40px] border border-slate-300 rounded-md" type="text" placeholder="search products">
+                    </div>
+                    <div>
+                        <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
+                            <a href="./addproduct.php">
+                                <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
+                            </a>
+                        </button>
+                    </div>
                 </div>
 
                 <div>
@@ -65,18 +61,13 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-                            <?php
-                            include "../../Controller/products/productController.php";
-                            ?>
-                            <?php for ($x = 0; $x <= count($products) - 1; $x++) {
-                                $product = $products[$x]; ?>
-
+                        <tbody class="product-lists-container bg-white divide-y divide-gray-200">
+                            <?php foreach ($productLists as $product) { ?>
                                 <tr>
                                     <td class="px-6 py-4 ">
-                                        <div class="flex space-x-4">
-                                            <img src="https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png" class="w-[60px]" alt="product-img">
-                                            <a href="" class="text-blue-500 underline">
+                                        <div class="flex space-x-4 items-center">
+                                            <img src="../../../<?= $product['photo'] ?>" class="w-[60px]" alt="product-img">
+                                            <a href="../../Controller/products/productDetailController.php?product_id=<?= $product['id'] ?>" class="text-blue-500 underline">
                                                 <?= $product["name"]; ?>
                                             </a>
                                         </div>
@@ -109,10 +100,10 @@
                                     <td class="px-6 py-4">
                                         <div class="flex space-x-2">
                                             <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                                <a href="">Edit</a>
+                                                <a href="../../Controller/products/editProductController.php?product_id=<?= $product['id'] ?>">Edit</a>
                                             </button>
                                             <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                                <a href="">Remove</a>
+                                                <a href="../../Controller/products/deleteProductController.php?product_id=<?= $product['id'] ?>">Remove</a>
                                             </button>
                                         </div>
                                     </td>

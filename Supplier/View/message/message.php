@@ -18,7 +18,6 @@ include "../components/header.php";
                                 <ion-icon name="search"></ion-icon>
                                 search
                             </button>
-
                         </div>
 
                         <ul class="user-lists mt-4 p-3 max-h-[500px] overflow-y-auto">

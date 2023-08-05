@@ -1,3 +1,8 @@
+<?php
+
+include "../../Controller/adminProfileController.php";
+// print_r($adminProfile);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,69 +24,60 @@
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
+        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200">
 
-            <div class="w-[50rem] h-[43rem] flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black">
-                <form action="">
-                    <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
-                        <div class="flex items-center justify-center  space-x-8 mb-3">
+            <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
+                <?php
 
-                            <label for="profile">
-                                <img src="../resources/img/profile1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
-                            </label>
-                            <input type="file" id="profile" hidden accept=".png,.jpg">
-                            <span class="text-white text-lg">
-                                Ava Rose
-                            </span>
-                        </div>
-                        <div class="flex flex-col space-y-8 items-center justify-between w-[26rem]">
-                            <div class="flex items-center justify-center space-x-24">
-                                <!-- name -->
-                                <label class="text-white font-sm" for="adname">Admin Name</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
+                    $count = 1;
 
-                            <div class="flex items-center justify-between w-[26rem] space-x-16">
-                                <!-- email -->
-                                <label class="text-white font-sm" for="adname">Email Address</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-[26rem] space-x-16">
-                                <!-- password -->
-                                <label class="text-white font-sm" for="adname">Password</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-[26rem] space-x-16">
-                                <!-- Bio -->
-                                <label class="text-white font-sm" for="adname">Add your bio</label>
-                                <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
+                    foreach ($adminProfile as $admin) {
+                    # code...
 
-
-                            <div class="flex  items-center justify-center space-x-10 w-auto">
-                                <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
-                                <a href=""><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Update</button></a>
-                            </div>
-                        </div>
+                ?>
+                <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
+                    <div class="flex items-center justify-center">
+                        <label for="profile">
+                            <img src="../resources/img/<?= $admin["image"] ?>" alt="profile" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                        </label>
+                        <input type="file" id="profile" hidden class="hidden" accept=".png,.jpg">
                     </div>
-                </form>
-                <div class="flex justify-center items-center space-x-10">
-                    <!-- <div class="flex items-center justify-center w-24 mt-8">
-                        <a href="./adminProfileEdit.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Back</button></a>
-                    </div> -->
-                    <div class="flex items-center justify-center w-24 mt-8">
-                        <a href="./adminSignup.php"><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
+                    <div class="w-auto flex flex-col space-y-8 items-center justify-center ">
+                        <div class="flex items-center justify-start space-x-24 text-white w-[30rem]">
+                            <!-- name -->
+                            <label class="text-white font-sm" for="">Admin Name :</label>
+                            <p> <?= $admin["admin_name"] ?></p>
+                        </div>
+
+                        <div class="flex items-center justify-start w-[30rem] space-x-20 text-white">
+                            <!-- email -->
+                            <label class="text-white font-sm" for="">Email Address :</label>
+                            <p> <?= $admin["admin_email"] ?></p>
+                        </div>
+                        <div class="flex items-center justify-start w-[30rem] space-x-36 text-white">
+                            <!-- phone -->
+                            <label class="text-white font-sm" for="">Phone :</label>
+                            <p> <?= $admin["phone"] ?></p>
+                        </div>
+                        <div class="flex items-center justify-start w-[30rem] space-x-20 text-white">
+                            <!-- Bio -->
+                            <label class="text-white font-sm" for="">Admin Position :</label>
+                            <p> <?= $admin["admin_bio"] ?></p>
+                        </div>
+                        <div class="flex  items-center justify-center space-x-10 w-auto">
+                            <a href="../adminDashboard/adminDashboard.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Back</button></a>
+                            <a href="../../Controller/adminSignupController.php?id=<?=$admin["id"]?>"><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
+                        </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
-
-
         </div>
     </div>
 </body>

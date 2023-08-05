@@ -1,3 +1,10 @@
+<?php
+
+include '../../Controller/orderListsController.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,133 +39,36 @@
                 <?php include '../components/menu.php'; ?>
             </div>
         </div>
-        <!-- nav -->
-        <div class="w-full h-auto flex justify-center items-center bg-[#003366] px-5 py-5 ml-64">
-            <input type="text" class="w-1/3 mx-auto py-2 rounded-lg" placeholder="Search">
-            <p class="text-lg font-semibold text-white mx-auto">
-                28 July 2023
-            </p>
-
-        </div>
 
         <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-8 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
-                Order by
-                <select name="" id="" class="text-black px-5 font-semibold rounded-lg py-2">
-                    <option value="">Order ID</option>
-                    <option value="">Product Name</option>
-                    <option value="">Qty</option>
-                    <option value="">Price Per Item</option>
-                    <option value="">Discount</option>
-                    <option value="">Date</option>
-                    <option value="">Total Price</option>
-                    
-                </select>
-                <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="text" name="" id="" class="text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white" placeholder="Search by ID Number ">
 
-                </div>
-            </div>
-            <div class="w-1/2 h-auto flex items-evenly justify-evenly bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
+            <div class="w-1/2 h-screen flex items-evenly justify-evenly bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black mt-14">
                 <table class=" w-full table-auto border-collapse text-white text-center">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>Order ID</th>
-                            <th>Product Name</th>
+                            <th>Customer Name</th>
+                            <th>Shop Name</th>
                             <th>Qty</th>
-                            <th>Price Per Item</th>
-                            <th>Discount</th>
                             <th>Date</th>
-                            <th>Delivery</th>
-                            <th>Total Price</th>
-                            <th></th>
+                            <th>Payment Type</th>
+                            <th>Total Amount</th>
                         </tr>
                     </thead>
                     <tbody class="">
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
+                        <?php foreach ($result as $t_orders) { ?>
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                                <td>#<?php echo $t_orders["order_id"]; ?></td>
+                                <td><?php echo $t_orders["cus_name"]; ?></td>
+                                <td><?php echo $t_orders["sup_name"];?></td>
+                                <td><?php echo $t_orders["total_quantity"];?></td>
+                                <td><?php echo $t_orders["create_date"];?></td>
+                                <td>COD</td>
+                                <td><?php echo $t_orders["total_amount"];?> MMK</td>
 
-                            
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
 
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                          
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>#112233</td>
-                            <td>Instant Coffee Mix</td>
-                            <td>3</td>
-                            <td>15,000 MMK</td>
-                            <td>5%</td>
-                            <td>09:34 pm, 09 Jun, 2023</td>
-                            <td>COD</td>
-                            <td>42,750 MMK</td>
-
-                           
-                        </tr>
+                            </tr>
+                        <?php } ?>
 
                     </tbody>
                 </table>
@@ -201,7 +111,7 @@
 
 
     </div>
-   
+
 </body>
 
 </html>

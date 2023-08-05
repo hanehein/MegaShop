@@ -6,6 +6,8 @@ let lists = [];
 const sizeLists = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
 const colorLists = ["black","white","grey","brown","blue","red","yellow","green","purple","orange"];
 
+
+//adding variants
 addVariantBtn.addEventListener('click', addVariant);
 
 function addVariant() {
@@ -63,3 +65,4 @@ function createVarint(variantValue, variantName, optionLists) {
         }, 1000);
     }
 }
+

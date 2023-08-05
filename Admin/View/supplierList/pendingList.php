@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-// include "../../Controller/supplierListController.php";
+include "../../Controller/supplierPendingListController.php";
 
 
 ?>
@@ -37,8 +37,8 @@ session_start();
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-end justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-center h-20  space-x-80">
+        <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
+            <div class=" flex items-center justify-center h-20  space-x-80">
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./approveList.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
@@ -62,11 +62,11 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="w-auto h-auto flex items-end justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black mr-10">
-                <table cellpadding="15" class="w-auto table-fixed border-collapse text-white text-center text-xs">
+            <div class="w-auto h-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
+                <table cellpadding="10" class="w-auto table-fixed border-collapse text-white text-center text-xs">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
-                           
+                            <th>No.</th>
                             <th>Name</th>
                             <td>Shop Name</td>
                             <th>Shop Email</th>
@@ -80,51 +80,37 @@ session_start();
                         </tr>
                     </thead>
                     <tbody class="">
+                        <?php 
+                            $count = 1;
+                            foreach ($supPendingLists as $pending ) {
+                                
+                            
+                        ?>
                         <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                           
-                            <td>Lily Deep</td>
-                            <td>Top Notch</td>
-                            <td>lilydeep@gmail.com</td>
-                            <td>Silver</td>
-                            <td>Yankin</td>
-                            <td>09444555666</td>
-                            <th>11223344</th>
-                            <td>25 July,2023</td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
+                            <td><?= $count++ ?></td>
+                            <td><?= $pending["sup_name"] ?></td>
+                            <td><?= $pending["sup_shop_name"] ?></td>
+                            <td><?= $pending["sup_email"] ?></td>
+                            <td>
+                            <?php
+                                if($pending["pack_id"]==0) echo "Basic";
+                                else if ($pending["pack_id"]==1)echo "Silver";
+                                else echo "Gold";
+                            ?>
+                            </td>
+                            <td><?= $pending["township"] ?></td>
+                            <td><?= $pending["sup_phone"] ?></td>
+                            <th><?= $pending["bank_account"] ?></th>
+                            <td><?= $pending["create_date"] ?></td>
+                            <td><a href="../../Controller/approveController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
+                            <td><a href="../../Controller/deniedController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
                         </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                           
-                           <td>Lily Deep</td>
-                           <td>Top Notch</td>
-                           <td>lilydeep@gmail.com</td>
-                           <td>Silver</td>
-                           <td>Yankin</td>
-                           <td>09444555666</td>
-                           <th>11223344</th>
-                           <td>25 July,2023</td>
-                           <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                           <td><a href=""><button class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
-                       </tr>
-                       <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                           
-                           <td>Lily Deep</td>
-                           <td>Top Notch</td>
-                           <td>lilydeep@gmail.com</td>
-                           <td>Silver</td>
-                           <td>Yankin</td>
-                           <td>09444555666</td>
-                           <th>11223344</th>
-                           <td>25 July,2023</td>
-                           <td><a href=""><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                           <td><a href=""><button class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
-                       </tr>
-                        
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5 mr-10">
+            <div class="w-auto flex items-start justify-center h-10 mb-5 ">
                 <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
                     <a href=""><button>1</button></a>
                 </div>

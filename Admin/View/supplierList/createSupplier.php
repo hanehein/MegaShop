@@ -22,13 +22,13 @@
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
+        <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
                 <form action="../../Controller//supplierAccCreateController.php" method="post">
@@ -38,9 +38,6 @@
                                 <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" hidden accept=".png,.jpg">
-                            <span class="text-white text-lg uppercase font-semibold">
-                                High Cultured
-                            </span>
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">
