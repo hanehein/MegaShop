@@ -1,33 +1,21 @@
 <?php
-
-
-include "../Controller/common/commonFunction.php";
-
-session_start();
-$username = $_POST["username"];
-
-if (isset($_POST["username"])) {
-    $_SESSION["username"] = $username;
-}
-
-if (!isset($_SESSION["username"])) {
-    header('Location: ./login.php'); // redirect 
-} 
+$id = $_SESSION["sup_id"];
 
 
 // DB Connection
 include "../Model/model.php";
 
 $sql = $pdo->prepare(
-    "SELECT * FROM users WHERE def_flg = 0"
+    "SELECT * FROM m_supliers WHERE id=:id"
 );
+$sql->bindValue(":id", $id);
 $sql->execute(); // real sql run 
 
-$_SESSION["users"]  = $sql->fetchAll(PDO::FETCH_ASSOC);
-// DB Connection
+$supplier = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
-header("Location: ../View/dashboard.php");
+
+// header("Location: ../View/dashboard/dashboard.php");
 
 
 

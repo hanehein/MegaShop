@@ -1,8 +1,9 @@
 <?php
-include "../../Controller/setting/loginController.php"
+include "../../Controller/setting/supplierProfileController.php"
 ?>
 <?php
-$hasJsFile = FALSE;
+$hasJsFile = TRUE;
+$jsFileNames = ["profile"];
 include "../components/header.php";
 ?>
 
@@ -29,29 +30,31 @@ include "../components/header.php";
                         <div class="bg-white w-full h-auto shadow-lg rounded-lg p-5 ">
                             <div class="flex flex-col space-y-3 justify-center items-center">
                                 <span>Shop Photo</span>
-                                <input type="file" name="image">
-                                <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" class="w-[100px]">
+                                <label for="shop_photo">
+                                    <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="shopImg" class="w-[100px]">
+                                </label>
+                                <input type="file" name="image" id="shop_photo" accept=".jpeg,.png" class="hidden">
                             </div>
                             <div class="flex justify-center items-center space-x-64">
                                 <div class="flex flex-col space-y-5">
-                                    <?php foreach ($result as $profile) { ?>
-                                        <span>Shop Name:<?= $profile["sup_shop_name"] ?></span>
-                                        <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
-                                        <span>Phone <?= $profile["sup_phone"] ?></span>
-                                        <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
+                                    <?php foreach ($profile as $result) { ?>
+                                        <span>Shop Name:</span>
+                                        <div class="border-2 rounded-lg w-[250px] h-[30px] bg-gray-200 px-2"><?= $result["sup_shop_name"] ?></div>
+                                        <span>Phone </span>
+                                        <div class="border-2 rounded-lg w-[250px] h-[30px] bg-gray-200 px-2"><?= $result["sup_phone"] ?></div>
                                 </div>
                                 <div class="flex flex-col space-y-5">
-                                    <span>Supplier Name <?= $profile["sup_name"] ?></span>
-                                    <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
-                                    <span>Email <?= $profile["sup_email"] ?></span>
-                                    <div class="border-2 rounded-lg w-[200px] h-[30px] bg-gray-200"></div>
+                                    <span>Supplier Name </span>
+                                    <div class="border-2 rounded-lg w-[250px] h-[30px] bg-gray-200 px-2"><?= $result["sup_name"] ?></div>
+                                    <span>Email</span>
+                                    <div class="border-2 rounded-lg w-[250px] h-[30px] bg-gray-200 px-2"> <?= $result["sup_email"] ?></div>
                                 </div>
-                            <?php } ?>
                             </div>
-                            <div class="text-end mt-12 px-10 space-x-3">
-                                <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Update</button>
-                                <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]">Cancel</button>
-                            </div>
+                        <?php } ?>
+                        <div class="text-end mt-12 px-10 space-x-3">
+                            <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Update</button>
+                            <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]">Cancel</button>
+                        </div>
                         </div>
                     </div>
                 </div>

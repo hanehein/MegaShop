@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include "../../Controller/DashboardController.php";
+print_r($supplier);
+?>
 <?php
 $hasJsFile = FALSE;
 include "../components/header.php";
@@ -16,6 +21,7 @@ include "../components/header.php";
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
                 <div class="details grid grid-cols-4 space-x-6 p-5">
+                    
 
                     <div class="bg-[#FFDD55] bg-opacity-30 p-5 flex space-x-5 justify-between items-center rounded-lg">
                         <div class="w-[50px] h-[50px] bg-white flex justify-center items-center rounded-md">
