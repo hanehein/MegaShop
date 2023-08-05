@@ -11,7 +11,7 @@ if (count($_POST) == 0) {
     $slogan = $_POST["slogan"];
 
 
-    include '../../Model/model.php';
+    include '../Model/model.php';
 
     $sql = $pdo->prepare(
         " UPDATE m_website_form SET
@@ -27,7 +27,7 @@ if (count($_POST) == 0) {
 
     $sql->execute();
 
-    header("Location: ../../View/adminDashboard/websiteForm.php");
+    header("Location: ../View/adminDashboard/websiteForm.php");
 }
 
 

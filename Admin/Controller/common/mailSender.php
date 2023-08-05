@@ -10,7 +10,7 @@ require './lib/PHPMailer/src/SMTP.php';
 
 class SendMail
 {
-    public function sendMail($toMail,$subject,$body)
+    public function sendMail($toMail,$subject,$body,$img)//
     {
         $mail = new PHPMailer(true);
 
@@ -23,7 +23,8 @@ class SendMail
             $mail->Username   = 'hlaingthazinphoo.hp@gmail.com';   //<< change   
             $mail->Password   = 'rhfkpjynhrphrjhd';          //<< change                     
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-            $mail->Port       = 465;                                    
+            $mail->Port       = 465;  
+            $mail->addEmbeddedImage($img,"img2");  //                               
 
             //Recipients
             $mail->setFrom('hlaingthazinphoo.hp@gmail.com',"MEGA_SHOP"); //<<change 

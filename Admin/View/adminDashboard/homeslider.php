@@ -1,3 +1,9 @@
+<?php
+
+include '../../Controller/homeSliderController.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/slider.css">
+    <script src="../resources/js/img.js" defer></script>
     <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -21,7 +28,7 @@
     </style>
 </head>
 
-<body class="flex justify-center items-center overflow-x-hidden no-scrollbar">
+<body class="flex justify-center items-center overflow-x-hidden no-scrollbar bg-[#e5e7eb]">
     <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
         <div class="flex justify-center items-center mt-3">
             <div class="font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer">
@@ -33,27 +40,28 @@
         <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
             <!-- ul list -->
             <ul class="flex flex-col py-4 space-y-1">
-               <?php include '../components/menu.php';?>
+                <?php include '../components/menu.php'; ?>
         </div>
     </div>
     <!-- nav -->
-    <div class="w-full flex flex-col bg-[#003366] absolute top-0 left-64 px-4 py-4">
-        <div class="flex justify-around">
-            <input type="text" class="w-1/3 mx-auto py-2 rounded-lg" placeholder="Search">
-            <p class="text-lg font-semibold text-white mx-auto">
-                28 July 2023
-            </p>
-        </div>
+    
+    <form action="../../Controller/websiteFormEditController.php" method="post">
+    <div class=" h-full mx-auto flex justify-between items-center bg-[#ffffff] px-7 py-7 mt-10">
+        <p></p>
+        <?php foreach ($result as $m_herosection) { ?>
+            <label for="img1"><img src="../resources/img/<?php echo $m_herosection["hero_photo1"]; ?>"></label>
+            <input type="file" id="img1"  class="hidden" accept=".png,.jpg,.svg">
+            <div class="flex flex-col w-1/2 ml-36">
+                <label for="img2"><img src="../resources/img/<?php echo $m_herosection["hero_photo2"]; ?>" alt="" class="ml-10 mb-10"></label>
+                <input type="file" id="img2"  class="hidden" accept=".png,.jpg,.svg">
+                <label for="img3"><img src="../resources/img/<?php echo $m_herosection["hero_photo3"]; ?>" alt="" class="ml-10 mb-10"></label>
+                <input type="file" id="img3"  class="hidden" accept=".png,.jpg,.svg">
+            </div>
+            
+        <?php } ?>
+        <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
     </div>
-    <div class=" h-auto mx-auto flex justify-between items-center bg-[#FFFFFF] px-7 py-7 mt-20">
-
-        <img src="../resources/img/img1.svg" alt="">
-        <div class="flex flex-col w-1/2 ml-36">
-            <img src="../resources/img/img2.svg" alt="" class="ml-10 mb-10">
-            <img src="../resources/img/img3.svg" alt="" class="ml-10 mb-10">
-        </div>
-
-    </div>
+    </form>
 </body>
 
 </html>

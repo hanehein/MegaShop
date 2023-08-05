@@ -1,7 +1,7 @@
 <?php
 session_start();
-$approveEdit = $_SESSION["approveEdit"];
-print_r($approveEdit);
+$cusNotify = $_SESSION["cusNotify"];
+print_r($cusNotify);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ print_r($approveEdit);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Approve Edit</title>
+    <title>Customer Notify</title>
     <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -33,91 +33,81 @@ print_r($approveEdit);
         <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200 ">
 
             <div class="w-[38rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="../../Controller/approveEditController.php" method="post">
+                <form action="../../Controller/cusNotifySentController.php" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../resources/img/shop1.jpg" name="image" value="" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" hidden accept=".png,.jpg">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
-                            <input type="hidden" class="hidden" name="id" value="<?php echo $approveEdit[0]["id"] ?>">
-                            <input type="hidden" class="hidden" name="password" value="<?php echo $approveEdit[0]["sup_password"] ?>">
+                            <input type="hidden" class="hidden" name="id" value="<?php echo $cusNotify[0]["id"] ?>">
+                            <!-- <input type="hidden" class="hidden" name="password" value=" ?>"> -->
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
-                                <label class="text-white" for="adname">Shop Name</label>
-                                <input type="text" value="<?php echo $approveEdit[0]["sup_shop_name"] ?>" name="shopName" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Customer Name</label>
+                                <input type="text" value="<?php echo $cusNotify[0]["cus_name"] ?>" name="cusName" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
-                                <label class="text-white" for="adname">Supplier Name</label>
-                                <input type="text" name="supplierName" value="<?php echo $approveEdit[0]["sup_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Email</label>
+                                <input type="text" name="email" value="<?php echo $cusNotify[0]["cus_email"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- email -->
-                                <label class="text-white" for="adname">Email Address</label>
-                                <input type="email" name="email" value="<?php echo $approveEdit[0]["sup_email"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="adname">Phone</label>
+                                <input type="text" name="phone" value="<?php echo $cusNotify[0]["cus_phone"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Shop Address</label>
-                                <input type="text" name="shopAddress" value="<?php echo $approveEdit[0]["sup_address"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
-
-                                <label class="text-white" for="id">Phone</label>
-                                <input type="text" value="<?php echo $approveEdit[0]["sup_phone"] ?>" name="phone" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <label class="text-white" for="">Address</label>
+                                <input type="text" name="address" value="<?php echo $cusNotify[0]["cus_address"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 text-xs">
                                 <label class="text-white" for="">Township</label>
                                 <div class="flex  items-center justify-center">
                                     <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 1) {
+                                                if ($cusNotify[0]["township"] == 1) {
                                                     echo "Yankin" ?> selected <?php }
                                                                                 ?> value="" name="township">Yankin</option>
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 2) {
+                                                if ($cusNotify[0]["township"] == 2) {
                                                     echo "Dagon" ?> selected <?php }
                                                                                 ?> value="" name="township">Dagon</option>
                                         <option <?php
-                                                if ($approveEdit[0]["township"] == 3) {
+                                                if ($cusNotify[0]["township"] == 3) {
                                                     echo "Kamayut" ?> selected <?php }
                                                                                 ?> value="" name="township">Kamayut</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="flex items-center justify-between w-96  text-white font-semibold text-xs">
-                                <label class="text-white" for="">Subscribed Plan</label>
+                                <label class="text-white" for="">Gender</label>
                                 <div class=" flex space-x-3 items-center justify-start">
-                                    <input type="radio" id="" name="plan" class="" value="0" <?php
-                                                                                                if ($approveEdit[0]["pack_id"] == 0) {
-                                                                                                    echo "Basic" ?> checked <?php }
+                                    <input type="radio" id="" name="gender" class="" value="0" <?php
+                                                                                                if ($cusNotify[0]["gender"] == 0) {
+                                                                                                    echo "Male" ?> checked <?php }
                                                                                                                             ?>>
-                                    <label for="plan_basic">Basic</label>
-                                    <input type="radio" id="plan_silver" name="plan" class="" value="1" <?php
-                                                                                                        if ($approveEdit[0]["pack_id"] == 1) {
-                                                                                                            echo "Silver" ?> checked <?php }
+                                    <label for="">Male</label>
+                                    <input type="radio"  name="gender" class="" value="1" <?php
+                                                                                                        if ($cusNotify[0]["gender"] == 1) {
+                                                                                                            echo "Female" ?> checked <?php }
                                                                                                                                         ?>>
-                                    <label for="plan_sliver">Silver</label>
-                                    <input type="radio" id="plan_gold" name="plan" class="" value="2" <?php
-                                                                                                        if ($approveEdit[0]["pack_id"] == 2) {
-                                                                                                            echo "Gold" ?> checked <?php }
+                                    <label for="">Female</label>
+                                    <input type="radio"  name="gender" class="" value="2" <?php
+                                                                                                        if ($cusNotify[0]["gender"] == 2) {
+                                                                                                            echo "Other" ?> checked <?php }
                                                                                                                                     ?>>
-                                    <label for="plan_gold">Gold</label>
+                                    <label for="">Other</label>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Bank Account</label>
-                                <input type="text" value="<?php echo $approveEdit[0]["bank_account"] ?>" name="bankAcc" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" placeholder="xxxxxxxx">
-                            </div>
-
-                            <button type="submit" name="" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black mt-3">Send Mail</button>
+                            <button type="submit" name="" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black mt-3">Nofity</button>
                         </div>
                     </div>
                 </form>
                 <div class="flex  items-center justify-center space-x-10 w-auto mt-3">
-                    <a href="../supplierList/pendingList.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancle</button></a>
+                    <a href="./registeredCustomer.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancle</button></a>
                 </div>
             </div>
         </div>
