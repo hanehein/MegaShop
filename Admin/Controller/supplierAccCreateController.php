@@ -3,7 +3,7 @@ include "./common/mailSender.php";
 include "./common/supplierPwdHarsh.php";
 ini_set('display_errors', 1);
 session_start();
-print_r($_POST); 
+// print_r($_POST); 
 
 if(isset($_POST["create"])){
     $supplierName = $_POST["supplierName"];
@@ -66,16 +66,21 @@ if(isset($_POST["create"])){
     $sql->execute();
     //send merchant to reister mail
     $domain = $_SERVER['SEVER_NAME'];
+    $body = file_get_contents("../emailTemplate/template/index.html");
     $mail = new SendMail();
     $mail->sendMail(
         $email,
-        "Your Account",
-        "<h2>Here is your shop account</h2>
-        Username : $supplierName
-        <br/>
-        Password : $password
-        "
+        "Your Shop UserName & Password",
+        // "Username : $supplierName
+        // <br/>
+        // Password : $password",
+        $body,
+        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"
     );
-    header("Location: ../../View/supplierList/approveList.php");
-    
+    header("Location: ../View/supplierList/approveList.php");
 }
+
+// <h2>Here is your shop account</h2>
+        // Username : $supplierName
+        // <br/>
+        // Password : $password
