@@ -210,8 +210,8 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;">Username : $supplierName</p>
-    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;"> Password : $password</p>
+    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;">Username : supplierName</p>
+    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;"> Password : password</p>
   </div>
 
       </td>

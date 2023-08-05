@@ -3,8 +3,8 @@ include "./common/supplierPwdHarsh.php";
 include "./common/mailSender.php";
 ini_set('display_errors', 1);
 session_start();
-print_r($_POST);//ok here
-echo "--------";
+// print_r($_POST);//ok here
+// echo "--------";
 
 if(count($_POST) == 0){
     header ("Location: ../View/errors/error.php");
@@ -29,8 +29,11 @@ if(count($_POST) == 0){
     $sql->execute();
     //send merchant to register mail
     $domain = $_SERVER['SEVER_NAME'];
-    $body = file_get_contents("../emailTemplate/template/index.html");
+    $body = file_get_contents("../emailTemplate/template/index.php");//
+    $body = str_replace("supplierName",$supplierName,$body);
+    $body = str_replace("password",$password,$body);
     $mail = new SendMail();
+    
     $mail->sendMail(
         $shopEmail,
         "Your Shop UserName & Password",
@@ -38,11 +41,9 @@ if(count($_POST) == 0){
         // <br/>
         // Password : $password",
         $body,
-        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"
+        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"//
     );
-    echo ($shopEmail);
-    echo ($supplierName);
-    echo ($password);
+   
 
     header("Location: ../View/supplierList/approveList.php");
 }
