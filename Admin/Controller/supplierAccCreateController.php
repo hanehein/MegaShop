@@ -1,11 +1,11 @@
-<?php 
+<?php
 include "./common/mailSender.php";
 include "./common/supplierPwdHarsh.php";
 ini_set('display_errors', 1);
 session_start();
 // print_r($_POST); 
 
-if(isset($_POST["create"])){
+if (isset($_POST["create"])) {
     $supplierName = $_POST["supplierName"];
     $shopName = $_POST["shopName"];
     $email = $_POST["email"];
@@ -16,7 +16,7 @@ if(isset($_POST["create"])){
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
     //generate password
-    
+
     $password = getpwd(8);
 
 
@@ -52,34 +52,33 @@ if(isset($_POST["create"])){
         )
     ");
 
-    $sql->bindValue(":name",$supplierName);
-    $sql->bindValue(":shopName",$shopName);
-    $sql->bindValue(":password",password_hash($password,PASSWORD_DEFAULT));
-    $sql->bindValue(":email",$email);
-    $sql->bindValue(":plan",$plan);
-    $sql->bindValue(":township",$township);
-    $sql->bindValue(":phone",$phone);
-    $sql->bindValue(":address",$shopAddress);
-    $sql->bindValue(":bankAcc",$bankAcc);
-    $sql->bindValue(":createdDate",date("Y-m-d"));
-    $sql->bindValue(":approve",$approve);
+    $sql->bindValue(":name", $supplierName);
+    $sql->bindValue(":shopName", $shopName);
+    $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
+    $sql->bindValue(":email", $email);
+    $sql->bindValue(":plan", $plan);
+    $sql->bindValue(":township", $township);
+    $sql->bindValue(":phone", $phone);
+    $sql->bindValue(":address", $shopAddress);
+    $sql->bindValue(":bankAcc", $bankAcc);
+    $sql->bindValue(":createdDate", date("Y-m-d"));
+    $sql->bindValue(":approve", $approve);
     $sql->execute();
-    //send merchant to reister mail
+    //send merchant to register mail
     $domain = $_SERVER['SEVER_NAME'];
-    $body = file_get_contents("../emailTemplate/template/index.html");
+    $body = file_get_contents("../emailTemplate/template/index.php"); //
+    $body = str_replace("supplierName", $supplierName, $body);
+    $body = str_replace("password", $password, $body);
     $mail = new SendMail();
+
     $mail->sendMail(
         $email,
         "Your Shop UserName & Password",
-        // "Username : $supplierName
-        // <br/>
-        // Password : $password",
         $body,
-        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"
+        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png" //
     );
     header("Location: ../View/supplierList/approveList.php");
 }
-
 // <h2>Here is your shop account</h2>
         // Username : $supplierName
         // <br/>

@@ -31,7 +31,7 @@
         <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="../../Controller//supplierAccCreateController.php" method="post">
+                <form action="../../Controller/supplierAccCreateController.php" method="post">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
