@@ -2,7 +2,8 @@
 
 <!-- Start header -->
 <?php
-$hasJsFile = FALSE;
+$hasJsFile = TRUE;
+$jsFileNames = ["searchProduct"];
 include "../components/header.php";
 ?>
 <!-- End header -->
@@ -20,12 +21,17 @@ include "../components/header.php";
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
-                <div class="text-end mb-3">
-                    <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
-                        <a href="./addproduct.php">
-                            <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
-                        </a>
-                    </button>
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <input id="searchInput" class="p-2 w-[500px] h-[40px] border border-slate-300 rounded-md" type="text" placeholder="search products">
+                    </div>
+                    <div>
+                        <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
+                            <a href="./addproduct.php">
+                                <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
+                            </a>
+                        </button>
+                    </div>
                 </div>
 
                 <div>
@@ -55,7 +61,7 @@ include "../components/header.php";
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
+                        <tbody class="product-lists-container bg-white divide-y divide-gray-200">
                             <?php foreach ($productLists as $product) { ?>
                                 <tr>
                                     <td class="px-6 py-4 ">

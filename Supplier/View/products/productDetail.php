@@ -1,6 +1,7 @@
 <?php
 session_start();
 $product = $_SESSION["product_detail"];
+$reviews = $_SESSION["product_reviews"];
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -19,6 +20,12 @@ include "../components/header.php";
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
+                <?php if ($product["p_approved"] == 0) { ?>
+                    <div class="p-5 rounded-md mb-2 bg-red-300">
+                        <p>This product is not approved by admin. Customers will not able to see this product.</p>
+                    </div>
+                <?php } ?>
+
                 <!-- product informations -->
                 <div class="p-5 bg-white rounded-md mb-5">
                     <h2 class="text-lg font-semibold border-b border-slate-300">
@@ -34,9 +41,9 @@ include "../components/header.php";
                                 <?php for ($i = 1; $i <= $product["max_photo"]; $i++) {
                                     if (!is_null($product["p_photo$i"])) {
                                 ?>
-                                    <div class="w-[200px] min-h-[200px] p-4 mr-5 rounded-md shadow-lg">
-                                        <img class="w-full" src="../../../<?= $product["p_photo$i"] ?>" alt="product-img" />
-                                    </div>
+                                        <div class="w-[200px] min-h-[200px] p-4 mr-5 rounded-md shadow-lg">
+                                            <img class="w-full" src="../../../<?= $product["p_photo$i"] ?>" alt="product-img" />
+                                        </div>
                                 <?php
                                     }
                                 };
@@ -141,122 +148,37 @@ include "../components/header.php";
                     </div>
                 </div>
 
+                
                 <!-- product reviews -->
                 <div class="p-5 bg-white rounded-md">
 
                     <h2 class="text-lg font-semibold border-b border-slate-300 py-3 mb-6">Ratings &
                         Reviews
-                        (3)</h2>
+                        (<?= count($reviews) ?>)</h2>
 
                     <div class="reviews-container">
                         <!-- start review -->
+                        <?php foreach ($reviews as &$review) { ?>
                         <div class="p-4 shadow-lg rounded-md border border-slate-400  mb-4">
                             <div class="flex justify-between items-center">
                                 <div class="flex space-x-3 items-center mb-3">
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                                    <span class="text-grey text-sm font-bold">Mark Albert</span>
+                                    <span class="text-grey text-sm font-bold"><?= $review["cus_name"] ?></span>
                                 </div>
                                 <div>
-                                    <span class="text-grey">27 Oct 2022</span>
+                                    <span class="text-grey"><?= $review["create_date"] ?></span>
                                 </div>
                             </div>
                             <div>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <?php for ($i = 0; $i < $review["rating"] ; $i++) { ?>
+                                    <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                <?php } ?>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                                voluptatibus exercitationem consectetur non, voluptate quae,
-                                laboriosam quam repudiandae praesentium nam, nulla modi molestias
-                                optio? Ipsum, earum praesentium ullam dolore ipsa architecto quam
-                                amet quia quas, commodi voluptatem culpa velit nulla, eveniet
-                                tempora ad et voluptas temporibus molestiae. Laboriosam temporibus
-                                odit sequi delectus, neque cupiditate reiciendis! Natus harum
-                                iusto, rem amet temporibus totam perspiciatis vel! Labore quia
-                                nemo nisi sit at dolorem iusto veniam odio saepe? Sapiente,
-                                cupiditate, autem magnam repellendus voluptate illo doloremque
-                                accusantium nam beatae reprehenderit neque, unde quaerat provident
-                                exercitationem tempore possimus consequuntur excepturi facilis
-                                officiis amet blanditiis voluptatum veritatis iure? Autem nulla ad
-                                illum, odit nisi aperiam quisquam. Quasi, consequatur veritatis?
-                                Corrupti blanditiis eaque eos quas fugit velit enim animi labore
-                                commodi reprehenderit ipsa quidem suscipit minima quibusdam
-                                aliquam distinctio, modi sapiente odit quam numquam! Voluptate
-                                facilis pariatur cum neque quibusdam, maxime reiciendis delectus
-                                debitis blanditiis atque minima vitae quis veritatis inventore
-                                odit exercitationem rem esse officiis dolore ipsa asperiores.
-                                Voluptas ab voluptate quisquam. Commodi ipsam possimus veniam
-                                reprehenderit fugiat tempora assumenda. Alias, neque culpa
-                                accusantium recusandae dignissimos blanditiis eligendi, vitae
-                                voluptatibus quibusdam deserunt ducimus harum reiciendis excepturi
-                                quidem aspernatur repellat quas ipsa fugit expedita. Iure,
-                                nesciunt?
+                                <?= $review["review"] ?>
                             </p>
                         </div>
-                        <!-- end review -->
-
-                        <!-- start review -->
-                        <div class="p-4 shadow-lg rounded-md border border-slate-400  mb-4">
-                            <div class="flex justify-between items-center">
-                                <div class="flex space-x-3 items-center mb-3">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                                    <span class="text-grey text-sm font-bold">Mark Albert</span>
-                                </div>
-                                <div>
-                                    <span class="text-grey">27 Oct 2022</span>
-                                </div>
-                            </div>
-                            <div>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                                voluptatibus exercitationem consectetur non, voluptate quae,
-                                laboriosam quam repudiandae praesentium nam, nulla modi molestias
-                                optio? Ipsum, earum praesentium ullam dolore ipsa architecto quam
-                                amet quia quas, commodi voluptatem culpa velit nulla, eveniet
-                                tempora ad et voluptas temporibus molestiae. Laboriosam temporibus
-                                odit sequi delectus, neque cupiditate reiciendis! Natus harum
-                                iusto, rem amet temporibus totam perspiciatis vel! Labore quia
-                                nemo nisi sit at dolorem iusto veniam odio saepe? Sapiente,
-                                cupiditate,
-                            </p>
-                        </div>
-                        <!-- end review -->
-
-                        <!-- start review -->
-                        <div class="p-4 shadow-lg rounded-md border border-slate-400  mb-4">
-                            <div class="flex justify-between items-center">
-                                <div class="flex space-x-3 items-center mb-3">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                                    <span class="text-grey text-sm font-bold">Mark Albert</span>
-                                </div>
-                                <div>
-                                    <span class="text-grey">27 Oct 2022</span>
-                                </div>
-                            </div>
-                            <div>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                                voluptatibus exercitationem consectetur non, voluptate quae,
-                                laboriosam quam repudiandae praesentium nam, nulla modi molestias
-                                optio? Ipsum, earum praesentium ullam dolore ipsa architecto quam
-                                amet quia quas, commodi voluptatem culpa velit nulla, eveniet
-                                tempora ad et voluptas temporibus molestiae. Laboriosam temporibus
-                                odit sequi delectus, neque cupiditate reiciendis! Natus harum
-                                iusto,
-                            </p>
-                        </div>
+                        <?php } ?>
                         <!-- end review -->
                     </div>
 
