@@ -57,7 +57,7 @@ session_start();
                         <ion-icon name="lock-closed" class="text-white"></ion-icon>
                         <input type="password" name="password" placeholder="Password" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required />
                     </div>
-
+                    <small class="text-xs text-red-600 font-semibold md:w-[18rem] w-[15rem] mx-auto mt-3 flex  px-4  justify-start items-center"><?= $_SESSION["loginError"]?></small>
                     <!-- login -->
                     <button type="submit" name="login" class="w-32 bg-[#003366] mx-auto mt-5 flex py-2 justify-center items-center text-white hover:bg-gray-200 hover:text-[#003366] text-sm font-semibold rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
                         Log In
@@ -69,3 +69,4 @@ session_start();
 </body>
 
 </html>
+<?php $_SESSION["loginError"] = "" ?>

@@ -40,7 +40,7 @@ print_r($signup);
             <div class=" w-96 mx-auto flex  font-['Poppins']  flex-col justify-center items-center py-5 ">
                 <!-- Sign up section -->
                 <p class="text-white text-lg text-center  ">Create New Account</p>
-                
+
                 <form action="../../Controller/adminUpdateController.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $signup[0]["id"] ?>">
                     <!-- username -->
@@ -60,23 +60,29 @@ print_r($signup);
                     </div>
                     <!-- phone number -->
                     <div class="shadow-md shadow-black md:w-[18rem] w-[16rem] bg-[#F6F6F6] border border-white rounded-[5px] mx-auto mt-7 flex py-1.5 px-4 space-x-5 justify-center items-center">
-                    <ion-icon name="phone-portrait" class="text-[#003366]" ></ion-icon>
+                        <ion-icon name="phone-portrait" class="text-[#003366]"></ion-icon>
                         <input type="text" name="phone" value="<?php echo $signup[0]["phone"] ?>" id="password" placeholder="Enter Phone Number" class="text-sm bg-[#F6F6F6] focus:outline-none text-[#003366] border-none" />
                     </div>
                     <!-- img path -->
                     <div class="shadow-md shadow-black md:w-[18rem] w-[16rem] bg-[#F6F6F6] border border-white rounded-[5px] mx-auto mt-7 flex py-1.5 px-4 space-x-5 justify-center items-center">
-                    <ion-icon name="phone-portrait" class="text-[#003366]" ></ion-icon>
+                        <ion-icon name="phone-portrait" class="text-[#003366]"></ion-icon>
                         <input type="text" name="image" value="<?php echo $signup[0]["image"] ?>" placeholder="Add image path" class="text-sm bg-[#F6F6F6] focus:outline-none text-[#003366] border-none" />
                     </div>
                     <!-- bio -->
                     <div class="shadow-md shadow-black md:w-[18rem] w-[16rem] bg-[#F6F6F6] border border-white rounded-[5px] mx-auto mt-7 flex py-1.5 px-4 space-x-5 justify-center items-center">
-                    <ion-icon name="phone-portrait" class="text-[#003366]" ></ion-icon>
-                    <input type="text" name="bio" value="<?php echo $signup[0]["admin_bio"] ?>" placeholder="Add admin position" class="text-sm bg-[#F6F6F6] focus:outline-none text-[#003366] border-none" />
+                        <ion-icon name="phone-portrait" class="text-[#003366]"></ion-icon>
+                        <input type="text" name="bio" value="<?php echo $signup[0]["admin_bio"] ?>" placeholder="Add admin position" class="text-sm bg-[#F6F6F6] focus:outline-none text-[#003366] border-none" />
                     </div>
-                    <!-- login -->
-                    <button type="submit" class="w-[10rem] bg-blue-200 rounded-[8px] mx-auto mt-8 flex py-2 justify-center items-center shadow-md shadow-black hover:bg-white hover:text-gray-500 text-white font-semibold ">
-                        Create
-                    </button>
+                    <div class="w-[18rem] flex items-center justify-center space-x-5">
+                        <a href="./adminProfileEdit.php"></a><button class="w-[8rem] bg-gray-300 rounded-[8px] mx-auto mt-8 flex py-2 justify-center items-center shadow-md shadow-black hover:bg-white hover:text-gray-500 text-white font-semibold text-sm ">
+                            Back
+                        </button>
+                        <!-- login -->
+                        <button type="submit" class="w-[8rem] bg-blue-500 rounded-[8px] mx-auto mt-8 flex py-2 justify-center items-center shadow-md shadow-black hover:bg-white hover:text-gray-500 text-white font-semibold text-sm ">
+                            Create
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>
