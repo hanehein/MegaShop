@@ -1,14 +1,6 @@
 <?php
 
-include '../../Model/model.php';
-
-$sql = $pdo->prepare(
-    "SELECT * FROM m_products WHERE p_approved = 1;"
-);
-
-$sql->execute();
-
-$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+include '../../Controller/approvedProductsController.php';
 
 
 ?>

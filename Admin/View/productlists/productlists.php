@@ -1,18 +1,6 @@
 <?php 
-include '../../Model/model.php';
 
-$sql = $pdo->prepare(
-    "SELECT *
-    FROM `m_products`
-    INNER JOIN `m_category` ON `m_products`.`p_category` = `m_category`.id
-    INNER JOIN `m_brand` ON `m_products`.`p_brand` = `m_brand`.id
-    INNER JOIN `m_suppliers` ON `m_products`.`supplier_id` = `m_suppliers`.id;
-    WHERE `p_approved` = 0;"
-);
-
-$sql->execute();
-
-$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+include '../../Controller/productListsControler.php';
 
 ?>
 
@@ -110,11 +98,12 @@ $result = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $m_products["p_discount"]; ?></td>
                                 <td><?php echo $m_products["p_buy_price"]; ?></td>
                                 <td><?php echo $m_products["p_sell_price"]; ?></td>
-                                <td><a href="../../Controller/controller/ProductsApproveController.php?id=<?php echo $m_products["id"];?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
+                                <td><a href="../../Controller/productsApproveController.php?id=<?php echo $m_products["id"];?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
                                 <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
                             </tr>
                          
                         <?php } ?>
+                        
                     </tbody>
                 </table>
             </div>

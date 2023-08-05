@@ -24,13 +24,13 @@ include "../../Controller/adminProfileController.php";
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
+        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
                 <?php

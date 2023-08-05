@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+// include "../../Controller/dashboardController.php";
+// print_r($admin);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +22,7 @@
 
 <body class="overflow-x-hidden">
     <!-- main div -->
-    <aside class="h-screen w-64 fixed flex flex-auto flex-shrink-0 bg-gray-200 text-gray-800">
+    <aside class="h-screen w-1/6  flex flex-auto flex-shrink-0 bg-gray-200 text-gray-800">
         <!-- dashboard div -->
         <div class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r">
             <div class="flex justify-center items-center mt-3">
@@ -149,7 +154,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
+                        <a href="../adminProfile/adminLogin.php" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-100 text-[#003366] border-l-4 border-transparent hover:border-blue-500 pr-6 ">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <ion-icon name="log-out"></ion-icon>
                             </span>

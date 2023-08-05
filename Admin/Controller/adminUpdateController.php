@@ -34,5 +34,5 @@ if(count($_POST) == 0){
     $sql->bindValue(":img",$image);
     $sql->bindValue(":phone",$phone);
     $sql->execute();
-    header("Location: ../View/adminProfile/adminProfileEdit.php");
+    header("Location: ../View/adminProfile/adminLogin.php");
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $supEdit = $_SESSION["supEdit"];
-print_r($supEdit);
+// print_r($supEdit);
 
 ?>
 
@@ -27,13 +27,13 @@ print_r($supEdit);
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
-    <div class="min-h-screen flex flex-auto flex-shrink-0 bg-black text-gray-800 relative">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-center bg-gray-200 ml-10">
+        <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
                 <form action="../../Controller/supUpdateController.php" method="post">
@@ -45,9 +45,9 @@ print_r($supEdit);
                             <input type="file" id="profile" hidden accept=".png,.jpg" value="">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
+                            <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["id"] ?>">
+                            <input type="hidden" class="hidden" name="password" value="<?php echo $supEdit[0]["sup_password"] ?>">
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["id"] ?>">
-                                <input type="hidden" class="hidden" name="password" value="<?php echo $supEdit[0]["sup_password"] ?>">
                                 <!-- name -->
                                 <label class="text-white" for="">Shop Name</label>
                                 <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
@@ -72,14 +72,17 @@ print_r($supEdit);
                                 <div class="flex  items-center justify-center">
                                     <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
                                         <option <?php
-                                                if ($supEdit[0]["township"] == 1) { echo "Yankin" ?> selected <?php }
-                                                                                                ?> value="1" >Yankin</option>
+                                                if ($supEdit[0]["township"] == 1) {
+                                                    echo "Yankin" ?> selected <?php }
+                                                                                                                ?> value="1">Yankin</option>
                                         <option <?php
-                                                if ($supEdit[0]["township"] == 2) { echo "Dagon" ?> selected <?php }
-                                                                                                ?> value="2" >Dagon</option>
+                                                if ($supEdit[0]["township"] == 2) {
+                                                    echo "Dagon" ?> selected <?php }
+                                                                                                                ?> value="2">Dagon</option>
                                         <option <?php
-                                                if ($supEdit[0]["township"] == 3) { echo "Kamayut" ?> selected <?php }
-                                                                                                ?> value="3" >Kamayut</option>
+                                                if ($supEdit[0]["township"] == 3) {
+                                                    echo "Kamayut" ?> selected <?php }
+                                                                                                                ?> value="3">Kamayut</option>
                                     </select>
                                 </div>
                             </div>
@@ -87,16 +90,19 @@ print_r($supEdit);
                                 <label class="text-white" for="">Plan</label>
                                 <div class=" flex space-x-3 items-center justify-start">
                                     <input type="radio" id="" name="plan" class="" value="0" <?php
-                                                                                            if ($supEdit[0]["pack_id"] == 0) { echo "Basic" ?> checked <?php }
-                                                                                                                                            ?>>
+                                                                                                if ($supEdit[0]["pack_id"] == 0) {
+                                                                                                    echo "Basic" ?> checked <?php }
+                                                                                                                                                        ?>>
                                     <label for="plan_basic">Basic</label>
                                     <input type="radio" id="plan_silver" name="plan" class="" value="1" <?php
-                                                                                            if ($supEdit[0]["pack_id"] == 1) { echo "Basic" ?> checked <?php }
-                                                                                                                                            ?>>
+                                                                                                        if ($supEdit[0]["pack_id"] == 1) {
+                                                                                                            echo "Basic" ?> checked <?php }
+                                                                                                                                                        ?>>
                                     <label for="plan_sliver">Silver</label>
                                     <input type="radio" id="plan_gold" name="plan" class="" value="2" <?php
-                                                                                                    if ($supEdit[0]["pack_id"] == 2) { echo "Gold" ?>  checked <?php }
-                                                                                                                                                    ?>>
+                                                                                                        if ($supEdit[0]["pack_id"] == 2) {
+                                                                                                            echo "Gold" ?> checked <?php }
+                                                                                                                                                                ?>>
                                     <label for="plan_gold">Gold</label>
                                 </div>
                             </div>

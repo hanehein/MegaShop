@@ -9,7 +9,7 @@ if (count($_POST) == 0) {
     $brand = $_POST["brand"];
     $date = $_POST["date"];
 
-    include '../../Model/model.php';
+    include '../Model/model.php';
 
     $sql = $pdo->prepare(
         " UPDATE m_brand SET
@@ -23,7 +23,7 @@ if (count($_POST) == 0) {
     $sql->bindValue(":id",$id);
     $sql->execute();
 
-    header("Location: ../../View/productlists/brandControl.php");
+    header("Location: ../View/productlists/brandControl.php");
 }
 
 

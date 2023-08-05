@@ -5,9 +5,9 @@ session_start();
 $id = $_GET["id"];
 
 if (!isset($id)) {
-    header ("Location: ../../../../View/productlists/brandControl.php");
+    header ("Location: ../View/productlists/brandControl.php");
 } else{
-    include "../../Model/model.php";
+    include "../Model/model.php";
 
     $sql =$pdo->prepare(
         " SELECT * FROM m_brand WHERE id = :id
@@ -20,7 +20,7 @@ if (!isset($id)) {
 
     $_SESSION['brandedit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    header("Location: ../../View/productlists/brandEdit.php");
+    header("Location: ../View/productlists/brandEdit.php");
 
 
 }

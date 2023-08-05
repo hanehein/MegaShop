@@ -4,12 +4,12 @@ print_r($_POST);
 
 if (count($_POST) == 0) {
     
-    header("Location: ../../View/productlists/categoryAdd.php");
+    header("Location: ../View/productlists/categoryAdd.php");
 } else {
     $cat = $_POST["category"];
     $date = $_POST["date"];
 
-    include '../../Model/model.php';
+    include '../Model/model.php';
 
     $sql = $pdo->prepare(
         " INSERT INTO m_category
@@ -28,7 +28,7 @@ if (count($_POST) == 0) {
     $sql->bindValue(":date",$date);
     $sql->execute();
 
-    header("Location: ../../View/productlists/CategoryControl.php");
+    header("Location: ../View/productlists/CategoryControl.php");
 }
 
 
