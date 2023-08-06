@@ -17,7 +17,7 @@ include "../components/header.php";
         <div class="col-span-5 relative">
 
             <?php
-            $currentMenu = "Orders";
+            $currentMenu = "Add Product";
             include "../components/navbar.php";
             ?>
 
