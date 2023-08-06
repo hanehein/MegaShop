@@ -16,70 +16,89 @@ if (isset($_POST["create"])) {
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
     //generate password
-
     $password = getpwd(8);
+    //get photo
+    $shopPhoto = $_FILES["shopPhoto"]["name"];
+    $shopPhototmp = $_FILES["shopPhoto"]["tmp_name"];
+
+
 
 
     include "../Model/model.php";
-    $sql = $pdo->prepare("
-        INSERT INTO m_suppliers
-        (
-            sup_name,
-            pack_id,
-            sup_email,
-            sup_password,
-            township,
-            sup_address,
-            sup_phone,
-            bank_account,
-            sup_shop_name,
-            create_date,
-            sup_approve
-        ) 
-        VALUES
-        (
-            :name,
-            :plan,
-            :email,
-            :password,
-            :township,
-            :address,
-            :phone,
-            :bankAcc,
-            :shopName,
-            :createdDate,
-            :approve
-        )
-    ");
+    if (move_uploaded_file($shopPhototmp, "../../Storage/shopPhoto/" . $shopPhoto)) {
+        $sql = $pdo->prepare("
+                INSERT INTO m_suppliers
+                (
+                    sup_name,
+                    pack_id,
+                    sup_email,
+                    sup_password,
+                    township,
+                    sup_address,
+                    sup_phone,
+                    bank_account,
+                    sup_shop_name,
+                    shop_photo_path,
+                    create_date,
+                    sup_approve
+                ) 
+                VALUES
+                (
+                    :name,
+                    :plan,
+                    :email,
+                    :password,
+                    :township,
+                    :address,
+                    :phone,
+                    :bankAcc,
+                    :shopName,
+                    :path,
+                    :createdDate,
+                    :approve
+                )
+            ");
 
-    $sql->bindValue(":name", $supplierName);
-    $sql->bindValue(":shopName", $shopName);
-    $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
-    $sql->bindValue(":email", $email);
-    $sql->bindValue(":plan", $plan);
-    $sql->bindValue(":township", $township);
-    $sql->bindValue(":phone", $phone);
-    $sql->bindValue(":address", $shopAddress);
-    $sql->bindValue(":bankAcc", $bankAcc);
-    $sql->bindValue(":createdDate", date("Y-m-d"));
-    $sql->bindValue(":approve", $approve);
-    $sql->execute();
+        $sql->bindValue(":name", $supplierName);
+        $sql->bindValue(":shopName", $shopName);
+        $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":plan", $plan);
+        $sql->bindValue(":township", $township);
+        $sql->bindValue(":phone", $phone);
+        $sql->bindValue(":address", $shopAddress);
+        $sql->bindValue(":bankAcc", $bankAcc);
+        $sql->bindValue(":path","../../Storage/shopPhoto/" . $shopPhoto);
+        $sql->bindValue(":createdDate", date("Y-m-d"));
+        $sql->bindValue(":approve", $approve);
+        $sql->execute();
+        $domain = $_SERVER['SEVER_NAME'];
+        $body = file_get_contents("../emailTemplate/template/index.php"); //
+        $body = str_replace("supplierName", $supplierName, $body);
+        $body = str_replace("password", $password, $body);
+        $mail = new SendMail();
+        $mail->sendMail(
+            $email,
+            "Your Shop UserName & Password",
+            $body,
+            "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png" //
+        );
+        header("Location: ../View/supplierList/approveList.php");
+    } else {
+        header("Location: ../View/errors/error.php");
+    }
     //send merchant to register mail
-    $domain = $_SERVER['SEVER_NAME'];
-    $body = file_get_contents("../emailTemplate/template/index.php"); //
-    $body = str_replace("supplierName", $supplierName, $body);
-    $body = str_replace("password", $password, $body);
-    $mail = new SendMail();
+    // $domain = $_SERVER['SEVER_NAME'];
+    // $body = file_get_contents("../emailTemplate/template/index.php"); //
+    // $body = str_replace("supplierName", $supplierName, $body);
+    // $body = str_replace("password", $password, $body);
+    // $mail = new SendMail();
 
-    $mail->sendMail(
-        $email,
-        "Your Shop UserName & Password",
-        $body,
-        "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png" //
-    );
-    header("Location: ../View/supplierList/approveList.php");
+    // $mail->sendMail(
+    //     $email,
+    //     "Your Shop UserName & Password",
+    //     $body,
+    //     "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png" //
+    // );
+    // header("Location: ../View/supplierList/approveList.php");
 }
-// <h2>Here is your shop account</h2>
-        // Username : $supplierName
-        // <br/>
-        // Password : $password
