@@ -1,14 +1,18 @@
+<?php include "../../Controller/orders/orderHistoryReviewController.php" ?>
+
+<!-- Start header -->
 <?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
+<!-- End header -->
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
         <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5">
             <?php
-            $currentMenu = "Orders";
+            $currentMenu = "Order History Review";
             include "../components/navbar.php";
             ?>
 
@@ -37,177 +41,66 @@ include "../components/header.php";
                     <!-- Orderlists container -->
                     <div class="px-5">
                         <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
-                            <thead>
-                                <tr class="border-b-2 border-slate-500 bg-white">
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        <input type="checkbox">
-                                        Order ID
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Method
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Status
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Fulfillment
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Customer
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Total Price
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Date
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">#112233</a>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Unpaid</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>In Progress</span>
-                                    </td>
-                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
-                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 flex space-x-3">
-                                        <button class="px-3 py-1 bg-green-400 text-white rounded-md">Confrimed</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <?php foreach ($orderHistoryLists as $order) { ?>
+                            <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
+                                <thead>
+                                    <tr class="border-b-2 border-slate-500 bg-white">
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Order ID
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Payment Method
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Payment Status
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Fulfillment
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Customer
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Total Price
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Date
+                                        </th>
+                                        <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 ">
+                                            <a href="../../Controller/orders/orderDetailController.php?order_id=<?= $order["order_id"] ?>" 
+                                            class="underline text-blue-500"><?= $order["order_code"] ?></a>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span>Cash On Delivery</span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span>Unpaid</span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span>In Progress</span>
+                                        </td>
+                                        <td class="px-6 py-4 "><span><?= $order["cus_name"] ?></span></td>
+                                        <td class="px-6 py-4 "><span><?= $order["total_amount"] ?> MMK</span></td>
+                                        <td class="px-6 py-4 "><span><?= $order["order_create_date"] ?></span></td>
+                                        <td class="px-6 py-4 flex space-x-3">
+                                            <?php if ($order["order_status"] == 1) { ?>
+                                                <button class="px-3 py-1 bg-green-400 text-white rounded-md">Confrimed</button>
+                                            <?php } else if ($order["order_status"] == 2) { ?>
+                                                <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <?php } ?>
                         <!-- end orderlist -->
-
-                        <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
-                            <thead>
-                                <tr class="border-b-2 border-slate-500 bg-white">
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        <input type="checkbox">
-                                        Order ID
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Method
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Status
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Fulfillment
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Customer
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Total Price
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Date
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">#112233</a>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Unpaid</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>In Progress</span>
-                                    </td>
-                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
-                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 flex space-x-3">
-                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- end orderlist -->
-
-                        <!-- start orderlist -->
-                        <table class="min-w-full table-auto rounded-lg overflow-hidden p-3 mb-4 shadow-md">
-                            <thead>
-                                <tr class="border-b-2 border-slate-500 bg-white">
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        <input type="checkbox">
-                                        Order ID
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Method
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Payment Status
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Fulfillment
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Customer
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Total Price
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Date
-                                    </th>
-                                    <th class="px-6 py-3 text-[#66CC33] text-left text-sm font-semibold tracking-wider">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="underline text-blue-500">#112233</a>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Unpaid</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>In Progress</span>
-                                    </td>
-                                    <td class="px-6 py-4 "><span>Min Khant Wai</span></td>
-                                    <td class="px-6 py-4 "><span>42,750 Ks</span></td>
-                                    <td class="px-6 py-4 "><span>July 20,2023</span></td>
-                                    <td class="px-6 py-4 flex space-x-3">
-                                        <button class="px-3 py-1 bg-red-400 text-white rounded-md">Rejected</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- end orderlist -->
-                    </div>
-
-                    <div class="text-end px-5">
-                        <button class="px-3 py-1 text-white bg-red-500 rounded-md mr-2">Remove</button>
-                        <button class="px-3 py-1 text-white bg-blue-500 rounded-md ">Cancel</button>
                     </div>
 
                     <!-- Pagination -->

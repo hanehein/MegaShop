@@ -19,7 +19,7 @@ include "../components/header.php";
         <div class="col-span-5 relative">
 
             <?php
-            $currentMenu = "Products";
+            $currentMenu = "Edit Product";
             include "../components/navbar.php";
             ?>
 

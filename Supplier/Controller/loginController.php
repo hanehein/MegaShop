@@ -3,11 +3,11 @@ session_start();
 
 // check from stage is  login page or not 
 if (count($_POST) == 0) {
-    header("Location: ../../../../View/errors/error.php");
+    header("Location: ../View/errors/error.php");
 }
 
 if (!isset($_POST["from_login"])) {
-    header("Location: ../../../../View/errors/error.php");
+    header("Location: ../View/errors/error.php");
 }
 
 $email = $_POST["email"];
