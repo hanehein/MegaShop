@@ -19,14 +19,14 @@ session_start();
     <div class="min-h-screen flex items-center justify-center container">
         <!-- photo container -->
         <div class="w-1/2 flex justify-center items-center">
-            <img src="../supImg/supplier log in.jpg" alt=""
-                class="w-[400px] h-[450px] rounded-[50px] border border-[#2C7607] shadow-xl "
-                style="box-shadow: 0 0 100px 100px rgba(44, 118, 7 ,0.65);">
+            <img src="../resources/img/supplierLogin.jpg" alt=""
+                class="w-[400px] h-[450px] rounded-[50px] border border-[#2C7607] "
+                >
         </div>
         <!-- input container -->
         <div class="min-h-screen w-1/2 px-8 md:px-16 flex justify-center items-center relative">
             <div class="absolute top-0 right-0 mt-4 mr-4 md:px-8">
-                <img src="../img/logo/Logo-supplier.png" alt="" class="w-[200px] h-[160px]">
+                <img src="../resources/img/Logo-supplier.png" alt="" class="w-[200px] h-[160px]">
             </div>
             <div class=" px-8 md:px-16 flex flex-col justify-center items-center">
                 <h4 class="my-7 text-center font-extrabold text-[25px] text-[#2C7607]">Log in</h4>
@@ -52,7 +52,7 @@ session_start();
                         </label>
                         <a href="#" class="text-red-500 ml-24 text-sm font-semibold italic">Forgot Password ?</a>
                     </div>
-                    <button class="my-4 bg-[#2C7607] rounded-xl text-white text-xl py-5 hover:scale-105 duration-300">Log in</button>
+                    <button class="my-4 bg-[#2C7607] rounded-xl text-white text-xl py-4 hover:scale-105 duration-300">Log in</button>
                     <div class="flex items-center">
                         <span class="ml-7">Don't have an account ? </span>
                         <a href="#" class="text-red-500 ml-24 text-sm italic font-semibold">Sign Up</a>

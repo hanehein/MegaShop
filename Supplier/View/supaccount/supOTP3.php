@@ -21,7 +21,7 @@ session_start();
             <div class="md:flex flex-col hidden w-1/2 py-10 px-10  items-center justify-center">
                 <img class="rounded-[250px] w-[550px] h-[200px] shadow-xl"
                     style="border-radius: 40px; box-shadow: 0 4px 15px 10px rgba(44, 118, 7, 0.5);"
-                    src="../img/p3.jpg">
+                    src="../resources/img/supOTP3.jpg">
             </div>
             <!-- input container -->
             <div class="md:w-1/2 relative flex flex-col items-center justify-center">
