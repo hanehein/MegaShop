@@ -1,6 +1,6 @@
 <?php 
 
-include '../../Controller/productListsControler.php';
+include '../../Controller/productListsController.php';
 
 ?>
 
@@ -98,8 +98,8 @@ include '../../Controller/productListsControler.php';
                                 <td><?php echo $m_products["p_discount"]; ?></td>
                                 <td><?php echo $m_products["p_buy_price"]; ?></td>
                                 <td><?php echo $m_products["p_sell_price"]; ?></td>
-                                <td><a href="../../Controller/productsApproveController.php?id=<?php echo $m_products["id"];?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
-                                <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
+                                <td><a href="../../Controller/productsApproveController.php?id=<?php echo $m_products["p_id"];?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">approve</button></a></td>
+                                <td><a href="../../Controller/productsDeleteController.php?id=<?php echo $m_products["p_id"];?>"><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">remove</button></a></td>
                             </tr>
                         <?php } ?>
                         

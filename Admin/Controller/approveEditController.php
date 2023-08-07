@@ -37,9 +37,6 @@ if(count($_POST) == 0){
     $mail->sendMail(
         $shopEmail,
         "Your Shop UserName & Password",
-        // "Username : $supplierName
-        // <br/>
-        // Password : $password",
         $body,
         "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"//
     );

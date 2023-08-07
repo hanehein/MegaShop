@@ -14,8 +14,8 @@ $sql = $pdo->prepare(
     FROM t_product_reviews
     INNER JOIN m_products ON t_product_reviews.product_id = m_products.id
     INNER JOIN m_customers ON t_product_reviews.customer_id = m_customers.id
-    WHERE t_product_reviews.del_flg = 0;
-    "
+    WHERE t_product_reviews.del_flg = 0
+    ORDER BY t_product_reviews.create_date DESC"
 );
 $sql->execute();
 $reviewLists = $sql->fetchAll(PDO::FETCH_ASSOC);

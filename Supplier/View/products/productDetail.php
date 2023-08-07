@@ -12,7 +12,7 @@ include "../components/header.php";
         <div class="col-span-5 relative">
 
             <?php
-            $currentMenu = "Products";
+            $currentMenu = "Product Detail";
             include "../components/navbar.php";
             ?>
 

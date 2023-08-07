@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/supplier.css">
-    <script src="../resources/js/img.js"></script>
+    <script src="../resources/js/img.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -31,13 +31,13 @@
         <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="../../Controller//supplierAccCreateController.php" method="post">
+                <form action="../../Controller/supplierAccCreateController.php" method="post" enctype="multipart/form-data">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../resources/img/addimg1.png"  alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
-                            <input type="file" id="profile" hidden accept=".png,.jpg">
+                            <input type="file" id="profile" name="shopPhoto" hidden accept=".png,.jpg">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">

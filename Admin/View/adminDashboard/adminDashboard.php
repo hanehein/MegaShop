@@ -30,151 +30,230 @@ include "../../Controller/dashboardController.php";
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200 space-y-5 font-['Poppins'] ">
-            <!-- 1st sectioin -->
-            <button class="flex items-center justify-center bg-[#003366] w-auto h-10 rounded-md text-white font-xs font-semibold px-4 py-2 space-x-2 mt-3">
-                <p>Welcome</p> <p><?=$admin[0]["admin_name"]?></p>
+        <div class="w-5/6 flex flex-col items-start justify-center bg-gray-200 space-y-3 font-['Poppins'] px-10 shadow-md shadow-white">
+
+            <button class=" rounded-tr-lg rounded-bl-lg flex items-center justify-center bg-[#003366] w-auto h-10  text-white font-xs  px-4 py-2 space-x-2 mt-3 border-2 hover:bg-[#66CC33]">
+                <p>Welcome</p>
+                <p><?= $admin[0]["admin_name"] ?></p>
             </button>
-            <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  bg-white">
-                <!-- 1 card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white rounded-md">
-                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2 rounded-md">
-                        <!-- circle -->
-                        <div class="w-24 h-24 flex flex-col items-center justify-center rounded-full border-8 border-[#00336698]">
-                            <p class="text-sm text-[#003366] text-center">Total</p>
-                            <p class="text-lg text-[#003366] font-semibold">25</p>
-                            <p class="text-sm text-[#003366] text-center">Shops</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2 rounded-md">
-                        <p class="text-white text-sm">Gold Plan</p>
-                        <p class="text-white text-base">10 shops</p>
-                    </div>
-                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2 rounded-md">
-                        <p class="text-white text-sm">Silver Plan</p>
-                        <p class="text-white text-base">10 shops</p>
-                    </div>
-                    <div class="w-full h-16 bg-blue-200 flex flex-col items-center justify-center  space-y-2 rounded-md">
-                        <p class="text-white text-sm">Free Trial</p>
-                        <p class="text-white text-sm">5 shops</p>
-                    </div>
-                </div>
-                <!-- 2 card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white">
-                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2">
-                        <!-- circle -->
-                        <div class="w-24 h-24 flex flex-col items-center justify-center rounded-full border-8 border-[#00336698] space-y-2">
-                            <p class="text-sm text-[#003366] text-center">Total</p>
-                            <p class="text-sm text-[#003366] font-semibold">2,5000,000</p>
-                            <p class="text-sm text-[#003366] text-center">Ks</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Gold Plan</p>
-                        <p class="text-white text-base">1,500,000 Ks</p>
-                    </div>
-                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2">
-                        <p class="text-white text-sm">Silver Plan</p>
-                        <p class="text-white text-base">1,000,000 Ks</p>
-                    </div>
-                    <div class="w-full h-16 bg-[#003366] flex flex-col items-center justify-center space-y-2">
-                        <p class="text-white text-sm">Website Viewers</p>
-                        <p class="text-white text-lg">100</p>
-                    </div>
-                </div>
-                <!-- 3rd card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center space-y-8">
-                    <div class="flex flex-col items-center justify-center w-full h-32 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Total Sales</p>
-                        <p class="text-white text-base">1,500,000 Ks</p>
-                    </div>
+            <!-- 1st sectioin -->
+            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+                <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
+                <p class="text-[#66CC33]">Suppliers</ion-icon></p>
+            </div>
+            <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  ">
 
-                    <div class="w-full h-32 bg-[#003366] flex flex-col items-center justify-center space-y-2">
-                        <p class="text-white text-sm text-center">Total Registered Users</p>
-                        <p class="text-white text-lg">100</p>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Total Suppliers</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">20 shops</p>
                     </div>
                 </div>
-                <!-- 4 cards -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center space-y-8">
-                    <div class="flex flex-col items-center justify-center w-full h-32 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Total Products</p>
-                        <p class="text-white text-base">300</p>
-                    </div>
 
-                    <div class="w-full h-32 bg-[#003366] flex flex-col items-center justify-center space-y-2">
-                        <p class="text-white text-sm">Total Orders</p>
-                        <p class="text-white text-lg">100</p>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Total Customers</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">50</p>
                     </div>
                 </div>
-                <!-- 5th card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center space-y-8">
-                    <div class="flex flex-col items-center justify-center w-full h-32 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Approved Products</p>
-                        <p class="text-white text-base">150 Ks</p>
-                    </div>
 
-                    <div class="w-full h-32 bg-[#003366] flex flex-col items-center justify-center space-y-2">
-                        <p class="text-white text-sm">Pending Products</p>
-                        <p class="text-white text-lg">150</p>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
                     </div>
                 </div>
-                <!-- 6 card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white">
-                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2">
-                        <!-- circle -->
-                        <div class="w-24 h-24 flex flex-col items-center justify-center rounded-full border-8 border-[#00336698]">
-                            <p class="text-sm text-[#003366] text-center">Total</p>
-                            <p class="text-lg text-[#003366] font-semibold">25</p>
-                            <p class="text-sm text-[#003366] text-center">Shops</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Gold Plan</p>
-                        <p class="text-white text-base">10 shops</p>
-                    </div>
-                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2">
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Silver Plan</p>
-                        <p class="text-white text-base">10 shops</p>
                     </div>
-                    <div class="w-full h-16 bg-[#003366] flex flex-col items-center justify-center  space-y-2">
-                        <p class="text-white text-sm">Free Trial</p>
-                        <p class="text-white text-sm">5 shops</p>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
                     </div>
                 </div>
-                <!-- 7 card -->
-                <div class="w-[10%] h-auto flex flex-col item-center justify-center bg-white">
-                    <div class="flex flex-col items-center justify-center w-full h-auto bg-white py-2">
-                        <!-- circle -->
-                        <div class="w-24 h-24 flex flex-col items-center justify-center rounded-full border-8 border-[#00336698] space-y-2">
-                            <p class="text-sm text-[#003366] text-center">Total</p>
-                            <p class="text-sm text-[#003366] font-semibold">2,5000,000</p>
-                            <p class="text-sm text-[#003366] text-center">Ks</p>
-                        </div>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Basic Plan</p>
                     </div>
-                    <div class="flex flex-col items-center justify-center w-full h-16 bg-[#003366]  space-y-2">
-                        <p class="text-white text-sm">Gold Plan</p>
-                        <p class="text-white text-base">1,500,000 Ks</p>
-                    </div>
-                    <div class="w-full h-16 flex flex-col items-center justify-center bg-gray-400  space-y-2">
-                        <p class="text-white text-sm">Silver Plan</p>
-                        <p class="text-white text-base">1,000,000 Ks</p>
-                    </div>
-                    <div class="w-full h-16 bg-[#003366] flex flex-col items-center justify-center space-y-2">
-                        <p class="text-white text-sm">Website Viewers</p>
-                        <p class="text-white text-lg">100</p>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
                     </div>
                 </div>
             </div>
             <!-- 2nd section -->
-            <div class="flex items-center justify-center w-[65rem] h-52 bg-white mt-3 rounded-md">
+            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+                <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
+                <p class="text-[#66CC33]">Products</ion-icon></p>
+            </div>
+            <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  ">
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Total Products</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
 
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
             </div>
             <!-- 3rd section -->
-            <div class="w-[65rem] flex items-center justify-center  mt-3 space-x-5 py-3 bg-white">
+            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+                <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
+                <p class="text-[#66CC33]">Orders</ion-icon></p>
+            </div>
+            <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  ">
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Gold Plan</p>
+                    </div>
+                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 4th section -->
+            <!-- canvas data table bar chart -->
+            <!-- <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-5  ">
+                <?php
+
+                $dataPoints = array(
+                    array("y" => 100,000, "label" => "Jan"),
+                    array("y" => 200,000, "label" => "Feb"),
+                    array("y" => 300,000, "label" => "Mar"),
+                    array("y" => 400,000, "label" => "Apr"),
+                    array("y" => 500,000, "label" => "May"),
+                    array("y" => 600,000, "label" => "Jun"),
+                    array("y" => 500,000, "label" => "Jul"),
+                    array("y" => 700,000, "label" => "Aug"),
+                    array("y" => 500,000, "label" => "Sept"),
+                    array("y" => 800,000, "label" => "Oct"),
+                    array("y" => 200,000, "label" => "Nov"),
+                    array("y" => 900,000, "label" => "Dec")
+                );
+
+                ?>
+                <!DOCTYPE HTML>
+                <html>
+
+                <head>
+                    <script>
+                        window.onload = function() {
+
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                animationEnabled: true,
+                                theme: "white",
+                                title: {
+                                    text: "Total Monthly Sales"
+                                },
+                                axisY: {
+                                    title: "Amount of Sale (in K)"
+                                },
+                                data: [{
+                                    type: "column",
+                                    yValueFormatString: "#,##0.## k",
+                                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                }]
+                            });
+                            chart.render();
+
+                        }
+                    </script>
+                </head>
+
+                <body>
+                    <div id="chartContainer" style="height: 350px; width: 100%;"></div>
+                    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+                </body>
+
+                </html>
+            </div> -->
+
+            <!-- 5th section -->
+            <div class="w-[65rem]  flex items-center justify-between  h-auto mt-3 space-x-5 py-3">
                 <!-- left graph -->
-                <div class="w-[25rem] flex flex-col items-center justify-center bg-white">
-                    <table cellpadding="12" class="w-[25rem] table-fixed border-collapse text-[#003366] text-center text-xs">
-                        <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
+                <div class="w-[30rem] flex flex-col items-center justify-center ">
+                    <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+                        <ion-icon name="ribbon-outline" class="text-[#66CC33]"></ion-icon>
+                        <p class="text-[#66CC33]">Best Selling Items</ion-icon></p>
+                    </div>
+                    <table cellpadding="12" class="w-full table-fixed border-collapse text-[#003366] text-center text-xs bg-gray-100 mt-2 border-2 ">
+                        <thead class=" bg-[#0033667a] text-white text-sm font-semibold h-16 ">
                             <tr>
                                 <th>Title</th>
                                 <th>Sold Qty</th>
@@ -211,9 +290,13 @@ include "../../Controller/dashboardController.php";
                     </table>
                 </div>
                 <!-- right graph -->
-                <div class="w-[25rem] flex flex-col items-center justify-center bg-white">
-                    <table cellpadding="12" class="w-[25rem] table-fixed border-collapse text-[#003366] text-center text-xs">
-                        <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
+                <div class="w-[30rem] flex flex-col items-center justify-center ">
+                    <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+                        <ion-icon name="ribbon-outline" class="text-[#66CC33]"></ion-icon>
+                        <p class="text-[#66CC33]">Best Seller Shop</ion-icon></p>
+                    </div>
+                    <table cellpadding="12" class="w-full table-fixed border-collapse text-text-[#003366] bg-gray-100 text-center text-xs m-2">
+                        <thead class=" bg-[#0033667a]  text-white text-sm font-semibold h-16">
                             <tr>
                                 <th>Title</th>
                                 <th>Sold Qty</th>

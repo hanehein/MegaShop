@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include "../../Controller/DashboardController.php";
-print_r($supplier);
+// include "../../Controller/DashboardController.php";
+// print_r($supplier);
 ?>
 <?php
 $hasJsFile = FALSE;

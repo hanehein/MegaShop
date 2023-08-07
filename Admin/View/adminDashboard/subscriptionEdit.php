@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +58,7 @@
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- password -->
-                                <label class="text-white" for="adname">Subscription Fees</label>
+                                <label class="text-white" for="adname">Payment</label>
                                 <input type="text" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">

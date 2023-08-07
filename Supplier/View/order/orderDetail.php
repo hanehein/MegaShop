@@ -1,14 +1,22 @@
 <?php
+session_start();
+$order = $_SESSION["order"];
+$orderDetails = $_SESSION["orderDetails"];
+?>
+
+<!-- Start header -->
+<?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
+<!-- End header -->
 
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
         <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5 relative">
             <?php
-            $currentMenu = "Orders";
+            $currentMenu = "Order Code - ".$order["order_code"];
             include "../components/navbar.php";
             ?>
 
@@ -23,23 +31,23 @@ include "../components/header.php";
                     <div class="px-5 py-4 flex justify-between items-end mb-10">
                         <div class="">
                             <div class="mb-3">
-                                <span>Min Khant Wai</span>
+                                <span><?= $order["cus_name"] ?></span>
                             </div>
                             <div class="mb-3">
                                 <span>gfgfgfgfg, fgfgf, gfgfgf-5545454, Tawmae, Yangon</span>
                             </div>
                             <div class="mb-3">
-                                <span>Email : example@gmail.com</span>
+                                <span>Email : <?= $order["cus_email"] ?></span>
                             </div>
                             <div class="mb-3">
-                                <span>Phone : 09-345435534</span>
+                                <span>Phone : <?= $order["cus_phone"] ?></span>
                             </div>
                         </div>
 
                         <div class="min-w-[250px]">
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Order ID</span></div>
-                                <div><span>#20232607GEpZj5</span></div>
+                                <div><span><?= $order["order_code"] ?></span></div>
                             </div>
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Payment Method</span></div>
@@ -51,11 +59,11 @@ include "../components/header.php";
                             </div>
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Date</span></div>
-                                <div><span>July 23, 2023</span></div>
+                                <div><span><?= $order["order_create_date"] ?></span></div>
                             </div>
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Amount</span></div>
-                                <div><span>139,00 MMK</span></div>
+                                <div><span><?= $order["total_amount"] ?> MMK</span></div>
                             </div>
                         </div>
                     </div>
@@ -90,65 +98,47 @@ include "../components/header.php";
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="text-blue-500 underline">Instant Coffee MIx</a>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span>3</span>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div>
-                                            <span class="font-semibold text-lg">Size : </span>
-                                            <span>XL</span>
-                                        </div>
-                                        <div>
-                                            <span class="font-semibold text-lg">Color : </span>
-                                            <span>White</span>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>15,000 MMK</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>5 %</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>July 20,2023</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>42,750 MMK</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 ">
-                                        <a href="" class="text-blue-500 underline">Homesick New Home Reed Diffuser</a>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span>3</span>
-                                    </td>
-                                    <td class="px-6 py-4">
+                                <?php foreach ($orderDetails as $detail) { ?>
+                                    <tr>
+                                        <td class="px-6 py-4 ">
+                                            <a href="" class="text-blue-500 underline"><?= $detail["p_name"] ?></a>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span><?= $detail["qty"] ?></span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div>
+                                                <span class="font-semibold text-lg">Size : </span>
+                                                <span>XL</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-semibold text-lg">Color : </span>
+                                                <span>White</span>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span><?= $detail["p_sell_price"] ?> MMK</span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span><?= $detail["p_discount"] ?> %</span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span>Cash On Delivery</span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span><?= $order["order_create_date"] ?></span>
+                                        </td>
+                                        <td class="px-6 py-4 ">
+                                            <span>
+                                                <?php 
+                                                $discountPrice =$detail["p_sell_price"] -  (($detail["p_sell_price"] * $detail["p_discount"]) / 100);
+                                                echo $discountPrice * $detail["qty"];
+                                                ?> MMK
+                                            </span>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
 
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>15,000 MMK</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>5 %</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>Cash On Delivery</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>July 20,2023</span>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <span>42,750 MMK</span>
-                                    </td>
-                                </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
@@ -160,15 +150,15 @@ include "../components/header.php";
                         <div class="min-w-[250px]">
                             <div class="grid grid-cols-2 gap-10 py-3 border-b border-slate-300">
                                 <div><span>Subtotal</span></div>
-                                <div><span>85500 MMK</span></div>
+                                <div><span><?= $order["total_amount"] ?> MMK</span></div>
                             </div>
                             <div class="grid grid-cols-2 gap-10 py-3 border-b border-slate-300">
                                 <div><span>Shipping</span></div>
-                                <div><span>0 MMK</span></div>
+                                <div><span><?= $order["delivery_fee"] ?> MMK</span></div>
                             </div>
                             <div class="grid grid-cols-2 gap-10 py-3">
                                 <div><span>Total</span></div>
-                                <div><span>85500 MMK</span></div>
+                                <div><span><?= $order["total_amount"] + $order["delivery_fee"]; ?> MMK</span></div>
                             </div>
 
                         </div>

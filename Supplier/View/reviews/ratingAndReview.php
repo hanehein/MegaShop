@@ -2,7 +2,8 @@
 
 <!-- Start header -->
 <?php
-$hasJsFile = FALSE;
+$hasJsFile = TRUE;
+$jsFileNames = ["orderReview"];
 include "../components/header.php";
 ?>
 <!-- End header -->
@@ -21,9 +22,10 @@ include "../components/header.php";
                 <div class="mb-5">
                     <label class="text-lg font-bold mr-4" for="order">Order By</label>
 
-                    <select class="p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
-                        <option value="">date</option>
-                        <option value="">rating</option>
+                    <select class="review-order p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
+                        <option value="0">all</option>
+                        <option value="1">date</option>
+                        <option value="2">rating</option>
                     </select>
                 </div>
 
@@ -50,7 +52,7 @@ include "../components/header.php";
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
+                        <tbody class="review-lists bg-white divide-y divide-gray-200">
                             <?php foreach ($reviewLists as $review) { ?>
                                 <tr>
                                     <td class="px-6 py-4">

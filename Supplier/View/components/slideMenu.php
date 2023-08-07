@@ -15,25 +15,39 @@
 
             <!-- products -->
             <li class="">
-                <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../products/product.php">
-                    <ion-icon class="mr-3 text-[18px]" name="gift-outline"></ion-icon>
-                    Products
-                </a>
+                <div class="capitalize px-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
+                    <span>
+                        <ion-icon class="mr-3 text-[18px]" name="bag-outline"></ion-icon>
+                        Products
+                    </span>
+                </div>
+
+                <ul class="child-menu">
+                    <li>
+                        <a class="block capitalize pl-[30px] pr-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
+                        href="../products/product.php">
+                            Product Lists
+                        </a>
+                    </li>
+                    <li>
+                        <a class="block capitalize pl-[30px] pr-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
+                        href="../products/deletedProduct.php">
+                            Deleted Products
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <!-- orders -->
             <li class="">
-                <div class="capitalize px-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 flex justify-between hover:text-white cursor-pointer">
-                    <span class="block">
+                <div class="capitalize px-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
+                    <span>
                         <ion-icon class="mr-3 text-[18px]" name="bag-outline"></ion-icon>
                         Orders
                     </span>
-                    <button class="menu-btn">
-                        <ion-icon class="mr-3 text-[18px]" name="caret-down"></ion-icon>
-                    </button>
                 </div>
 
-                <ul class="hidden child-menu">
+                <ul class="child-menu">
                     <li>
                         <a class="block capitalize pl-[30px] pr-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
                         href="../order/orderHistoryReview.php">

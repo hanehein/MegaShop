@@ -1,9 +1,8 @@
-<?php include "../../Controller/products/productListsController.php" ?>
+<?php include "../../Controller/products/deletedProductListsController.php" ?>
 
 <!-- Start header -->
 <?php
-$hasJsFile = TRUE;
-$jsFileNames = ["searchProduct"];
+$hasJsFile = FALSE;
 include "../components/header.php";
 ?>
 <!-- End header -->
@@ -13,7 +12,7 @@ include "../components/header.php";
         <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5">
             <?php
-            $currentMenu = "Product Lists";
+            $currentMenu = "Deleted Products";
             include "../components/navbar.php";
             ?>
 
@@ -21,18 +20,7 @@ include "../components/header.php";
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
-                <div class="flex justify-between items-center mb-3">
-                    <div>
-                        <input id="searchInput" class="p-2 w-[500px] h-[40px] border border-slate-300 rounded-md" type="text" placeholder="search products">
-                    </div>
-                    <div>
-                        <button class="bg-green-800 text-white px-4 py-2 text-white text-md font-semibold rounded-md actvie:scale-[1.03]">
-                            <a href="./addproduct.php">
-                                <ion-icon class="text-lg" name="add-circle-outline"></ion-icon> Add Product
-                            </a>
-                        </button>
-                    </div>
-                </div>
+                <h2 class="text-slate-500 font-bold mb-2">You have deleted <span class="text-red-500"><?= count($deletedProductLists) ?></span> products</h2>
 
                 <div>
                     <table class="min-w-full table-auto rounded-lg overflow-hidden">
@@ -62,7 +50,7 @@ include "../components/header.php";
                             </tr>
                         </thead>
                         <tbody class="product-lists-container bg-white divide-y divide-gray-200">
-                            <?php foreach ($productLists as $product) { ?>
+                            <?php foreach ($deletedProductLists as $product) { ?>
                                 <tr>
                                     <td class="px-6 py-4 ">
                                         <div class="flex space-x-4 items-center">
@@ -99,15 +87,10 @@ include "../components/header.php";
                                     </td>
                                     <td class="px-6 py-4">
 
-                                        <div class="flex space-x-2">
-                                            <a href="../../Controller/products/editProductController.php?product_id=<?= $product['id'] ?>">
-                                                <button class="bg-green-500 px-3 py-1 rounded-md text-white font-semibold">
-                                                    Edit
-                                                </button>
-                                            </a>
-                                            <a href="../../Controller/products/deleteProductController.php?product_id=<?= $product['id'] ?>">
-                                                <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
-                                                    Remove
+                                        <div class="">
+                                            <a href="../../Controller/products/recoverProductController.php?product_id=<?= $product['id'] ?>">
+                                                <button class="bg-orange-500 px-3 py-1 rounded-md w-full text-white font-semibold">
+                                                    Recover
                                                 </button>
                                             </a>
                                         </div>

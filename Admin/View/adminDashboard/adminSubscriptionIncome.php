@@ -1,3 +1,10 @@
+<?php 
+ini_set('display_errors', 1);
+include "../../Controller/subscriptionEditController.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,12 +74,13 @@
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>Shop Name</th>
-                            <th>Subscription Plan</th>
+                            <th>Subscribed Plan</th>
                             <th>Duration</th>
-                            <th>Subscription Fees</th>
-                            <th>Created Date</th>
+                            <th>Payment</th>
+                            <th>Activated Date</th>
+                            <th>Expired Date</th>
                             <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody class=" text-xs">
@@ -81,90 +89,10 @@
                             <td>Silver</td>
                             <td>3 Months</td>
                             <td>300,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>B</td>
-                            <td>Gold</td>
-                            <td>6 Months</td>
-                            <td>900,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>C</td>
-                            <td>Silver</td>
-                            <td>3 Months</td>
-                            <td>300,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>D</td>
-                            <td>Gold</td>
-                            <td>3 Months</td>
-                            <td>900,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>E</td>
-                            <td>Silver</td>
-                            <td>3 Months</td>
-                            <td>300,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>F</td>
-                            <td>Silver</td>
-                            <td>3 Months</td>
-                            <td>900,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>G</td>
-                            <td>Gold</td>
-                            <td>6 Months</td>
-                            <td>900,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>H</td>
-                            <td>Silver</td>
-                            <td>3 Months</td>
-                            <td>300,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>I</td>
-                            <td>Gold</td>
-                            <td>6 Months</td>
-                            <td>900,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td>J</td>
-                            <td>Silver</td>
-                            <td>3 Months</td>
-                            <td>300,000 Ks</td>
-                            <td>25 July,2023</td>
-                            <td><a href="./subscriptionEdit.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Delete</button></a></td>
+                            <th>25 July,2023</th>
+                            <th>25 Oct,2023</th>
+                            <td><a href="../../Controller/subscriptionEditController.php"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                            <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                     </tbody>
                 </table>
