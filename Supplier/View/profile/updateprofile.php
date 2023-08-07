@@ -36,7 +36,7 @@
                  <div class="container mx-auto p-5">
                      <div class="grid grid-cols-3 w-full h-auto p-5 bg-white rounded-lg">
 
-                         <!-- <form action="../../Controller/setting/updateProfileController.php" method="post"> -->
+                         <form action="../../Controller/setting/updateProfileController.php" method="post">
                          <div class="border-r-2 border-black">
                              <span>Shop Photo</span>
                              <label for="shop_photo">
@@ -49,7 +49,7 @@
 
                              <div class="flex justify between items-center space-x-64">
                                  <div class="flex flex-col space-y-5">
-                                     <input type="hidden" name="id">
+                                     <input type="hidden" name="id" value="<?= $profile_data[0]["id"] ?>">
                                      <span>Shop Name</span>
                                      <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_shop_name"] ?>" name="sup_shop_name" required>
                                      <span>Phone</span>
@@ -63,16 +63,18 @@
                                      <span>Email</span>
                                      <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_email"] ?>" name="sup_email" required>
                                      <span>Re-enter Password</span>
-                                     <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_password"] ?>" required>
+                                     <input type="text" class="border-2 rounded-lg bg-gray-300" required>
                                  </div>
                              </div>
 
                              <div class="text-right mt-5 py-8 px-5 space-x-3">
-                                 <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]" name="update">Update</button>
+                                 <a href="../../Controller/setting/updateProfileController.php">
+                                     <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]" name="update">Update</button>
+                                 </a>
                                  <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]" name="cancel">Cancel</button>
                              </div>
                          </div>
-                         <!-- </form> -->
+                         </form>
                      </div>
                  </div>
              </div>

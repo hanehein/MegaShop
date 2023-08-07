@@ -94,6 +94,21 @@ session_start();
                     required
                     />
                 </div>
+                <!--township-->
+                        <label class="block font-bold mb-1" for="">Township</label>
+                        <div class="flex  items-center justify-center">
+                            <select name="township" id="" class="block p-2 rounded-md border border-[#2C7607] shadow-md w-[400px] h-[40px]">
+                                <option value="1">Yankin</option>
+                                <option value="2">Dagon</option>
+                                <option value="3">Kamayut</option>
+                            </select>
+                        </div>
+                    
+                    <!--bankaccount-->
+                    <label for="phone" class="block font-bold mb-1">Bank Account</label>
+                    <div class="block p-2 rounded-md border border-[#2C7607] shadow-md w-[400px] h-[40px]">
+                        <input type="text" name="bank_acc" id="name" placeholder="Bank Account" class="text-sm bg-[#F6F6F6] focus:outline-none text-black border-none ">
+                    </div>
 
                 <div class="flex space-x-2 items-center">
                     <input id="privacy_policy" type="checkbox" class="form-checkbox text-[#2C7607]">
@@ -102,7 +117,7 @@ session_start();
                     </label>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <input 
                     type="submit" 
                     class="bg-[#2C7607] w-[300px] rounded-xl text-white py-2 hover:scale-105 duration-300"

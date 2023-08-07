@@ -12,6 +12,7 @@ if (isset($_POST["signup"])) {
     $shopAddress = $_POST["shop_address"];
     $bankAcc = $_POST["bank_acc"];
 
+
     //generate password
 
     $password = getpwd(8);

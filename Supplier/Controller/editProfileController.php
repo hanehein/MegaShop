@@ -8,14 +8,13 @@ $id= $_GET["id"];
 include "../Model/model.php";
 
 $sql = $pdo->prepare(
-    "SELECT sup_name, sup_email, sup_password, sup_phone, sup_shop_name, sup_photo FROM m_suppliers
+    "SELECT id, sup_name, sup_email, sup_password, sup_phone, sup_shop_name, sup_photo FROM m_suppliers
     WHERE id = :id"
 );
 
 $sql->bindValue(":id", $id);
 $sql->execute();
 $_SESSION["data"] = $sql->fetchAll(PDO::FETCH_ASSOC);
-print_r($_SESSION["data"]);
 
 
 // go to view page
