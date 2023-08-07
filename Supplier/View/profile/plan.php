@@ -30,11 +30,11 @@ include "../components/header.php";
                         <!--Start card-->
                         <?php foreach ($package as $pack) { ?>
                             <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
-
+                                
                                 <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
                                 <span><?= $pack["pack_des"] ?></span>
                                 <span><?= $pack["pack_price"] ?>Ks/month for <?= $pack["pack_duration"] ?> months</span>
-                                <a href="../../Controller/choosePlanController.php" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose <?= $pack["pack_name"] ?> Plan</a>
+                                <a href="../../Controller/choosePlanController.php?plan_id=<?= $pack["id"] ?>" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose <?= $pack["pack_name"] ?> Plan</a>
                                 <div class="px-4 py-6 border-b-2">
                                 </div>
                             </div>
