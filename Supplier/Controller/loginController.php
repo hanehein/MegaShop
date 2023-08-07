@@ -1,17 +1,6 @@
 <?php
 session_start();
 
-// check from stage is  login page or not 
-if (count($_POST) == 0) {
-    header("Location: ../View/errors/error.php");
-}
-
-if (!isset($_POST["from_login"])) {
-    header("Location: ../View/errors/error.php");
-}
-
-$email = $_POST["email"];
-$password = $_POST["password"];
 
 // check from stage is  register page or not 
 if (isset($_POST["login"])) {
@@ -33,7 +22,7 @@ if (isset($_POST["login"])) {
     } else {
         if (password_verify($passwords, $result[0]["sup_password"])) {
                 $_SESSION["sup_id"] =$result[0]["id"];
-                header("Location: ../View/daahboard/dashboard.php");
+                header("Location: ../View/dashboard/dashboard.php");
         } else {
             $_SESSION["loginerror"] = "Email or password incorrect!";
             header("Location: ../../../View/profile/login.php");
