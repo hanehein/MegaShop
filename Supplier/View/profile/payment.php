@@ -1,3 +1,6 @@
+<?php 
+include "../../Controller/choosePlanController.php"
+?>
 <?php
 $hasJsFile = FALSE;
 include "../components/header.php";
@@ -27,15 +30,15 @@ include "../components/header.php";
                         <span class="font-semibold">You Chose Diamond Plan To Subscribe</span>
                         <span>You will subscribe to our website for 6 months</span>
                         <span class="text-xs">Total cost : 40,000 Ks </span>
-                        <span>Please Choose Your Payment Method</span>
-                        <div class="flex justify-between items-center space-x-11">
+                        <!-- <span>Please Choose Your Payment Method</span> -->
+                        <!-- <div class="flex justify-between items-center space-x-11">
                             <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
                                 <ion-icon name="checkbox-outline"></ion-icon>
                                 KBZpay</button>
                             <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
                                 <ion-icon name="checkbox-outline"></ion-icon>
                                 AYApay</button>
-                        </div>
+                        </div> -->
                         <div class="text-end">
                             <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
                                 Subscribe</button>

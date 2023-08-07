@@ -21,8 +21,8 @@ include "../components/header.php";
                     <span class="text-2xl font-semibold">Supplier Profile</span>
 
                     <div class="flex justify-between items-center space-x-96">
-                        <a href="">My Profile</a>
-                        <a href="">Go Premium</a>
+                        <a href="./supProfile.php">My Profile</a>
+                        <a href="./plan.php">Go Premium</a>
                     </div>
 
                     <!--card body-->
@@ -34,7 +34,7 @@ include "../components/header.php";
                                 <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
                                 <span><?= $pack["pack_des"] ?></span>
                                 <span><?= $pack["pack_price"] ?>Ks/month for <?= $pack["pack_duration"] ?> months</span>
-                                <a href="" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose Silver Plan</a>
+                                <a href="../../Controller/choosePlanController.php" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose <?= $pack["pack_name"] ?> Plan</a>
                                 <div class="px-4 py-6 border-b-2">
                                 </div>
                             </div>
