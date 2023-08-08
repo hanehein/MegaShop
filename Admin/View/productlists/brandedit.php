@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$brand = $_SESSION["brandedit"];
+$brand = $_SESSION["brandedit"];    
 
 ?>
 

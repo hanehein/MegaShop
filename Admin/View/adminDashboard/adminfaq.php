@@ -32,18 +32,10 @@
         <!-- Menu -->
         <div class="overflow-y-auto overflow-x-hidden flex-grow font-['Poppins']">
             <!-- ul list -->
-            <?php include '../components/menu.php';?>
+            <?php include '../components/menu.php'; ?>
         </div>
     </div>
-    <!-- nav -->
-    <div class="w-full flex flex-col bg-[#003366] absolute top-0 left-64 px-4 py-4">
-        <div class="flex justify-around">
-            <input type="text" class="w-1/3 mx-auto py-2 rounded-lg" placeholder="Search">
-            <p class="text-lg font-semibold text-white mx-auto">
-                28 July 2023
-            </p>
-        </div>
-    </div>
+
 
     <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-36 rounded-lg px-10 py-10 mb-10 ">
         <div class="mt-10 mb-10">
@@ -65,7 +57,7 @@
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
         </div>
         <div class="mt-10 mb-10">
-        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
             <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="We reply to the users as soon as possible." disabled></input>
             <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
