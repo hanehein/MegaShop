@@ -1,3 +1,9 @@
+<?php
+
+include '../../Controller/FaqController.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,32 +43,33 @@
     </div>
 
 
+
     <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-36 rounded-lg px-10 py-10 mb-10 ">
+    <form action="" method="post">
+        <?php foreach ($result as $m_faq) { ?>
         <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full " value="Do we provide installation support to the users?" disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="Yes, we provide installation support to the users. Feel free to email us anytime." disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full " value="<?php echo $m_faq["faq1"];?>" ></input>
+         
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq2"];?>" ></input>
+
         </div>
         <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="Do we provide installation guide to the users?" disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="Yes, we provide installation guide to the users with the packages." disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq3"];?>" ></input>
+
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq4"];?>" ></input>
+
         </div>
         <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="We reply to the users as soon as possible." disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq5"];?>" ></input>
+        
+            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq6"];?>" ></input>
+  
         </div>
-        <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="How much time do we take to get back to the user?" disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="We reply to the users as soon as possible." disabled></input>
-            <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Edit</button>
-        </div>
+        <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Save</button>
+        <?php } ?>
+        </form>
     </div>
+
 
 
 </body>
