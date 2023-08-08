@@ -5,7 +5,7 @@ $id= $_GET["id"];
 //     header("Location: ../View/errors/error.php");
 // }else{
 //connect database
-include "../Model/model.php";
+include "../../Model/model.php";
 
 $sql = $pdo->prepare(
     "SELECT id, sup_name, sup_email, sup_password, sup_phone, sup_shop_name, sup_photo FROM m_suppliers
@@ -18,6 +18,7 @@ $_SESSION["data"] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 // go to view page
-header("Location: ../View/profile/updateProfile.php");
+header("Location: ../../View/profile/updateProfile.php");
+
 
 ?>

@@ -41,8 +41,10 @@ include "../components/header.php";
                                 AYApay</button>
                         </div> -->
                         <div class="text-end">
-                            <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
-                                Subscribe</button>
+                            <a href="../../Controller/setting/subscribeController.php">
+                                <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
+                                    Subscribe</button>
+                            </a>
                         </div>
                     </div>
                 </div>

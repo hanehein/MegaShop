@@ -55,15 +55,13 @@
                                      <span>Phone</span>
                                      <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_phone"] ?>" name="sup_phone" required>
                                      <span>New Password</span>
-                                     <input type="text" class="border-2 rounded-lg bg-gray-300" name="sup_password" required>
+                                     <input type="text" class="border-2 rounded-lg bg-gray-300" name="sup_password">
                                  </div>
                                  <div class="flex flex-col space-y-5">
                                      <span>Supplier Name</span>
                                      <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_name"] ?>" name="sup_name">
                                      <span>Email</span>
                                      <input type="text" class="border-2 rounded-lg bg-gray-300" value="<?= $profile_data[0]["sup_email"] ?>" name="sup_email" required>
-                                     <span>Re-enter Password</span>
-                                     <input type="text" class="border-2 rounded-lg bg-gray-300" required>
                                  </div>
                              </div>
 
@@ -71,7 +69,9 @@
                                  <a href="../../Controller/setting/updateProfileController.php">
                                      <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]" name="update">Update</button>
                                  </a>
+                                 <a href="./supProfile.php">
                                  <button class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#FF0000]" name="cancel">Cancel</button>
+                                 </a>
                              </div>
                          </div>
                          </form>

@@ -36,8 +36,7 @@ if(count($_POST)==0){
        
         $sql->execute();
         $profile = $sql->fetchAll(PDO::FETCH_ASSOC);
-        print_r($profile);
-        echo "<pre>";
+        
        header("Location: ../../View/profile/supProfile.php");
         
 }
