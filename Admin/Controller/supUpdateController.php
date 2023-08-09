@@ -33,13 +33,12 @@ if(count($_POST) == 0){
         where id = :id
     ");
     $sql->bindValue(":id",$id);
-    $sql->bindValue(":name",$supplierName);
-    $sql->bindValue(":email",$shopEmail);
+    $sql->bindValue(":name",$supplierName);//
+    $sql->bindValue(":email",$shopEmail);//
     $sql->bindValue(":shopName", $shopName);
     $sql->bindValue(":township",$township);
     $sql->bindValue(":plan",$plan);
     $sql->bindValue(":bankAcc",$bankAcc);
-    $sql->bindValue(":shopName",$shopPhoto);
     $sql->bindValue(":phone",$phone);
     
     $sql->execute();

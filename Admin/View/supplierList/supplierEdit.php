@@ -2,7 +2,7 @@
 session_start();
 
 $supEdit = $_SESSION["supEdit"];
-// print_r($supEdit);
+print_r($supEdit);
 
 ?>
 
@@ -41,9 +41,9 @@ $supEdit = $_SESSION["supEdit"];
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../<?php echo $supEdit[0]["shop_photo_path"]?>" alt="" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
-                            <input type="file" id="profile" name="shopPhoto" hidden accept=".png,.jpg" value="<?php echo $supEdit[0]["shop_photo_path"]?>">
+                            <input type="file" id="profile" name="shopPhoto" class="hidden" accept=".png,.jpg" value="">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["id"] ?>">
@@ -51,7 +51,7 @@ $supEdit = $_SESSION["supEdit"];
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
                                 <label class="text-white" for="">Shop Name</label>
-                                <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"]?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
