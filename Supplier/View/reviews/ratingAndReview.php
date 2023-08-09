@@ -23,9 +23,8 @@ include "../components/header.php";
                     <label class="text-lg font-bold mr-4" for="order">Order By</label>
 
                     <select class="review-order p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
-                        <option value="0">all</option>
-                        <option value="1">date</option>
-                        <option value="2">rating</option>
+                        <option value="0">date</option>
+                        <option value="1">rating</option>
                     </select>
                 </div>
 

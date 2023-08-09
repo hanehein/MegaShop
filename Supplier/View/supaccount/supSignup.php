@@ -31,11 +31,12 @@ session_start();
         <!-- input container -->
         <div class="w-1/2 px-8 md:px-16 flex flex-col justify-center items-center">
             <h4 class="text-center font-extrabold text-[25px] text-[#2C7607]">Sign Up</h4>
-            <form action="" class="flex flex-col gap-4">
-                <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="text" name="name" placeholder="Name">
-                <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="email" name="email" placeholder="Email">
+            <form action="../../Controller/account/signUpController.php" method="post" class="flex flex-col gap-4">
+                <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="text" name="shop_name" placeholder="Shop Name">
+                <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="text" name="supplier_name" placeholder="Supplier Name">
+                <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="email" name="email" placeholder="Email Address">
                 <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px] relative" type="tel" name="phone" placeholder="Phone number">
-                <div class="relative">
+                <!-- <div class="relative">
                     <input class="p-2 my-2 rounded-xl border border-[#2C7607] shadow-md w-[400px] h-[60px]" type="password" name="password" placeholder="Password">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2C7607"
                         class="bi bi-eye absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-[#2C7607] transform group-hover:text-[#2C7607]"
@@ -56,7 +57,7 @@ session_start();
                         <path
                             d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                     </svg>
-                </div>
+                </div> -->
                 <div class="flex items-center">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-[#2C7607]">
                     <label for="privacy_policy" class="ml-2">

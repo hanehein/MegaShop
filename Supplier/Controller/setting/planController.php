@@ -9,5 +9,4 @@ $sql = $pdo->prepare(
 $sql->execute();
 $package = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
-
 ?>

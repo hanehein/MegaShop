@@ -10,7 +10,6 @@ $pwd = "";
 $pdo = new PDO("mysql:host=$hostname;port=$port;dbname=$dbname",
     $uname,$pwd);
 
-print_r($pdo);
 // set error exc
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
