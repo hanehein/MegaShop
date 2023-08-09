@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $supEdit = $_SESSION["supEdit"];
 // print_r($supEdit);
 
@@ -22,7 +23,7 @@ $supEdit = $_SESSION["supEdit"];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-    <script src="../resources/js/img.js"></script>
+    <script src="../resources/js/img.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -40,9 +41,9 @@ $supEdit = $_SESSION["supEdit"];
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
-                            <input type="file" id="profile" hidden accept=".png,.jpg" value="">
+                            <input type="file" id="profile" name="shopPhoto" hidden accept=".png,.jpg" value="<?php echo $supEdit[0]["shop_photo_path"]?>">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["id"] ?>">
@@ -74,15 +75,15 @@ $supEdit = $_SESSION["supEdit"];
                                         <option <?php
                                                 if ($supEdit[0]["township"] == 1) {
                                                     echo "Yankin" ?> selected <?php }
-                                                                                                                ?> value="1">Yankin</option>
+                                                                                ?> value="1">Yankin</option>
                                         <option <?php
                                                 if ($supEdit[0]["township"] == 2) {
                                                     echo "Dagon" ?> selected <?php }
-                                                                                                                ?> value="2">Dagon</option>
+                                                                                ?> value="2">Dagon</option>
                                         <option <?php
                                                 if ($supEdit[0]["township"] == 3) {
                                                     echo "Kamayut" ?> selected <?php }
-                                                                                                                ?> value="3">Kamayut</option>
+                                                                                ?> value="3">Kamayut</option>
                                     </select>
                                 </div>
                             </div>
@@ -92,17 +93,17 @@ $supEdit = $_SESSION["supEdit"];
                                     <input type="radio" id="" name="plan" class="" value="0" <?php
                                                                                                 if ($supEdit[0]["pack_id"] == 0) {
                                                                                                     echo "Basic" ?> checked <?php }
-                                                                                                                                                        ?>>
+                                                                                                                            ?>>
                                     <label for="plan_basic">Basic</label>
                                     <input type="radio" id="plan_silver" name="plan" class="" value="1" <?php
                                                                                                         if ($supEdit[0]["pack_id"] == 1) {
                                                                                                             echo "Basic" ?> checked <?php }
-                                                                                                                                                        ?>>
+                                                                                                                                    ?>>
                                     <label for="plan_sliver">Silver</label>
                                     <input type="radio" id="plan_gold" name="plan" class="" value="2" <?php
                                                                                                         if ($supEdit[0]["pack_id"] == 2) {
                                                                                                             echo "Gold" ?> checked <?php }
-                                                                                                                                                                ?>>
+                                                                                                                                    ?>>
                                     <label for="plan_gold">Gold</label>
                                 </div>
                             </div>

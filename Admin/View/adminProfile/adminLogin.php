@@ -40,6 +40,7 @@ session_start();
                 <p class="text-white text-[23px] text-center">Log In</p>
 
                 <form action="../../Controller/loginController.php" method="post">
+                    <input type="hidden" name="admin_id" class="hidden">
                     <div class="md:w-[18rem] w-[15rem]  bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
                         <ion-icon name="person" class="text-white"></ion-icon>
                         <input type="text" name="userName" placeholder="Enter Name" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required />

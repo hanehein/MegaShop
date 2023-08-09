@@ -1,8 +1,10 @@
 <?php
 ini_set('display_errors', 1);
-// session_start();
-include "../../Controller/dashboardController.php";
-// print_r($admin);
+session_start();
+// include "../../Controller/middleware/loginCheck.php";
+
+$admin = $_SESSION["admin"];
+print_r($admin);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -193,18 +195,18 @@ include "../../Controller/dashboardController.php";
                 <?php
 
                 $dataPoints = array(
-                    array("y" => 100,000, "label" => "Jan"),
-                    array("y" => 200,000, "label" => "Feb"),
-                    array("y" => 300,000, "label" => "Mar"),
-                    array("y" => 400,000, "label" => "Apr"),
-                    array("y" => 500,000, "label" => "May"),
-                    array("y" => 600,000, "label" => "Jun"),
-                    array("y" => 500,000, "label" => "Jul"),
-                    array("y" => 700,000, "label" => "Aug"),
-                    array("y" => 500,000, "label" => "Sept"),
-                    array("y" => 800,000, "label" => "Oct"),
-                    array("y" => 200,000, "label" => "Nov"),
-                    array("y" => 900,000, "label" => "Dec")
+                    array("y" => 100, 000, "label" => "Jan"),
+                    array("y" => 200, 000, "label" => "Feb"),
+                    array("y" => 300, 000, "label" => "Mar"),
+                    array("y" => 400, 000, "label" => "Apr"),
+                    array("y" => 500, 000, "label" => "May"),
+                    array("y" => 600, 000, "label" => "Jun"),
+                    array("y" => 500, 000, "label" => "Jul"),
+                    array("y" => 700, 000, "label" => "Aug"),
+                    array("y" => 500, 000, "label" => "Sept"),
+                    array("y" => 800, 000, "label" => "Oct"),
+                    array("y" => 200, 000, "label" => "Nov"),
+                    array("y" => 900, 000, "label" => "Dec")
                 );
 
                 ?>
