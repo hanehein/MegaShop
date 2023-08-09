@@ -40,7 +40,7 @@ include '../../Controller/websiteFormController.php';
                 <?php include '../components/menu.php'; ?>
             </div>
         </div>
-        
+
 
         <form action="../../Controller/websiteFormEditController.php" method="post">
             <div class="w-1/2 h-auto mx-auto flex justify-center items-center bg-[#FFFFFF] px-7 py-7 ">
@@ -56,7 +56,7 @@ include '../../Controller/websiteFormController.php';
                     <?php foreach ($result as $m_website_form) { ?>
                         <div class="w-1/6 h-auto bg-white flex flex-col items-center justify-center py-3 px-3 rounded-lg mt-2 mb-3">
                             <label for="logo">
-                            <img src="../resources/img/<?php echo $m_website_form["logo_photo"] ?>" alt="" class="cursor-pointer">
+                                <img src="../resources/img/<?php echo $m_website_form["logo_photo"] ?>" alt="" class="cursor-pointer">
                             </label>
                         </div>
 

@@ -6,7 +6,7 @@ document.getElementById('profile').onchange = function (evt) {
     if (FileReader && files && files.length) {
         var fr = new FileReader();
         fr.onload = function () {
-            document.getElementById('outImg').src = fr.result;
+            document.getElementById('photoimg').src = fr.result;
         }
         fr.readAsDataURL(files[0]);
     }

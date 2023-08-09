@@ -65,18 +65,18 @@ include '../../Controller/ProfileController.php';
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:shadow-xl">My Profile</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Followed Stores</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Order History</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">My Reviews</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Wishlist</p>
+            <a href="./profile.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p></a>
+                <a href="./followedStores.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p></a>
+                <a href="./orderHistory.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p></a>
+                <a href="./myReviews.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p></a>
+                <a href="./wishlist.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p></a>
             </div>
         </div>
         <!-- edit -->
         <div class="w-4/5 md:w-5/12 h-1/2 mx-auto bg-gray-100 shadow-2xl text-center rounded-xl py-4 mt-5 border-2 border-transparent">
             <?php foreach ($result as $m_customers) { ?>
                 <div class="flex  items-center justify-evenly">
-                    <img src="../../../Storage/profile/profile1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/6 rounded-full ">
+                    <img src="../../../Storage/profile/<?php echo $m_customers["cus_photo"]?>" alt="" class="w-1/3 md:w-1/6 h-1/6 rounded-full ">
                     <div class="hidden md:flex flex-col items-center">
                         <p class="text-xl font-bold py-6"><?php echo $m_customers["cus_name"]; ?></p>
                         <p class="text-lg font-semibold py-6"><?php echo $m_customers["cus_address"]; ?></p>
@@ -111,12 +111,14 @@ include '../../Controller/ProfileController.php';
                     </div>
 
                 </div>
-            <?php  }  ?>
+            
             <a href="../../Controller/ProfileEditController.php?id=<?php echo $m_customers["id"]; ?>">
             <button class="bg-orange-500 w-1/6 md:w-1/12 mt-10 py-2 rounded-lg mr-16 md:mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300 text-white font-bold hover:text-black">
                 Edit
             </button>
+            
             </a>
+            <?php  }  ?>
         </div>
     </div>
         <!-- footer -->
