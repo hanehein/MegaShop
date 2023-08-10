@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
-// include "../../Controller/middleware/loginCheck.php";
 
 $admin = $_SESSION["admin"];
 print_r($admin);

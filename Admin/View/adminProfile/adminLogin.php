@@ -22,7 +22,7 @@ session_start();
 
 <body class="overflow-x-hidden bg-white">
     <!-- main div -->
-    <div class="w-auto h-screen container flex mx-auto justify-center items-center ">
+    <div class="w-auto h-screen container flex mx-auto justify-center items-center">
         <!-- inner container -->
         <div class="md:w-[26rem] w-[18rem] h-[32rem] container mx-auto flex-col items-center justify-center bg-[#CCCCCC]  rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
             <!-- logo section -->

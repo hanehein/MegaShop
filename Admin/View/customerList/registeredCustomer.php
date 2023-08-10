@@ -40,8 +40,8 @@ include "../../Controller/customerListController.php";
                 </div>
             </div>
             <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
-                <table cellspacing="" cellpadding="10" class=" w-auto table-fixed text-white text-center text-xs">
-                    <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16 w-auto">
+                <table cellspacing="" cellpadding="8" class="w-auto table-fixed text-white text-center text-xs">
+                    <thead class=" bg-[#00336661] text-white text-sm font-semibold h-14 w-auto">
                         <tr>
                             <th>No.</th>
                             <th>Profile</th>
@@ -64,11 +64,11 @@ include "../../Controller/customerListController.php";
                             # code...
 
                         ?>
-                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                            <tr class="h-10 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++; ?></td>
                                 <td>
                                     <a href="../../../Storage/"></a>//
-                                    <img src="../../..<?= $customer["cus_photo"]?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
+                                    <img src="../../..<?= $customer["cus_photo"] ?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
                                 </td>
                                 <td> <?= $customer["cus_name"] ?></td>
                                 <td> <?= $customer["cus_email"] ?></td>
@@ -83,7 +83,7 @@ include "../../Controller/customerListController.php";
                                         else echo "Kamayut"; ?></td>
                                 <td> <?= $customer["cus_address"] ?></td>
                                 <td> <?= $customer["create_date"] ?></td>
-                                <td><a href="../../Controller/customerNotifyController.php?id=<?=$customer["id"]?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Notify</button></a></td>
+                                <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -91,41 +91,35 @@ include "../../Controller/customerListController.php";
             </div>
             <!-- pagination -->
             <div class="w-auto flex items-center justify-center h-10 mb-5 ">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
+                <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] 
+                    <?php
+                    if ($page <= 1) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page - 1 ?>">Previous</a>
+                    </li>
+                    <?php
+                    for ($i = 1; $i <= $pageList; $i++) { ?>
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366] active">
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page + 1 ?>">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </body>
 
 </html>
-
-                            

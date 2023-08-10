@@ -29,6 +29,7 @@ if (count($_POST) == 0) {
         } else {
             if ($password == $result[0]["admin_password"]) {
                 $_SESSION["adminId"] = $result[0]["admin_id"];
+                $_SESSION["adminName"] = $result[0]["admin_name"];
                 header("Location: ./dashboardController.php");
             } else {
                 $_SESSION["loginError"] = "Name or Password Incorrect!";
