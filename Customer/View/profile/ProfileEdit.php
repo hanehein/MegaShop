@@ -81,11 +81,11 @@ $profile = $_SESSION['profileEdit'];
         <!-- save -->
         <div class="w-2/3 md:w-5/12 h-1/2 mx-auto bg-gray-100 shadow-2xl text-center rounded-xl py-4 mt-5">
 
-            <form action="../../Controller/ProfileUpdateController.php" method="post">
+            <form action="../../Controller/ProfileUpdateController.php" method="post" enctype="multipart/form-data">
                 <div class="flex  items-center justify-center">
 
                     <label for="profile" class="w-2/3 justify-center items-center">
-                        <img src="../../../Storage/profile/<?php echo $profile[0]["cus_photo"];?>" id="photoimg" class="w-2/3 md:w-1/3 h-1/6 rounded-full ml-10 cursor-pointer">
+                        <img src="../../../Storage/profile/<?php echo $profile[0]["cus_photo"];?>" id="outImg" class="w-2/3 md:w-1/3 h-1/6 rounded-full ml-10 cursor-pointer">
                     </label>
                     <input type="file" name="profile" id="profile" hidden class="hidden" accept=".png,.jpg,.svg" >
                     <div class="hidden md:flex flex-col items-center">
