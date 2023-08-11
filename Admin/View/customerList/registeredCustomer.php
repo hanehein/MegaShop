@@ -67,7 +67,7 @@ include "../../Controller/customerListController.php";
                             <tr class="h-10 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++; ?></td>
                                 <td>
-                                    <img src="../../..<?= $customer["cus_photo"] ?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
+                                    <img src="../<?= $customer["cus_photo"] ?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
                                 </td>
                                 <td> <?= $customer["cus_name"] ?></td>
                                 <td> <?= $customer["cus_email"] ?></td>
