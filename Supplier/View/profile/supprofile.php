@@ -1,5 +1,7 @@
 <?php
-include "../../Controller/setting/supplierProfileController.php"
+include "../../Controller/setting/supplierProfileController.php";
+// echo "<pre>";
+// print_r($profile);
 ?>
 <?php
 $hasJsFile = FALSE;
@@ -51,7 +53,7 @@ include "../components/header.php";
                             <?php } ?>
                     <!-- </form> -->
                     <div class="text-end mt-12 px-10 space-x-3">
-                        <a href="../../Controller/editProfileController.php?id=<?= $result["id"] ?>">
+                        <a href="../../Controller/setting/editProfileController.php  ?id=<?= $result["id"] ?>">
                         <button  name="edit" class="w-[100px] px-3 py-1 text-white rounded-lg bg-[#66CC33]">Edit</button> 
                         </a>
                         <a href="">

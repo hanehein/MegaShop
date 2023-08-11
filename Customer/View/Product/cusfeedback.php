@@ -110,16 +110,16 @@
 
         <p>Please rate your experience from 0 to 10, 10 being the highest</p>
         <div class="flex space-x-1 md:space-x-2">
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">1</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</div>
-            <div class="bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</div>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">1</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</button>
+            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
         </div>
         <p class="text-xl font-semibold mt-4">Please Share What Can Be Improved</p>
         <textarea name="advice" id="" placeholder="Write some advices..." class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>

@@ -12,11 +12,14 @@ if (!isset($_POST["from_signup"])) {
 
 session_start();
 
-$shop_name = $_POST["shop_name"];
 $supplier_name = $_POST["supplier_name"];
+$shop_name = $_POST["shop_name"];
 $email = $_POST["email"];
-$shop_address = $_POST["shop_address"];
+$township = $_POST["township"];
 $phone = $_POST["phone"];
+$shop_address = $_POST["shop_address"];
+$bank_acc = $_POST["bank_acc"];
+
 
 //Db Connection
 include "../../Model/model.php";
@@ -38,24 +41,37 @@ if(count($supplier) == 0){
     $sql = $pdo->prepare(
         "INSERT INTO m_suppliers (
             sup_name,
-            sup_shop_name,
             sup_email,
+            sup_password,
+            township,
+            sup_address,
             sup_phone,
-            sup_address
+            bank_account,
+            sup_shop_name,
+            create_date
         ) VALUES (
             :sup_name,
-            :shop_name,
             :email,
+            :password,
+            :township,
+            :address,
             :phone,
-            :address
+            :bank_acc,
+            :shop_name,
+            :creat_date
         )"
     );
     
     $sql->bindValue(":sup_name", $supplier_name);
-    $sql->bindValue(":shop_name", $shop_name);
+   
     $sql->bindValue(":email", $email);
-    $sql->bindValue(":phone", $phone);
+    $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
+    $sql->bindValue(":password", $passsword);
+    $sql->bindValue(":township", $township);
     $sql->bindValue(":address", $shop_address);
+    $sql->bindValue(":phone", $phone);
+    $sql->bindValue(":shop_name", $shop_name);
+  
     $sql->execute();
 
     header("Location: ../../View/account/login.php");

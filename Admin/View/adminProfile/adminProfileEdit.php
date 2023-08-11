@@ -72,7 +72,7 @@ include "../../Controller/adminProfileController.php";
                         </div>
                         <div class="flex  items-center justify-center space-x-10 w-auto">
                             <a href="../adminDashboard/adminDashboard.php"><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Back</button></a>
-                            <a href="../../Controller/adminSignupController.php?id=<?=$admin["id"]?>"><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
+                            <a href="../../Controller/adminSignupController.php?id=<?=$admin["admin_id"]?>"><button class="w-24 h-8 text-white bg-[#66CC33] rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Sign Up</button></a>
                         </div>
                     </div>
                 </div>

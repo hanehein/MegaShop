@@ -18,7 +18,7 @@ if(count($_POST) == 0){
     $bankAcc = $_POST["bankAcc"];
     $phone = $_POST["phone"];
     $password = $_POST["password"];
-    // $password = getpwd(8);
+    $shopPhoto = $_FILES["shopPhoto"]["name"];
 
     include "../Model/model.php";
     $sql = $pdo->prepare("
@@ -33,13 +33,14 @@ if(count($_POST) == 0){
         where id = :id
     ");
     $sql->bindValue(":id",$id);
-    $sql->bindValue(":name",$supplierName);
-    $sql->bindValue(":email",$shopEmail);
+    $sql->bindValue(":name",$supplierName);//
+    $sql->bindValue(":email",$shopEmail);//
     $sql->bindValue(":shopName", $shopName);
     $sql->bindValue(":township",$township);
     $sql->bindValue(":plan",$plan);
     $sql->bindValue(":bankAcc",$bankAcc);
     $sql->bindValue(":phone",$phone);
+    
     $sql->execute();
     header("Location: ../View/supplierList/approveList.php");
 
