@@ -55,19 +55,18 @@ include "../../Controller/customerListController.php";
                             <th>Promotions</th>
                         </tr>
                     </thead>
-                    <tbody class="">
+                    <tbody>
                         <?php
 
-                        $count = 1;
+                        $count = (($page - 1) * $rowLimits) + 1;
 
-                        foreach ($customerLists as $customer) {
-                            # code...
+                        foreach ($customerLists as $customer) { 
+                            
 
                         ?>
                             <tr class="h-10 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++; ?></td>
                                 <td>
-                                    <a href="../../../Storage/"></a>//
                                     <img src="../../..<?= $customer["cus_photo"] ?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
                                 </td>
                                 <td> <?= $customer["cus_name"] ?></td>
@@ -92,7 +91,7 @@ include "../../Controller/customerListController.php";
             <!-- pagination -->
             <div class="w-auto flex items-center justify-center h-10 mb-5 ">
                 <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
-                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] 
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
                     <?php
                     if ($page <= 1) {
                         echo "disabled";
@@ -103,7 +102,12 @@ include "../../Controller/customerListController.php";
                     </li>
                     <?php
                     for ($i = 1; $i <= $pageList; $i++) { ?>
-                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366] active">
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <?php
+                            if ($page == $i) {
+                                echo "active";
+                            }
+                        ?> hover:text-white hover:bg-[#003366]">
                             <a href="?page=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php } ?>
