@@ -13,7 +13,7 @@ $(document).ready(function () {
                 $(products).each(function (index, product) {
                     // Your code here
                     $(".product-lists-container").append(
-                        `<tr>
+                        `<tr class="hover:bg-slate-200">
                             <td class="px-6 py-4 ">
                                 <div class="flex space-x-4 items-center">
                                     <img src="../../../${product['photo']}" class="w-[60px]" alt="product-img">

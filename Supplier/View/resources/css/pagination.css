@@ -1,0 +1,10 @@
+.disabled-link {
+    color: gray; /* Change color to indicate disabled state */
+    text-decoration: none; /* Remove underline or styling */
+    pointer-events: none; /* Prevent click events */
+}
+
+.active-link {
+    color: white;
+    background-color: #66CC33;
+}

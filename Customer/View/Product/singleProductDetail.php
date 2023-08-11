@@ -1,3 +1,8 @@
+<?php
+session_start();
+$product = $_SESSION["product_detail"];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -70,13 +75,21 @@
               <span class="text-medium text-grey">5.0</span>
             </div>
             <h2 class="text-extra-large font-bold">
-              STEP Women Blouse Short Sleeves 007402
+              <?= $product["p_name"] ?>
             </h2>
             <div>
-              <p class="text-extra-large text-orange font-bold">KS 8850</p>
-              <p class="text-red-600 text-tiny">
-                <span class="line-through">Ks 9950</span> (10% off)
+              <p class="text-extra-large text-orange font-bold">
+                <?php if($product["p_discount"] != 0){
+                  echo ($product["p_sell_price"] * (100 - $product["p_discount"])) / 100;
+                }else {
+                  echo $product["p_sell_price"];
+                } ?> MMK
               </p>
+              <?php if ($product["p_discount"] != 0) { ?>
+                <p class="text-red-600 text-tiny">
+                  <span class="line-through"><?= $product["p_sell_price"] ?> MMK</span> (<?= $product["p_discount"] ?>% off)
+                </p>
+              <?php } ?>
             </div>
           </div>
 
@@ -118,28 +131,27 @@
             <!-- quantity box -->
             <div class="flex space-x-2 items-center mb-5">
               <span class="text-grey">Quantity : </span>
-              <div class="w-[30px] h-[30px] rounded-md bg-grey flex justify-center items-center">
+              <div class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center">
                 <ion-icon class="text-white" name="remove"></ion-icon>
               </div>
               <div class="w-[50px] h-[30px] rounded-md bg-grey flex justify-center items-center bg-transparent">
                 <span class="font-bold">1</span>
               </div>
-              <div class="w-[30px] h-[30px] rounded-md bg-grey flex justify-center items-center">
+              <div class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center">
                 <ion-icon class="text-white" name="add"></ion-icon>
               </div>
               <div>
-                <small class="font-tiny">only 12 items left</small>
               </div>
             </div>
             <!-- quantity box -->
 
             <!-- button box -->
             <div class="flex space-x-5 items-center">
-              <button class="bg-orange text-white py-2 px-3 sm:px-6 rounded-md">
+              <button class="bg-[#F68721] text-white py-2 px-3 sm:px-6 rounded-md">
                 <ion-icon class="text-extra-large" name="cart"></ion-icon> Add
                 to Cart
               </button>
-              <button class="bg-blue text-white py-2 px-3 sm:px-6 rounded-md">
+              <button class="bg-[#024486] text-white py-2 px-3 sm:px-6 rounded-md">
                 <ion-icon class="text-extra-large" name="basket"></ion-icon>
                 Buy Now
               </button>
@@ -150,20 +162,8 @@
           <div class="border-b-2 py-2">
             <h2 class="text-extra-large font-bold mb-2">Description</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque,
-              laboriosam sunt quasi quae tempore voluptatum officia odit
-              temporibus fugit tenetur ex, eos aliquam in facere quisquam a
-              necessitatibus eum nostrum. Numquam, ipsa! Saepe totam quisquam
-              provident unde quod omnis laboriosam, eum laudantium sequi
-              optio. Optio saepe voluptatem, expedita dolorum consequuntur
-              exercitationem veniam unde sed, ex reiciendis atque ducimus
-              assumenda voluptas ea, odit culpa harum et neque? Laudantium
-              culpa ex quasi expedita, repellat dolor optio enim distinctio
-              dolorum corrupti, aliquid praesentium ratione nam? Accusamus
-              soluta consectetur quos officiis aperiam similique harum.
-              Blanditiis animi nesciunt libero odio voluptas voluptate
-              reprehenderit obcaecati minima?
-            </p>
+              <?= $product["p_description"] ?>
+             </p>
           </div>
 
           <div class="py-2">
@@ -173,7 +173,7 @@
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABKVBMVEX7+O/69+5BQUP8sEL6eRP//fSurKfDwLqRkY6lpKD++/L7rjn7+/Q1NTj7+fL679g5PUP/tUP6cwCHaUL4vpT79ulNTU7d2tP6uVfo5t37rDH7tU/z8OcxMjX18un7sEP75cTOy8X5bgD63bEsLDH///9jYmK+u7VWVlb62af5w3ONa0DioELHkUT3eAD6y4n3hi6Eg4H648z6pjn5jCNGRkf705iFhIFvb26cmpZubW2Ii41XW1+IgXf6umFKQztjU0DPpWTrw4a+o31YUET67dGdgFe1hD9/XzRvWj7YmkOme0FcTDrYlTF8Y0HvqUOZdkP1rHH7oDT3y6ZwSzf2jT352br1nFj4s4P50K75lBv5y5ogICYTFB37qB76yID4hRz3giX2omIVe2MLAAANkUlEQVR4nO1dDVvaShYOxIE4GSJiQ0z4CFEEpFWrvSh491p3V9bV261tXdverqvd/v8fsTOTAAkgxBliMva+z9N2GhOe83o+58xMkKSEIpXCfx79DAZ9UgSwSJqSHv9biQ1MqkiJw49RVgbDjgvUnVieE4VhisaMuKWIEM+cHmOQEQisLhgH2OQUJh6yGZpI5slSPYnEjy0epkQiyRTwU+JkbNYgI04epDVJ3EJEiZ8gZT9zfnFLEDEECoasggrjgyz1r+eAYhCUWLQoGD2mkkQchmzOJE6UYS5IxEmEf+bsuMGpAQEUyCWiCG2gFJ8SBGDIU3GJMK/jUGDiubng6KcK0gfiCTICMOQKMqnkd7r4G/7J5idUw59p8VMMchRsuyxEosgaLYRhyDa7ZlF8bGCaXSe/2BqAOeKLQlCkeMEEgYyNDc+fYNwChAVrcShM0mYzNZEa/mxLGqLoT2KcoiV/ZuYD29ZWcYLoz9HwT7SsvMIlvsB//g1/rqa9EBs/uWQUQoMcj4qR0ZiVsKhdFhBAACDvpzwIniUNaRExFMLsUberGID7kx4Abz+cF7Dc6Dqm2WwdSZGokXfdlBuwWmwCCLGh9hqLZ5jiLZsWQBF2M555gt7+DEMVdvMtdI6HtEDLeEiLHCe64mYIGs6QlZ9tEExVRTLmntBs+UiBdHn6bawb4BPAEPQyfob7zlQzZZu5JKOaBEWTctIIIOpl4bTMz3rOJgEEJbO4hZCkr1CYvxb/cvzrZOZnbvjHzxAh57faYfukZMuqqu683Tn969/+fqZAFLgr/oDPCoT6h/84t1RVprh6++oqLaur9j9/66MRx4QY2+OhIX27ZKkXl7KH1d9/Xz09p6N3/ypt60ij9yW+PfIQ0MqhjHW3+tYeMnx5/n5tlY52XqqWvLeCElGShMSYpSGd8sOWeSYPGV5enK+6w1en+C9VPtRRIqJFKARUoaHNkjriMtKiR1C+ekevqeub2FSFYTiSFOlta0Dq8r1sDxkOYROGdqlUktu6FqfY4REgWJPVgc5WL1+uToF9KmN1YoYl1a6hWR+cGPgJbqsDTb1cW7s4W5uC92/XXmIdYo44T26LQNHnhehwQFC+SufzefJnEvjqFbHSEvHGw8RT9Ed8tDd0QfkVpZeeBLmYfyUPPNTaSzjFgA/6CMqX+fzFh/edSYY7F2f5/KASsO033z4mmmJAg4c+gvJOPr9zfv5+XIv5C/uU/MilJ3/6vrS08TWxFFNBDW76Ca6e5/NrV5dvJ1T49tWrtXweZ3+iviWKwnVyKfryNeqrsp/hB+yHZ1OMNN05wz/5sGoT9XnYPYiYIvtrb3wU9fUgw7VpUWZoq2vflnwovNYXx2aaqExL9GPbBtFegKC8ejGT4b8LSwGKUUebxzMc32Wh9a0AQVk9ncUw/W43wHBpI1o7XcTW1pMxgputWQTTresgxcJNdCs3bEvYY1NztBm0UatmTgsyI3TMz2N2Gl08XUgfSC+NEURmbibDnIHGKEYXbBbRKAmmQtnaRNCozGRYMSC6LoRRIvdZi8XMQANeqOJKEzbnMGxCCX30UyzcPCAg0xb/Aa8F9YHGAuk6nteCzBwrXQaSpr8OhtOp02HGJY3hswvRYTAXqmRWC5Q5DBWAnwu44vScyHqAPjUYLAZep8ImEyK1TQQF+3MY0rVE9MVPcXdKrOEJ9ItbutFqlo+h1SeZDXZnEkynu+Qu7WDDb6afJ5TIE+gX2MbTBhN7wlA9oWKmZid8nPKr5DZ040v8hclZFO/R3wUBrQczBblWnp3wccqnS4noD7+Z3owx5DOzBfYpdX+csV1nKs92Q+yI7mKp7i/eCkFH5AyDCzRS/8RQvaf1JTTqcxjW3TV99MOnxMKBf8WGd0Pk4vzQX9DYXncQOqOEP91eK+5ycKCw8Zc1yVjDdoFGgUb+tOumbTAsaYqd4nSGTbpSqh34GQ5DTSJ2WQyB7lWX35tflgpLbp8eLHt+2OkUi8VpWiRFDYa24vfDHy7D8dl13EBtlSy/uG0Xb4YwLGkIwemRRnFXu/UbH8MvHsOErQujE3kVqy9QPg9Kmoc0OChqMG5GZlq4GegwQU4okXT4bXej4GLjiys3bFVyBITKdFRa7qQefBk8i+EyTNymVrj9H4wXLrxoCDPz4TJE1y9GGMTSRGlQIlsSfPCuAQJINyU+hBlPJwAPyz0CpFuD2RFhayoEweZyCGTC3PQwmpFtKg7DMBvCz3iRfSqGU51+jvlRB5zhgkmyUqawnbCSZDbY+kAigUWHi+0gRA6mY5URyBENZpuohmMJHbj/eP+RaIhI0QuDGwjQaKj5MjtCoyYp9Ibak20jmt0vBmWn6VSx3FXDqEpSmf4tgarRdMokzkODoOyFfK1fW3FHSK9t1nQ0MdZWajV3YtKvhV7C4G74z/gAkE3X6/WWCaFxe2tA6Py3YkJ8tYWvdsjcD+Cf39Y7Xt5GpTt34wzaLFmWVaL9KrQ9Gkta23Jv0Ut3m+HKN053mNPIKxdzx8vp+jGARi6HGRr1NGbr1HPpbrFSxxQBvkFp5HLuRm+0blHx0aalltqYGCaBti3VPpFVq6YRFZL1AHKrvm6FZ8hxIGjObwialVxzy8lkKEMTAJdhJ9fFjqjksD5BsZJBqVwl6zGkm5803VbvsU/eq7ZOxm2AVtbVE0j0aa3LKuEamiHnLHLes9VWLqcYeIaAGaaV5WU8qTexIisGlGC5U2lShikjV3cCDGuWuqJhhWHFoZplkbGkU7c7sbbbdH/Uo3TIzG7+rwcaDexxDWKfuXT99raeTpvAqeeJUeL5bwaAYrrTqVQatLc9YEj6coSPbmMW2GApN40aKaa+aZV0LSxDrhNroYoubJi9dK5IrTSTzS5P6jBdbDWUMvQzHNOhOtQhOrTW+zVyNTxD9pOjoXJ2WVGMrUzuVqKRZuSHx9Dnhzi4emmQMsS5j/geRKA98EOE9BP7RJOQjSOOqqr3HkM0JyfyrVyH8uBqsV7MNDwd+mNp7riTc2NpxXciCDNsbx/WEDFN+8RWR7FUJbGULF/d7+21VRUTX1fvya2zCfIdqwzzMHSKON0VjWE+vJ3Ih7d+hiTz3eFAMj0fovu7E4T1qd5tIx1fvLububOWd+9BuF8PJDUN8bKy45Tp32M1jeOYvkqtRoDdbqKm6evUP2t9Ypd98s/w1ofke7LZy6DsBIG6dHh2y1+Veme7vCFyR9jSNM3zOM0tSuk9mu/eSSSr4T8b7LssBCHItEafkmLkR9qHkjd7wiP8z/A9A+4AeEPvAlYGdMcSDN2TiZMh7DnmPoTlo0YWx1cFKQY0u106tSADE1b3q2TZrXFUxRf28V2kLirje7upbCZsXy1OFwROYx/Xat2e0TGA09pqOMBombdEINDbdxxYTldJjjGVfQAaPUNJSUBJk8r9Vsko4TuHMXYQQLeDTa9T3jpqYraUYa6ouDo86hCGKQiWlS2jJYGKcdQyYLnokIqh1T3uxdn9DQ1ANAGUbqZjQjOXwYW40din66Cw2dtXQDmdxZVrOoPpAOWo2SrjSXQ3bwCjWK4/QocxAjp0KtjskeLb6eFZk5kxl2kMqWaWy7Ca6ZEKqNfEF/RmD9d4WWcr60AzA7LTz3gnDl5HisZPN4oCOHhjBNCGURaSYEHvwg9AGmPDx9InBVcDQQiwv71alIYqy2q7KNy8bm/UiJWgk40escZXnPqUnsKCXi/0c6EruWgoPgXiJDizi6A9BhFKGNkH6P2V8OhHFlv5uuEzpzDoevfbJ9IYnA/Liu4kNxfDORaADm42Cku/fHrje5/CVFgnK1ER9HodbMcq59u4pn91d+N9xzRte8pbFVyChxG+UcEtnaLbZYE+Lw12HBKW8hSaUb5OwWv4s73bOaSBo5Uv/pMUmOYYS6sdnYUOdjeynrYJ95SGXhSCp++WPGWS7cTkZRERJorU8NTT4599hO+ig9djFIc2q673o1PgiCDr86FvRvrHSYqE5fd7PbptliP5nmAeo6E/dic5FnavQ5QyonxNAVq5Gae4cRMmxLAeoH/6GagGvo4daP4KwoQYtkwWzwQbffYFnML/Jg/gTQPrmyLj6QAh/ccgNW58CZkE2b6mILYeCTm0TdRYKLwIt1VdwK8pwLV4YanwOuyLIYR4C/wYSGr8GDIJitOOCwIdhCzTxHnR4DhC8xPOQB8JUTT4UzT8Wd9lIQpDBl0IRI+16BIoxrCesxGGIquoogQZcQI+K8StSUKBsYUnEJ43OwJhwiGbqQlWdDE0uoShJ1of6MkgkIkyCiqUDhMvKPcuhIVIERl+hq+r5HpWAF/ifYlb4gnyyShA0cUuoiinbXiOVYqQsHlOdQnRJeE7V7lAQaIB9xvAkp8IEy+gB9bVTyEyGQXb11UKEuldMG0jicxEF/+xzC99FEWBjJvNkh8GB3j+DX+RtMGEZ85OhJkLF0RKaGwQxkKZG/7ChBi2Y5WisCNglFYcioJt/Hw82AK+QFbKLOpTEeT/5qSk64L3GzGSzs8t7FmFFKLo4iubks5O4u35CqBBnhd1iLHxk6PhL0bG5ug3CtGq5G34J1yHPAs23ickm6AYcZCC/VilKASjPECfDDAtaUQhSGRg0+EDJP8PiIkx92gBtlIAAAAASUVORK5CYII=" class="w-[50px] h-[50px] rounded-full" alt="" />
               </div>
               <div>
-                <span>Rare Boutique</span>
+                <span><?= $product["sup_shop_name"] ?></span>
               </div>
             </div>
           </div>

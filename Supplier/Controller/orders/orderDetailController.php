@@ -12,10 +12,16 @@ include "../../Model/model.php";
 
 // get order general informations
 $sql = $pdo->prepare(
-    "SELECT *,t_orders.create_date AS order_create_date
-    FROM t_orders 
-    JOIN m_customers ON t_orders.cus_id = m_customers.id
-    where t_orders.id = :order_id"
+    "SELECT 
+        *,
+        t_orders.create_date AS order_create_date
+    FROM 
+        t_orders 
+    INNER JOIN m_customers 
+    ON 
+        t_orders.cus_id = m_customers.id
+    where 
+        t_orders.id = :order_id"
 );
 
 $sql->bindValue(":order_id", $order_id);

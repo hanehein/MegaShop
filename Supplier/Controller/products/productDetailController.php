@@ -14,10 +14,19 @@ session_start();
 include "../../Model/model.php";
 
 $sql = $pdo->prepare(
-    "SELECT * FROM m_products
-    INNER JOIN m_category ON m_products.p_category = m_category.id
-    INNER JOIN m_brand ON m_products.p_brand = m_brand.id
-    WHERE m_products.id = :id"
+    "SELECT 
+        *,
+        m_products.id AS p_id
+    FROM 
+        m_products
+    INNER JOIN m_category 
+    ON 
+        m_products.p_category = m_category.id
+    INNER JOIN m_brand 
+    ON 
+        m_products.p_brand = m_brand.id
+    WHERE 
+        m_products.id = :id"
 );
 
 $sql->bindValue(":id",$product_id);

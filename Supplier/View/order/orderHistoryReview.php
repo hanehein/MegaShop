@@ -108,19 +108,20 @@ include "../components/header.php";
                         <!-- Pagination component -->
                         <nav class="flex items-center justify-center">
                             <!-- Previous button -->
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
+                            <a href="?page=<?= $page-1 ?>" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md 
+                            <?php if($page <= 1) { echo "pointer-events-none"; } ?>
+                            ">
                                 <ion-icon name="chevron-back"></ion-icon>
                             </a>
                             <!-- Page numbers -->
-                            <a href="#" class="active px-3 py-1 border border-[#66CC33] text-bold">1</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">2</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">3</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">...</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">10</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">11</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">12</a>
+                            <?php for ($i = 1; $i <= $pageLists ; $i++) { ?>
+                                <a href="?page=<?= $i ?>" class="active px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?></a>
+                            <?php } ?>
+                            
                             <!-- Next button -->
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
+                            <a href="?page=<?= $page+1 ?>" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md
+                            <?php if($page >= $pageLists) { echo "pointer-events-none"; } ?>
+                            ">
                                 <ion-icon name="chevron-forward"></ion-icon>
                             </a>
                         </nav>

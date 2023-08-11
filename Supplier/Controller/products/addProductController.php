@@ -11,6 +11,9 @@ if (!isset($_POST["from_addproduct"])) {
     header("Location: ../../View/errors/error.php");
 }
 
+session_start();
+$supplier_id = $_SESSION["sup_id"];
+
 $p_name = $_POST["product_name"];
 $p_category = $_POST["product_category"];
 $p_brand = $_POST["product_brand"];
@@ -21,10 +24,13 @@ $p_discount = $_POST["product_discount"];
 $p_descirption = $_POST["product_description"];
 $create_date = date("Y-m-d");
 
+//move images to storage
 foreach ($_FILES as $key => $value) {
-    $photo_tmp_name = $_FILES[$key]["tmp_name"];
-    $photo_name = $_FILES[$key]["name"];
-    move_uploaded_file($photo_tmp_name, "../../../Storage/products/$photo_name");
+    if ($_FILES[$key]["size"] != 0) {
+        $photo_tmp_name = $_FILES[$key]["tmp_name"];
+        $photo_name = $_FILES[$key]["name"];
+        move_uploaded_file($photo_tmp_name, "../../../Storage/products/$photo_name");
+    }
 }
 
 //connect database
@@ -80,18 +86,20 @@ $sql->bindValue(":buy_price", $p_buy_price);
 $sql->bindValue(":stock", $p_stock);
 $sql->bindValue(":description", $p_descirption);
 $sql->bindValue(":discount", $p_discount);
-$sql->bindValue(":sup_id", 1);
+$sql->bindValue(":sup_id", $supplier_id);
 $sql->bindValue(":date", $create_date);
 
-for ($i = 1; $i <= $MAX_IMAGE ; $i++) {
+for ($i = 1; $i <= $MAX_IMAGE; $i++) {
     $sql->bindValue(":photo$i", NULL);
 }
 
 $idx = 0;
 foreach ($_FILES as $key => $value) {
-    $photo_name = $_FILES[$key]["name"];
-    $idx++;
-    $sql->bindValue(":photo$idx", "Storage/products/$photo_name");
+    if ($_FILES[$key]["size"] != 0) {
+        $photo_name = $_FILES[$key]["name"];
+        $idx++;
+        $sql->bindValue(":photo$idx", "Storage/products/$photo_name");
+    }
 }
 
 $sql->execute();
