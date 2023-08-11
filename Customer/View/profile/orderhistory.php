@@ -5,7 +5,6 @@ $orders = $_SESSION['profileEdit'];
 $result = $orders;
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +50,15 @@ $result = $orders;
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <a href="./profile.php">
+            <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
-            <a href="./followedStores.php">
+            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
             </a>
 
-            <a href="./orderHistory.php">
+            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
@@ -82,13 +81,13 @@ $result = $orders;
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="./profile.php">
+                <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="./followedStores.php">
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="./orderHistory.php">
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
                 <a href="./myReviews.php">
@@ -101,29 +100,35 @@ $result = $orders;
         </div>
         <!-- history -->
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
-            <div class="flex flex-col items-center justify-center">
-                <p class="text-xl font-semibold">
-                    Order History
-                </p>
-                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+            <?php if (count($result) == 0) { ?>
+                <div class="flex flex-col items-center justify-center">
+                    <p class="text-lg">You haven't ordered anything yet.</p>
+                </div>
+            <?php } else { ?>
+                <div class="flex flex-col items-center justify-center">
+                    <p class="text-xl font-semibold">
+                        Order History
+                    </p>
                     <?php foreach ($result as $orders) { ?>
-                        <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                            Traffic Star >>>
-                        </div>
-                        <div class="flex items-center justify-between px-4">
-                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
+                    <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                        
+                            <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
+                                Traffic Star >>>
+                            </div>
+                            <div class="flex items-center justify-between px-4">
+                                <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 md:w-1/12 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
 
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"><?php echo $orders["sup_name"]; ?></p>
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-
-
-                        </div>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2 line-clamp-3"> Tucano Backpacks TU-BP01</p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["sup_name"]; ?></p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["total_amount"]; ?> MMK</p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["create_date"]; ?></p>
+                            </div>
+                        
+                    </div>
                     <?php } ?>
                 </div>
+            <?php } ?>
 
-
-            </div>
         </div>
 
 

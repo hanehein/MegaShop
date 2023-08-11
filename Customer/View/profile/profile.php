@@ -45,20 +45,30 @@ include '../../Controller/ProfileController.php';
             <div class="w-full h-1 bg-black hidden md:block"></div>
             <?php foreach ($result as $m_customers) { ?>
 
-            <a href="./profile.php?id=<?php echo $m_customers["id"]; ?>"><p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p></a>
+                <a href="./profile.php?id=<?php echo $m_customers["id"]; ?>">
+                    <p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p>
+                </a>
 
-            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $m_customers["id"]; ?>"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p></a>
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $m_customers["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+                </a>
 
-           <a href="../../Controller/OrderHistoryController.php?id=<?php echo $m_customers["id"]; ?>"> <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p></a>
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $m_customers["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+                </a>
 
-            <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p></a>
+                <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+                </a>
 
-            <a href="./wishlist.php?id=<?php echo $m_customers["id"]; ?>"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p></a>
+                <a href="./wishlist.php?id=<?php echo $m_customers["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+                </a>
 
-            <div class="md:flex justify-center items-center hidden">
-                <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-            </div>
+                <div class="md:flex justify-center items-center hidden">
+                    <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
+                </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -66,70 +76,70 @@ include '../../Controller/ProfileController.php';
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="./profile.php">
+                <a href="./profile.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="./followedStores.php">
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="./orderHistory.php">
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php">
+                <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php">
+                <a href="./wishlist.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
         </div>
         <!-- edit -->
         <div class="w-4/5 md:w-5/12 h-1/2 mx-auto bg-gray-100 shadow-2xl text-center rounded-xl py-4 mt-5 border-2 border-transparent">
-            
-                <div class="flex  items-center justify-evenly">
-                    <img src="../../../Storage/profile/<?php echo $m_customers["cus_photo"] ?>" alt="" class="w-1/3 md:w-1/6 h-1/6 rounded-full ">
-                    <div class="hidden md:flex flex-col items-center">
-                        <p class="text-xl font-bold py-6"><?php echo $m_customers["cus_name"]; ?></p>
-                        <p class="text-lg font-semibold py-6"><?php echo $m_customers["cus_address"]; ?></p>
-                    </div>
+
+            <div class="flex  items-center justify-evenly">
+                <img src="../<?php echo $m_customers["cus_photo"] ?>" alt="" class="w-1/3 md:w-1/6 h-1/6 rounded-full ">
+                <div class="hidden md:flex flex-col items-center">
+                    <p class="text-xl font-bold py-6"><?php echo $m_customers["cus_name"]; ?></p>
+                    <p class="text-lg font-semibold py-6"><?php echo $m_customers["cus_address"]; ?></p>
+                </div>
+            </div>
+
+
+            <div class="flex flex-col mx-auto">
+                <div class="w-1/2 ml-2 md:ml-24 mt-3 ">
+                    <p class="text-xl font-semibold">Name</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="text" name="name" id="" value="<?php echo $m_customers["cus_name"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4 active:border-solid" disabled>
+                </div>
+                <div class="w-1/2 ml-10 md:ml-32 mt-5">
+                    <p class="text-xl font-semibold">Email address</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="email" name="email" id="" value="<?php echo $m_customers["cus_email"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
+                </div>
+                <div class="w-1/2 ml-2 md:ml-28 mt-5">
+                    <p class="text-xl font-semibold">Location</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="text" name="address" id="" value="<?php echo $m_customers["cus_address"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
+                </div>
+                <div class="w-1/2 ml-10 md:ml-36 mt-5">
+                    <p class="text-xl font-semibold">Phone Number</p>
+                </div>
+                <div class="mt-5 cursor-pointer">
+                    <input type="number" inputmode="numeric" name="phone" id="" value="<?php echo $m_customers["cus_phone"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
                 </div>
 
+            </div>
 
-                <div class="flex flex-col mx-auto">
-                    <div class="w-1/2 ml-2 md:ml-24 mt-3 ">
-                        <p class="text-xl font-semibold">Name</p>
-                    </div>
-                    <div class="mt-5 cursor-pointer">
-                        <input type="text" name="name" id="" value="<?php echo $m_customers["cus_name"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4 active:border-solid" disabled>
-                    </div>
-                    <div class="w-1/2 ml-10 md:ml-32 mt-5">
-                        <p class="text-xl font-semibold">Email address</p>
-                    </div>
-                    <div class="mt-5 cursor-pointer">
-                        <input type="email" name="email" id="" value="<?php echo $m_customers["cus_email"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
-                    </div>
-                    <div class="w-1/2 ml-2 md:ml-28 mt-5">
-                        <p class="text-xl font-semibold">Location</p>
-                    </div>
-                    <div class="mt-5 cursor-pointer">
-                        <input type="text" name="address" id="" value="<?php echo $m_customers["cus_address"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
-                    </div>
-                    <div class="w-1/2 ml-10 md:ml-36 mt-5">
-                        <p class="text-xl font-semibold">Phone Number</p>
-                    </div>
-                    <div class="mt-5 cursor-pointer">
-                        <input type="number" inputmode="numeric" name="phone" id="" value="<?php echo $m_customers["cus_phone"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
-                    </div>
+            <a href="../../Controller/ProfileEditController.php?id=<?php echo $m_customers["id"]; ?>">
+                <button type="submit" name="edit" class="bg-orange-500 w-1/6 md:w-1/12 mt-10 py-2 rounded-lg mr-16 md:mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300 text-white font-bold hover:text-black">
+                    Edit
+                </button>
 
-                </div>
-
-                <a href="../../Controller/ProfileEditController.php?id=<?php echo $m_customers["id"]; ?>">
-                    <button class="bg-orange-500 w-1/6 md:w-1/12 mt-10 py-2 rounded-lg mr-16 md:mr-64 mb-20 float-right cursor-pointer hover:bg-blue-300 text-white font-bold hover:text-black">
-                        Edit
-                    </button>
-
-                </a>
-            <?php  }  ?>
+            </a>
+        <?php  }  ?>
         </div>
     </div>
     <!-- footer -->
