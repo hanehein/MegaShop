@@ -57,7 +57,7 @@ include '../../Controller/ProfileController.php';
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
                 </a>
 
-                <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
                 </a>
 

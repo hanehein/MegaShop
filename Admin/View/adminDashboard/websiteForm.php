@@ -72,7 +72,7 @@ include '../../Controller/websiteFormController.php';
 
                         <input type="text" name="slogan" class="mt-2 mb-3 rounded-lg px-2 w-1/3" value="<?php echo $m_website_form["slogan"]; ?>">
                     <?php } ?>
-                    <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
+                    <button class="px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
                 </div>
 
             </div>

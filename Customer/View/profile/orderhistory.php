@@ -50,7 +50,7 @@ $result = $orders;
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./profile.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
@@ -62,7 +62,7 @@ $result = $orders;
                 <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
-            <a href="./myReviews.php">
+            <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
             </a>
 
@@ -81,7 +81,7 @@ $result = $orders;
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./profile.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
