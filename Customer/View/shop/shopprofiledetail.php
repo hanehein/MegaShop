@@ -1,3 +1,6 @@
+<?php
+include "../../Controller/shop/shopProfileDetailController.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop profile Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/shopProfileDetail.js" defer></script>
+    <script src="../resources/js/searchProductDetail.js" defer></script>
+    <link rel="stylesheet" href="../resources/css/shopProfileDetail.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -54,6 +62,11 @@
             <div class="flex flex-col md:flex-row space-y-5 md:space-y-0 items-center space-x-11">
                 <div class="flex flex-col space-y-2 items-start">
                     <h1 class="text-xl font-semibold">94%</h1>
+                    <!--Start bar graph-->
+                    <div class="rating_graph">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
                     <div class="flex flex-row items-center justify-center space-x-3">
                         <p>Positive</p>
                         <div class="bg-gray-500 w-[210px] h-[13px]">
@@ -76,6 +89,7 @@
                         <span>16</span>
                     </div>
                 </div>
+                <!--End bar graph-->
                 <div class="flex flex-col space-y-2 items-center">
                     <h1 class="font-semibold text-xl">Seller Ratings and Reviews(16)</h1>
                     <div class="flex space-x-16">
@@ -89,138 +103,156 @@
                     </div>
                 </div>
             </div>
-            <!--chatbox-->
-            <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
-                <div class="flex flex-col space-y-2">
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-2 items-center">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                            <span class="text-grey text-sm font-bold">Mark Albert</span>
+            <!--Start shop reviewbox-->
+            <?php foreach ($reviews as $review) { ?>
+                <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2 items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
+                                <span class="text-grey text-sm font-bold"><?= $review["cus_name"] ?></span>
+                            </div>
+                            <p class="text-grey"><?= $review["create_date"] ?></p>
                         </div>
-                        <p class="text-grey">27 Oct 2022</p>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <ion-icon name="happy" class="text-xl text-yellow-600"></ion-icon>
-                        <span>Positive</span>
-                    </div>
-                    <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way.
-                        This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily
-                        commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
-                </div>
-            </div>
-            <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
-                <div class="flex flex-col space-y-2">
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-2 items-center">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                            <span class="text-grey text-sm font-bold">Sandy</span>
+                        <div class="flex items-center space-x-1">
+                            <ion-icon name="happy" class="text-xl text-yellow-600"></ion-icon>
+                            <span><?php if ($review["rating"] == 0) {
+                                        echo "bad";
+                                    } elseif ($review["rating"]) {
+                                        echo "neutral";
+                                    } else {
+                                        echo "positive";
+                                    }
+                                    ?></span>
                         </div>
-                        <p class="text-grey font-light">27 Oct 2022</p>
+                        <p><?= $review["shop_review"] ?></p>
                     </div>
-                    <div class="flex items-center space-x-1">
-                        <ion-icon name="happy" class="text-xl text-yellow-600"></ion-icon>
-                        <span>Positive</span>
-                    </div>
-                    <p>from daily commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
                 </div>
+            <?php } ?>
+
+            <!-- Pagination -->
+            <div class="w-full flex justify-center p-5">
+                <!-- Pagination component -->
+                <ul class="flex items-center justify-center">
+                    <!-- Previous button -->
+                    <li class="<?php if ($page <= 1) {
+                                    echo "disabled";
+                                } ?>">
+                        <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
+                            <ion-icon name="chevron-back"></ion-icon>
+                        </a>
+                    </li>
+                    <!-- Page numbers -->
+
+                    <?php
+                    for ($i = 1; $i <= $page_lists; $i++) { ?>
+                        <li class="<?php if ($page == $i) {
+                                        echo "active";
+                                    } ?>">
+                            <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+
+
+                    <!-- Next button -->
+                    <li class="<?php if ($page >= $page_lists) {
+                                    echo "disabled";
+                                } ?>">
+                        <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
-                <div class="flex flex-col space-y-2">
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-2 items-center">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                            <span class="text-grey text-sm font-bold">Sandy</span>
-                        </div>
-                        <p class="text-grey">27 Oct 2022</p>
-                    </div>
-                    <div class="flex items-center space-x-1">
-                        <ion-icon name="happy" class="text-xl text-yellow-600"></ion-icon>
-                        <span>Positive</span>
-                    </div>
-                    <p>from daily commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
-                </div>
-            </div>
-            <div class="flex justify-center items-center">
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-l-md"></div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center bg-blue-600">1</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">2</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">3</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">...</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">41</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">42</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center">43</div>
-                <div class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-r-md"></div>
-            </div>
+
         </div>
     </section>
     <!--product ratings & reviews-->
     <section class="bg-white flex flex-col p-5 mt-5">
         <p class="text-xl font-semibold">Product Ratings & Reviews(345)</p>
-        <div class="flex space-x-6 p-5">
-            <img src="../resources/img/cola.jpg" alt="" class="w-[80px] h-[120px]">
-            <div class="flex flex-col">
-                <p class="text-blue-600 font-bold text-2xl mb-3">STEP Women Blouse Short Sleeves 007402</p>
-                <div class="flex space-x-1">
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                </div>
-                <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way.
-                    This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily
-                    commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
-                <div class="flex space-x-4 mt-5">
-                    <img src="../resources/img/colacan.jpg" alt="" class="w-[100px] h-[130px]">
-                    <img src="../resources/img/oreo.jpg" alt="" class="w-[100px] h-[130px]">
-                </div>
-                <div class="flex space-x-3">
-                    <p class="text-gray-600 font-thin">27 Oct 2022 By</p>
-                    <p class="text-blue-600 font-semibold">Mark Albert</p>
-                </div>
-            </div>
-        </div>
-        <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
-        <div class="flex space-x-6 p-5">
-            <img src="../resources/img/cola.jpg" alt="" class="w-[80px] h-[120px]">
-            <div class="flex flex-col">
-                <p class="text-blue-600 font-bold text-2xl mb-3">STEP Women Blouse Short Sleeves 007402</p>
-                <div class="flex space-x-1">
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                    <ion-icon name="star" class="text-yellow-700"></ion-icon>
-                </div>
-                <p>I recently purchased the [Brand Name] backpack, and I must say, it has exceeded my expectations in every way.
-                    This backpack has proven to be a reliable companion, accompanying me on various adventures, from daily
-                    commutes to weekend getaways. Here are my thoughts on this fantastic product.</p>
-                <div class="flex space-x-4 mt-5">
-                    <img src="../resources/img/colacan.jpg" alt="" class="w-[100px] h-[130px]">
-                    <img src="../resources/img/oreo.jpg" alt="" class="w-[100px] h-[130px]">
-                </div>
-                <div class="flex space-x-3">
-                    <p class="text-gray-600 font-thin">27 Oct 2022 By</p>
-                    <p class="text-blue-600 font-semibold">Mark Albert</p>
+        <!--Start review box-->
+        <?php foreach ($p_reviews as $p_review) { ?>
+            <div class="flex space-x-6 p-5">
+                <img src="../resources/img/cola.jpg" alt="" class="w-[80px] h-[120px]">
+                <div class="flex flex-col">
+                    <p class="text-blue-600 font-bold text-2xl mb-3">STEP Women Blouse Short Sleeves 007402</p>
+                    <div class="flex space-x-1">
+                        <?php for ($i = 0; $i < 5; $i++) { ?>
+                            <ion-icon class="text-lg 
+                <?php
+                            if ($i < $p_review["rating"]) {
+                                echo "text-[#F68721]";
+                            } else {
+                                echo "text-slate-500";
+                            }
+                ?>" name="star"></ion-icon>
+                        <?php } ?>
+
+
+                    </div>
+                    <p><?= $p_review["review"] ?></p>
+                    <div class="flex space-x-4 mt-5">
+                        <img src="../resources/img/colacan.jpg" alt="" class="w-[100px] h-[130px]">
+                        <img src="../resources/img/oreo.jpg" alt="" class="w-[100px] h-[130px]">
+                    </div>
+                    <div class="flex space-x-3">
+                        <p class="text-gray-600 font-thin"><?= $p_review["create_date"] ?> By</p>
+                        <p class="text-blue-600 font-semibold"><?= $p_review["cus_name"] ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
+            <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
+        <?php } ?>
+
+        <!--End review box-->
+
         <!--pages bar-->
         <div class="flex justify-center items-center">
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-l-md"></div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center bg-blue-600">1</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">2</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">3</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">...</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">410</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">411</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center">412</div>
-            <div class="w-[50px] h-[50px] border-2 border-blue-600 flex justify-center items-center rounded-r-md"></div>
+            <ul class="flex items-center justify-center">
+                <!-- Previous button -->
+                <li class="<?php if ($page <= 1) {
+                                echo "disabled";
+                            } ?>">
+                    <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
+                        <ion-icon name="chevron-back"></ion-icon>
+                    </a>
+                </li>
+                <!-- Page numbers -->
+
+                <?php
+                for ($i = 1; $i <= $page_lists; $i++) { ?>
+                    <li class="<?php if ($page == $i) {
+                                    echo "active";
+                                } ?>">
+                        <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
+                    </li>
+                <?php } ?>
+
+
+                <!-- Next button -->
+                <li class="<?php if ($page >= $page_lists) {
+                                echo "disabled";
+                            } ?>">
+                    <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
+                        <ion-icon name="chevron-forward"></ion-icon>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
     <!--Start footer-->
     <?php include "../components/footer.php"; ?>
+    <script>
+        let serverData = <?php echo json_encode($reviewers); ?>;
+        let shop_ratings = [];
+        let total_persons = [];
+        for (let index = 0; index < serverData.length; index++) {
+            shop_ratings.push(serverData[index].rating);
+            total_persons.push(serverData[index].countperson);
+        }
+
+        console.log(serverData);
+    </script>
 </body>
 
 </html>

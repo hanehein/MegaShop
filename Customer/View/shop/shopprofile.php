@@ -1,3 +1,6 @@
+<?php
+include "../../Controller/shop/shopProfileController.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,16 +116,17 @@
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-4 px-3 py-5">
                     <!-- start card -->
+                    <?php foreach($products as $product) { ?>
                     <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
                         <!-- card header -->
                         <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
+                            <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl" alt="product-img" />
                         </div>
                         <!-- card header -->
                         <!-- card body -->
                         <div>
                             <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
+                                <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
                                 <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                             </div>
                             <div>
@@ -133,11 +137,11 @@
                             </div>
                             <div class="block sm:flex sm:justify-between sm:items-center mb-2">
                                 <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
+                                    <span class="text-red-600 line-through"><?= $product["p_sell_price"] ?> Ks</span>
                                     <span class="text-red-600">( 20 % off)</span>
                                 </div>
                                 <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
+                                    <span class="text-custom-blue text-custom-large font-bold">800 ks</span>
                                 </div>
                             </div>
                             <div class="text-center">
@@ -149,6 +153,7 @@
                         </div>
                         <!-- card body -->
                     </div>
+                    <?php } ?>
                     <!-- end card -->
                 </div>
             </div>
