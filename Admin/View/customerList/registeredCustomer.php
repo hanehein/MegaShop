@@ -20,10 +20,13 @@ include "../../Controller/customerListController.php";
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/customer.css">
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/searchCustomer.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
     <!-- main div -->
+    <!-- <a href="../../Controller/searchCustomerController.php"></a> -->
     <div class="min-h-screen flex   bg-black text-gray-800 relative ">
         <!-- dashboard div -->
         <?php
@@ -31,9 +34,13 @@ include "../../Controller/customerListController.php";
         ?>
         <!-- data display div -->
         <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins']  ">
-            <div class="w-5/6 flex items-center justify-center h-20  space-x-80">
-                <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+            <div class="w-5/6 flex items-center justify-center h-14  space-x-20">
+                <div class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#003366] hover:bg-white">
                     <button>Registered Customers</button>
+                </div>
+                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md">
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type customer name to search">
+                    <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
@@ -55,7 +62,7 @@ include "../../Controller/customerListController.php";
                             <th>Promotions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="searchResult">
                         <?php
 
                         $count = (($page - 1) * $rowLimits) + 1;

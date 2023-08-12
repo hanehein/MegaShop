@@ -8,7 +8,7 @@ session_start();
         $page = 1;
     }
 
-    $rowLimits = 8; 
+    $rowLimits = 5; 
     $pageStart = ($page - 1) * $rowLimits;
     $pageStart = ($pageStart < 0)? 1 : $pageStart; 
 
