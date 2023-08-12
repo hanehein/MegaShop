@@ -10,9 +10,12 @@ $order_id = $_GET["order_id"];
 include "../../Model/model.php";
 
 $sql = $pdo->prepare(
-    "UPDATE t_orders
-    SET order_status = 1
-    WHERE id = :id"
+    "UPDATE 
+        t_orders
+    SET 
+        order_status = 1
+    WHERE 
+        id = :id"
 );
 $sql->bindValue(":id", $order_id);
 $sql->execute();

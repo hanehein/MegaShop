@@ -41,15 +41,15 @@
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            <a href="./profile.php"><p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p></a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            <a href="./followedStores.php"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p></a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            <a href="./orderHistory.php"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p></a>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">My Reviews</p>
+            <a href="./myReviews.php"><p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">My Reviews</p></a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+            <a href="./wishlist.php"><p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p></a>
 
             <div class="md:flex justify-center items-center hidden">
                 <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>

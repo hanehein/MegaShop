@@ -1,4 +1,7 @@
 <?php 
+session_start();
+$supplier_id = $_SESSION["sup_id"];
+
 //connect database
 include "../../Model/model.php";
 
@@ -9,11 +12,11 @@ $sql = $pdo->prepare(
     t_orders.create_date AS order_create_date 
     FROM t_orders 
     JOIN m_customers ON t_orders.cus_id = m_customers.id
-    where t_orders.order_status = 0 AND t_orders.sup_id = :supplier_id
+    where t_orders.order_status = 0 AND t_orders.sup_id = :sup_id
     ORDER BY t_orders.create_date DESC"
 );
 
-$sql->bindValue(":supplier_id", 1);
+$sql->bindValue(":sup_id", $supplier_id);
 $sql->execute();
 $incomingOrders = $sql->fetchAll(PDO::FETCH_ASSOC);
 

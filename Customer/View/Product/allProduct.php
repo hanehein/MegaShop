@@ -1,3 +1,5 @@
+<?php include "../../Controller/products/productListsController.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,279 +128,74 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 px-3 py-5">
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 px-3 py-5">
+                    <?php foreach ($productLists as $product) { ?>
+                        <!-- start card -->
+                        <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3 cursor-pointer">
+                            <!-- card header -->
+                            <div class="mb-2 flex justify-center">
+                                <a href="../../Controller/products/productDetailsController.php?product_id=<?= $product["id"] ?>">
+                                    <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[150px]" alt="product-img" />
+                                </a>
                             </div>
+                            <!-- card header -->
+                            <!-- card body -->
                             <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
+                                <div class="flex justify-between">
+                                    <h2 class="text-md font-bold ">
+                                        <a href="../../Controller/products/productDetailsController.php?product_id=<?= $product["id"] ?>">
+                                            <?php if (strlen($product["p_name"]) > 14) {
+                                                echo substr($product["p_name"], 0, 14) . "...";
+                                            } else {
+                                                echo $product["p_name"];
+                                            }
+                                            ?>
+                                        </a>
+                                    </h2>
+                                    <button>
+                                        <ion-icon name="heart-outline" class="text-red-600 text-lg"></ion-icon>
+                                    </button>
                                 </div>
                                 <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
+                                <div class="block mb-2">
+                                    <div class="text-custom-tiny font-bold">
+                                        <span class="<?php
+                                                        if ($product["p_discount"] != 0) {
+                                                            echo "text-red-600 line-through";
+                                                        } else {
+                                                            echo "text-custom-blue text-custom-large font-bold";
+                                                        } ?>">
+                                            <?= $product["p_sell_price"] ?> MMK
+                                        </span>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-red-600">( <?= $product["p_discount"] ?> % off)</span>
+                                        <?php } ?>
+                                    </div>
+                                    <div>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-custom-blue text-custom-large font-bold">
+                                                <?= ($product["p_sell_price"] * (100 - $product["p_discount"])) / 100  ?> MMK
+                                            </span>
+                                        <?php } ?>
 
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
+                                <div class="text-center">
+                                    <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
+                                        <ion-icon class="text-custom-large" name="cart"></ion-icon>
+                                        <span class="text-white">Add to Cart</span>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
+                            <!-- card body -->
                         </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
-
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
-                                </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
-
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
-                                </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
-
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
-                                </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
-
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
-                                </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
-
-                    <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
-                            <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                            </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
-                                </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- card body -->
-                    </div>
-                    <!-- end card -->
+                        <!-- end card -->
+                    <?php } ?>
 
                 </div>
 

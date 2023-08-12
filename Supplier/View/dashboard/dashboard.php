@@ -1,7 +1,5 @@
 <?php 
-session_start();
-// include "../../Controller/DashboardController.php";
-// print_r($supplier);
+include "../../Controller/dashboard/dashboardController.php";
 ?>
 <?php
 $hasJsFile = FALSE;
@@ -30,7 +28,7 @@ include "../components/header.php";
                         <div>
                             <h2 class="text-slate-500 text-xl font-bold">Total Products</h2>
                             <div class="text-center">
-                                <span>102</span>
+                                <span><?= $totalProducts ?></span>
                             </div>
                         </div>
                     </div>
@@ -42,7 +40,7 @@ include "../components/header.php";
                         <div>
                             <h2 class="text-slate-500 text-xl font-bold">Total Orders</h2>
                             <div class="text-center">
-                                <span>102</span>
+                                <span><?= $totalConfirmedOrders ?></span>
                             </div>
                         </div>
                     </div>

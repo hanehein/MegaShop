@@ -1,3 +1,12 @@
+<?php
+session_start();
+$orders = $_SESSION['profileEdit'];
+
+$result = $orders;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +39,7 @@
 <body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar flex flex-col min-h-screen">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
-        <?php include '../components/responsiveNav.php';?>
+        <?php include '../components/responsiveNav.php'; ?>
     </div>
     <!-- body -->
     <div class="flex flex-col md:flex-row justify-between items-center mt-18 overflow-y-auto mb-10">
@@ -41,15 +50,25 @@
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            </a>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
+            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            <a href="./myReviews.php">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+            <a href="./wishlist.php">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+            </a>
 
             <div class="md:flex justify-center items-center hidden">
                 <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
@@ -62,70 +81,61 @@
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="./profile.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p></a>
-                <a href="./followedStores.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p></a>
-                <a href="./orderHistory.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p></a>
-                <a href="./myReviews.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p></a>
-                <a href="./wishlist.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p></a>
+                <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
+                </a>
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                </a>
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
+                </a>
+                <a href="./myReviews.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
+                </a>
+                <a href="./wishlist.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
+                </a>
             </div>
         </div>
         <!-- history -->
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
-            <div class="flex flex-col items-center justify-center">
-                <p class="text-xl font-semibold">
-                    Order History
-                </p>
-                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                        Traffic Star >>>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
-                        </div>
-                    </div>
+            <?php if (count($result) == 0) { ?>
+                <div class="flex flex-col items-center justify-center">
+                    <p class="text-lg">You haven't ordered anything yet.</p>
                 </div>
-                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                        Traffic Star >>>
+            <?php } else { ?>
+                <div class="flex flex-col items-center justify-center">
+                    <p class="text-xl font-semibold">
+                        Order History
+                    </p>
+                    <?php foreach ($result as $orders) { ?>
+                    <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                        
+                            <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
+                                Traffic Star >>>
+                            </div>
+                            <div class="flex items-center justify-between px-4">
+                                <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 md:w-1/12 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
+
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2 line-clamp-3"> Tucano Backpacks TU-BP01</p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["sup_name"]; ?></p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["total_amount"]; ?> MMK</p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["create_date"]; ?></p>
+                            </div>
+                        
                     </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
-                <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                    <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                        Traffic Star >>>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/3 md:w-1/6 h-1/3 ml-10 mt-3 rounded-lg mb-3">
-                        <div class="py-3 text-left px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            <?php } ?>
+
         </div>
 
 
     </div>
 
     <!-- footer -->
-    <?php include '../components/footer.php';?>
+    <?php include '../components/footer.php'; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </body>
 

@@ -5,6 +5,10 @@ ini_set('display_errors', 1);
 session_start();
 // print_r($_POST); 
 
+if(count($_POST) == 0){
+    header("Location: ../View/errors/error.php");
+}//not complete
+
 if (isset($_POST["create"])) {
     $supplierName = $_POST["supplierName"];
     $shopName = $_POST["shopName"];
@@ -22,7 +26,7 @@ if (isset($_POST["create"])) {
     $shopPhototmp = $_FILES["shopPhoto"]["tmp_name"];
 
 
-
+    
 
     include "../Model/model.php";
     if (move_uploaded_file($shopPhototmp, "../../Storage/shopPhoto/" . $shopPhoto)) {
@@ -72,6 +76,7 @@ if (isset($_POST["create"])) {
         $sql->bindValue(":createdDate", date("Y-m-d"));
         $sql->bindValue(":approve", $approve);
         $sql->execute();
+        //sent mail
         $domain = $_SERVER['SEVER_NAME'];
         $body = file_get_contents("../emailTemplate/template/index.php"); //
         $body = str_replace("supplierName", $supplierName, $body);

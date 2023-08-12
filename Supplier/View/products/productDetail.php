@@ -142,7 +142,7 @@ include "../components/header.php";
                         <!-- start edit btn -->
                         <div class="text-end">
                             <button class="p-2 w-[100px] text-white text-lg bg-green-600 rounded-md font-semibold">
-                                <a href="">Edit</a>
+                                <a href="../../Controller/products/editProductController.php?product_id=<?= $product["p_id"] ?>">Edit</a>
                             </button>
                         </div>
                     </div>
