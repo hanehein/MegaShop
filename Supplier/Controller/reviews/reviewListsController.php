@@ -1,9 +1,33 @@
 <?php
+//login check
+
 session_start();
 $supplier_id = $_SESSION["sup_id"];
+$rowLimit = 10;
 
 //connect database
 include "../../Model/model.php";
+
+$sql = $pdo->prepare(
+    "SELECT 
+        *
+    FROM 
+        t_product_reviews
+    INNER JOIN m_products 
+    ON 
+        t_product_reviews.product_id = m_products.id
+    WHERE 
+        t_product_reviews.del_flg = 0
+    AND 
+        m_products.supplier_id = :sup_id
+    "
+);
+$sql->bindValue(":sup_id", $supplier_id);
+$sql->execute();
+$totalRecords = count($sql->fetchAll(PDO::FETCH_ASSOC));
+
+$pageLists = ceil($totalRecords / $rowLimit); 
+
 
 $sql = $pdo->prepare(
     "SELECT 
@@ -26,7 +50,9 @@ $sql = $pdo->prepare(
     AND 
         m_products.supplier_id = :sup_id
     ORDER BY 
-        t_product_reviews.create_date DESC"
+        t_product_reviews.create_date DESC
+    LIMIT
+        0, $rowLimit"
 );
 $sql->bindValue(":sup_id", $supplier_id);
 $sql->execute();

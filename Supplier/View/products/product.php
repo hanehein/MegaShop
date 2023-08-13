@@ -17,7 +17,6 @@ include "../components/header.php";
             include "../components/navbar.php";
             ?>
 
-            <!-- start aye myat noe khin -->
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
@@ -116,7 +115,6 @@ include "../components/header.php";
                                 </tr>
                             <?php }; ?>
 
-
                             <!-- Add more rows as needed -->
                         </tbody>
                     </table>
@@ -136,7 +134,10 @@ include "../components/header.php";
         
                         <!-- Page numbers -->
                         <?php for ($i = 1; $i <= $pageLists ; $i++) { ?>
-                            <a href="?page=<?= $i ?>" class="px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?></a>
+                            <a href="?page=<?= $i ?>" 
+                            class="<?php if($i == $page) {echo "pagination-active";} ?>
+                            px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?>
+                            </a>
                         <?php } ?>
                         
                         <!-- Next button -->
@@ -149,7 +150,6 @@ include "../components/header.php";
                 </div>
 
             </div>
-            <!-- end aye myat noe khin -->
 
         </div>
     </section>

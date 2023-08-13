@@ -4,7 +4,6 @@
 session_start();
 $supplier_id = $_SESSION["sup_id"];
 
-
 if(isset($_GET["page"])){
     $page = $_GET["page"];
     if($page < 1){
@@ -64,8 +63,7 @@ $sql = $pdo->prepare(
     AND
         m_products.supplier_id = :sup_id
     LIMIT 
-        $pageStart, $rowLimit;
-    "
+        $pageStart, $rowLimit"
 );
 $sql->bindValue(":sup_id", $supplier_id);
 $sql->execute();

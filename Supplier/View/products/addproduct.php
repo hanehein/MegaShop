@@ -21,25 +21,13 @@ include "../components/header.php";
             include "../components/navbar.php";
             ?>
 
-            <!-- start aye myat noe khin -->
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
                 <div>
                     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="../../Controller/products/addProductController.php" method="post" enctype="multipart/form-data">
 
-                        <!-- <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="product_image">Product
-                                Image:</label>
-                            
-                            <label for="product_image"
-                                class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Choose Image
-                            </label>
-                            <span id="selected_image_name" class="ml-2 text-gray-600"></span>
-                        </div> -->
-
-
+                        <!-- product image -->
                         <div class="mb-5">
                             <div>
                                 <span class="block text-gray-700 text-sm font-bold mb-2">Product
@@ -53,24 +41,21 @@ include "../components/header.php";
                                         <input id="product_image1" type="file" name="photo1" accept="image/*" hidden>
                                     </div>
                                 </div>
-
-
                             </div>
-
-
                             <div class="flex space-x-10 items-center">
                                 <input class="add-image px-3 py-1 bg-blue-500 rounded-md text-white" value="Add Photo" type="button" />
                                 <div class="image-warning-message"></div>
                             </div>
                         </div>
 
-
+                        <!-- product name -->
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_name">Product
                                 Name:</label>
                             <input class="shadow border rounded w-1/2 py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline" id="product_name" name="product_name" type="text" placeholder="Enter product name" required>
                         </div>
 
+                        <!-- product category and brand -->
                         <div class="mb-5">
                             <div class="flex space-x-10">
                                 <div>
@@ -94,43 +79,47 @@ include "../components/header.php";
                             </div>
                         </div>
 
+                        <!-- buy price and sell price -->
                         <div class="mb-5">
                             <div class="flex space-x-10">
 
                                 <div>
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="product_buy_price">Product Buy
                                         Price:</label>
-                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_buy_price" type="number" name="product_buy_price" placeholder="Enter product price" required>
+                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_buy_price" type="number" name="product_buy_price" placeholder="Enter product buy price" required>
                                 </div>
 
                                 <div>
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="product_sell_price">Product Sell
                                         Price:</label>
-                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_sell_price" type="number" name="product_sell_price" placeholder="Enter product price" required>
+                                    <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_sell_price" type="number" name="product_sell_price" placeholder="Enter product sell price" required>
                                 </div>
                             </div>
 
                         </div>
 
+                        <!-- product stock -->
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_stock">Product
                                 Stock</label>
                             <input class="shadow appearance-none border rounded w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_stock" type="number" name="product_stock" step="1" placeholder="Enter product price" required>
                         </div>
 
+                        <!-- product discount -->
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_discount">Product
                                 Discount:</label>
                             <input class="shadow appearance-none border rounded  w-[300px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_discount" type="number" name="product_discount" step="1" placeholder="Enter product price" required>
                         </div>
 
-
+                        <!-- product discount -->
                         <div class="mb-5">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="product_description">Product
                                 Description:</label>
                             <textarea class="shadow appearance-none border rounded w-1/2 h-[200px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="product_description" rows="4" name="product_description" placeholder="Enter product description" required></textarea>
                         </div>
 
+                        <!-- variants -->
                         <div class="mb-5">
                             <h2 class="block text-gray-700 text-sm font-bold mb-2">Variants :</h2>
                             <div class="variant-lists-container mb-2">
@@ -140,8 +129,6 @@ include "../components/header.php";
                                     <select class="variant-lists shadow rounded w-[300px] py-2 px-3 bg-white border border-slate-300" id="other_options" required>
                                         <option value="1">Size</option>
                                         <option value="2">Color</option>
-                                        <option value="3">RAM</option>
-                                        <option value="4">Other</option>
                                     </select>
 
                                     <div>
@@ -159,9 +146,8 @@ include "../components/header.php";
                         </div>
                     </form>
                 </div>
-
             </div>
-            <!-- end aye myat noe khin -->
+
         </div>
     </section>
 </body>

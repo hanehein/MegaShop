@@ -47,10 +47,10 @@ $(document).ready(function () {
                 $(".current-user-name").text(messages[0].cus_name);
                 $('.current-messages').empty();
                 $(messages).each(function (index, message) {
-                    const whoTurn = message.from_to == 0 ? "justify-items-end" : "justify-items-start";
+                    const whoSend = message.from_to == 0 ? "justify-items-end" : "justify-items-start";
                     $('.current-messages').append(`
                         <div class="chat-message mb-2">
-                            <div class="grid ${whoTurn}">
+                            <div class="grid ${whoSend}">
                                 <p class="max-w-[500px] p-3 bg-slate-200 rounded-md">
                                     ${message.message}
                                 </p>

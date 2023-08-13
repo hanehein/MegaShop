@@ -2,6 +2,7 @@
 session_start();
 $product = $_SESSION["product_detail"];
 $reviews = $_SESSION["product_reviews"];
+$pageLists = $_SESSION["page_lists"];
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -81,14 +82,14 @@ include "../components/header.php";
                             <div>
                                 <span class="font-semibold text-slate-500">Buy Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    <?= $product["p_sell_price"] ?> MMK
+                                    <?= $product["p_buy_price"] ?> MMK
                                 </p>
                             </div>
 
                             <div>
                                 <span class="font-semibold text-slate-500">Sell Price</span>
                                 <p class="block text-black font-normal min-w-[200px] w-fit rounded-md mt-2">
-                                    <?= $product["p_buy_price"] ?> Ks
+                                    <?= $product["p_sell_price"] ?> MMK
                                 </p>
                             </div>
                         </div>
@@ -110,26 +111,34 @@ include "../components/header.php";
                         </div>
 
                         <!--start sizes -->
-                        <div class="mb-8">
-                            <span class="font-semibold text-slate-500">Sizes</span>
-                            <div class="mt-2 flex space-x-5">
-                                <span class="block text-black font-normal w-fit rounded-md">XL</span>
-                                <span class="block text-black font-normal w-fit rounded-md">L</span>
-                                <span class="block text-black font-normal w-fit rounded-md">M</span>
+                        <?php if (!is_null($product["p_size"])) { ?>
+                            <div class="mb-8">
+                                <span class="font-semibold text-slate-500">Sizes</span>
+                                <div class="mt-2 flex space-x-5">
+                                    <?php
+                                    $sizes = explode(",", $product["p_size"]);
+                                    foreach ($sizes as $size) {
+                                    ?>
+                                        <span class="block text-black font-normal w-fit rounded-md"><?= $size ?></span>
+                                    <?php } ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
 
                         <!--start colors -->
-                        <div class="mb-8">
-                            <span class="font-semibold text-slate-500">Colors</span>
-                            <div class="mt-2 flex space-x-5">
-                                <span class="block text-black font-normal w-fit rounded-md">white</span>
-                                <span class="block text-black font-normal w-fit rounded-md">black</span>
-                                <span class="block text-black font-normal w-fit rounded-md">red</span>
-                                <span class="block text-black font-normal w-fit rounded-md">black</span>
-                                <span class="block text-black font-normal w-fit rounded-md">yellow</span>
+                        <?php if (!is_null($product["p_color"])) { ?>
+                            <div class="mb-8">
+                                <span class="font-semibold text-slate-500">Colors</span>
+                                <div class="mt-2 flex space-x-5">
+                                    <?php
+                                    $colors = explode(",", $product["p_color"]);
+                                    foreach ($colors as $color) {
+                                    ?>
+                                        <span class="block text-black font-normal w-fit rounded-md"><?= $color ?></span>
+                                    <?php } ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
 
                         <!-- start description -->
                         <div class="mb-8">
@@ -148,7 +157,7 @@ include "../components/header.php";
                     </div>
                 </div>
 
-                
+
                 <!-- product reviews -->
                 <div class="p-5 bg-white rounded-md">
 
@@ -159,50 +168,27 @@ include "../components/header.php";
                     <div class="reviews-container">
                         <!-- start review -->
                         <?php foreach ($reviews as &$review) { ?>
-                        <div class="p-4 shadow-lg rounded-md border border-slate-400  mb-4">
-                            <div class="flex justify-between items-center">
-                                <div class="flex space-x-3 items-center mb-3">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                                    <span class="text-grey text-sm font-bold"><?= $review["cus_name"] ?></span>
+                            <div class="p-4 shadow-lg rounded-md border border-slate-400  mb-4">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex space-x-3 items-center mb-3">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
+                                        <span class="text-grey text-sm font-bold"><?= $review["cus_name"] ?></span>
+                                    </div>
+                                    <div>
+                                        <span class="text-grey"><?= $review["create_date"] ?></span>
+                                    </div>
                                 </div>
                                 <div>
-                                    <span class="text-grey"><?= $review["create_date"] ?></span>
+                                    <?php for ($i = 0; $i < $review["rating"]; $i++) { ?>
+                                        <ion-icon class=" text-orange-600" name="star"></ion-icon>
+                                    <?php } ?>
                                 </div>
+                                <p>
+                                    <?= $review["review"] ?>
+                                </p>
                             </div>
-                            <div>
-                                <?php for ($i = 0; $i < $review["rating"] ; $i++) { ?>
-                                    <ion-icon class=" text-orange-600" name="star"></ion-icon>
-                                <?php } ?>
-                            </div>
-                            <p>
-                                <?= $review["review"] ?>
-                            </p>
-                        </div>
                         <?php } ?>
                         <!-- end review -->
-                    </div>
-
-                    <!-- Pagination -->
-                    <div class="w-full flex justify-center p-5">
-                        <!-- Pagination component -->
-                        <nav class="flex items-center justify-center">
-                            <!-- Previous button -->
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
-                                <ion-icon name="chevron-back"></ion-icon>
-                            </a>
-                            <!-- Page numbers -->
-                            <a href="#" class="active px-3 py-1 border border-[#66CC33] text-bold">1</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">2</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">3</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">...</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">10</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">11</a>
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">12</a>
-                            <!-- Next button -->
-                            <a href="#" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
-                                <ion-icon name="chevron-forward"></ion-icon>
-                            </a>
-                        </nav>
                     </div>
 
                 </div>

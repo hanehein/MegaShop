@@ -3,6 +3,7 @@ include "../../Controller/products/categoryListController.php";
 include "../../Controller/products/brandListController.php";
 session_start();
 $product = $_SESSION["product_detail"];
+
 ?>
 
 <!-- Start header -->
@@ -158,6 +159,10 @@ include "../components/header.php";
                         <div class="mb-5">
                             <h2 class="block text-gray-700 text-sm font-bold mb-2">Variants :</h2>
                             <div class="variant-lists-container mb-2">
+                                <?php if(!is_null($product["p_color"])) { 
+                                        $colors = explode(",", $product["p_color"]);
+                                ?>
+                                <?php } ?>
                             </div>
                             <div class="mb-2">
                                 <div class="flex space-x-3 items-center">

@@ -10,6 +10,7 @@ if (!isset($_POST["from_editproduct"])) {
     header("Location: ../../View/errors/error.php");
 }
 
+
 session_start();
 $supplier_id = $_SESSION["sup_id"];
 
@@ -41,7 +42,7 @@ $sql = $pdo->prepare(
         p_description = :description,
         p_discount = :discount,
         supplier_id = :sup_id,
-        update_date = :update_date
+        update_date = :update_date,
     WHERE 
         id = :id"
 );

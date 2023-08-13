@@ -1,4 +1,6 @@
 <?php
+//login check
+
 session_start();
 $supplier_id = $_SESSION["sup_id"];
 

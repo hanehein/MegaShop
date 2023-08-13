@@ -1,11 +1,61 @@
 $(document).ready(function () {
+    const pageList = Number($("#page-list").val());
+    let currentActive = 1;
 
     $(".review-order").change(function () {
+        removeActive();
+        $(".pagination-page-btn:first").addClass("pagination-active");
+        const orderValue = $(this).val()
+        displayReviews(orderValue);
+    });
+
+    $(".pagination-page-btn").each(function(index, btn) {
+        $(btn).click(function(){
+            currentActive = Number($(this).text());
+            removeActive();
+            $(this).addClass("pagination-active");
+            const orderValue = $(".review-order").val();
+            const page = $(this).text();
+            displayReviews(orderValue, page);
+        })
+    });
+
+    $(".pagination-prev").click(function(){
+        if(currentActive > 1){
+            currentActive--;
+            removeActive();
+            $(`.pagination-page-btn:eq(${currentActive - 1})`).addClass("pagination-active");
+            const orderValue = $(".review-order").val();
+            const page = currentActive;
+            displayReviews(orderValue, page);
+        }
+    });
+
+    $(".pagination-next").click(function(){
+        if(currentActive < pageList){
+            currentActive++;
+            removeActive();
+            $(`.pagination-page-btn:eq(${currentActive - 1})`).addClass("pagination-active");
+            const orderValue = $(".review-order").val();
+            const page = currentActive;
+            displayReviews(orderValue, page);
+        }
+    });
+
+    function removeActive(){
+        $(".pagination-page-btn").each(function(index, btn) {
+            $(btn).removeClass("pagination-active")
+        });
+    }
+
+    function displayReviews(orderValue,page = 1){
         $.ajax({
             url: "../../Controller/reviews/orderReviewController.php",
             type: "POST",
             data: {
-                orderValue: $(this).val(),
+                orderValue: orderValue,
+                rowLimit : $('#row-limit').val(),
+                page : page,
                 from_orderReview: ''
             },
             success: function (results) {
@@ -47,7 +97,7 @@ $(document).ready(function () {
                 console.log(errors);
             }
         });
-    })
+    }
 
 });
 
