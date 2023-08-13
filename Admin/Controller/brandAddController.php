@@ -28,7 +28,7 @@ if (count($_POST) == 0) {
     $sql->bindValue(":date",$date);
     $sql->execute();
 
-    header("Location: ../../View/productlists/brandControl.php");
+    header("Location: ../View/productlists/brandControl.php");
 }
 
 
