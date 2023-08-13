@@ -2,7 +2,6 @@
 session_start();
 $product = $_SESSION["product_detail"];
 $reviews = $_SESSION["product_reviews"];
-$pageLists = $_SESSION["page_lists"];
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>

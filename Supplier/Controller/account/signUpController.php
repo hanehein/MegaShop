@@ -10,14 +10,17 @@ if (!isset($_POST["from_signup"])) {
     header("Location: ../../View/errors/error.php");
 }
 
-session_start();
+echo "<pre>";
+print_r($_POST);
+echo $_POST["bank_acc"];
+die("");
 
 $supplier_name = $_POST["supplier_name"];
 $shop_name = $_POST["shop_name"];
 $email = $_POST["email"];
 $township = $_POST["township"];
-$phone = $_POST["phone"];
 $shop_address = $_POST["shop_address"];
+$phone = $_POST["phone"];
 $bank_acc = $_POST["bank_acc"];
 
 
@@ -42,7 +45,6 @@ if(count($supplier) == 0){
         "INSERT INTO m_suppliers (
             sup_name,
             sup_email,
-            sup_password,
             township,
             sup_address,
             sup_phone,
@@ -52,7 +54,6 @@ if(count($supplier) == 0){
         ) VALUES (
             :sup_name,
             :email,
-            :password,
             :township,
             :address,
             :phone,

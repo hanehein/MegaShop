@@ -3,7 +3,7 @@
 
 session_start();
 $supplier_id = $_SESSION["sup_id"];
-$rowLimit = 10;
+$rowLimit = 2;
 
 //connect database
 include "../../Model/model.php";
