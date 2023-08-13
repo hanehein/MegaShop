@@ -35,27 +35,27 @@ include "../../Controller/supplierPendingListController.php";
             <div class=" flex items-center justify-center h-20  space-x-20">
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./approveList.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
                             <button>Approved</button>
                         </div>
                     </a>
                     <a href="./pendingList.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
+                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white shadow-md">
                             <button>Pending</button>
                         </div>
                     </a>
                 </div>
                 <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md">
-                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search">
-                    <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search shadow-md">
+                    <button class="w-12 py-[0.55rem] rounded-r-md shadow-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./createSupplier.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
                             <button>Create Supplier Account</button>
                         </div>
                     </a>
-                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
                         <input type="date" name="" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     </div>
                 </div>
@@ -69,6 +69,7 @@ include "../../Controller/supplierPendingListController.php";
                             <td>Shop Name</td>
                             <th>Shop Email</th>
                             <th>Plan</th>
+                            <th>Plan Duration</th>
                             <th>Township</th>
                             <th>Phone</th>
                             <th>Bank Account</th>
@@ -79,7 +80,7 @@ include "../../Controller/supplierPendingListController.php";
                     </thead>
                     <tbody id="searchResult">
                         <?php 
-                            $count = 1;
+                            $count = (($page - 1) * $rowLimits) + 1;
                             foreach ($supPendingLists as $pending ) {
                                 
                             
@@ -96,10 +97,11 @@ include "../../Controller/supplierPendingListController.php";
                                 else echo "Gold";
                             ?>
                             </td>
-                            <td><?= $pending["township"] ?></td>
-                            <td><?= $pending["sup_phone"] ?></td>
-                            <th><?= $pending["bank_account"] ?></th>
-                            <td><?= $pending["create_date"] ?></td>
+                            <td> <?= $pending["pack_actual_duration"]?>&nbsp;months</td>
+                            <td><?= $pending["township"]?></td>
+                            <td><?= $pending["sup_phone"]?></td>
+                            <th><?= $pending["bank_account"]?></th>
+                            <td><?= $pending["create_date"]?></td>
                             <td><a href="../../Controller/approveController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
                             <td><a href="../../Controller/deniedController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
                         </tr>
