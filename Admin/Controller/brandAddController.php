@@ -9,7 +9,7 @@ if (count($_POST) == 0) {
     $brand = $_POST["brand"];
     $date = $_POST["date"];
 
-    include '../../Model/model.php';
+    include '../Model/model.php';
 
     $sql = $pdo->prepare(
         " INSERT INTO m_brand
@@ -28,7 +28,7 @@ if (count($_POST) == 0) {
     $sql->bindValue(":date",$date);
     $sql->execute();
 
-    header("Location: ../../View/productlists/brandControl.php");
+    header("Location: ../View/productlists/brandControl.php");
 }
 
 

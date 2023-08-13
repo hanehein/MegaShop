@@ -86,6 +86,10 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="">Plan Duration</label>
+                                <input type="number" name="duration" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="">Bank Account</label>
                                 <input type="text" name="bankAcc" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" placeholder="xxxxxxxx">
                             </div>

@@ -55,7 +55,7 @@
                 </select>
                 <div class="flex items-center justify-center space-x-3">
 
-                <a href="./categoryAdd.php"><button class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">Add Brand</button></a>
+                <a href="./categoryAdd.php"><button class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">Add Category</button></a>
                 </div>
             </div>
 

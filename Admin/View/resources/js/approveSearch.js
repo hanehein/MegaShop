@@ -25,6 +25,7 @@ $(document).ready(function() {
                                 <td>${supplier.sup_phone}</td>
                                 <td>${supplier.bank_account}</td>
                                 <td>${supplier.create_date}</td>
+                                <td><a href="../../Controller//supplierEditController.php?id=${supplier.id}"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             </tr>
                             `
                         )

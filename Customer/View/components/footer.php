@@ -1,5 +1,5 @@
 <!-- START footer SECTION -->
-<section class="bg-custom-blue p-3 clear-both">
+<section class=" p-3 clear-both w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-auto">
     <div class="container mx-auto">
         <div class="block sm:border-b-2 sm:border-white sm:flex sm:justify-between mb-2">
             <div class="px-4 py-6 text-white border-b-2 border-white sm:border-none">
