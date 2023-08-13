@@ -45,8 +45,8 @@ include "../../Controller/supplierPendingListController.php";
                         </div>
                     </a>
                 </div>
-                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md">
-                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search shadow-md">
+                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md shadow-md">
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search ">
                     <button class="w-12 py-[0.55rem] rounded-r-md shadow-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="flex items-center justify-center space-x-3">
@@ -115,7 +115,7 @@ include "../../Controller/supplierPendingListController.php";
                     <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
                     <?php
                     if ($page <= 1) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">
@@ -135,7 +135,7 @@ include "../../Controller/supplierPendingListController.php";
                     <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
                     <?php
                     if ($page >= $pageList) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">

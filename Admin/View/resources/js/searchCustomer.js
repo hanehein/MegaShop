@@ -24,7 +24,7 @@ $(document).ready(function() {
                                 <td>${customer.township}</td>
                                 <td>${customer.cus_address}</td>
                                 <td>${customer.create_date}</td>
-                                <td>${customer.notify}</td>
+                                <td><a href="../../Controller/customerNotifyController.php?id=${customer.id}"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>
                             </tr>
                             `
                         )

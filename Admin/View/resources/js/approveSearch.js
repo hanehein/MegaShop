@@ -20,8 +20,8 @@ $(document).ready(function() {
                                 <td>${supplier.sup_shop_name}</td>
                                 <td>${supplier.sup_email}</td>
                                 <td>${supplier.pack_id}</td>
+                                <td>${supplier.pack_actual_duration}&nbsp;months</td>
                                 <td>${supplier.township}</td>
-                                <td>${supplier.view_count}</td>
                                 <td>${supplier.sup_phone}</td>
                                 <td>${supplier.bank_account}</td>
                                 <td>${supplier.create_date}</td>

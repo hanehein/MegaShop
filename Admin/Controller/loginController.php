@@ -24,7 +24,7 @@ if (count($_POST) == 0) {
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
         // print_r($result);
         if (count($result) == 0) {
-            $_SESSION["loginError"] = "Admin Name not found!";
+            // $_SESSION["loginError"] = "Admin Name not found!";
             header("Location: ../View/adminProfile/adminLogin.php");
         } else {
             if ($password == $result[0]["admin_password"]) {

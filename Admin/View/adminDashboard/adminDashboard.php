@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 session_start();
 
 $admin = $_SESSION["admin"];
-print_r($admin);
+// print_r($admin);
 ?>
 <!DOCTYPE html>
 <html lang="en">

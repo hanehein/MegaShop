@@ -121,7 +121,7 @@ include "../../Controller/supplierListController.php";
                     <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
                     <?php
                     if ($page <= 1) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">
@@ -141,7 +141,7 @@ include "../../Controller/supplierListController.php";
                     <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
                     <?php
                     if ($page >= $pageList) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">
