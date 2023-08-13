@@ -31,28 +31,30 @@ include "../../Controller/subscriptionEditController.php";
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
+        <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins']">
+            <div class="w-full flex items-center justify-center h-15 space-x-20 mt-5">
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./adminSubscriptionIncome.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
                             <button>Subscription</button>
                         </div>
                     </a>
-
                     <a href="./adminAdsIncome.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                             <button>Advertisement</button>
                         </div>
                     </a>
-
+                </div>
+                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md">
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search">
+                    <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                 </div>
             </div>
             <!-- plan desc -->
-            <div class="w-full flex items-center justify-center space-x-10">
+            <div class="w-auto px-2 py-2 flex items-center justify-center space-x-10 h-8 bg-white rounded-md shadow-sm">
                 <div class="flex items-center justify-center text-xs text-[#66CC33] font-semibold space-x-3">
                     <span>[Gold Plan</span>
                     <ion-icon name="chevron-forward-circle"></ion-icon>

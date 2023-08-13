@@ -1,7 +1,5 @@
 <?php
-include "../../Controller/setting/planController.php";
-session_start();
-$supplier_id = $_SESSION["sup_id"];
+include "../../Controller/setting/planIdController.php";
 ?>
 <?php
 $hasJsFile = FALSE;
@@ -30,8 +28,12 @@ include "../components/header.php";
                     <!--card body-->
                     <div class="flex justify-between items-center space-x-10">
                         <!--Start card-->
-                        <?php foreach ($package as $pack) { ?>
-                            <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg <?php if($pack["id"] == $supplier_id){ echo "border border-red-500 bg-red-800";} ?>">
+                        <?php if ($product["pack_id"] == 0) { ?>
+                    <div class="p-5 rounded-md mb-2 bg-red-300">
+                    </div>
+                <?php } ?>
+                        <?php foreach ($plan_id as $pack) { ?>
+                            <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
                                 
                                 <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
                                 <span><?= $pack["pack_des"] ?></span>

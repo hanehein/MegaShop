@@ -2,7 +2,7 @@
 session_start();
 
 $supEdit = $_SESSION["supEdit"];
-print_r($supEdit);
+// print_r($supEdit);
 
 ?>
 

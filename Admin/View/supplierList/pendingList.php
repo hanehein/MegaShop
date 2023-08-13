@@ -2,15 +2,7 @@
 session_start();
 
 include "../../Controller/supplierPendingListController.php";
-
-
 ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +19,8 @@ include "../../Controller/supplierPendingListController.php";
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/supplier.css">
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/pendingSearch.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -38,7 +32,7 @@ include "../../Controller/supplierPendingListController.php";
         ?>
         <!-- data display div -->
         <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class=" flex items-center justify-center h-20  space-x-80">
+            <div class=" flex items-center justify-center h-20  space-x-20">
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./approveList.php">
                         <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
@@ -50,6 +44,10 @@ include "../../Controller/supplierPendingListController.php";
                             <button>Pending</button>
                         </div>
                     </a>
+                </div>
+                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md">
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search">
+                    <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./createSupplier.php">
@@ -79,7 +77,7 @@ include "../../Controller/supplierPendingListController.php";
                             <th>Denied</th>
                         </tr>
                     </thead>
-                    <tbody class="">
+                    <tbody id="searchResult">
                         <?php 
                             $count = 1;
                             foreach ($supPendingLists as $pending ) {
@@ -110,37 +108,38 @@ include "../../Controller/supplierPendingListController.php";
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5 ">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
+            <div class="w-auto flex items-center justify-center h-10 mb-5 ">
+                <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page - 1 ?>">Previous</a>
+                    </li>
+                    <?php
+                    for ($i = 1; $i <= $pageList; $i++) { ?>
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <?php
+                            if ($page == $i) {
+                                echo "active";
+                            }
+                        ?> hover:text-white hover:bg-[#003366]">
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page + 1 ?>">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

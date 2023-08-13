@@ -9,6 +9,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../resources/js/cusFeedback.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,28 +106,33 @@
             </div>
         </nav>
     </div>
-    <section class="flex flex-col justify-center items-center space-y-10 p-10">
-        <p class="font-semibold text-xl underline">Customer Feedback</p>
-
-        <p>Please rate your experience from 0 to 10, 10 being the highest</p>
-        <div class="flex space-x-1 md:space-x-2">
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">1</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</button>
-            <button class="bg-gray-300 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
+    <form action="../../Controller/products/cusFeedbackController.php" method="post">
+        <section class="flex flex-col justify-center items-center space-y-10 p-10">
+            <p class="font-semibold text-xl underline">Customer Feedback</p>
+            <p>Please rate your experience from 0 to 10, 10 being the highest</p>
+            <!-- <input type="text" name="" id=""> -->
+            <input type="text" id="rateVal" name="rateVal" value="">
+            <div class="flex space-x-1 md:space-x-2">
+                <button onclick="btn(this)" name="r1" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center">1</button>
+                <button onclick="btn(this)" name="r2" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
+                <button onclick="btn(this)" name="r3" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
+                <button onclick="btn(this)" name="r4" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>
+                <button onclick="btn(this)" name="r5" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</button>
+                <button onclick="btn(this)" name="r6" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</button>
+                <button onclick="btn(this)" name="r7" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</button>
+                <button onclick="btn(this)" name="r8" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</button>
+                <button onclick="btn(this)" name="r9" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</button>
+                <button onclick="btn(this)" name="r10" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
+            </div>
+            <p class="text-xl font-semibold mt-4">Please Share What Can Be Improved</p>
+            <textarea name="feedback" id="" placeholder="Write some advices..." class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>
+        </section>
+        <div class="sm:text-center md:text-end px-32 py-5">
+            <a href="../../Controller/products/cusFeedbackController.php">
+                <button class="bg-[#024486] rounded-lg px-3 py-1 text-white hover:bg-blue-300">Share</button>
+            </a>
         </div>
-        <p class="text-xl font-semibold mt-4">Please Share What Can Be Improved</p>
-        <textarea name="advice" id="" placeholder="Write some advices..." class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>
-    </section>
-    <div class="sm:text-center md:text-end px-32 py-5">
-        <button class="bg-[#024486] rounded-lg px-3 py-1 text-white hover:bg-blue-300">Share</button>
-    </div>
+    </form>
     <!--Start footer-->
     <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-auto">
         <!-- first one -->

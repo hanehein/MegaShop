@@ -5,7 +5,6 @@ session_start();
 $profile = $_SESSION['profileEdit'];
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +29,7 @@ $profile = $_SESSION['profileEdit'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-    <script src="../resources/js/img.js"></script>
+    <script src="../resources/js/img.js" defer></script>
     <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -71,11 +70,21 @@ $profile = $_SESSION['profileEdit'];
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-            <a href="./profile.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p></a>
-                <a href="./followedStores.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p></a>
-                <a href="./orderHistory.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p></a>
-                <a href="./myReviews.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p></a>
-                <a href="./wishlist.php"><p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p></a>
+                <a href="./profile.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
+                </a>
+                <a href="./followedStores.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                </a>
+                <a href="./orderHistory.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
+                </a>
+                <a href="./myReviews.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
+                </a>
+                <a href="./wishlist.php">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
+                </a>
             </div>
         </div>
         <!-- save -->
@@ -85,9 +94,9 @@ $profile = $_SESSION['profileEdit'];
                 <div class="flex  items-center justify-center">
 
                     <label for="profile" class="w-2/3 justify-center items-center">
-                        <img src="../../../Storage/profile/<?php echo $profile[0]["cus_photo"];?>" id="outImg" class="w-2/3 md:w-1/3 h-1/6 rounded-full ml-10 cursor-pointer">
+                        <img src="../<?php echo $profile[0]["cus_photo"] ?>" id="outImg" class="w-2/3 md:w-1/3 h-1/6 rounded-full ml-10 cursor-pointer">
                     </label>
-                    <input type="file" name="profile" id="profile" hidden class="hidden" accept=".png,.jpg,.svg" >
+                    <input type="file" name="profile" id="profile" hidden accept=".png,.jpg,.svg">
                     <div class="hidden md:flex flex-col items-center">
                         <p class="text-xl font-bold py-6"><?php echo $profile[0]["cus_name"]; ?></p>
                         <p class="text-lg font-semibold py-6"><?php echo $profile[0]["cus_address"]; ?></p>
@@ -97,7 +106,7 @@ $profile = $_SESSION['profileEdit'];
 
 
                 <div class="flex flex-col mx-auto">
-                <input type="hidden" name="id" value="<?php echo $profile[0]["id"]; ?>">
+                    <input type="hidden" name="id" value="<?php echo $profile[0]["id"]; ?>">
                     <div class="w-1/2 ml-2 md:ml-24 mt-3 ">
                         <p class="text-xl font-semibold">Name</p>
                     </div>
