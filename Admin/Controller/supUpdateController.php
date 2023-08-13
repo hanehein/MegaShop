@@ -16,6 +16,7 @@ if(count($_POST) == 0){
     $township = $_POST["township"];
     $plan = $_POST["plan"];
     $bankAcc = $_POST["bankAcc"];
+    $duration = $_POST["duration"];
     $phone = $_POST["phone"];
     $password = $_POST["password"];
     $shopPhoto = $_FILES["shopPhoto"]["name"];
@@ -29,7 +30,8 @@ if(count($_POST) == 0){
         township = :township,
         sup_phone = :phone,
         bank_account = :bankAcc,
-        sup_shop_name = :shopName
+        sup_shop_name = :shopName,
+        pack_actual_duration = :duration
         where id = :id
     ");
     $sql->bindValue(":id",$id);
@@ -38,6 +40,7 @@ if(count($_POST) == 0){
     $sql->bindValue(":shopName", $shopName);
     $sql->bindValue(":township",$township);
     $sql->bindValue(":plan",$plan);
+    $sql->bindValue(":duration",$duration);
     $sql->bindValue(":bankAcc",$bankAcc);
     $sql->bindValue(":phone",$phone);
     
