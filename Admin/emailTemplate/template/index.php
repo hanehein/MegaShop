@@ -97,10 +97,10 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
 <!--[if !mso]><!--><link href=""><!--<![endif]-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
-<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ffffff;color: #d2c2c2e7">
+<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ffffff;color: #d2c2c2e7;font-family: 'Poppins', sans-serif;">
   <!--[if IE]><div class="ie-container"><![endif]-->
   <!--[if mso]><div class="mso-container"><![endif]-->
   <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #ffffff;width:100%" cellpadding="0" cellspacing="0">
@@ -138,7 +138,7 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   <tr>
     <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="cid:img2" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 50%;max-width: 132.5px;" width="132.5"/>
+      <img align="center" border="0" src="cid:img3" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 50%;max-width: 132.5px;" width="132.5"/>
       
     </td>
   </tr>
@@ -149,10 +149,10 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:42px;font-family:'Montserrat',sans-serif;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:42px;font-family: 'Poppins', sans-serif;" align="left">
         
   <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="1%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #003366;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
     <tbody>
@@ -195,8 +195,8 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #ffffff; line-height: 100%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 100%; text-align: center;"><strong><span style="font-size: 44px; line-height: 44px;"><span style="line-height: 44px; font-size: 30px;font-family: 'Wallpoet', cursive;">WELCOME FROM MEGA SHOP</span></span></strong></p>
-<p style="font-size: 14px; line-height: 100%; text-align: center;"><span style="font-size: 72px; line-height: 72px;"><strong><span style="line-height: 72px; font-size: 72px;"><span style="line-height: 72px; font-size: 20px;font-family: 'Wallpoet', cursive;">Thanks for choosing us</span></span></strong></span></p>
+    <p style="font-size: 14px; line-height: 100%; text-align: center;"><strong><span style="font-size: 44px; line-height: 44px;"><span style="line-height: 44px; font-size: 30px;font-family: 'Poppins', sans-serif;">Welcome From MEGA SHOP</span></span></strong></p>
+<p style="font-size: 14px; line-height: 100%; text-align: center;"><span style="font-size: 72px; line-height: 72px;"><strong><span style="line-height: 72px; font-size: 72px;"><span style="line-height: 72px; font-size: 20px;font-family: 'Poppins', sans-serif;">Thanks for choosing us</span></span></strong></span></p>
   </div>
 
       </td>
@@ -204,14 +204,14 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family: 'Poppins', sans-serif;if;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;">Username : supplierName</p>
-    <p style="font-size: 14px; line-height: 140%;font-family: 'Wallpoet', cursive;"> Password : password</p>
+    <p style="font-size: 14px; line-height: 140%;font-family: 'Poppins', sans-serif;">Username : supplierName</p>
+    <p style="font-size: 14px; line-height: 140%;font-family: 'Poppins', sans-serif;"> Password : password</p>
   </div>
 
       </td>
@@ -219,13 +219,13 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;if;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:'Montserrat',sans-serif;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family: 'Poppins', sans-serif;if;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 48px; line-height: 67.2px;"><strong><span style="line-height: 67.2px; font-size: 18px;font-family: 'Wallpoet', cursive;">Stay Confortable & Trade Smart</span></strong></span></p>
+    <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 48px; line-height: 67.2px;"><strong><span style="line-height: 67.2px; font-size: 18px;font-family: 'Poppins', sans-serif;">Stay Confortable & Trade Smart</span></strong></span></p>
   </div>
 
       </td>
@@ -233,16 +233,16 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family: 'Wallpoet', cursive;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family: 'Wallpoet', cursive;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family: 'Poppins', sans-serif;" align="left">
         
   <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
 <div class="v-text-align" align="center">
   <!--[if mso]><table border="0" cellspacing="0" cellpadding="0"><tr><td align="center" bgcolor="#eec60e" style="padding:10px 70px;" valign="top"><![endif]-->
-    <a href="../../../Customer/View/Home/index.php" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #66CC33; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
-      <span style="display:block;padding:10px 70px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;font-family: 'Wallpoet', cursive;;">Explore More</span></strong></span>
+    <a href="#" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #66CC33; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;font-size: 14px;">
+      <span style="display:block;padding:10px 70px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;font-family: 'Poppins', sans-serif;">Explore More</span></strong></span>
     </a>
     <!--[if mso]></td></tr></table><![endif]-->
 </div>
@@ -252,10 +252,10 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table class="hide-mobile" style="font-family: 'Wallpoet', cursive;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table class="hide-mobile" style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:56px;font-family: 'Wallpoet', cursive;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:56px;font-family: 'Poppins', sans-serif;" align="left">
         
   <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="1%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #003366;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
     <tbody>
@@ -272,10 +272,10 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table style="font-family: 'Wallpoet', cursive;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:20px;font-family: 'Wallpoet', cursive;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:20px;font-family: 'Poppins', sans-serif;" align="left">
         
   <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="1%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #003366;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
     <tbody>
@@ -292,13 +292,13 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   </tbody>
 </table>
 
-<table id="u_content_text_2" style="font-family: 'Wallpoet', cursive;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table id="u_content_text_2" style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 17px 20px;font-family: 'Wallpoet', cursive;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 17px 20px;font-family: 'Poppins', sans-serif;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%; text-align: left;font-family: 'Wallpoet', cursive;">-Stay Confortable & Trade Smart-</p>
+    <p style="font-size: 14px; line-height: 140%; text-align: left;font-family: 'Poppins', sans-serif;">-Stay Confortable & Trade Smart-</p>
   </div>
 
       </td>
@@ -336,13 +336,13 @@ table, td { color: #000000; } #u_body a { color: #ffffff; text-decoration: none;
   <div style="height: 100%;width: 100% !important;">
   <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;"><!--<![endif]-->
   
-<table style="font-family: 'Wallpoet', cursive;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family: 'Poppins', sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:40px;font-family: 'Wallpoet', cursive;" align="left">
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:40px;font-family: 'Poppins', sans-serif;" align="left">
         
   <div class="v-text-align" style="font-size: 14px; color: #fdfdfd; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 14px; line-height: 19.6px;font-family: 'Wallpoet', cursive;">&copy;2023.&nbsp;MEGA Shop All Rights Reserved </span></p>
+    <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="font-size: 14px; line-height: 19.6px;font-family: 'Poppins', sans-serif;">&copy;2023.&nbsp;MEGA Shop All Rights Reserved </span></p>
   </div>
 
       </td>
