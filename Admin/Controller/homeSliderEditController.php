@@ -30,6 +30,4 @@ if (count($_POST) == 0) {
     header("Location: ../View/adminDashboard/homeSlider.php");
 }
 
-
-
 ?>
