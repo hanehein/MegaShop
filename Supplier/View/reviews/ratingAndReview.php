@@ -20,16 +20,14 @@ include "../components/header.php";
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
                 <div class="mb-5">
+                    <input id="row-limit" type="number" hidden value="<?= $rowLimit ?>">
+                    <input id="page-list" type="number" hidden value="<?= $pageLists ?>">
                     <label class="text-lg font-bold mr-4" for="order">Order By</label>
-
                     <select class="review-order p-2 w-[200px] rounded-md border-2 border-[#66CC33] text-slate-500 text-medium" id="order">
                         <option value="0">date</option>
                         <option value="1">rating</option>
                     </select>
                 </div>
-
-                <div>
-                    <span class="font-bold text-sm">Showing 1 to 5 of 412 results</span>
                     <table class="min-w-full table-auto rounded-lg overflow-hidden">
                         <thead>
 
@@ -92,19 +90,15 @@ include "../components/header.php";
                     <!-- Pagination component -->
                     <nav class="flex items-center justify-center">
                         <!-- Previous button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
+                        <a href="#" class="pagination-prev px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
                             <ion-icon name="chevron-back"></ion-icon>
                         </a>
                         <!-- Page numbers -->
-                        <a href="#" class="active px-3 py-1 border border-[#66CC33] text-bold">1</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">2</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">3</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">...</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">10</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">11</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">12</a>
+                        <?php for ($i=1; $i <= $pageLists; $i++) { ?>
+                            <button class="<?php if($i == 1) echo "pagination-active"; ?> pagination-page-btn px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?></button>
+                        <?php } ?>
                         <!-- Next button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
+                        <a href="#" class="pagination-next px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
                             <ion-icon name="chevron-forward"></ion-icon>
                         </a>
                     </nav>

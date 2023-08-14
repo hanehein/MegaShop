@@ -50,7 +50,7 @@ $result = $follow;
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <a href="../../Controller/ProfileController.php?id=<?php echo $follow[0]["id"]; ?>">
+            <a href="./profile.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
@@ -62,17 +62,12 @@ $result = $follow;
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
-            <a href="./myReviews.php">
+            <a href="../../Controller/MyReviewsController.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
             </a>
-            <a href="./wishlist.php">
+            <a href="../../Controller/WishlistController.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
             </a>
-
-            <div class="md:flex justify-center items-center hidden">
-                <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-            </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -80,7 +75,7 @@ $result = $follow;
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="../../Controller/ProfileController.php?id=<?php echo $follow[0]["id"]; ?>">
+                <a href="./profile.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="../../Controller/FollowedStoresController.php?id=<?php echo $follow[0]["id"]; ?>">
@@ -89,10 +84,10 @@ $result = $follow;
                 <a href="../../Controller/OrderHistoryController.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php">
+                <a href="../../Controller/WishlistController.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>

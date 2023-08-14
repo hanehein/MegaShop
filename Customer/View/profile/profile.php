@@ -57,18 +57,13 @@ include '../../Controller/ProfileController.php';
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
                 </a>
 
-                <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
                 </a>
 
-                <a href="./wishlist.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="../../Controller/WishlistController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
                 </a>
-
-                <div class="md:flex justify-center items-center hidden">
-                    <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-                </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -85,10 +80,10 @@ include '../../Controller/ProfileController.php';
                 <a href="../../Controller/OrderHistoryController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="../../Controller/WishlistController.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>

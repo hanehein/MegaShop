@@ -1,4 +1,8 @@
-<?php include "../../Controller/products/productListsController.php" ?>
+<?php
+include "../../Controller/products/categoryListController.php";
+include "../../Controller/products/brandListController.php";
+include "../../Controller/products/productListsController.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +41,10 @@
             </ul>
         </div>
         <div class="block sm:grid sm:grid-cols-6 gap-4">
-            <div class="hidden sm:block border-r-2 border-custom-grey">
+            <div class="hidden md:block border-r-2 border-custom-grey  min-h-screen">
 
-                <div class="categories-box p-4 border-b-2 border-custom-grey">
+                <!-- category -->
+                <!-- <div class="categories-box p-4 border-b-2 border-custom-grey">
                     <h2 class="text-custom-extra-large">Categories</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
                         <li>Fashion</li>
@@ -47,8 +52,9 @@
                         <li>Books</li>
                         <li>Fashion</li>
                     </ul>
-                </div>
+                </div> -->
 
+                <!-- brands -->
                 <div class="brands-box p-4 border-custom-grey border-b-2">
                     <h2 class="text-custom-extra-large">Brands</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
@@ -59,6 +65,7 @@
                     </ul>
                 </div>
 
+                <!-- sizes -->
                 <div class="sizes-box p-4 border-custom-grey border-b-2">
                     <h2 class="text-custom-extra-large">Sizes</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
@@ -72,6 +79,7 @@
                     </ul>
                 </div>
 
+                <!-- colors -->
                 <div class="colors-box p-4 border-custom-grey border-b-2">
                     <h2 class="text-custom-extra-large">Colors</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
@@ -128,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 px-3 py-5">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 px-3 py-5">
                     <?php foreach ($productLists as $product) { ?>
                         <!-- start card -->
                         <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3 cursor-pointer">
@@ -156,12 +164,31 @@
                                         <ion-icon name="heart-outline" class="text-red-600 text-lg"></ion-icon>
                                     </button>
                                 </div>
+
+                                <!-- start stars -->
                                 <div>
-                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <?php
+                                    $productRating = array_filter($productRatings, function ($rating) {
+                                        global $product;
+                                        return $rating["product_id"] == $product["id"];
+                                    });
+                                    ?>
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                        <ion-icon class="text-custom-mediu
+                                        <?php
+                                        foreach ($productRating as $rating) {
+                                            if ($i < $rating["average_rating"]) {
+                                                echo "text-[#F68721]";
+                                            } else {
+                                                echo "text-slate-500";
+                                            }
+                                        }
+                                        ?>" name="star"></ion-icon>
+                                    <?php } ?>
                                 </div>
+                                <!-- end stars -->
+
+
                                 <div class="block mb-2">
                                     <div class="text-custom-tiny font-bold">
                                         <span class="<?php

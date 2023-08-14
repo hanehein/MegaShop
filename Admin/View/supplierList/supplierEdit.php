@@ -1,16 +1,10 @@
 <?php
 session_start();
-
 $supEdit = $_SESSION["supEdit"];
 // print_r($supEdit);
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -106,6 +100,10 @@ $supEdit = $_SESSION["supEdit"];
                                                                                                                                     ?>>
                                     <label for="plan_gold">Gold</label>
                                 </div>
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="adname">Plan Duration</label>
+                                <input value="<?php echo $supEdit[0]["pack_actual_duration"] ?>" type="number" name="duration" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="adname">Bank Account</label>

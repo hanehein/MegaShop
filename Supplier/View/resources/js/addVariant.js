@@ -28,8 +28,8 @@ function createVarint(variantValue, variantName, optionLists) {
         optionLists.forEach(list => {
             result += `
                 <div class="flex items-center">
-                    <input type="checkbox" id="sizeSmall" name="size" value="Small" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    <label for="sizeSmall" class="ml-2 text-gray-700">${list}</label>
+                    <input type="checkbox" id="${variantName}-${list}" name="${variantName}[]" value="${list}" class="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                    <label for="${variantName}-${list}" class="ml-2 text-gray-700">${list}</label>
                 </div>
             `;
         });

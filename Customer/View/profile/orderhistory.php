@@ -50,7 +50,7 @@ $result = $orders;
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./profile.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
@@ -62,11 +62,11 @@ $result = $orders;
                 <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
-            <a href="./myReviews.php">
+            <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
             </a>
 
-            <a href="./wishlist.php">
+            <a href="../../Controller/WishlistController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
             </a>
 
@@ -81,7 +81,7 @@ $result = $orders;
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="../../Controller/ProfileController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./profile.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
@@ -90,15 +90,16 @@ $result = $orders;
                 <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php">
+                <a href="../../Controller/WishlistController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
         </div>
         <!-- history -->
+        
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
             <?php if (count($result) == 0) { ?>
                 <div class="flex flex-col items-center justify-center">
@@ -110,8 +111,8 @@ $result = $orders;
                         Order History
                     </p>
                     <?php foreach ($result as $orders) { ?>
-                    <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
-                        
+                        <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+
                             <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
                                 Traffic Star >>>
                             </div>
@@ -123,8 +124,8 @@ $result = $orders;
                                 <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["total_amount"]; ?> MMK</p>
                                 <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["create_date"]; ?></p>
                             </div>
-                        
-                    </div>
+
+                        </div>
                     <?php } ?>
                 </div>
             <?php } ?>

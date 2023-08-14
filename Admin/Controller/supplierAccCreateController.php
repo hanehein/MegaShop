@@ -19,6 +19,7 @@ if (isset($_POST["create"])) {
     $shopAddress = $_POST["shopAddress"];
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
+    $duration = $_POST["duration"];
     //generate password
     $password = getpwd(8);
     //get photo
@@ -44,7 +45,8 @@ if (isset($_POST["create"])) {
                     sup_shop_name,
                     shop_photo_path,
                     create_date,
-                    sup_approve
+                    sup_approve,
+                    pack_actual_duration
                 ) 
                 VALUES
                 (
@@ -59,7 +61,8 @@ if (isset($_POST["create"])) {
                     :shopName,
                     :path,
                     :createdDate,
-                    :approve
+                    :approve,
+                    :duration
                 )
             ");
 
@@ -68,6 +71,7 @@ if (isset($_POST["create"])) {
         $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
         $sql->bindValue(":email", $email);
         $sql->bindValue(":plan", $plan);
+        $sql->bindValue(":duration", $duration);
         $sql->bindValue(":township", $township);
         $sql->bindValue(":phone", $phone);
         $sql->bindValue(":address", $shopAddress);

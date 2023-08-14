@@ -115,7 +115,8 @@ include "../components/header.php";
                             </a>
                             <!-- Page numbers -->
                             <?php for ($i = 1; $i <= $pageLists ; $i++) { ?>
-                                <a href="?page=<?= $i ?>" class="active px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?></a>
+                                <a href="?page=<?= $i ?>" 
+                                class="<?php if($i == $page) {echo "pagination-active";} ?> px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?></a>
                             <?php } ?>
                             
                             <!-- Next button -->

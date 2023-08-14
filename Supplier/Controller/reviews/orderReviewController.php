@@ -13,6 +13,9 @@ session_start();
 $supplier_id = $_SESSION["sup_id"];
 
 $orderValue = $_POST["orderValue"];
+$rowLimit = $_POST["rowLimit"];
+$page = $_POST["page"];
+$pageStart = ($page - 1) * $rowLimit;
 
 //connect database
 include "../../Model/model.php";
@@ -35,17 +38,21 @@ $query = "SELECT
         WHERE 
             t_product_reviews.del_flg = 0
         AND 
-            m_products.supplier_id = :sup_id";
+            m_products.supplier_id = :sup_id"
+        ;
 
 if($orderValue == 0){
     //order by date
-    $sql = $pdo->prepare($query." ORDER BY t_product_reviews.create_date DESC");
+    $sql = $pdo->prepare(
+        $query." ORDER BY t_product_reviews.create_date DESC LIMIT 
+        $pageStart, $rowLimit");
 
 }else if($orderValue == 1){
     //order by rating
-    $sql = $pdo->prepare($query." ORDER BY t_product_reviews.rating DESC");
+    $sql = $pdo->prepare($query." ORDER BY t_product_reviews.rating DESC LIMIT 
+    $pageStart, $rowLimit");
 };
-
+ 
 $sql->bindValue(":sup_id", $supplier_id);
 $sql->execute();
 $reviewLists = $sql->fetchAll(PDO::FETCH_ASSOC);

@@ -24,6 +24,19 @@ $p_discount = $_POST["product_discount"];
 $p_descirption = $_POST["product_description"];
 $create_date = date("Y-m-d");
 
+if(isset($_POST["color"])){
+    $p_colors = implode(",", $_POST["color"]);
+}else{
+    $p_colors = NULL;
+}
+
+if(isset($_POST["size"])){
+    $p_sizes = implode(",", $_POST["size"]);
+}else{
+    $p_sizes = NULL;
+}
+
+
 //move images to storage
 foreach ($_FILES as $key => $value) {
     if ($_FILES[$key]["size"] != 0) {
@@ -53,6 +66,8 @@ $sql = $pdo->prepare(
             p_photo6,
             p_photo7,
             p_photo8,
+            p_size,
+            p_color,
             p_discount,
             supplier_id,
             create_date
@@ -72,6 +87,8 @@ $sql = $pdo->prepare(
             :photo6,
             :photo7,
             :photo8,
+            :size,
+            :color,
             :discount,
             :sup_id,
             :date
@@ -85,6 +102,8 @@ $sql->bindValue(":sell_price", $p_sell_price);
 $sql->bindValue(":buy_price", $p_buy_price);
 $sql->bindValue(":stock", $p_stock);
 $sql->bindValue(":description", $p_descirption);
+$sql->bindValue(":size", $p_sizes);
+$sql->bindValue(":color", $p_colors);
 $sql->bindValue(":discount", $p_discount);
 $sql->bindValue(":sup_id", $supplier_id);
 $sql->bindValue(":date", $create_date);

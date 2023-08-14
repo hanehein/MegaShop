@@ -1,10 +1,10 @@
 <?php
 
-include '../../Model/model.php';
+include "../../Model/model.php";
 
 $sql = $pdo->prepare(
     "SELECT * FROM m_customers 
-    WHERE id = 1"
+    WHERE id = 2"
 );
 
 $sql->execute();
