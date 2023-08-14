@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 include "../../Controller/customerListController.php";
-
+$today = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ include "../../Controller/customerListController.php";
                     <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <input type="date" name="" id="" value="<?=$today?>" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                 </div>
             </div>
             <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
@@ -101,7 +101,7 @@ include "../../Controller/customerListController.php";
                     <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
                     <?php
                     if ($page <= 1) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">
@@ -121,7 +121,7 @@ include "../../Controller/customerListController.php";
                     <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
                     <?php
                     if ($page >= $pageList) {
-                        echo "disabled";
+                        echo "pointer-events-none";
                     }
                     ?>
                     ">

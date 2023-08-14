@@ -11,6 +11,25 @@ $(document).ready(function () {
         let pendingSuppliers = JSON.parse(res);
         console.log(pendingSuppliers);
         for (const supplier of pendingSuppliers) {
+          //packType
+          let packType = "";
+          if (supplier.pack_id === 0) {
+            packType = "Basic";
+          } else if (supplier.pack_id === 1) {
+            packType = "Silver";
+          } else {
+            packType = "Gold";
+          }
+          //township
+          let township = "";
+
+          if (supplier.township == 1) {
+            township = "Yankin";
+          } else if (supplier.township == 2) {
+            township = "Dagon";
+          } else {
+            township = "Kamayut";
+          }
           $("#searchResult").append(
             `               
                             <tr class="h-10 border-b-2 border-b-white hover:bg-[#00336618]">
@@ -18,9 +37,9 @@ $(document).ready(function () {
                                 <td>${supplier.sup_name}</td>
                                 <td>${supplier.sup_shop_name}</td>
                                 <td>${supplier.sup_email}</td>
-                                <td>${supplier.pack_id}</td>
+                                <td>${packType}</td>
                                 <td>${supplier.pack_actual_duration}&nbsp;months</td>
-                                <td>${supplier.township}</td>
+                                <td>${township}</td>
                                 <td>${supplier.sup_phone}</td>
                                 <td>${supplier.bank_account}</td>
                                 <td>${supplier.create_date}</td>

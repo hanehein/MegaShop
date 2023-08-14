@@ -93,6 +93,10 @@
                                 <label class="text-white" for="">Bank Account</label>
                                 <input type="text" name="bankAcc" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" placeholder="xxxxxxxx">
                             </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="adname">Created Date</label>
+                                <input value="" type="date" name="createDate" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
                                <button type="submit" name="create" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>

@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
-
 include "../../Controller/supplierPendingListController.php";
+$today = date("Y-m-d");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@ include "../../Controller/supplierPendingListController.php";
                         </div>
                     </a>
                     <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
-                        <input type="date" name="" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <input type="date" name="" value="<?php echo $today?>" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     </div>
                 </div>
             </div>
@@ -79,32 +79,35 @@ include "../../Controller/supplierPendingListController.php";
                         </tr>
                     </thead>
                     <tbody id="searchResult">
-                        <?php 
-                            $count = (($page - 1) * $rowLimits) + 1;
-                            foreach ($supPendingLists as $pending ) {
-                                
-                            
+                        <?php
+                        $count = (($page - 1) * $rowLimits) + 1;
+                        foreach ($supPendingLists as $pending) {
+
+
                         ?>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><?= $count++ ?></td>
-                            <td><?= $pending["sup_name"] ?></td>
-                            <td><?= $pending["sup_shop_name"] ?></td>
-                            <td><?= $pending["sup_email"] ?></td>
-                            <td>
-                            <?php
-                                if($pending["pack_id"]==0) echo "Basic";
-                                else if ($pending["pack_id"]==1)echo "Silver";
-                                else echo "Gold";
-                            ?>
-                            </td>
-                            <td> <?= $pending["pack_actual_duration"]?>&nbsp;months</td>
-                            <td><?= $pending["township"]?></td>
-                            <td><?= $pending["sup_phone"]?></td>
-                            <th><?= $pending["bank_account"]?></th>
-                            <td><?= $pending["create_date"]?></td>
-                            <td><a href="../../Controller/approveController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                            <td><a href="../../Controller/deniedController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
-                        </tr>
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                                <td><?= $count++ ?></td>
+                                <td><?= $pending["sup_name"] ?></td>
+                                <td><?= $pending["sup_shop_name"] ?></td>
+                                <td><?= $pending["sup_email"] ?></td>
+                                <td>
+                                    <?php
+                                    if ($pending["pack_id"] == 0) echo "Basic";
+                                    else if ($pending["pack_id"] == 1) echo "Silver";
+                                    else echo "Gold";
+                                    ?>
+                                </td>
+                                <td> <?= $pending["pack_actual_duration"] ?>&nbsp;months</td>
+                                <td> <?php if ($pending["township"] == 1) echo "Yankin";
+                                        else if ($pending["township"] == 2) echo "Dagon";
+                                        else echo "Kamayut"; ?></td>
+                                </td>
+                                <td><?= $pending["sup_phone"] ?></td>
+                                <th><?= $pending["bank_account"] ?></th>
+                                <td><?= $pending["create_date"] ?></td>
+                                <td><a href="../../Controller/approveController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
+                                <td><a href="../../Controller/deniedController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -125,9 +128,9 @@ include "../../Controller/supplierPendingListController.php";
                     for ($i = 1; $i <= $pageList; $i++) { ?>
                         <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
                         <?php
-                            if ($page == $i) {
-                                echo "active";
-                            }
+                        if ($page == $i) {
+                            echo "active";
+                        }
                         ?> hover:text-white hover:bg-[#003366]">
                             <a href="?page=<?= $i ?>"><?= $i ?></a>
                         </li>

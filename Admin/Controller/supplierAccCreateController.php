@@ -20,6 +20,7 @@ if (isset($_POST["create"])) {
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
     $duration = $_POST["duration"];
+    
     //generate password
     $password = getpwd(8);
     //get photo
