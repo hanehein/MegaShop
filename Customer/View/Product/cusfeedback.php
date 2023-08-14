@@ -113,16 +113,16 @@
             <!-- <input type="text" name="" id=""> -->
             <input type="text" id="rateVal" name="rateVal" value="">
             <div class="flex space-x-1 md:space-x-2">
-                <button onclick="btn(this)" name="r1" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center">1</button>
-                <button onclick="btn(this)" name="r2" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
-                <button onclick="btn(this)" name="r3" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
-                <button onclick="btn(this)" name="r4" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>
-                <button onclick="btn(this)" name="r5" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</button>
-                <button onclick="btn(this)" name="r6" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</button>
-                <button onclick="btn(this)" name="r7" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</button>
-                <button onclick="btn(this)" name="r8" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</button>
-                <button onclick="btn(this)" name="r9" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</button>
-                <button onclick="btn(this)" name="r10" class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center">1</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">5</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">6</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">7</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">8</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">9</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
             </div>
             <p class="text-xl font-semibold mt-4">Please Share What Can Be Improved</p>
             <textarea name="feedback" id="" placeholder="Write some advices..." class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>
