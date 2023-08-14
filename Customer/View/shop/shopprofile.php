@@ -116,43 +116,57 @@ include "../../Controller/shop/shopProfileController.php";
 
                 <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-4 px-3 py-5">
                     <!-- start card -->
-                    <?php foreach($products as $product) { ?>
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
+                    <?php foreach ($products as $product) { ?>
+                        <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
+                            <!-- card header -->
                             <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[150px]" alt="product-img" />
                             </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through"><?= $product["p_sell_price"] ?> Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
+                            <!-- card header -->
+                            <!-- card body -->
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
+                                    <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                                 </div>
                                 <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">800 ks</span>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                </div>
+                                <div class="block sm:flex sm:justify-between sm:items-center mb-2">
+                                    <div class="text-custom-tiny font-bold"> <span class="<?php
+                                                                                            if ($product["p_discount"] != 0) {
+                                                                                                echo "text-red-600 line-through";
+                                                                                            } else {
+                                                                                                echo "text-custom-blue text-custom-large font-bold";
+                                                                                            } ?>">
+                                            <?= $product["p_sell_price"] ?> MMK
+                                        </span>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-red-600">( <?= $product["p_discount"] ?> % off)</span>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-custom-blue text-custom-large font-bold">
+                                                <?= ($product["p_sell_price"] * (100 - $product["p_discount"])) / 100  ?> MMK
+                                            </span>
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
+                                        <ion-icon class="text-custom-large" name="cart"></ion-icon>
+                                        <span class="text-white">Add to Cart</span>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
+                            <!-- card body -->
                         </div>
-                        <!-- card body -->
-                    </div>
                     <?php } ?>
                     <!-- end card -->
                 </div>
