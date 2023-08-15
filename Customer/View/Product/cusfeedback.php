@@ -111,7 +111,7 @@
             <p class="font-semibold text-xl underline">Customer Feedback</p>
             <p>Please rate your experience from 0 to 10, 10 being the highest</p>
             <!-- <input type="text" name="" id=""> -->
-            <input type="text" id="rateVal" name="rateVal" value="">
+            <input type="number" id="rateVal" name="rateVal" value="0" hidden>
             <div class="flex space-x-1 md:space-x-2">
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center">1</button>
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>

@@ -1,22 +1,22 @@
 const rateVal = document.getElementById('rateVal');
-const rateBtn = document.getElementsByClassName('rate');
+const rateBtns = document.querySelectorAll(".rate");
 const message = document.getElementById("message");
 
-console.log(rateBtn.length);
+rateBtns.forEach( rateBtn => {
+  rateBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    removeActive();
+    this.classList.add("active");
+    const rate = this.innerText;
+    rateVal.value = rate;
+  })
+});
 
-for(i = 0; i < rateBtn.length; i++){
-  rateBtn[i].addEventListener("click",function (e){
-    console.log("hi");
-     // e.preventDefault(); 
-    // rateVal.value= e.innerText;
-    message.innerText ="";
-    rateVal.value = "";
-   
+
+function removeActive(){
+  rateBtns.forEach(btn => {
+    btn.classList.remove("active");
   })
 }
 
-// function btn(key) {
-//     rateVal.value= key.innerText;
-   
-//   }
 
