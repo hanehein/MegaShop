@@ -55,7 +55,5 @@ if (!isset($id)) {
 
     $pageList = ceil(count( $_SESSION['profileEdit']) / $rowLimits);
 
-    print_r($pageList);
-
     header("Location: ../View/profile/orderHistory.php");
 }

@@ -74,7 +74,7 @@ $profile = $_SESSION['profileEdit'];
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="./followedStores.php">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent  px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
                 <a href="./orderHistory.php">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
