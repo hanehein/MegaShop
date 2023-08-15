@@ -133,8 +133,8 @@ include "../../Controller/shop/shopProfileController.php";
                     <?php foreach ($products as $product) { ?>
                         <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
                             <!-- card header -->
-                            <div>
-                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl " alt="product-img" />
+                            <div class="text-center">
+                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[180px]" alt="product-img" />
                             </div>
                             <!-- card header -->
                             <!-- card body -->
@@ -143,16 +143,26 @@ include "../../Controller/shop/shopProfileController.php";
                                     <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
                                     <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                                 </div>
-                                <?php for ($i = 0; $i < 5; $i++) { ?>
-                                    <ion-icon class="text-lg 
-                <?php
-                                    if ($i < $product_ratings["rating"]) {
-                                        echo "text-[#F68721]";
-                                    } else {
-                                        echo "text-slate-500";
-                                    }
-                ?>" name="star"></ion-icon>
-                                <?php } ?>
+                                <div>
+                                    <?php
+                                    $avg= array_filter($avgs, function ($rating) {
+                                        global $product;
+                                        return $rating["product_id"] == $product["id"];
+                                    });
+                                    ?>
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                        <ion-icon class="text-custom-mediu
+                                        <?php
+                                        foreach ($avg as $rating) {
+                                            if ($i < $rating["average_rating"]) {
+                                                echo "text-[#F68721]";
+                                            } else {
+                                                echo "text-slate-500";
+                                            }
+                                        }
+                                        ?>" name="star"></ion-icon>
+                                    <?php } ?>
+                                </div>
 
                                 <!-- <div>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>

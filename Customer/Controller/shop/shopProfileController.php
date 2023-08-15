@@ -16,6 +16,18 @@ $sql = $pdo->prepare(
   $sql->execute();
   $products = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+  //Average rating
+$sql = $pdo->prepare(
+  "SELECT 
+  product_id, 
+  AVG(rating) AS average_rating
+FROM 
+  t_product_reviews
+GROUP BY 
+  product_id;"
+);
+$sql->execute();
+$avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
 
   // echo "<pre>";
   // print_r($product_ratings);

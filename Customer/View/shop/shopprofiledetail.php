@@ -80,7 +80,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
                 <!--End bar graph-->
 
                 <div class="flex flex-col space-y-2 items-center">
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php $total[0]["countperson"] ?>)</h1>
+                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total[0]["countperson"] ?>)</h1>
                     <div class="flex space-x-16">
                         <ion-icon name="happy-outline"></ion-icon>
                         <ion-icon name="happy-outline"></ion-icon>

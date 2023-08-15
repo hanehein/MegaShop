@@ -73,6 +73,7 @@ $sql = $pdo->prepare(
 $sql->execute();
 $total = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+
 ?>
 
 
