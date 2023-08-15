@@ -18,6 +18,7 @@ $region = $_POST["region"];
 $township = $_POST["township"];
 $bank_acc = $_POST["bank_acc"];
 $shop_address = $_POST["shop_address"];
+$create_date = date("Y-m-d");
 
 //Db Connection
 include "../../Model/model.php";
@@ -31,6 +32,7 @@ $sql->bindValue(":email", $email);
 $sql->execute();
 $supplier = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+
 //check email is already register or not
 if(count($supplier) == 0){
     //Db Connection
@@ -39,40 +41,40 @@ if(count($supplier) == 0){
     $sql = $pdo->prepare(
         "INSERT INTO m_suppliers (
             sup_name,
+            sup_shop_name,
             sup_email,
-            sup_address,
             sup_phone,
             bank_account,
-            sup_shop_name,
             region_id,
             township_id,
+            sup_address,
             create_date
         ) VALUES (
             :sup_name,
-            :email,
+            :shop_name,
+            :sup_email,
+            :sup_phone,
+            :bank_account,
+            :region,
             :township,
             :address,
-            :phone,
-            :bank_acc,
-            :shop_name,
-            :region_id,
-            :township_id,
-            :creat_date
+            :create_date
         )"
     );
-    
-    $sql->bindValue(":shop_name", $shop_name);
-    $sql->bindValue(":sup_name", $sup_name);
-    $sql->bindValue(":email", $email);
-    $sql->bindValue(":phone", $phone);
-    $sql->bindValue(":region_id", $region);
-    $sql->bindValue(":township_id", $township);
-    $sql->bindValue(":bank_acc", $bank_acc);
-    $sql->bindValue(":address", $shop_address);
-    $sql->execute();
 
+    $sql->bindValue(":sup_name", $sup_name);
+    $sql->bindValue(":shop_name", $shop_name);
+    $sql->bindValue(":sup_email",$email);
+    $sql->bindValue(":sup_phone", $phone);
+    $sql->bindValue(":bank_account", $bank_acc);
+    $sql->bindValue(":region", $region);
+    $sql->bindValue(":township", $township);
+    $sql->bindValue(":address", $shop_address);
+    $sql->bindValue(":create_date", $create_date);
+    $sql->execute();
     header("Location: ../../View/account/login.php");
 }else{
+    session_start();
     $_SESSION["signup_error"] = "Email is already registered!";
-    header("Location: ../../View/account/signUp1.php");
+    header("Location: ../../View/account/signUp.php");
 }

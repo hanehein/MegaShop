@@ -33,15 +33,22 @@ if(count($supplier) == 0){
     //go to login page
     header("Location: ../../View/account/login.php");
 }else{
-    if(password_verify($password,$supplier[0]["sup_password"])){
-        //login success
-        $_SESSION["sup_id"] = $supplier[0]["id"];
-        // go to dashboard
-        header("Location: ../../View/dashboard/dashboard.php");
-    }else{
-        // invalid email
-        $_SESSION["login_error"] = "Email or password incorrect!";
+    if($supplier[0]["sup_approve"] == 0){
+        //not approved by admin
+        $_SESSION["login_error"] = "Your account is not approved by admin.Check Your Email Again!!";
         //go to login page
         header("Location: ../../View/account/login.php");
+    }else{
+        if(password_verify($password,$supplier[0]["sup_password"])){
+            //login success
+            $_SESSION["sup_id"] = $supplier[0]["id"];
+            // go to dashboard
+            header("Location: ../../View/dashboard/dashboard.php");
+        }else{
+            // invalid email
+            $_SESSION["login_error"] = "Email or password incorrect!";
+            //go to login page
+            header("Location: ../../View/account/login.php");
+        }
     }
 }
