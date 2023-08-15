@@ -20,6 +20,7 @@ if (isset($_POST["create"])) {
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
     $duration = $_POST["duration"];
+    
     //generate password
     $password = getpwd(8);
     //get photo
@@ -90,7 +91,7 @@ if (isset($_POST["create"])) {
             $email,
             "Your Shop UserName & Password",
             $body,
-            "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png" //
+            "../emailTemplate/template/images/Logo-supplier.png" //
         );
         header("Location: ../View/supplierList/approveList.php");
     } else {

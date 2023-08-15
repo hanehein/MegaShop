@@ -55,126 +55,19 @@ include "../../Controller/shop/shopProfileDetailController.php";
         </div>
     </div>
     <!--content-->
-    <section class="bg-white mt-3 space-y-6 p-5">
-        <a href="./shopProfileDetail.php">
-            <button class="border px-3 py-1 mr-5 rounded-lg border-blue-500 bg-blue-500 text-white">Shop Reviews</button>
-        </a>
-        <a href="./shopProfileProductReview.php">
-            <button class="border px-3 py-1 rounded-lg border-blue-500 bg-blue-500 text-white">Product Reviews</button>
-        </a>
-        <p class="text-lg font-bold ml-[80px] md:ml-[535px]">Average Seller Ratings</p>
-        <div class="flex flex-col justify-between items-center space-y-5">
-            <div class="flex flex-col space-y-5 items-center">
-                <div class="flex flex-col space-y-2 items-start">
-                    <h1 class="text-xl font-semibold">94%</h1>
-                    <!--Start bar graph-->
-                    <div class="rating_graph w-[300px] h-[300px]  md:w-[400px]">
-                        <canvas id="myChart"></canvas>
-                    </div>
 
-                    <!-- <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Positive</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[180px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>432</span>
-                    </div>
-                    <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Natural</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[7px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>13</span>
-                    </div>
-                    <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Negative</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[12px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>16</span>
-                    </div> -->
-                </div>
-                <!--End bar graph-->
-
-                <div class="flex flex-col space-y-2 items-center">
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(16)</h1>
-                    <div class="flex space-x-16">
-                        <ion-icon name="happy-outline"></ion-icon>
-                        <ion-icon name="happy-outline"></ion-icon>
-                    </div>
-                    <div class="flex flex-row space-x-5">
-                        <p>Positive</p>
-                        <p>Natural</p>
-                        <p>Negative</p>
-                    </div>
-                </div>
-            </div>
-            <!--Start shop reviewbox-->
-            <?php foreach ($reviews as $review) { ?>
-                <div class="border-4 border-blue-200 w-[350px] h[300px] md:w-[800px] md:h-[180px] rounded-md p-3">
-                    <div class="flex flex-col space-y-2">
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2 items-center">
-                                <img src="../../../<?= $review["cus_photo"] ?>" class="w-[40px] h-[40px] rounded-full" alt="user-profile" />
-                                <span class="text-grey text-sm font-bold"><?= $review["cus_name"] ?></span>
-                            </div>
-                            <p class="text-grey"><?= $review["create_date"] ?></p>
-                        </div>
-                        <div class="flex items-center space-x-1">
-                            <ion-icon name="happy" class="text-xl text-yellow-600"></ion-icon>
-                            <span><?php if ($review["rating"] == 0) {
-                                        echo "bad";
-                                    } elseif ($review["rating"]) {
-                                        echo "neutral";
-                                    } else {
-                                        echo "positive";
-                                    }
-                                    ?></span>
-                        </div>
-                        <p><?= $review["shop_review"] ?></p>
-                    </div>
-                </div>
-            <?php } ?>
-
-            <!-- Pagination -->
-            <div class="w-full flex justify-center p-5">
-                <!-- Pagination component -->
-                <ul class="flex items-center justify-center">
-                    <!-- Previous button -->
-                    <li class="<?php if ($page <= 1) {
-                                    echo "disabled";
-                                } ?>">
-                        <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
-                            <ion-icon name="chevron-back"></ion-icon>
-                        </a>
-                    </li>
-                    <!-- Page numbers -->
-
-                    <?php
-                    for ($i = 1; $i <= $page_lists; $i++) { ?>
-                        <li class="<?php if ($page == $i) {
-                                        echo "active";
-                                    } ?>">
-                            <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
-                        </li>
-                    <?php } ?>
-
-
-                    <!-- Next button -->
-                    <li class="<?php if ($page >= $page_lists) {
-                                    echo "disabled";
-                                } ?>">
-                        <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
-                            <ion-icon name="chevron-forward"></ion-icon>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
     <!--product ratings & reviews-->
+
+
     <section class="bg-white flex flex-col p-5 mt-5">
+        <div class="flex mb-3">
+            <a href="./shopProfileDetail.php">
+                <button class="border px-3 py-1 mr-5 rounded-lg border-blue-500 bg-blue-500 text-white">Shop Reviews</button>
+            </a>
+            <a href="./shopProfileProductReview.php">
+                <button class="border px-3 py-1 rounded-lg border-blue-500 bg-blue-500 text-white">Product Reviews</button>
+            </a>
+        </div>
         <p class="text-xl font-semibold">Product Ratings & Reviews(345)</p>
         <!--Start review box-->
         <?php foreach ($p_reviews as $p_review) { ?>

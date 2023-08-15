@@ -78,7 +78,7 @@
                             <td><?php echo $m_category["cat_name"];?></td>                        
                             <td><?php echo $m_category["create_date"] ;?></td>
                             <td><a href="../../Controller/categoryEditController.php?id=<?php echo $m_category["id"];?>"><button class="w-16 py-2 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
-                            <td><a href=""><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
+                            <td><a href="../../Controller/categoryDeleteController.php?id=<?php echo $m_category["id"];?>"><button class="w-16 py-2 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td>
                         </tr>
                         <?php } ?>
                     </tbody>

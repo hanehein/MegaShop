@@ -42,7 +42,7 @@ $signup  = $_SESSION["adminSignup"];
                 <p class="text-white text-lg text-center  ">Create New Account</p>
 
                 <form action="../../Controller/adminUpdateController.php" method="post">
-                    <input type="hidden" name="id" value="<?php echo $signup[0]["id"] ?>">
+                    <input type="hidden" name="id" value="<?php echo $signup[0]["admin_id"] ?>">
                     <!-- username -->
                     <div class="shadow-md shadow-black md:w-[18rem] w-[16rem] bg-[#F6F6F6] border border-white rounded-[5px] mx-auto mt-4 flex py-1.5 px-4 space-x-5 justify-center items-center">
                         <ion-icon name="person" class="text-[#003366] "></ion-icon>

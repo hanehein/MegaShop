@@ -49,16 +49,26 @@ $result = $wishlist;
             <p class="text-xl font-bold py-3 hidden md:block">User Profile</p>
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
+            <?php foreach ($result as $wishlist) { ?>
+            <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            </a>
 
-            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
-
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
+            <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
+            </a>
 
         </div>
         <!-- mobile view -->
@@ -67,22 +77,23 @@ $result = $wishlist;
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="./profile.php">
+                <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="./followedStores.php">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="./orderHistory.php">
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php">
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
+                <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
+            <?php } ?>
         </div>
         <!-- wishlist -->
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20 justify-center">
