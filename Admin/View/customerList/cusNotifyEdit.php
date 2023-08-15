@@ -1,7 +1,7 @@
 <?php
 session_start();
 $cusNotify = $_SESSION["cusNotify"];
-print_r($cusNotify);
+// print_r($cusNotify);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ print_r($cusNotify);
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/supplier.css">
-    <script src="../resources/js/img.js"></script>
+    <script src="../resources/js/img.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -37,7 +37,7 @@ print_r($cusNotify);
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../resources/img/shop1.jpg" name="image" value="" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../<?= $cusNotify[0]["cus_photo"]?>" name="image" value="" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" hidden accept=".png,.jpg">
                         </div>
@@ -66,7 +66,7 @@ print_r($cusNotify);
                             <div class="flex items-center justify-between w-96 text-xs">
                                 <label class="text-white" for="">Township</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
+                                    <select name="region" id="" class="text-[#003366] text-xs w-52 rounded-md">
                                         <option <?php
                                                 if ($cusNotify[0]["township"] == 1) {
                                                     echo "Yankin" ?> selected <?php }
@@ -102,7 +102,7 @@ print_r($cusNotify);
                                     <label for="">Other</label>
                                 </div>
                             </div>
-                            <button type="submit" name="" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black mt-3">Nofity</button>
+                            <button type="submit" name="" class="w-24 h-8 text-white bg-blue-500 rounded-md text-sm hover:bg-white hover:text-blue-500 shadow-md shadow-black mt-3">Notify</button>
                         </div>
                     </div>
                 </form>

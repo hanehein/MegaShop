@@ -1,3 +1,6 @@
+<?php
+include "../../Controller/shop/shopProfileController.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +22,7 @@
     <!--Start navbar-->
     <?php include "../components/navbarForHome.php"; ?>
     <!--next bar-->
+    <div class="flex flex-col">
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
@@ -39,6 +43,19 @@
             </div>
         </div>
     </div>
+    <!--submenu-->
+    <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
+        <div class="flex flex-row space-x-2 md:space-x-5">
+        <a href="./shopProfile.php">
+                All products
+            </a>
+            <a href="./shopProfileDetail.php">
+                Profile
+            </a>
+        </div>
+    </div>
+     
+   
     <!--Start product section-->
     <section class="relative">
         <div class="block sm:grid sm:grid-cols-6 gap-4">
@@ -111,44 +128,71 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-4 px-3 py-5">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 px-3 py-5">
                     <!-- start card -->
-                    <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
-                        <!-- card header -->
-                        <div>
-                            <img src="https://i5.walmartimages.com/asr/9a261ab6-c14f-41b5-9253-7a57a32ddf29.4f27d098d30daba67c363a4dcddad090.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" class="rounded-xl" alt="product-img" />
-                        </div>
-                        <!-- card header -->
-                        <!-- card body -->
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <h2 class="text-custom-large font-bold">Coca Cola</h2>
-                                <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
-                            </div>
+                    <?php foreach ($products as $product) { ?>
+                        <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
+                            <!-- card header -->
                             <div>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl " alt="product-img" />
                             </div>
-                            <div class="block sm:flex sm:justify-between sm:items-center mb-2">
-                                <div class="text-custom-tiny font-bold">
-                                    <span class="text-red-600 line-through">10000 Ks</span>
-                                    <span class="text-red-600">( 20 % off)</span>
+                            <!-- card header -->
+                            <!-- card body -->
+                            <div>
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
+                                    <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                                 </div>
-                                <div>
-                                    <span class="text-custom-blue text-custom-large font-bold">8000 ks</span>
+                                <?php for ($i = 0; $i < 5; $i++) { ?>
+                                    <ion-icon class="text-lg 
+                <?php
+                                    if ($i < $product_ratings["rating"]) {
+                                        echo "text-[#F68721]";
+                                    } else {
+                                        echo "text-slate-500";
+                                    }
+                ?>" name="star"></ion-icon>
+                                <?php } ?>
+
+                                <!-- <div>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                    <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
+                                </div> -->
+                                <div class="block sm:flex sm:justify-between sm:items-center mb-2">
+                                    <div class="text-custom-tiny font-bold"> <span class="<?php
+                                                                                            if ($product["p_discount"] != 0) {
+                                                                                                echo "text-red-600 line-through";
+                                                                                            } else {
+                                                                                                echo "text-custom-blue text-custom-large font-bold";
+                                                                                            } ?>">
+                                            <?= $product["p_sell_price"] ?> MMK
+                                        </span>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-red-600">( <?= $product["p_discount"] ?> % off)</span>
+                                        <?php } ?>
+                                    </div>
+
+                                    <div>
+                                        <?php if ($product["p_discount"] != 0) { ?>
+                                            <span class="text-custom-blue text-custom-large font-bold">
+                                                <?= ($product["p_sell_price"] * (100 - $product["p_discount"])) / 100  ?> MMK
+                                            </span>
+                                        <?php } ?>
+
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
+                                        <ion-icon class="text-custom-large" name="cart"></ion-icon>
+                                        <span class="text-white">Add to Cart</span>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
-                                    <ion-icon class="text-custom-large" name="cart"></ion-icon>
-                                    <span class="text-white">Add to Cart</span>
-                                </button>
-                            </div>
+                            <!-- card body -->
                         </div>
-                        <!-- card body -->
-                    </div>
+                    <?php } ?>
                     <!-- end card -->
                 </div>
             </div>

@@ -9,7 +9,9 @@ if (!isset($id)) {
 } else {
     include "../Model/model.php";
     $sql = $pdo->prepare("
-        SELECT * FROM m_customers WHERE id = :id
+        SELECT * FROM m_customers 
+        JOIN m_regions ON m_customers.region_id = m_regions.id  
+        WHERE m_customers.id = :id
     ");
     $sql->bindValue(":id", $id);
     $sql->execute();

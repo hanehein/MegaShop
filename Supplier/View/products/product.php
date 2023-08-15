@@ -11,13 +11,12 @@ include "../components/header.php";
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
         <?php include "../components/slideMenu.php"; ?>
-        <div class="col-span-5">
+        <div class="col-span-5 relative">
             <?php
             $currentMenu = "Product Lists";
             include "../components/navbar.php";
             ?>
 
-            <!-- start aye myat noe khin -->
             <div class="p-5 max-h-screen overflow-y-auto">
                 <div class="h-[60px]"></div>
 
@@ -63,7 +62,7 @@ include "../components/header.php";
                         </thead>
                         <tbody class="product-lists-container bg-white divide-y divide-gray-200">
                             <?php foreach ($productLists as $product) { ?>
-                                <tr>
+                                <tr id="product-list" class="hover:bg-slate-200">
                                     <td class="px-6 py-4 ">
                                         <div class="flex space-x-4 items-center">
                                             <img src="../../../<?= $product['photo'] ?>" class="w-[60px]" alt="product-img">
@@ -106,7 +105,7 @@ include "../components/header.php";
                                                 </button>
                                             </a>
                                             <a href="../../Controller/products/deleteProductController.php?product_id=<?= $product['id'] ?>">
-                                                <button class="bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
+                                                <button class="delete-btn bg-red-500 px-3 py-1 rounded-md text-white font-semibold">
                                                     Remove
                                                 </button>
                                             </a>
@@ -115,7 +114,6 @@ include "../components/header.php";
                                     </td>
                                 </tr>
                             <?php }; ?>
-
 
                             <!-- Add more rows as needed -->
                         </tbody>
@@ -127,26 +125,32 @@ include "../components/header.php";
                     <!-- Pagination component -->
                     <nav class="flex items-center justify-center">
                         <!-- Previous button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
+                        <a href="?page=<?= $page-1 ?>" 
+                        class="px-3 py-1 text-[#66CC33] bg-white border border-[#66CC33] rounded-tl-md rounded-bl-md 
+                        <?php if($page <= 1) { echo "pointer-events-none"; } ?>
+                        ">
                             <ion-icon name="chevron-back"></ion-icon>
                         </a>
+        
                         <!-- Page numbers -->
-                        <a href="#" class="active px-3 py-1 border border-[#66CC33] text-bold">1</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">2</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">3</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">...</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">10</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">11</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">12</a>
+                        <?php for ($i = 1; $i <= $pageLists ; $i++) { ?>
+                            <a href="?page=<?= $i ?>" 
+                            class="<?php if($i == $page) {echo "pagination-active";} ?>
+                            px-3 py-1 border border-[#66CC33] text-bold"><?= $i ?>
+                            </a>
+                        <?php } ?>
+                        
                         <!-- Next button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
+                        <a href="?page=<?= $page+1 ?>" class="px-3 py-1 text-[#66CC33] bg-white border border-[#66CC33] rounded-tr-md rounded-br-md 
+                        <?php if($page >= $pageLists) { echo "pointer-events-none"; } ?>
+                        ">
                             <ion-icon name="chevron-forward"></ion-icon>
                         </a>
                     </nav>
                 </div>
 
             </div>
-            <!-- end aye myat noe khin -->
+
         </div>
     </section>
 </body>

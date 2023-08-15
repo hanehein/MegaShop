@@ -1,5 +1,6 @@
 <?php
-    session_start();
+session_start();
+include "../../Controller/regionListController.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/supplier.css">
-    <script src="../resources/js/img.js"></script>
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/townshipAdd.js" defer></script>
+    <script src="../resources/js/img.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -31,13 +34,13 @@
         <div class="w-5/6 flex flex-col  items-center justify-center bg-gray-200">
 
             <div class="w-[50rem] h-auto flex flex-col items-center justify-center bg-[#003366] font-['Poppins'] rounded-md shadow-md shadow-black py-4">
-                <form action="../../Controller/supplierAccCreateController.php" method="post">
+                <form action="../../Controller/supplierAccCreateController.php" method="post" enctype="multipart/form-data">
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../resources/img/shop1.jpg" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../resources/img/addimg1.png" alt="coffee" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
-                            <input type="file" id="profile" hidden accept=".png,.jpg">
+                            <input type="file" id="profile" name="shopPhoto" hidden accept=".png,.jpg">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
                             <div class="flex items-center justify-between w-96 space-x-16">
@@ -56,21 +59,28 @@
                                 <input type="email" name="email" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Shop Address</label>
-                                <input type="text" name="shopAddress" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
-
                                 <label class="text-white" for="id">Phone</label>
                                 <input type="text" name="phone" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between w-96 text-xs">
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="">Address</label>
+                                <textarea name="address" id="" cols="23" rows="2" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" style="resize: none;"></textarea>
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="">Region</label>
+                                <div class="flex  items-center justify-center">
+                                    <select name="region" id="region" class="text-[#003366] text-xs w-[13.5rem] rounded-md h-11">
+                                        <?php foreach ($regions as $region) { ?>
+                                            <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="">Township</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md ">
-                                        <option   value="1">Yankin</option>
-                                        <option  value="2">Dagon</option>
-                                        <option  value="3">Kamayut</option>
+                                    <select name="township" id="township" class="text-[#003366] text-xs w-[13.5rem] rounded-md h-11">
+
                                     </select>
                                 </div>
                             </div>
@@ -86,12 +96,20 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="">Plan Duration</label>
+                                <input type="number" name="duration" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="">Bank Account</label>
                                 <input type="text" name="bankAcc" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none" placeholder="xxxxxxxx">
                             </div>
+                            <div class="flex items-center justify-between w-96 space-x-16">
+                                <label class="text-white" for="adname">Created Date</label>
+                                <input value="" type="date" name="createDate" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
                             <div class="flex  items-center justify-center space-x-10 w-auto">
                                 <a href=""><button class="w-24 h-8 text-white bg-gray-500 rounded-md text-sm hover:bg-white hover:text-[#CCCCCC] shadow-md shadow-black">Cancel</button></a>
-                               <button type="submit" name="create" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>
+                                <button type="submit" name="create" class="w-24 h-8 text-white bg-green-600 rounded-md text-sm hover:bg-white hover:text-[#66CC33] shadow-md shadow-black">Create</button>
                             </div>
                         </div>
                     </div>
@@ -105,3 +123,24 @@
 </body>
 
 </html>
+
+<!-- 
+
+<option value="1">Kachin State</option>
+                                        <option value="2">Kayah State</option>
+                                        <option value="3">Kayin State</option>
+                                        <option value="4">Chin State</option>
+                                        <option value="5">Sagaing Region</option>
+                                        <option value="6">Tanintharyi Region</option>
+                                        <option value="7">Bago Region</option>
+                                        <option value="8">Mon State</option>
+                                        <option value="9">Magway Region</option>
+                                        <option value="10">Mandalay Region</option>
+                                        <option value="11">Shan State</option>
+                                        <option value="12">Yangon Region</option>
+                                        <option value="13">Rakhine State</option>
+                                        <option value="14">Ayeyarwady Region
+                                        </option>
+                                        <option value="15">Naypyidaw Union Territory</option>
+
+ -->

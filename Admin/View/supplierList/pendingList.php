@@ -1,16 +1,8 @@
-<?php 
+<?php
 session_start();
-
 include "../../Controller/supplierPendingListController.php";
-
-
+$today = date("Y-m-d");
 ?>
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +19,8 @@ include "../../Controller/supplierPendingListController.php";
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/supplier.css">
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/pendingSearch.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -38,27 +32,31 @@ include "../../Controller/supplierPendingListController.php";
         ?>
         <!-- data display div -->
         <div class="w-5/6 flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class=" flex items-center justify-center h-20  space-x-80">
+            <div class=" flex items-center justify-center h-20  space-x-20">
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./approveList.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
                             <button>Approved</button>
                         </div>
                     </a>
                     <a href="./pendingList.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">
+                        <div class="w-32 h-10 flex items-center justify-center bg-[#66CC33] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white shadow-md">
                             <button>Pending</button>
                         </div>
                     </a>
                 </div>
+                <div class="w-auto h-8 flex items-center justify-center  text-[#003366] text-xs rounded-md shadow-md">
+                    <input type="text" id="search" name="" class="w-64 text-xs bg-white text-[#003366] rounded-l-md font-semibold  hover:bg-gray-200" placeholder="Type shop name to search ">
+                    <button class="w-12 py-[0.55rem] rounded-r-md shadow-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
+                </div>
                 <div class="flex items-center justify-center space-x-3">
                     <a href="./createSupplier.php">
-                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
                             <button>Create Supplier Account</button>
                         </div>
                     </a>
-                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                        <input type="date" name="" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
+                        <input type="date" name="" value="<?php echo $today ?>" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     </div>
                 </div>
             </div>
@@ -71,7 +69,8 @@ include "../../Controller/supplierPendingListController.php";
                             <td>Shop Name</td>
                             <th>Shop Email</th>
                             <th>Plan</th>
-                            <th>Township</th>
+                            <th>Plan Duration</th>
+                            <th>Region</th>
                             <th>Phone</th>
                             <th>Bank Account</th>
                             <th>Created Date</th>
@@ -79,68 +78,86 @@ include "../../Controller/supplierPendingListController.php";
                             <th>Denied</th>
                         </tr>
                     </thead>
-                    <tbody class="">
-                        <?php 
-                            $count = 1;
-                            foreach ($supPendingLists as $pending ) {
-                                
-                            
+                    <tbody id="searchResult">
+                        <?php
+                        $count = (($page - 1) * $rowLimits) + 1;
+                        foreach ($supPendingLists as $pending) {
+
+
                         ?>
-                        <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
-                            <td><?= $count++ ?></td>
-                            <td><?= $pending["sup_name"] ?></td>
-                            <td><?= $pending["sup_shop_name"] ?></td>
-                            <td><?= $pending["sup_email"] ?></td>
-                            <td>
-                            <?php
-                                if($pending["pack_id"]==0) echo "Basic";
-                                else if ($pending["pack_id"]==1)echo "Silver";
-                                else echo "Gold";
-                            ?>
-                            </td>
-                            <td><?= $pending["township"] ?></td>
-                            <td><?= $pending["sup_phone"] ?></td>
-                            <th><?= $pending["bank_account"] ?></th>
-                            <td><?= $pending["create_date"] ?></td>
-                            <td><a href="../../Controller/approveController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                            <td><a href="../../Controller/deniedController.php?id=<?=$pending["id"]?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
-                        </tr>
+                            <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
+                                <td><?= $count++ ?></td>
+                                <td><?= $pending["sup_name"] ?></td>
+                                <td><?= $pending["sup_shop_name"] ?></td>
+                                <td><?= $pending["sup_email"] ?></td>
+                                <td>
+                                    <?php
+                                    if ($pending["pack_id"] == 0) echo "Basic";
+                                    else if ($pending["pack_id"] == 1) echo "Silver";
+                                    else echo "Gold";
+                                    ?>
+                                </td>
+                                <td> <?= $pending["pack_actual_duration"] ?>&nbsp;months</td>
+                                <td> <?php if ($pending["region_id"] == 1) echo "Kachin State";
+                                        else if ($pending["region_id"] == 2) echo "Kayah State";
+                                        else if ($pending["region_id"] == 3) echo "Kayin State
+                                        ";
+                                        else if ($pending["region_id"] == 4) echo "Chin State";
+                                        else if ($pending["region_id"] == 5) echo "Sagaing Region";
+                                        else if ($pending["region_id"] == 6) echo "Tanintharyi Region";
+                                        else if ($pending["region_id"] == 7) echo "Bago Region";
+                                        else if ($pending["region_id"] == 8) echo "Mon State";
+                                        else if ($pending["region_id"] == 9) echo "Magway Region";
+                                        else if ($pending["region_id"] == 10) echo "Mandalay Region";
+                                        else if ($pending["region_id"] == 11) echo "Shan State";
+                                        else if ($pending["region_id"] == 12) echo "Yangon Region";
+                                        else if ($pending["region_id"] == 13) echo "Rakhine State";
+                                        else if ($pending["region_id"] == 14) echo "Ayeyarwady Region";
+                                        else echo "Naypyidaw Union Territory"; ?></td>
+                                </td>
+                                <td><?= $pending["sup_phone"] ?></td>
+                                <th><?= $pending["bank_account"] ?></th>
+                                <td><?= $pending["create_date"] ?></td>
+                                <td><a href="../../Controller/approveController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
+                                <td><a href="../../Controller/deniedController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5 ">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
+            <div class="w-auto flex items-center justify-center h-10 mb-5 ">
+                <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page - 1 ?>">Previous</a>
+                    </li>
+                    <?php
+                    for ($i = 1; $i <= $pageList; $i++) { ?>
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <?php
+                        if ($page == $i) {
+                            echo "active";
+                        }
+                        ?> hover:text-white hover:bg-[#003366]">
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page + 1 ?>">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

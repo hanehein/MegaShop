@@ -105,29 +105,6 @@ include "../components/header.php";
                     </table>
                 </div>
 
-                <!-- Pagination -->
-                <div class="w-full flex justify-center p-5">
-                    <!-- Pagination component -->
-                    <nav class="flex items-center justify-center">
-                        <!-- Previous button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]  rounded-tl-md rounded-bl-md">
-                            <ion-icon name="chevron-back"></ion-icon>
-                        </a>
-                        <!-- Page numbers -->
-                        <a href="#" class="active px-3 py-1 border border-[#66CC33] text-bold">1</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">2</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">3</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">...</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">10</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">11</a>
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33]">12</a>
-                        <!-- Next button -->
-                        <a href="#" class="px-3 py-1 bg-white border border-[#66CC33] rounded-tr-md rounded-br-md">
-                            <ion-icon name="chevron-forward"></ion-icon>
-                        </a>
-                    </nav>
-                </div>
-
             </div>
             <!-- end aye myat noe khin -->
         </div>

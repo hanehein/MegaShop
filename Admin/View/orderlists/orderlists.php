@@ -65,8 +65,6 @@ include '../../Controller/orderListsController.php';
                                 <td><?php echo $t_orders["create_date"];?></td>
                                 <td>COD</td>
                                 <td><?php echo $t_orders["total_amount"];?> MMK</td>
-
-
                             </tr>
                         <?php } ?>
 

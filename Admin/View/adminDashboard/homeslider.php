@@ -45,7 +45,7 @@ include '../../Controller/homeSliderController.php';
     </div>
     <!-- nav -->
     
-    <form action="../../Controller/websiteFormEditController.php" method="post">
+    <form action="../../Controller/homeSliderEditController.php" method="post">
     <div class=" h-full mx-auto flex justify-between items-center bg-[#ffffff] px-7 py-7 mt-10">
         <p></p>
         <?php foreach ($result as $m_herosection) { ?>
@@ -59,7 +59,7 @@ include '../../Controller/homeSliderController.php';
             </div>
             
         <?php } ?>
-        <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
+        <a href="../../Controller/homeSliderEditController.php"><button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button></a>
     </div>
     </form>
 </body>

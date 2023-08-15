@@ -35,14 +35,13 @@ if(count($_POST) == 0){
     
     $mail->sendMail(
         $email,
-        "check out special promotions we offer this weekend!",
+        "Let's check it out special promotions we offer this weekend!",
         $body,
         "../notifyEmail/Notify/images/image-2.png",
-        "../notifyEmail/Notify/images/undraw_Contact_us_re_4qqt.png"
+        "../notifyEmail/Notify/images/user_logo.jpg"
     );
     
-
-    header("Location: ../View/customerList/registeredCustomer.php");
+    echo "<script>window.location.assign('../View/customerList/registeredCustomer.php')</script>";
 }
 
 // "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"//

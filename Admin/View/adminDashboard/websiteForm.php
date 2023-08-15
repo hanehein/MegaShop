@@ -40,7 +40,7 @@ include '../../Controller/websiteFormController.php';
                 <?php include '../components/menu.php'; ?>
             </div>
         </div>
-        
+
 
         <form action="../../Controller/websiteFormEditController.php" method="post">
             <div class="w-1/2 h-auto mx-auto flex justify-center items-center bg-[#FFFFFF] px-7 py-7 ">
@@ -56,7 +56,7 @@ include '../../Controller/websiteFormController.php';
                     <?php foreach ($result as $m_website_form) { ?>
                         <div class="w-1/6 h-auto bg-white flex flex-col items-center justify-center py-3 px-3 rounded-lg mt-2 mb-3">
                             <label for="logo">
-                            <img src="../resources/img/<?php echo $m_website_form["logo_photo"] ?>" alt="" class="cursor-pointer">
+                                <img src="../resources/img/<?php echo $m_website_form["logo_photo"] ?>" alt="" class="cursor-pointer">
                             </label>
                         </div>
 
@@ -72,7 +72,7 @@ include '../../Controller/websiteFormController.php';
 
                         <input type="text" name="slogan" class="mt-2 mb-3 rounded-lg px-2 w-1/3" value="<?php echo $m_website_form["slogan"]; ?>">
                     <?php } ?>
-                    <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
+                    <button class="px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
                 </div>
 
             </div>

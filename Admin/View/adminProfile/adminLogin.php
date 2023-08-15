@@ -22,7 +22,7 @@ session_start();
 
 <body class="overflow-x-hidden bg-white">
     <!-- main div -->
-    <div class="w-auto h-screen container flex mx-auto justify-center items-center ">
+    <div class="w-auto h-screen container flex mx-auto justify-center items-center">
         <!-- inner container -->
         <div class="md:w-[26rem] w-[18rem] h-[32rem] container mx-auto flex-col items-center justify-center bg-[#CCCCCC]  rounded-bl-3xl rounded-tr-3xl shadow-md shadow-black">
             <!-- logo section -->
@@ -40,6 +40,7 @@ session_start();
                 <p class="text-white text-[23px] text-center">Log In</p>
 
                 <form action="../../Controller/loginController.php" method="post">
+                    <input type="hidden" name="admin_id" class="hidden">
                     <div class="md:w-[18rem] w-[15rem]  bg-[#003366] border border-white rounded-bl-3xl rounded-tr-3xl mx-auto mt-4 flex py-1.5 px-4 space-x-3 justify-center items-center shadow-md shadow-black border-none">
                         <ion-icon name="person" class="text-white"></ion-icon>
                         <input type="text" name="userName" placeholder="Enter Name" class="text-sm bg-[#003366] focus:outline-none border-none text-white" required />

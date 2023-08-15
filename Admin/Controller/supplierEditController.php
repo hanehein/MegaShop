@@ -1,7 +1,7 @@
 <?php 
  ini_set('display_errors', 1);
     session_start();
-    // print_r($_GET);
+    print_r($_GET);
     $id = $_GET["id"];
 
     if(!isset($id)){
@@ -9,7 +9,9 @@
     } else {
         include "../Model/model.php";
         $sql = $pdo->prepare("
-            SELECT * FROM m_suppliers WHERE id = :id;
+            SELECT * FROM m_suppliers 
+            JOIN m_regions ON m_suppliers.region_id = m_regions.id 
+            WHERE m_suppliers.id = :id;
         ");
         $sql->bindValue(":id",$id);
         $sql->execute();

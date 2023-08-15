@@ -9,9 +9,12 @@ $product_id = $_GET["product_id"];
 include "../../Model/model.php";
 
 $sql = $pdo->prepare(
-    "UPDATE m_products SET
-    del_flg = 1
-    WHERE id = :id"
+    "UPDATE 
+        m_products 
+    SET
+        del_flg = 1
+    WHERE 
+        id = :id"
 );
 
 $sql->bindValue(":id",$product_id);

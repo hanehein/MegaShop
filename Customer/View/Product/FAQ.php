@@ -1,3 +1,9 @@
+<?php 
+
+include '../../Controller/FaqController.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,25 +40,25 @@
     </div>
     <!-- qna -->
     <div class="bg-[#D9D9D9] w-2/3 md:w-1/2 mx-auto mt-20 rounded-lg px-5 py-5 md:px-10 md:py-10 mb-10">
+        <?php foreach ($result as $m_faq) { ?>
+
         <div class="mt-10 mb-10">
-            <p class="text-lg font-semibold">Do we provide installation support to the users?</p>
-            <p class="text-sm font-medium mt-10">Yes, we provide installation support to the users. Feel free to email us anytime.</p>
+            <p class="text-lg font-semibold"><?php echo $m_faq["faq1"];?></p>
+            <p class="text-sm font-medium mt-10"><?php echo $m_faq["faq2"];?></p>
         </div>
         <div class="mt-10 mb-10">
-            <p class="text-lg font-semibold">Do we provide installation guide to the users?</p>
-            <p class="text-sm font-medium mt-10">Yes, we provide installation guide to the users with the packages.</p>
+            <p class="text-lg font-semibold"><?php echo $m_faq["faq3"];?></p>
+            <p class="text-sm font-medium mt-10"><?php echo $m_faq["faq4"];?></p>
         </div>
         <div class="mt-10 mb-10">
-            <p class="text-lg font-semibold">How much time do we take to get back to the user?</p>
-            <p class="text-sm font-medium mt-10">We reply to the users as soon as possible.</p>
+            <p class="text-lg font-semibold"><?php echo $m_faq["faq5"];?></p>
+            <p class="text-sm font-medium mt-10"><?php echo $m_faq["faq6"];?></p>
         </div>
-        <div class="mt-10 mb-10">
-            <p class="text-lg font-semibold">How much time do we take to get back to the user?</p>
-            <p class="text-sm font-medium mt-10">We reply to the users as soon as possible.</p>
-        </div>
+
+        <?php } ?>
     </div>
     <!-- footer -->
-    <?php include '../components/footer.php'; ?>
+    <?php include '../components/footer.php';?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </body>
 

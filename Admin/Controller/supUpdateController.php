@@ -13,12 +13,13 @@ if(count($_POST) == 0){
     $supplierName = $_POST["supplierName"];
     $shopEmail = $_POST["email"];
     $shopName = $_POST["shopName"];
-    $township = $_POST["township"];
+    $region = $_POST["region"];
     $plan = $_POST["plan"];
     $bankAcc = $_POST["bankAcc"];
+    $duration = $_POST["duration"];
     $phone = $_POST["phone"];
     $password = $_POST["password"];
-    // $password = getpwd(8);
+    $shopPhoto = $_FILES["shopPhoto"]["name"];
 
     include "../Model/model.php";
     $sql = $pdo->prepare("
@@ -26,38 +27,23 @@ if(count($_POST) == 0){
         sup_name = :name,
         pack_id = :plan,
         sup_email = :email,
-        township = :township,
         sup_phone = :phone,
         bank_account = :bankAcc,
-        sup_shop_name = :shopName
+        sup_shop_name = :shopName,
+        pack_actual_duration = :duration,
+        region_id = :region
         where id = :id
     ");
     $sql->bindValue(":id",$id);
-    $sql->bindValue(":name",$supplierName);
-    $sql->bindValue(":email",$shopEmail);
+    $sql->bindValue(":name",$supplierName);//
+    $sql->bindValue(":email",$shopEmail);//
     $sql->bindValue(":shopName", $shopName);
-    $sql->bindValue(":township",$township);
+    $sql->bindValue(":region",$region);
     $sql->bindValue(":plan",$plan);
+    $sql->bindValue(":duration",$duration);
     $sql->bindValue(":bankAcc",$bankAcc);
     $sql->bindValue(":phone",$phone);
+    
     $sql->execute();
     header("Location: ../View/supplierList/approveList.php");
-
-    // $sql->bindValue(":password",password_hash($password,PASSWORD_DEFAULT));
-   
-    //send merchant to register mail
-    // $domain = $_SERVER['SEVER_NAME'];
-    // $mail = new SendMail();
-    // $mail->sendMail(
-    //     $shopEmail,
-    //     "Your Account",
-    //     "<h2>Here is your shop account</h2>
-    //     Username : $supplierName
-    //     <br/>
-    //     Password : $password
-    //     "
-    // );
-    // echo ($shopEmail);
-    // echo ($supplierName);
-    // echo ($password);
 }

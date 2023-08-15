@@ -1,0 +1,5 @@
+
+.pagination a.active {
+    color: white;
+    background-color: blue;
+}

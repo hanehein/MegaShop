@@ -1,4 +1,8 @@
 <?php
+session_start();
+$package = $_SESSION["plan"];
+?>
+<?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
@@ -18,27 +22,29 @@ include "../components/header.php";
                     <span class="text-2xl font-semibold">Supplier Profile</span>
 
                     <div class="flex justify-between items-center space-x-96">
-                        <a href="" class="hover:underline">My Profile</a>
-                        <a href="" class="hover:underline">Go Premium</a>
+                        <a href="./supProfile.php" class="hover:underline">My Profile</a>
+                        <a href="./plan.php" class="hover:underline">Go Premium</a>
                     </div>
                 </div>
                 <div class="container mx-auto">
                     <div class="w-auto h-screen p-5 shadow-lg rounded-lg flex flex-col items-center justify-center space-y-12 bg-white mt-5">
-                        <span class="font-semibold">You Chose Diamond Plan To Subscribe</span>
-                        <span>You will subscribe to our website for 6 months</span>
-                        <span class="text-xs">Total cost : 40,000 Ks </span>
-                        <span>Please Choose Your Payment Method</span>
-                        <div class="flex justify-between items-center space-x-11">
+                        <span class="font-semibold">You Chose <?= $package[0]["pack_name"] ?> Plan To Subscribe</span>
+                        <span>You will subscribe to our website for <?= $package[0]["pack_duration"] ?> months</span>
+                        <span class="text-xs">Total cost : <?= $package[0]["pack_price"] ?> Ks </span>
+                        <!-- <span>Please Choose Your Payment Method</span> -->
+                        <!-- <div class="flex justify-between items-center space-x-11">
                             <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
                                 <ion-icon name="checkbox-outline"></ion-icon>
                                 KBZpay</button>
                             <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[150px]">
                                 <ion-icon name="checkbox-outline"></ion-icon>
                                 AYApay</button>
-                        </div>
+                        </div> -->
                         <div class="text-end">
-                            <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
-                                Subscribe</button>
+                            <a href="../../Controller/setting/subscribeController.php">
+                                <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
+                                    Subscribe</button>
+                            </a>
                         </div>
                     </div>
                 </div>

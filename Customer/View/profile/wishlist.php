@@ -1,3 +1,12 @@
+<?php
+session_start();
+$wishlist = $_SESSION['profileEdit'];
+
+$result = $wishlist;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +39,7 @@
 <body class="bg-[#F6F6F6] font-['Poppins] no-scrollbar flex flex-col min-h-screen">
     <div class="w-full flex flex-col items-center">
         <!-- navbar -->
-        <?php include '../components/responsiveNav.php';?>
+        <?php include '../components/responsiveNav.php'; ?>
     </div>
     <!-- body -->
     <div class="flex flex-col md:flex-row md:justify-between items-center mt-18 overflow-y-auto mb-10">
@@ -40,21 +49,27 @@
             <p class="text-xl font-bold py-3 hidden md:block">User Profile</p>
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
+            <?php foreach ($result as $wishlist) { ?>
+            <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            </a>
 
-            <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+            <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+            <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
+            </a>
 
-            <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
-
-            <div class="md:flex justify-center items-center hidden">
-                <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-            </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -62,12 +77,23 @@
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">My Profile</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Followed Stores</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">Order History</p>
-                <p class="text-xs ml-2 mr-2 font-semibold px-1 py-1">My Reviews</p>
-                <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:shadow-xl">Wishlist</p>
+                <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
+                </a>
+                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
+                </a>
+                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
+                </a>
+                <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
+                </a>
+                <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Wishlist</p>
+                </a>
             </div>
+            <?php } ?>
         </div>
         <!-- wishlist -->
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20 justify-center">
@@ -76,94 +102,48 @@
                 <p class="text-xl font-semibold">
                     Wishlist
                 </p>
-                <div class="bg-[#d6d3d1] mt-10 rounded-lg mb-10 w-full">
-                    <div class="flex justify-around bg-[#003366] w-full rounded-tr-lg rounded-tl-lg px-5 py-5 md:px-10 md:py-10">
-
-                        <p class="text-white text-xs md:text-lg font-bold mr-24 md:mr-72">Products</p>
-                        <p class="text-white text-xs md:text-lg font-bold ml-10 md:ml-20">Unit Price</p>
-                        <p class="text-white text-xs md:text-lg font-bold">Stock Status</p>
-                        <p class="text-white text-xs md:text-lg font-bold">Action</p>
-
+                <?php if (count($result) == 0) { ?>
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-lg">You haven't added anything yet.</p>
                     </div>
-                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
+                <?php } else { ?>
+                    <div class="bg-[#d6d3d1] mt-10 rounded-lg mb-10 w-full">
+                        <div class="flex justify-around bg-[#003366] w-full rounded-tr-lg rounded-tl-lg px-5 py-5 md:px-10 md:py-10">
 
-                        <div class="flex items-center justify-between mr-10">
-                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
-                            <div class="py-3 text-left px-2 md:px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
+                            <p class="text-white text-xs md:text-lg font-bold mr-24 md:mr-72">Products</p>
+                            <p class="text-white text-xs md:text-lg font-bold ml-10 md:ml-20">Unit Price</p>
+                            <p class="text-white text-xs md:text-lg font-bold">Stock Status</p>
+                            <p class="text-white text-xs md:text-lg font-bold">Action</p>
+
                         </div>
+                        <?php foreach ($result as $wishlist) { ?>
+                            <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
 
-                            <p class="text-sm md:text-xl font-semibold mr-5 md:mr-10">100$</p>
-
-                            <p class="text-xs md:text-xl font-semibold ml-2">In Stock</p>
-
-                            <div class="text-sm font-semibold py-3 md:mr-10 md:px-3 md:md-10">
-                                <button class="w-auto bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 ">Remove</button>
+                                <div class="flex items-center justify-between mr-10">
+                                    <img src="../<?php echo $wishlist["p_photo1"]; ?>" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
+                                    <div class="py-3 text-left px-2 md:px-5 mr-10 ml-5 md:ml-10 md:mr-20">
+                                        <p class="font-semibold text-sm md:text-lg mb-2 mt-2 capitalize"><?php echo $wishlist["p_name"]; ?></p>
+                                        <p class="mb-2 mt-2 text-xs capitalize"><?php echo $wishlist["p_color"]; ?></p>
+                                        <p class="mb-2 mt-2 text-xs capitalize"><?php echo $wishlist["p_size"]; ?></p>
+                                    </div>
+                                    <p class="text-xs md:text-xl font-semibold md:ml-24 mr-5 md:mr-10"><?php echo $wishlist["p_sell_price"]; ?> MMK</p>
+                                    <p class="text-xs md:text-xl font-semibold ml-2 md:ml-5"><?php echo $wishlist["p_stock"]; ?></p>
+                                    <a href="../../Controller/WishlistRemoveController.php?id=<?php echo $wishlist["id"]; ?>"><button class="w-auto text-sm font-semibold bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 ">Remove</button></a>
+                                </div>
                             </div>
-                        </div>
-
+                        <?php } ?>
                     </div>
-                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
-
-                        <div class="flex items-center justify-between mr-10">
-                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
-                            <div class="py-3 text-left px-2 md:px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
-                        </div>
-
-                            <p class="text-sm md:text-xl font-semibold mr-5 md:mr-10">100$</p>
-
-                            <p class="text-xs md:text-xl font-semibold ml-2">In Stock</p>
-
-                            <div class="text-sm font-semibold py-3 md:mr-10 md:px-3 md:md-10">
-                                <button class="w-auto bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 ">Remove</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="rounded-lg   bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
-
-                        <div class="flex items-center justify-between mr-10">
-                            <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
-                            <div class="py-3 text-left px-2 md:px-5 mr-10 ml-5 md:mr-20">
-                            <p class="font-semibold text-sm md:text-lg mb-2 mt-2"> Tucano Backpacks TU-BP01</p>
-                            <p class="mb-2 mt-2 text-xs">Tucano, Color Family:Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Color :Blue</p>
-                            <p class="mb-2 mt-2 text-xs">Size : ###</p>
-                        </div>
-
-                            <p class="text-sm md:text-xl font-semibold mr-5 md:mr-10">100$</p>
-
-                            <p class="text-xs md:text-xl font-semibold ml-2">In Stock</p>
-
-                            <div class="text-sm font-semibold py-3 md:mr-10 md:px-3 md:md-10">
-                                <button class="w-auto bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 ">Remove</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    
-
-                </div>
-                
-
-
+                <?php } ?>
             </div>
-            <!-- mobile view -->
-            
+
         </div>
+    </div>
 
 
     </div>
 
     <!-- footer -->
-    <?php include '../components/footer.php';?>
+    <?php include '../components/footer.php'; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </body>
 
