@@ -14,12 +14,14 @@ if (isset($_POST["create"])) {
     $shopName = $_POST["shopName"];
     $email = $_POST["email"];
     $plan = $_POST["plan"];
+    $region = $_POST["region"];
     $township = $_POST["township"];
     $phone = $_POST["phone"];
-    $shopAddress = $_POST["shopAddress"];
+    $shopAddress = $_POST["address"];
     $bankAcc = $_POST["bankAcc"];
     $approve = 1;
     $duration = $_POST["duration"];
+    
     
     //generate password
     $password = getpwd(8);
@@ -39,7 +41,6 @@ if (isset($_POST["create"])) {
                     pack_id,
                     sup_email,
                     sup_password,
-                    township,
                     sup_address,
                     sup_phone,
                     bank_account,
@@ -47,7 +48,9 @@ if (isset($_POST["create"])) {
                     shop_photo_path,
                     create_date,
                     sup_approve,
-                    pack_actual_duration
+                    pack_actual_duration,
+                    region_id,
+                    township_id
                 ) 
                 VALUES
                 (
@@ -55,7 +58,6 @@ if (isset($_POST["create"])) {
                     :plan,
                     :email,
                     :password,
-                    :township,
                     :address,
                     :phone,
                     :bankAcc,
@@ -63,7 +65,9 @@ if (isset($_POST["create"])) {
                     :path,
                     :createdDate,
                     :approve,
-                    :duration
+                    :duration,
+                    :region,
+                    :township
                 )
             ");
 
@@ -71,11 +75,12 @@ if (isset($_POST["create"])) {
         $sql->bindValue(":shopName", $shopName);
         $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
         $sql->bindValue(":email", $email);
+        $sql->bindValue(":address", $shopAddress);
         $sql->bindValue(":plan", $plan);
         $sql->bindValue(":duration", $duration);
+        $sql->bindValue(":region", $region);
         $sql->bindValue(":township", $township);
         $sql->bindValue(":phone", $phone);
-        $sql->bindValue(":address", $shopAddress);
         $sql->bindValue(":bankAcc", $bankAcc);
         $sql->bindValue(":path","../../Storage/shopPhoto/" . $shopPhoto);
         $sql->bindValue(":createdDate", date("Y-m-d"));
@@ -93,7 +98,7 @@ if (isset($_POST["create"])) {
             $body,
             "../emailTemplate/template/images/Logo-supplier.png" //
         );
-        header("Location: ../View/supplierList/approveList.php");
+        echo "<script>window.location.assign('../View/supplierList/approveList.php')</script>";
     } else {
         header("Location: ../View/errors/error.php");
     }

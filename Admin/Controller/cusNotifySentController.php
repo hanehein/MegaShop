@@ -41,8 +41,7 @@ if(count($_POST) == 0){
         "../notifyEmail/Notify/images/user_logo.jpg"
     );
     
-
-    header("Location: ../../View/customerList/registeredCustomer.php");
+    echo "<script>window.location.assign('../View/customerList/registeredCustomer.php')</script>";
 }
 
 // "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"//

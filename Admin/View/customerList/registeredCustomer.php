@@ -56,7 +56,7 @@ $today = date("Y-m-d");
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Gender</th>
-                            <th>Township</th>
+                            <th>Region</th>
                             <th>Address</th>
                             <th>Created Date</th>
                             <th>Promotions</th>
@@ -84,9 +84,22 @@ $today = date("Y-m-d");
                                         else if ($customer["gender"] == 1) echo "Female";
                                         else echo "Other";
                                         ?></td>
-                                <td> <?php if ($customer["township"] == 1) echo "Yankin";
-                                        else if ($customer["township"] == 2) echo "Dagon";
-                                        else echo "Kamayut"; ?></td>
+                                <td> <?php if ($customer["region_id"] == 1) echo "Kachin State";
+                                        else if ($customer["region_id"] == 2) echo "Kayah State";
+                                        else if ($customer["region_id"] == 3) echo "Kayin State
+                                        ";
+                                        else if ($customer["region_id"] == 4) echo "Chin State";
+                                        else if ($customer["region_id"] == 5) echo "Sagaing Region";
+                                        else if ($customer["region_id"] == 6) echo "Tanintharyi Region";
+                                        else if ($customer["region_id"] == 7) echo "Bago Region";
+                                        else if ($customer["region_id"] == 8) echo "Mon State";
+                                        else if ($customer["region_id"] == 9) echo "Magway Region";
+                                        else if ($customer["region_id"] == 10) echo "Mandalay Region";
+                                        else if ($customer["region_id"] == 11) echo "Shan State";
+                                        else if ($customer["region_id"] == 12) echo "Yangon Region";
+                                        else if ($customer["region_id"] == 13) echo "Rakhine State";
+                                        else if ($customer["region_id"] == 14) echo "Ayeyarwady Region";
+                                        else echo "Naypyidaw Union Territory"; ?></td>
                                 <td> <?= $customer["cus_address"] ?></td>
                                 <td> <?= $customer["create_date"] ?></td>
                                 <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>

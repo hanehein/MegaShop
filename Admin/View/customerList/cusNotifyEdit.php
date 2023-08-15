@@ -66,7 +66,7 @@ $cusNotify = $_SESSION["cusNotify"];
                             <div class="flex items-center justify-between w-96 text-xs">
                                 <label class="text-white" for="">Township</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
+                                    <select name="region" id="" class="text-[#003366] text-xs w-52 rounded-md">
                                         <option <?php
                                                 if ($cusNotify[0]["township"] == 1) {
                                                     echo "Yankin" ?> selected <?php }

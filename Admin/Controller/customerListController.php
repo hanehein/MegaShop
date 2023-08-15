@@ -15,7 +15,9 @@ session_start();
 
     //all data fetch
     $sql = $pdo->prepare("
-        SELECT * FROM m_customers WHERE del_flg = 0 AND cus_registered = 1
+        SELECT * FROM m_customers 
+        JOIN m_regions ON m_customers.region_id = m_regions.id 
+        WHERE m_customers.del_flg = 0 AND cus_registered = 1
     ");
     $sql->execute();
     $totalRecord = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +26,9 @@ session_start();
 
     //normal fetch
     $sql = $pdo->prepare("
-        SELECT * FROM m_customers WHERE del_flg = 0 AND cus_registered = 1 LIMIT $pageStart, $rowLimits
+        SELECT * FROM m_customers 
+        JOIN m_regions ON m_customers.region_id = m_regions.id 
+        WHERE m_customers.del_flg = 0 AND cus_registered = 1 LIMIT $pageStart, $rowLimits
     ");
     $sql->execute();
     $customerLists = $sql->fetchAll(PDO::FETCH_ASSOC);

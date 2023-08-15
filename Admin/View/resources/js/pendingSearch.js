@@ -21,14 +21,38 @@ $(document).ready(function () {
             packType = "Gold";
           }
           //township
-          let township = "";
+          let region = "";
 
-          if (supplier.township == 1) {
-            township = "Yankin";
-          } else if (supplier.township == 2) {
-            township = "Dagon";
+          if (supplier.region_id == 1) {
+            region = "Kachin State";
+          } else if (supplier.region_id == 2) {
+            region = "Kayah State";
+          } else if (supplier.region_id == 3) {
+            region = "Kayin State";
+          } else if (supplier.region_id == 4) {
+            region = "Chin State";
+          } else if (supplier.region_id == 5) {
+            region = "Sagaing Region";
+          } else if (supplier.region_id == 6) {
+            region = "Tanintharyi Region";
+          } else if (supplier.region_id == 7) {
+            region = "Bago Region";
+          } else if (supplier.region_id == 8) {
+            region = "Mon State";
+          } else if (supplier.region_id == 9) {
+            region = "Magway Region";
+          } else if (supplier.region_id == 10) {
+            region = "Mandalay Region";
+          } else if (supplier.region_id == 11) {
+            region = "Shan State";
+          } else if (supplier.region_id == 12) {
+            region = "Yangon Region";
+          } else if (supplier.region_id == 13) {
+            region = "Rakhine State";
+          } else if (supplier.region_id == 14) {
+            region = "Ayeyarwady Region";
           } else {
-            township = "Kamayut";
+            region = "Naypyidaw Union Territory";
           }
           $("#searchResult").append(
             `               
@@ -39,7 +63,7 @@ $(document).ready(function () {
                                 <td>${supplier.sup_email}</td>
                                 <td>${packType}</td>
                                 <td>${supplier.pack_actual_duration}&nbsp;months</td>
-                                <td>${township}</td>
+                                <td>${region}</td>
                                 <td>${supplier.sup_phone}</td>
                                 <td>${supplier.bank_account}</td>
                                 <td>${supplier.create_date}</td>
