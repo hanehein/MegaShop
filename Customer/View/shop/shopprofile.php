@@ -22,6 +22,7 @@ include "../../Controller/shop/shopProfileController.php";
     <!--Start navbar-->
     <?php include "../components/navbarForHome.php"; ?>
     <!--next bar-->
+    <div class="flex flex-col">
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
@@ -42,6 +43,19 @@ include "../../Controller/shop/shopProfileController.php";
             </div>
         </div>
     </div>
+    <!--submenu-->
+    <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
+        <div class="flex flex-row space-x-2 md:space-x-5">
+        <a href="./shopProfile.php">
+                All products
+            </a>
+            <a href="./shopProfileDetail.php">
+                Profile
+            </a>
+        </div>
+    </div>
+     
+   
     <!--Start product section-->
     <section class="relative">
         <div class="block sm:grid sm:grid-cols-6 gap-4">
@@ -114,13 +128,13 @@ include "../../Controller/shop/shopProfileController.php";
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-8 gap-4 px-3 py-5">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-4 px-3 py-5">
                     <!-- start card -->
                     <?php foreach ($products as $product) { ?>
                         <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
                             <!-- card header -->
                             <div>
-                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[150px]" alt="product-img" />
+                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl " alt="product-img" />
                             </div>
                             <!-- card header -->
                             <!-- card body -->
@@ -129,12 +143,23 @@ include "../../Controller/shop/shopProfileController.php";
                                     <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
                                     <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                                 </div>
-                                <div>
+                                <?php for ($i = 0; $i < 5; $i++) { ?>
+                                    <ion-icon class="text-lg 
+                <?php
+                                    if ($i < $product_ratings["rating"]) {
+                                        echo "text-[#F68721]";
+                                    } else {
+                                        echo "text-slate-500";
+                                    }
+                ?>" name="star"></ion-icon>
+                                <?php } ?>
+
+                                <!-- <div>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>
-                                </div>
+                                </div> -->
                                 <div class="block sm:flex sm:justify-between sm:items-center mb-2">
                                     <div class="text-custom-tiny font-bold"> <span class="<?php
                                                                                             if ($product["p_discount"] != 0) {

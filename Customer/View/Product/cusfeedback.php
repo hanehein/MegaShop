@@ -125,7 +125,7 @@
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">10</button>
             </div>
             <p class="text-xl font-semibold mt-4">Please Share What Can Be Improved</p>
-            <textarea name="feedback" id="" placeholder="Write some advices..." class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>
+            <textarea name="feedback" id="" placeholder="Write some advices..." id="message" class="border border-gray-600 w-[350px] md:w-[800px] h-[200px] p-3 mt-3"></textarea>
         </section>
         <div class="sm:text-center md:text-end px-32 py-5">
             <a href="../../Controller/products/cusFeedbackController.php">

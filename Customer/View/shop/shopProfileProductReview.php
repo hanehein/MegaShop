@@ -10,11 +10,12 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop profile Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../resources/css/shopProfileDetail.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="../resources/lib/jquery3.6.0.js"></script>
     <script src="../resources/js/shopProfileDetail.js" defer></script>
     <script src="../resources/js/searchProductDetail.js" defer></script>
-    <link rel="stylesheet" href="../resources/css/shopProfileDetail.css">
+    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -45,8 +46,12 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--submenu-->
     <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
         <div class="flex flex-row space-x-2 md:space-x-5">
-            <p>All products</p>
-            <span>Profile</span>
+        <a href="./shopProfile.php">
+                All products
+            </a>
+            <a href="./shopProfileDetail.php">
+                Profile
+            </a>
         </div>
         <!--search-->
         <div class="flex flex-row">
@@ -103,36 +108,33 @@ include "../../Controller/shop/shopProfileDetailController.php";
 
         <!--pagination-->
         <div class="flex justify-center items-center">
-            <ul class="flex items-center justify-center">
-                <!-- Previous button -->
-                <li class="<?php if ($page <= 1) {
-                                echo "disabled";
-                            } ?>">
-                    <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
+        <div class="pagination flex items-center justify-center">
+                    <!-- Previous button -->
+                    <a href="?page=<?= $page - 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tl-md rounded-bl-md 
+                        <?php if ($page <= 1) {
+                            echo "pointer-events-none";
+                        } ?>
+                        ">
                         <ion-icon name="chevron-back"></ion-icon>
                     </a>
-                </li>
 
-                <!-- Page numbers -->
-                <?php
-                for ($i = 1; $i <= $page_lists; $i++) { ?>
-                    <li class="<?php if ($page == $i) {
-                                    echo "active";
-                                } ?>">
-                        <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
-                    </li>
-                <?php } ?>
+                    <?php for ($i = 1; $i <= $page_lists; $i++) { ?>
+                        <a href="?page=<?= $i ?>" class="<?php if ($i == $page) {
+                                                                echo "active";
+                                                            } ?>
+                            px-3 py-1 border border-blue-500 text-bold"><?= $i ?>
+                        </a>
+                    <?php } ?>
 
-
-                <!-- Next button -->
-                <li class="<?php if ($page >= $page_lists) {
-                                echo "disabled";
-                            } ?>">
-                    <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
+                    <!-- Next button -->
+                    <a href="?page=<?= $page + 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tr-md rounded-br-md 
+                        <?php if ($page >= $page_lists) {
+                            echo "pointer-events-none";
+                        } ?>
+                        ">
                         <ion-icon name="chevron-forward"></ion-icon>
                     </a>
-                </li>
-            </ul>
+                </div>
         </div>
     </section>
     <!--Start footer-->
