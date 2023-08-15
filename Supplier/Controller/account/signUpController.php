@@ -10,19 +10,14 @@ if (!isset($_POST["from_signup"])) {
     header("Location: ../../View/errors/error.php");
 }
 
-echo "<pre>";
-print_r($_POST);
-echo $_POST["bank_acc"];
-die("");
-
-$supplier_name = $_POST["supplier_name"];
 $shop_name = $_POST["shop_name"];
+$sup_name = $_POST["sup_name"];
 $email = $_POST["email"];
-$township = $_POST["township"];
-$shop_address = $_POST["shop_address"];
 $phone = $_POST["phone"];
+$region = $_POST["region"];
+$township = $_POST["township"];
 $bank_acc = $_POST["bank_acc"];
-
+$shop_address = $_POST["shop_address"];
 
 //Db Connection
 include "../../Model/model.php";
@@ -45,11 +40,12 @@ if(count($supplier) == 0){
         "INSERT INTO m_suppliers (
             sup_name,
             sup_email,
-            township,
             sup_address,
             sup_phone,
             bank_account,
             sup_shop_name,
+            region_id,
+            township_id,
             create_date
         ) VALUES (
             :sup_name,
@@ -59,24 +55,24 @@ if(count($supplier) == 0){
             :phone,
             :bank_acc,
             :shop_name,
+            :region_id,
+            :township_id,
             :creat_date
         )"
     );
     
-    $sql->bindValue(":sup_name", $supplier_name);
-   
-    $sql->bindValue(":email", $email);
-    $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
-    $sql->bindValue(":password", $passsword);
-    $sql->bindValue(":township", $township);
-    $sql->bindValue(":address", $shop_address);
-    $sql->bindValue(":phone", $phone);
     $sql->bindValue(":shop_name", $shop_name);
-  
+    $sql->bindValue(":sup_name", $sup_name);
+    $sql->bindValue(":email", $email);
+    $sql->bindValue(":phone", $phone);
+    $sql->bindValue(":region_id", $region);
+    $sql->bindValue(":township_id", $township);
+    $sql->bindValue(":bank_acc", $bank_acc);
+    $sql->bindValue(":address", $shop_address);
     $sql->execute();
 
     header("Location: ../../View/account/login.php");
 }else{
     $_SESSION["signup_error"] = "Email is already registered!";
-    header("Location: ../../View/account/signUp.php");
+    header("Location: ../../View/account/signUp1.php");
 }
