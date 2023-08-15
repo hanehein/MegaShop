@@ -1,10 +1,11 @@
 <?php
 session_start();
 $supEdit = $_SESSION["supEdit"];
-// print_r($supEdit);
+print_r($supEdit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +36,7 @@ $supEdit = $_SESSION["supEdit"];
                     <div class="w-full flex flex-col items-center justify-center  px-8 space-y-5">
                         <div class="flex items-center justify-center  space-x-8 mb-3">
                             <label for="profile">
-                                <img src="../<?php echo $supEdit[0]["shop_photo_path"]?>" alt="" width="100%" id="outImg" class="rounded-full w-28 h-28">
+                                <img src="../<?php echo $supEdit[0]["shop_photo_path"] ?>" alt="" width="100%" id="outImg" class="rounded-full w-28 h-28">
                             </label>
                             <input type="file" id="profile" name="shopPhoto" class="hidden" accept=".png,.jpg" value="">
                         </div>
@@ -45,7 +46,7 @@ $supEdit = $_SESSION["supEdit"];
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
                                 <label class="text-white" for="">Shop Name</label>
-                                <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"]?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="shopName" value="<?php echo $supEdit[0]["sup_shop_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
@@ -63,21 +64,12 @@ $supEdit = $_SESSION["supEdit"];
                                 <input type="number" name="phone" value="<?php echo $supEdit[0]["sup_phone"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 text-xs space-x-16">
-                                <label class="text-white" for="">Township</label>
+                                <label class="text-white" for="">Region</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
-                                        <option <?php
-                                                if ($supEdit[0]["township"] == 1) {
-                                                    echo "Yankin" ?> selected <?php }
-                                                                                ?> value="1">Yankin</option>
-                                        <option <?php
-                                                if ($supEdit[0]["township"] == 2) {
-                                                    echo "Dagon" ?> selected <?php }
-                                                                                ?> value="2">Dagon</option>
-                                        <option <?php
-                                                if ($supEdit[0]["township"] == 3) {
-                                                    echo "Kamayut" ?> selected <?php }
-                                                                                ?> value="3">Kamayut</option>
+                                    <select name="region" id="region" class="text-[#003366] text-xs w-[13.5rem] rounded-md h-11">
+                                        <?php foreach ($supEdit as $region) { ?>
+                                            <option value="<?= $region[0]["id"] ?>"><?= $region[0]["name"] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -126,3 +118,19 @@ $supEdit = $_SESSION["supEdit"];
 </body>
 
 </html>
+
+
+<select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
+    <option <?php
+            if ($supEdit[0]["township"] == 1) {
+                echo "Yankin" ?> selected <?php }
+                                                                                ?> value="1">Yankin</option>
+    <option <?php
+            if ($supEdit[0]["township"] == 2) {
+                echo "Dagon" ?> selected <?php }
+                                                                                ?> value="2">Dagon</option>
+    <option <?php
+            if ($supEdit[0]["township"] == 3) {
+                echo "Kamayut" ?> selected <?php }
+                                                                                ?> value="3">Kamayut</option>
+</select>

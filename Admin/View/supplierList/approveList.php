@@ -2,7 +2,8 @@
 session_start();
 include "../../Controller/supplierListController.php";
 $today = date("Y-m-d");
-// print_r($supLists);
+
+print_r($supLists);
 
 ?>
 
@@ -59,7 +60,7 @@ $today = date("Y-m-d");
                         </div>
                     </a>
                     <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
-                        <input type="date" name="" id="" value="<?=$today?>" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <input type="date" name="" id="" value="<?= $today ?>" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     </div>
                 </div>
             </div>
@@ -101,23 +102,23 @@ $today = date("Y-m-d");
                                         else if ($supplier["pack_id"] == 1) echo "Silver";
                                         else echo "Gold";
                                         ?></td>
-                                <td> <?= $supplier["pack_actual_duration"]?>&nbsp;months</td>
-                                <td> <?php if ($supplier["region_id"] == 1) echo "Kachin State";
-                                        else if ($supplier["region_id"] == 2) echo "Kayah State";
-                                        else if ($supplier["region_id"] == 3) echo "Kayin State
+                                <td> <?= $supplier["pack_actual_duration"] ?>&nbsp;months</td>
+                                <td><?php if ($supplier["region_id"] == 1) echo "Kachin State";
+                                    else if ($supplier["region_id"] == 2) echo "Kayah State";
+                                    else if ($supplier["region_id"] == 3) echo "Kayin State
                                         ";
-                                        else if ($supplier["region_id"] == 4) echo "Chin State";
-                                        else if ($supplier["region_id"] == 5) echo "Sagaing Region";
-                                        else if ($supplier["region_id"] == 6) echo "Tanintharyi Region";
-                                        else if ($supplier["region_id"] == 7) echo "Bago Region";
-                                        else if ($supplier["region_id"] == 8) echo "Mon State";
-                                        else if ($supplier["region_id"] == 9) echo "Magway Region";
-                                        else if ($supplier["region_id"] == 10) echo "Mandalay Region";
-                                        else if ($supplier["region_id"] == 11) echo "Shan State";
-                                        else if ($supplier["region_id"] == 12) echo "Yangon Region";
-                                        else if ($supplier["region_id"] == 13) echo "Rakhine State";
-                                        else if ($supplier["region_id"] == 14) echo "Ayeyarwady Region";
-                                        else echo "Naypyidaw Union Territory"; ?></td>
+                                    else if ($supplier["region_id"] == 4) echo "Chin State";
+                                    else if ($supplier["region_id"] == 5) echo "Sagaing Region";
+                                    else if ($supplier["region_id"] == 6) echo "Tanintharyi Region";
+                                    else if ($supplier["region_id"] == 7) echo "Bago Region";
+                                    else if ($supplier["region_id"] == 8) echo "Mon State";
+                                    else if ($supplier["region_id"] == 9) echo "Magway Region";
+                                    else if ($supplier["region_id"] == 10) echo "Mandalay Region";
+                                    else if ($supplier["region_id"] == 11) echo "Shan State";
+                                    else if ($supplier["region_id"] == 12) echo "Yangon Region";
+                                    else if ($supplier["region_id"] == 13) echo "Rakhine State";
+                                    else if ($supplier["region_id"] == 14) echo "Ayeyarwady Region";
+                                    else echo "Naypyidaw Union Territory"; ?></td>
                                 <td> <?= $supplier["sup_phone"] ?></td>
                                 <th> <?= $supplier["bank_account"] ?></th>
                                 <td> <?= $supplier["create_date"] ?></td>
