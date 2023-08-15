@@ -1,8 +1,7 @@
 <?php
 session_start();
-
 include "../../Controller/supplierListController.php";
-
+$today = date("Y-m-d");
 // print_r($supLists);
 
 ?>
@@ -60,7 +59,7 @@ include "../../Controller/supplierListController.php";
                         </div>
                     </a>
                     <div class="w-32 h-10 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366] shadow-md">
-                        <input type="date" name="" id="" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                        <input type="date" name="" id="" value="<?=$today?>" class="border-none text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                     </div>
                 </div>
             </div>

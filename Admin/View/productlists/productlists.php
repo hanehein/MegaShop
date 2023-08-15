@@ -88,7 +88,7 @@ include '../../Controller/productListsController.php';
                                 <td><?php echo ++$count; ?></td>
                                 <td>
                                     <div class="flex justify-evenly items-center">
-                                        <img src="../resources/img/<?php echo $m_products["p_photo1"]; ?>.jpg" class="w-1/4 rounded-lg h-1/2">
+                                        <img src="../<?php echo $m_products["p_photo1"]; ?>" class="w-1/4 rounded-lg h-1/2">
                                         <p><?php echo $m_products["p_name"]; ?></p>
                                     </div>
                                 </td>

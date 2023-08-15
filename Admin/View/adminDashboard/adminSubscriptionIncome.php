@@ -1,9 +1,9 @@
 <?php
 ini_set('display_errors', 1);
 include "../../Controller/subscriptionIncomeController.php";
+$today = date("Y-m-d");
+// print_r($subIncome);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +20,9 @@ include "../../Controller/subscriptionIncomeController.php";
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/income.css">
+    <link rel="stylesheet" href="../resources/css/active.css">
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/subIncomeSearch.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden ">
@@ -44,7 +47,7 @@ include "../../Controller/subscriptionIncomeController.php";
                     <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="date" name="" id="" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <input type="date" name="" id="" value="<?php echo $today?>" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                 </div>
             </div>
             <!-- plan desc -->
@@ -66,30 +69,33 @@ include "../../Controller/subscriptionIncomeController.php";
                 </div>
             </div>
             <div class="w-auto flex items-start justify-start bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black">
-                <table cellspacing="10" cellpadding="15" class=" w-auto table-fixed text-white text-center">
+                <table cellspacing="10" cellpadding="10" class=" w-auto table-fixed text-white text-center">
                     <thead class=" bg-[#00336661] text-white text-sm font-semibold h-16">
                         <tr>
                             <th>No</th>
                             <th>Shop Name</th>
+                            <th>Shop Email</th>
                             <th>Subscribed Plan</th>
                             <th>Duration</th>
                             <th>Bank Account</th>
                             <th>Total Amount</th>
                             <th>Activated Date</th>
+                            <th>Expired Date</th>
                             <th>Edit</th>
                             <!-- <th>Remove</th> -->
                         </tr>
                     </thead>
-                    <tbody class=" text-xs" id="searchResult">
+                    <tbody class=" text-sm" id="searchResult">
                         <?php
 
-                        $count = 1;
+                        $count = (($page - 1) * $rowLimits) + 1;
 
                         foreach ($subIncome as $income) {
                         ?>
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++; ?></td>
                                 <td><?= $income["sup_shop_name"] ?></td>
+                                <td><?= $income["sup_email"] ?></td>
                                 <td>
                                     <?php
                                     if ($income["pack_id"] == 0) echo "Basic";
@@ -97,22 +103,38 @@ include "../../Controller/subscriptionIncomeController.php";
                                     else echo "Gold";
                                     ?></td>
                                 </td>
-                                <td><?= $income["pack_actual_duration"]?> months</td>
+                                <td><?= $income["pack_actual_duration"] ?> months</td>
                                 <td><?= $income["bank_account"] ?></td>
                                 <td><?php
-                                        $period = $income["pack_actual_duration"];
-                                        if ($income["pack_id"] == 1) {
-                                            $totalAmt = $period * 100000;
-                                            echo $totalAmt;
-                                        }
-                                        else if ($income["pack_id"] == 2){
-                                            $totalAmt = $period * 150000;
-                                            echo $totalAmt;
-                                        }
-                                        else echo "0";
-                                    ?>&nbsp;Ks</td>
-                                <th><?= $income["create_date"]?></th>
-                                <td><a href="../../Controller/subscriptionEditController.php?id=<?= $income["id"]?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                                    $period = $income["pack_actual_duration"];
+                                    if ($income["pack_id"] == 1) {
+                                        $totalAmt = $period * 100000;
+                                        $numberFormat = number_format($totalAmt);
+                                        echo $numberFormat;
+                                    } else if ($income["pack_id"] == 2) {
+                                        $totalAmt = $period * 150000;
+                                        $numberFormat = number_format($totalAmt);
+                                        echo $numberFormat;
+                                    } else echo "0";
+                                    ?>&nbsp;MMK</td>
+                                <td><?= $income["create_date"] ?></td>
+                                <td>
+                                    <?php
+                                    $createdDateString = $income["create_date"];
+                                    $durationMonths = $income["pack_actual_duration"];
+                                    $createdDate = new DateTime($createdDateString);
+                                    // Calculate the expiration date
+                                    $originalCreatedDate = clone $createdDate;
+                                    $expiredDate = $originalCreatedDate->modify("+$durationMonths months");
+                                    // Handle potential overflow from months to years
+                                    while ($expiredDate < $originalCreatedDate) {
+                                        $expiredDate->modify('+1 month');
+                                    }
+                                    $expiredFormatted = $expiredDate->format('Y-m-d');
+                                    echo $expiredFormatted;
+                                    ?>
+                                </td>
+                                <td><a href="../../Controller/subscriptionEditController.php?id=<?= $income["id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                                 <!-- <td><a href=""><button class="w-16 py-1 rounded-md bg-red-600 text-white text-xs hover:text-red-600 hover:bg-gray-700">Remove</button></a></td> -->
                             </tr>
                         <?php } ?>
@@ -120,37 +142,38 @@ include "../../Controller/subscriptionIncomeController.php";
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
+            <div class="w-auto flex items-center justify-center h-10 mb-5 ">
+                <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page - 1 ?>">Previous</a>
+                    </li>
+                    <?php
+                    for ($i = 1; $i <= $pageList; $i++) { ?>
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <?php
+                        if ($page == $i) {
+                            echo "color";
+                        }
+                        ?> hover:text-white hover:bg-[#003366]">
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page + 1 ?>">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

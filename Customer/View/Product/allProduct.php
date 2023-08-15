@@ -1,5 +1,4 @@
 <?php
-include "../../Controller/products/categoryListController.php";
 include "../../Controller/products/brandListController.php";
 include "../../Controller/products/productListsController.php";
 ?>
@@ -23,8 +22,10 @@ include "../../Controller/products/productListsController.php";
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/allProduct.css">
     <link rel="stylesheet" href="../resources/css/home.css">
+    <script src="../resources/lib/jquery3.6.0.js"></script>
     <script src="../resources/js/allProduct.js" defer></script>
     <script src="../resources/js/home.js" defer></script>
+    <script src="../resources/js/searchProduct.js" defer></script>
 </head>
 
 <body>

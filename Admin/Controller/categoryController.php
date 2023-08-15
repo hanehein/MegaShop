@@ -3,7 +3,8 @@
 include '../../Model/model.php';
 
     $sql = $pdo->prepare(
-        "SELECT * FROM m_category;"
+        "SELECT * FROM m_category
+        WHERE del_flg = 0;"
     );
 
     $sql ->execute();

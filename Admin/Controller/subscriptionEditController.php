@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors', 1);
 
 $id = $_GET["id"];
@@ -14,7 +15,6 @@ if(!isset($id)){
     $sql->bindValue(":id",$id);
     $sql->execute();
     $_SESSION["subIncomeEdit"] = $sql->fetchAll(PDO::FETCH_ASSOC);
-    
     header("Location: ../View/adminDashboard/subscriptionEdit.php");
 }
 

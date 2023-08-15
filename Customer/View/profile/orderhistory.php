@@ -4,6 +4,9 @@ $orders = $_SESSION['profileEdit'];
 
 $result = $orders;
 
+$rowLimits = 5;
+$pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
+
 
 ?>
 
@@ -70,10 +73,6 @@ $result = $orders;
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
             </a>
 
-            <div class="md:flex justify-center items-center hidden">
-                <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-            </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -99,7 +98,7 @@ $result = $orders;
             </div>
         </div>
         <!-- history -->
-        
+
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
             <?php if (count($result) == 0) { ?>
                 <div class="flex flex-col items-center justify-center">
@@ -131,8 +130,40 @@ $result = $orders;
             <?php } ?>
 
         </div>
-
-
+    </div>
+    <!-- pagination -->
+    <div class="w-auto flex items-center justify-center h-10 mb-5 md:ml-[44rem]">
+        <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+            <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-[#003366] hover:bg-white enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                <a href="?page=<?= $page - 1 ?>">Previous</a>
+            </li>
+            <?php
+            for ($i = 1; $i <= $pageList; $i++) { ?>
+                <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  hover:text-white hover:bg-[#003366] 
+                        <?php
+                        if ($page == $i) {
+                            echo "active";
+                        }
+                        ?> hover:text-white hover:bg-[#003366]">
+                    <a href="?page=<?= $i ?>"><?= $i ?></a>
+                </li>
+            <?php } ?>
+            <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-[#003366] hover:bg-white
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                <a href="?page=<?= $page + 1 ?>">Next</a>
+            </li>
+        </ul>
     </div>
 
     <!-- footer -->

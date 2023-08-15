@@ -24,7 +24,7 @@ class SendMail
             $mail->Password   = 'rhfkpjynhrphrjhd';          //<< change                     
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
             $mail->Port       = 465;  
-            $mail->addEmbeddedImage($img,"img2");  //                               
+            $mail->addEmbeddedImage($img,"img3");  //                               
 
             //Recipients
             $mail->setFrom('hlaingthazinphoo.hp@gmail.com',"MEGA_SHOP"); //<<change 
