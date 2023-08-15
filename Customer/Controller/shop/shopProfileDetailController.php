@@ -65,4 +65,15 @@ $sql = $pdo->prepare(
 );
 $sql->execute();
 $reviewers = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+//total reviews
+$sql = $pdo->prepare(
+  "SELECT count(id) As countperson FROM t_shop_reviews"
+);
+$sql->execute();
+$total = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
+
+
+

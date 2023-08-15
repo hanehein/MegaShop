@@ -10,11 +10,12 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop profile Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../resources/css/shopProfilePagination.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="../resources/lib/jquery3.6.0.js"></script>
     <script src="../resources/js/shopProfileDetail.js" defer></script>
     <script src="../resources/js/searchProductDetail.js" defer></script>
-    <link rel="stylesheet" href="../resources/css/shopProfileDetail.css">
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -45,8 +46,12 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--submenu-->
     <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
         <div class="flex flex-row space-x-2 md:space-x-5">
-            <p>All products</p>
-            <span>Profile</span>
+            <a href="./shopProfile.php">
+                All products
+            </a>
+            <a href="./shopProfileDetail.php">
+                Profile
+            </a>
         </div>
         <!--search-->
         <div class="flex flex-row">
@@ -71,33 +76,11 @@ include "../../Controller/shop/shopProfileDetailController.php";
                     <div class="rating_graph w-[300px] h-[300px]  md:w-[400px]">
                         <canvas id="myChart"></canvas>
                     </div>
-
-                    <!-- <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Positive</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[180px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>432</span>
-                    </div>
-                    <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Natural</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[7px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>13</span>
-                    </div>
-                    <div class="flex flex-row items-center justify-center space-x-3">
-                        <p>Negative</p>
-                        <div class="bg-gray-500 w-[210px] h-[13px]">
-                            <div class="w-[12px] h-[13px] bg-orange-600"></div>
-                        </div>
-                        <span>16</span>
-                    </div> -->
                 </div>
                 <!--End bar graph-->
 
                 <div class="flex flex-col space-y-2 items-center">
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(16)</h1>
+                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php $total[0]["countperson"] ?>)</h1>
                     <div class="flex space-x-16">
                         <ion-icon name="happy-outline"></ion-icon>
                         <ion-icon name="happy-outline"></ion-icon>
@@ -137,111 +120,41 @@ include "../../Controller/shop/shopProfileDetailController.php";
             <?php } ?>
 
             <!-- Pagination -->
-            <div class="w-full flex justify-center p-5">
-                <!-- Pagination component -->
-                <ul class="flex items-center justify-center">
+            <div class="flex justify-center items-center">
+                <div class="pagination flex items-center justify-center">
                     <!-- Previous button -->
-                    <li class="<?php if ($page <= 1) {
-                                    echo "disabled";
-                                } ?>">
-                        <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
-                            <ion-icon name="chevron-back"></ion-icon>
-                        </a>
-                    </li>
-                    <!-- Page numbers -->
-
-                    <?php
-                    for ($i = 1; $i <= $page_lists; $i++) { ?>
-                        <li class="<?php if ($page == $i) {
-                                        echo "active";
-                                    } ?>">
-                            <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
-                        </li>
-                    <?php } ?>
-
-
-                    <!-- Next button -->
-                    <li class="<?php if ($page >= $page_lists) {
-                                    echo "disabled";
-                                } ?>">
-                        <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
-                            <ion-icon name="chevron-forward"></ion-icon>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-    <!--product ratings & reviews-->
-    <section class="bg-white flex flex-col p-5 mt-5">
-        <p class="text-xl font-semibold">Product Ratings & Reviews(345)</p>
-        <!--Start review box-->
-        <?php foreach ($p_reviews as $p_review) { ?>
-            <div class="flex space-x-6 p-5">
-                <img src="../resources/img/cola.jpg" alt="" class="w-[80px] h-[120px]">
-                <div class="flex flex-col">
-                    <p class="text-blue-600 font-bold text-2xl mb-3">STEP Women Blouse Short Sleeves 007402</p>
-                    <div class="flex space-x-1">
-                        <?php for ($i = 0; $i < 5; $i++) { ?>
-                            <ion-icon class="text-lg 
-                <?php
-                            if ($i < $p_review["rating"]) {
-                                echo "text-[#F68721]";
-                            } else {
-                                echo "text-slate-500";
-                            }
-                ?>" name="star"></ion-icon>
-                        <?php } ?>
-
-
-                    </div>
-                    <p><?= $p_review["review"] ?></p>
-                    <div class="flex space-x-3">
-                        <p class="text-gray-600 font-thin"><?= $p_review["create_date"] ?> By</p>
-                        <p class="text-blue-600 font-semibold"><?= $p_review["cus_name"] ?></p>
-                    </div>
-                </div>
-            </div>
-            <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
-        <?php } ?>
-
-        <!--End review box-->
-
-        <!--pagination-->
-        <div class="flex justify-center items-center">
-            <ul class="flex items-center justify-center">
-                <!-- Previous button -->
-                <li class="<?php if ($page <= 1) {
-                                echo "disabled";
-                            } ?>">
-                    <a href="#?page=<?= $page - 1 ?>" class="px-3 py-1 bg-white border border-blue-600  rounded-tl-md rounded-bl-md">
+                    <a href="?page=<?= $page - 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tl-md rounded-bl-md 
+                        <?php if ($page <= 1) {
+                            echo "pointer-events-none";
+                        } ?>
+                        ">
                         <ion-icon name="chevron-back"></ion-icon>
                     </a>
-                </li>
 
-                <!-- Page numbers -->
-                <?php
-                for ($i = 1; $i <= $page_lists; $i++) { ?>
-                    <li class="<?php if ($page == $i) {
-                                    echo "active";
-                                } ?>">
-                        <a href="#?page=<?= $i ?>" class="active px-3 py-1 border border-blue-600 text-bold"><?= $i ?></a>
-                    </li>
-                <?php } ?>
+                    <?php for ($i = 1; $i <= $page_lists; $i++) { ?>
+                        <a href="?page=<?= $i ?>" class="<?php if ($i == $page) {
+                                                                echo "active";
+                                                            } ?>
+                            px-3 py-1 border border-blue-500 text-bold"><?= $i ?>
+                        </a>
+                    <?php } ?>
 
-
-                <!-- Next button -->
-                <li class="<?php if ($page >= $page_lists) {
-                                echo "disabled";
-                            } ?>">
-                    <a href="#?page=<?= $page + 1 ?>" class="px-3 py-1 bg-white border border-blue-600 rounded-tr-md rounded-br-md">
+                    <!-- Next button -->
+                    <a href="?page=<?= $page + 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tr-md rounded-br-md 
+                        <?php if ($page >= $page_lists) {
+                            echo "pointer-events-none";
+                        } ?>
+                        ">
                         <ion-icon name="chevron-forward"></ion-icon>
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
+
+
         </div>
     </section>
+
+
     <!--Start footer-->
     <?php include "../components/footer.php"; ?>
     <script>
@@ -252,9 +165,17 @@ include "../../Controller/shop/shopProfileDetailController.php";
             shop_ratings.push(serverData[index].rating);
             total_persons.push(serverData[index].countperson);
         }
-
-        console.log(serverData);
     </script>
+    <!-- <script>
+        let serverData1 = <?php echo json_encode($total); ?>;
+        let tot_persons = [];
+        for (let index = 0; index < serverData1.length; index++) {
+            
+            tot_persons.push(serverData1[index].countperson);
+        }
+
+        <?php echo (count($tot_persons)) ?>
+    </script> -->
 </body>
 
 </html>

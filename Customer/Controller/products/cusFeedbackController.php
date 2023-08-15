@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 $rate = $_POST["rateVal"];
 $feedback =$_POST["feedback"];
-$cus_id = 12;//get from login 
+$cus_id = 1;//get from login 
 $create_date = date("Y-m-d");
 //DB connection
 include "../../Model/model.php";
