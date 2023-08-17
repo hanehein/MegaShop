@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 include "../../Controller/customerListController.php";
 $today = date("Y-m-d");
+// print_r($customerLists);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ $today = date("Y-m-d");
 <body class="overflow-x-hidden ">
     <!-- main div -->
     <!-- <a href="../../Controller/searchCustomerController.php"></a> -->
-    <div class="min-h-screen flex   bg-black text-gray-800 relative ">
+    <div class="min-h-screen flex text-gray-800 relative ">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
@@ -43,7 +44,7 @@ $today = date("Y-m-d");
                     <button class="w-12 py-[0.55rem] rounded-r-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]"><ion-icon name="search" class="text-white"></ion-icon></button>
                 </div>
                 <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="date" name="" id="" value="<?=$today?>" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <input type="date" name="" id="" value="<?= $today ?>" class=" text-xs bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
                 </div>
             </div>
             <div class="w-auto flex items-center justify-center bg-[#00336659] font-['Poppins'] rounded-md shadow-sm shadow-black ">
@@ -57,7 +58,7 @@ $today = date("Y-m-d");
                             <th>Phone</th>
                             <th>Gender</th>
                             <th>Region</th>
-                            <th>Address</th>
+                            <th>Township</th>
                             <th>Created Date</th>
                             <th>Promotions</th>
                         </tr>
@@ -67,9 +68,7 @@ $today = date("Y-m-d");
 
                         $count = (($page - 1) * $rowLimits) + 1;
 
-                        foreach ($customerLists as $customer) { 
-                            
-
+                        foreach ($customerLists as $customer) {
                         ?>
                             <tr class="h-10 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++; ?></td>
@@ -84,25 +83,15 @@ $today = date("Y-m-d");
                                         else if ($customer["gender"] == 1) echo "Female";
                                         else echo "Other";
                                         ?></td>
-                                <td> <?php if ($customer["region_id"] == 1) echo "Kachin State";
-                                        else if ($customer["region_id"] == 2) echo "Kayah State";
-                                        else if ($customer["region_id"] == 3) echo "Kayin State
-                                        ";
-                                        else if ($customer["region_id"] == 4) echo "Chin State";
-                                        else if ($customer["region_id"] == 5) echo "Sagaing Region";
-                                        else if ($customer["region_id"] == 6) echo "Tanintharyi Region";
-                                        else if ($customer["region_id"] == 7) echo "Bago Region";
-                                        else if ($customer["region_id"] == 8) echo "Mon State";
-                                        else if ($customer["region_id"] == 9) echo "Magway Region";
-                                        else if ($customer["region_id"] == 10) echo "Mandalay Region";
-                                        else if ($customer["region_id"] == 11) echo "Shan State";
-                                        else if ($customer["region_id"] == 12) echo "Yangon Region";
-                                        else if ($customer["region_id"] == 13) echo "Rakhine State";
-                                        else if ($customer["region_id"] == 14) echo "Ayeyarwady Region";
-                                        else echo "Naypyidaw Union Territory"; ?></td>
-                                <td> <?= $customer["cus_address"] ?></td>
+                                <td> <?php if ($customer["region_id"] == $customer["region_real_id"]) echo $customer["region_name"];
+                                        ?></td>
+                                <td> <?php
+                                        if ($customer["township_id"] == $customer["township_real_id"] && $customer["region_id"] == $customer["township_region_id"]) {
+                                            echo $customer["township_name"];
+                                        }
+                                        ?></td>
                                 <td> <?= $customer["create_date"] ?></td>
-                                <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>
+                                <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["customer_id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -122,11 +111,11 @@ $today = date("Y-m-d");
                     </li>
                     <?php
                     for ($i = 1; $i <= $pageList; $i++) { ?>
-                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold active:bg-[#66CC33]  
                         <?php
-                            if ($page == $i) {
-                                echo "active";
-                            }
+                        if ($page == $i) {
+                            echo "active";
+                        }
                         ?> hover:text-white hover:bg-[#003366]">
                             <a href="?page=<?= $i ?>"><?= $i ?></a>
                         </li>
@@ -147,3 +136,19 @@ $today = date("Y-m-d");
 </body>
 
 </html>
+
+<!-- else if ($customer["region_id"] == 2) echo "Kayah State";
+                                        else if ($customer["region_id"] == 3) echo "Kayin State
+                                        ";
+                                        else if ($customer["region_id"] == 4) echo "Chin State";
+                                        else if ($customer["region_id"] == 5) echo "Sagaing Region";
+                                        else if ($customer["region_id"] == 6) echo "Tanintharyi Region";
+                                        else if ($customer["region_id"] == 7) echo "Bago Region";
+                                        else if ($customer["region_id"] == 8) echo "Mon State";
+                                        else if ($customer["region_id"] == 9) echo "Magway Region";
+                                        else if ($customer["region_id"] == 10) echo "Mandalay Region";
+                                        else if ($customer["region_id"] == 11) echo "Shan State";
+                                        else if ($customer["region_id"] == 12) echo "Yangon Region";
+                                        else if ($customer["region_id"] == 13) echo "Rakhine State";
+                                        else if ($customer["region_id"] == 14) echo "Ayeyarwady Region";
+                                        else echo "Naypyidaw Union Territory";  -->

@@ -24,7 +24,7 @@
 
     // normal fetch
     $sql = $pdo->prepare("
-        SELECT * FROM m_suppliers 
+        SELECT *, m_suppliers.id as supplierId FROM m_suppliers 
         JOIN m_regions ON m_suppliers.region_id = m_regions.id 
         WHERE m_suppliers.del_flg = 0 AND sup_approve = 0 LIMIT $pageStart, $rowLimits;
     ");

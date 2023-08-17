@@ -1,9 +1,17 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
-
 $admin = $_SESSION["admin"];
+$supplier = $_SESSION["totalSuppliers"];
+$customer = $_SESSION["totalCustomers"];
+$product = $_SESSION["totalProducts"];
+$brand = $_SESSION["totalBrand"];
+$category = $_SESSION["totalCategory"];
+// print_r($customer);
+// echo "</br>";
 // print_r($admin);
+// echo "</br>";
+// print_r($supplier);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +48,7 @@ $admin = $_SESSION["admin"];
             <!-- 1st sectioin -->
             <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
                 <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
-                <p class="text-[#66CC33]">Suppliers</ion-icon></p>
+                <p class="text-[#66CC33]">Suppliers & Customers</ion-icon></p>
             </div>
             <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  ">
 
@@ -48,8 +56,8 @@ $admin = $_SESSION["admin"];
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Total Suppliers</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">20 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_suppliers"]?></p>
                     </div>
                 </div>
 
@@ -57,8 +65,8 @@ $admin = $_SESSION["admin"];
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Total Customers</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">50</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $customer[0]["total_customers"]?></p>
                     </div>
                 </div>
 
@@ -66,8 +74,8 @@ $admin = $_SESSION["admin"];
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Gold Plan</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_gold"]?>&nbsp;shops</p>
                     </div>
                 </div>
 
@@ -75,16 +83,16 @@ $admin = $_SESSION["admin"];
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Silver Plan</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_silver"]?>&nbsp;shops</p>
                     </div>
                 </div>
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Basic Plan</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_basic"]?>&nbsp;shops</p>
                     </div>
                 </div>
             </div>
@@ -98,43 +106,43 @@ $admin = $_SESSION["admin"];
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
                         <p class="text-white text-sm">Total Products</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $product[0]["total_products"]?></p>
                     </div>
                 </div>
 
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm">Total Brand</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
-                    </div>
-                </div>
-
-                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
-                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
-                    </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $brand[0]["total_brand"]?></p>
                     </div>
                 </div>
 
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm">Total Category</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"><?= $category[0]["total_category"]?></p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm">Total Product Review</p>
+                    </div>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm">Total Customer Review</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
             </div>
@@ -146,45 +154,45 @@ $admin = $_SESSION["admin"];
             <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-3 space-x-10  ">
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm">Total Order</p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
-                    </div>
-                </div>
-
-                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
-                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
-                    </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
 
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm"></p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
 
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm"></p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
+                    </div>
+                </div>
+
+                <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
+                    <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
+                        <p class="text-white text-sm"></p>
+                    </div>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Gold Plan</p>
+                        <p class="text-white text-sm"></p>
                     </div>
-                    <div class="w-full h-16 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold">5 shops</p>
+                    <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
             </div>

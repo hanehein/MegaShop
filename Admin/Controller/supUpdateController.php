@@ -19,7 +19,7 @@ if(count($_POST) == 0){
     $duration = $_POST["duration"];
     $phone = $_POST["phone"];
     $password = $_POST["password"];
-    $shopPhoto = $_FILES["shopPhoto"]["name"];
+    // $shopPhoto = $_FILES["shopPhoto"]["name"];
 
     include "../Model/model.php";
     $sql = $pdo->prepare("
@@ -32,7 +32,7 @@ if(count($_POST) == 0){
         sup_shop_name = :shopName,
         pack_actual_duration = :duration,
         region_id = :region
-        where id = :id
+        where m_suppliers.id = :id
     ");
     $sql->bindValue(":id",$id);
     $sql->bindValue(":name",$supplierName);//

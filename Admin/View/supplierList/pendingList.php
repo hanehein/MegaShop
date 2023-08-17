@@ -2,6 +2,7 @@
 session_start();
 include "../../Controller/supplierPendingListController.php";
 $today = date("Y-m-d");
+// print_r($supPendingLists);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,8 +83,6 @@ $today = date("Y-m-d");
                         <?php
                         $count = (($page - 1) * $rowLimits) + 1;
                         foreach ($supPendingLists as $pending) {
-
-
                         ?>
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?= $count++ ?></td>
@@ -98,7 +97,7 @@ $today = date("Y-m-d");
                                     ?>
                                 </td>
                                 <td> <?= $pending["pack_actual_duration"] ?>&nbsp;months</td>
-                                <td> <?php if ($pending["region_id"] == 1) echo "Kachin State";
+                                <td> <?php if ($pending["region_id"] == 1) echo "Kachin State"; 
                                         else if ($pending["region_id"] == 2) echo "Kayah State";
                                         else if ($pending["region_id"] == 3) echo "Kayin State
                                         ";
@@ -118,8 +117,8 @@ $today = date("Y-m-d");
                                 <td><?= $pending["sup_phone"] ?></td>
                                 <th><?= $pending["bank_account"] ?></th>
                                 <td><?= $pending["create_date"] ?></td>
-                                <td><a href="../../Controller/approveController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
-                                <td><a href="../../Controller/deniedController.php?id=<?= $pending["id"] ?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
+                                <td><a href="../../Controller/approveController.php?id=<?= $pending["supplierId"] ?>"><button value="" class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Approve</button></a></td>
+                                <td><a href="../../Controller/deniedController.php?id=<?= $pending["supplierId"] ?>"><button value="" class="w-16 py-1 rounded-md bg-gray-700 text-white text-xs hover:text-red-600 hover:bg-gray-700">Denied</button></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>

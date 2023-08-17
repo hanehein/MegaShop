@@ -1,7 +1,7 @@
 <?php
 session_start();
 $approveEdit = $_SESSION["approveEdit"];
-// print_r($approveEdit);
+print_r($approveEdit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@ $approveEdit = $_SESSION["approveEdit"];
                             <input type="file" id="profile" hidden accept=".png,.jpg">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
-                            <input type="hidden" class="hidden" name="id" value="<?php echo $approveEdit[0]["id"] ?>">
+                            <input type="hidden" class="hidden" name="id" value="<?php echo $approveEdit[0]["supplierId"]?>">
                             <input type="hidden" class="hidden" name="password" value="<?php echo $approveEdit[0]["sup_password"] ?>">
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
@@ -60,30 +60,20 @@ $approveEdit = $_SESSION["approveEdit"];
                                 <input type="email" name="email" value="<?php echo $approveEdit[0]["sup_email"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Shop Address</label>
-                                <input type="text" name="shopAddress" value="<?php echo $approveEdit[0]["sup_address"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 space-x-16">
 
                                 <label class="text-white" for="id">Phone</label>
                                 <input type="text" value="<?php echo $approveEdit[0]["sup_phone"] ?>" name="phone" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
-                            <div class="flex items-center justify-between w-96 text-xs">
-                                <label class="text-white" for="">Township</label>
+                            <div class="flex items-center justify-between w-96 text-xs space-x-16">
+                                <label class="text-white" for="">Region</label>
                                 <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
-                                        <option <?php
-                                                if ($approveEdit[0]["township"] == 1) {
-                                                    echo "Yankin" ?> selected <?php }
-                                                                                ?> value="" name="township">Yankin</option>
-                                        <option <?php
-                                                if ($approveEdit[0]["township"] == 2) {
-                                                    echo "Dagon" ?> selected <?php }
-                                                                                ?> value="" name="township">Dagon</option>
-                                        <option <?php
-                                                if ($approveEdit[0]["township"] == 3) {
-                                                    echo "Kamayut" ?> selected <?php }
-                                                                                ?> value="" name="township">Kamayut</option>
+                                <select name="region" id="region" class="text-[#003366] text-xs w-[13.5rem] rounded-md h-11">
+                                        <?php foreach ($approveEdit as $region) { ?>
+                                            <option <?php
+                                                    if ($region["name"] == $region["region_id"]) {
+                                                        echo $region["name"]; ?> selected <?php
+                                                    }?> value="<?= $region["region_id"] ?>"><?= $region["name"] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
