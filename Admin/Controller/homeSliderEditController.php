@@ -13,6 +13,7 @@ if (count($_POST) == 0) {
 
     include '../Model/model.php';
 
+    if (move_uploaded_file($profiletmp, "../../Storage/profile/" .$profile)) {
     $sql = $pdo->prepare(
         " UPDATE m_herosection SET
          hero_photo1 = :img1,
@@ -28,6 +29,7 @@ if (count($_POST) == 0) {
     $sql->execute();
 
     header("Location: ../View/adminDashboard/homeSlider.php");
+} else {
+        header("Location: ../View/errors/error.php");
+    }
 }
-
-?>

@@ -10,7 +10,7 @@ if(count($_POST) == 0){
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $region = $_POST["region"];
-    $township = $_POST["phone"];
+    $township = $_POST["township"];
     $address = $_POST["address"];
     $order = $_POST["order"];
     $payment = $_POST["payment"];
@@ -34,6 +34,7 @@ if(count($_POST) == 0){
     }
 
     $token = substr(gettoken(102),0,6);
+
     
 
     include '../Model/model.php';
@@ -112,7 +113,7 @@ if(count($_POST) == 0){
     // $_SESSION["p_id"] = $p_id;
 
 
-    header("Location: ../View/order/orderComplete.php");
+    // header("Location: ../View/order/orderComplete.php");    
 
 }
 ?>
