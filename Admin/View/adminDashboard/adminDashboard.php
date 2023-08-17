@@ -1,12 +1,16 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
+$today = date("Y-m-d");
 $admin = $_SESSION["admin"];
 $supplier = $_SESSION["totalSuppliers"];
 $customer = $_SESSION["totalCustomers"];
 $product = $_SESSION["totalProducts"];
 $brand = $_SESSION["totalBrand"];
 $category = $_SESSION["totalCategory"];
+$chart = $_SESSION["chart"];
+$plan = $_SESSION["planChart"];
+// print_r($chart);
 // print_r($customer);
 // echo "</br>";
 // print_r($admin);
@@ -29,6 +33,10 @@ $category = $_SESSION["totalCategory"];
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../resources/css/dashboard.css">
+    <link rel="stylesheet" href="../resources/css/chart.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../resources/js/chart.js" defer></script>
+    <script src="../resources/js/fetch.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden">
@@ -39,14 +47,18 @@ $category = $_SESSION["totalCategory"];
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-5/6 flex flex-col items-start justify-center bg-gray-200 space-y-3 font-['Poppins'] px-10 shadow-md shadow-white">
-
-            <button class=" rounded-tr-lg rounded-bl-lg flex items-center justify-center bg-[#003366] w-auto h-10  text-white font-xs  px-4 py-2 space-x-2 mt-3 border-2 hover:bg-[#66CC33]">
-                <p>Welcome</p>
-                <p><?= $admin[0]["admin_name"] ?></p>
-            </button>
+        <div class="w-5/6 flex flex-col items-start justify-center bg-gray-200  font-['Poppins'] px-10 shadow-md shadow-white">
+            <div class="w-[65rem]  flex items-center justify-between text-md mt-1 font-semibold">
+                <button class="rounded-tr-lg rounded-bl-lg flex items-center justify-center bg-[#003366] w-auto   text-white font-xs  px-4 py-2 space-x-2 mt-3 border-2 hover:bg-[#66CC33]">
+                    <p>Welcome</p>
+                    <p><?= $admin[0]["admin_name"] ?></p>
+                </button>
+                <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
+                    <input type="date" name="" id="" value="<?= $today ?>" class=" text-xs bg-white text-[#003366] text-xs rounded-tr-lg rounded-bl-lg font-semibold hover:text-white hover:bg-[#003366]">
+                </div>
+            </div>
             <!-- 1st sectioin -->
-            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+            <div class="flex items-center justify-center space-x-3 text-md mt-3 font-semibold ">
                 <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
                 <p class="text-[#66CC33]">Suppliers & Customers</ion-icon></p>
             </div>
@@ -57,7 +69,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Total Suppliers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_suppliers"]?></p>
+                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_suppliers"] ?></p>
                     </div>
                 </div>
 
@@ -66,7 +78,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Total Customers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $customer[0]["total_customers"]?></p>
+                        <p class="text-[#003366] text-sm font-semibold"><?= $customer[0]["total_customers"] ?></p>
                     </div>
                 </div>
 
@@ -75,7 +87,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Gold Plan</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_gold"]?>&nbsp;shops</p>
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
 
@@ -84,7 +96,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Silver Plan</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_silver"]?>&nbsp;shops</p>
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
                 <div class="w-[18%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
@@ -92,12 +104,12 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Basic Plan</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_basic"]?>&nbsp;shops</p>
+                        <p class="text-[#003366] text-sm font-semibold"></p>
                     </div>
                 </div>
             </div>
             <!-- 2nd section -->
-            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+            <div class="flex items-center justify-center space-x-3 text-md mt-3 font-semibold ">
                 <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
                 <p class="text-[#66CC33]">Products</ion-icon></p>
             </div>
@@ -107,7 +119,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Total Products</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $product[0]["total_products"]?></p>
+                        <p class="text-[#003366] text-sm font-semibold"><?= $product[0]["total_products"] ?></p>
                     </div>
                 </div>
 
@@ -116,7 +128,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Total Brand</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $brand[0]["total_brand"]?></p>
+                        <p class="text-[#003366] text-sm font-semibold"><?= $brand[0]["total_brand"] ?></p>
                     </div>
                 </div>
 
@@ -125,7 +137,7 @@ $category = $_SESSION["totalCategory"];
                         <p class="text-white text-sm">Total Category</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $category[0]["total_category"]?></p>
+                        <p class="text-[#003366] text-sm font-semibold"><?= $category[0]["total_category"] ?></p>
                     </div>
                 </div>
 
@@ -147,7 +159,7 @@ $category = $_SESSION["totalCategory"];
                 </div>
             </div>
             <!-- 3rd section -->
-            <div class="flex items-center justify-center space-x-3 text-md font-semibold ">
+            <div class="flex items-center justify-center space-x-3 text-md mt-3  font-semibold ">
                 <ion-icon name="grid-outline" class="text-[#66CC33]"></ion-icon>
                 <p class="text-[#66CC33]">Orders</ion-icon></p>
             </div>
@@ -197,62 +209,14 @@ $category = $_SESSION["totalCategory"];
                 </div>
             </div>
             <!-- 4th section -->
-            <!-- canvas data table bar chart -->
-            <!-- <div class=" flex w-[65rem]  items-center justify-center  h-auto mt-5  ">
-                <?php
-
-                $dataPoints = array(
-                    array("y" => 100, 000, "label" => "Jan"),
-                    array("y" => 200, 000, "label" => "Feb"),
-                    array("y" => 300, 000, "label" => "Mar"),
-                    array("y" => 400, 000, "label" => "Apr"),
-                    array("y" => 500, 000, "label" => "May"),
-                    array("y" => 600, 000, "label" => "Jun"),
-                    array("y" => 500, 000, "label" => "Jul"),
-                    array("y" => 700, 000, "label" => "Aug"),
-                    array("y" => 500, 000, "label" => "Sept"),
-                    array("y" => 800, 000, "label" => "Oct"),
-                    array("y" => 200, 000, "label" => "Nov"),
-                    array("y" => 900, 000, "label" => "Dec")
-                );
-
-                ?>
-                <!DOCTYPE HTML>
-                <html>
-
-                <head>
-                    <script>
-                        window.onload = function() {
-
-                            var chart = new CanvasJS.Chart("chartContainer", {
-                                animationEnabled: true,
-                                theme: "white",
-                                title: {
-                                    text: "Total Monthly Sales"
-                                },
-                                axisY: {
-                                    title: "Amount of Sale (in K)"
-                                },
-                                data: [{
-                                    type: "column",
-                                    yValueFormatString: "#,##0.## k",
-                                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                                }]
-                            });
-                            chart.render();
-
-                        }
-                    </script>
-                </head>
-
-                <body>
-                    <div id="chartContainer" style="height: 350px; width: 100%;"></div>
-                    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-                </body>
-
-                </html>
-            </div> -->
-
+            <div class=" flex w-[65rem]  items-center justify-between  h-auto mt-5 bg-gray-100 rounded-md">
+                <div class="barChart">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="pieChart">
+                    <canvas id="planChart"></canvas>
+                </div>
+            </div>
             <!-- 5th section -->
             <div class="w-[65rem]  flex items-center justify-between  h-auto mt-3 space-x-5 py-3">
                 <!-- left graph -->
@@ -343,6 +307,26 @@ $category = $_SESSION["totalCategory"];
                 </div>
             </div>
         </div>
+    </div>
+    <!-- chart_js -->
+    <script>
+        let serverData = <?php echo json_encode($chart) ?>;
+        let serverData1 = <?php echo json_encode($plan) ?>;
+        let dates = [];
+        let totalPerson = [];
+        let totalPlan = [];
+        //bar chart
+        for (let index = 0; index < serverData.length; index++) {
+           dates.push(serverData[index].create_date);
+           totalPerson.push(serverData[index].countPerson)
+        }
+        //pie chart
+        for (let index = 0; index < serverData1.length; index++) {
+            totalPlan.push(serverData1[index].plan);
+        }
+       
+    </script>
 </body>
+
 
 </html>

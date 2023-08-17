@@ -14,10 +14,7 @@ $_SESSION["admin"] =  $sql->fetchAll(PDO::FETCH_ASSOC);
 // suppliers
 $sql2 = $pdo->prepare("
     SELECT *,
-    (SELECT COUNT(id) FROM m_suppliers WHERE del_flg = 0 AND sup_approve = 1) AS total_suppliers,
-    (SELECT COUNT(pack_id) FROM m_suppliers WHERE del_flg = 0 AND sup_approve = 1 AND pack_id = 2) AS total_gold,
-    (SELECT COUNT(pack_id) FROM m_suppliers WHERE del_flg = 0 AND sup_approve = 1 AND pack_id = 1) AS total_silver,
-    (SELECT COUNT(pack_id) FROM m_suppliers WHERE del_flg = 0 AND sup_approve = 1 AND pack_id = 0) AS total_basic
+    (SELECT COUNT(id) FROM m_suppliers WHERE del_flg = 0 AND sup_approve = 1) AS total_suppliers
     FROM m_suppliers
     WHERE del_flg = 0 AND sup_approve = 1;
 ");
@@ -59,16 +56,18 @@ $sql6 = $pdo->prepare("
 ");
 $sql6->execute();
 $_SESSION["totalCategory"] = $sql6->fetchAll(PDO::FETCH_ASSOC);
+//chart
+$sql7 = $pdo->prepare("
+    SELECT COUNT(id) AS countPerson, create_date FROM `m_customers` GROUP BY create_date;
+");
+$sql7->execute();
+$_SESSION["chart"] = $sql7->fetchAll(PDO::FETCH_ASSOC);
+//plan 
+$sql8 = $pdo->prepare("
+    SELECT COUNT(id) AS plan, pack_id FROM `m_suppliers` GROUP BY pack_id
+");
+$sql8->execute();
+$_SESSION["planChart"] = $sql8->fetchAll(PDO::FETCH_ASSOC);
 
 
 header("Location: ../View/adminDashboard/adminDashboard.php");
-
-
-
-
-// SELECT *, COUNT(m_suppliers.id) AS total_suppliers
-//         FROM m_admin
-//         LEFT JOIN m_suppliers ON m_admin.admin_id = m_suppliers.admin_id_fk 
-//         WHERE admin_name=:name AND m_supplier.del_flg = 0 AND m_suppliers.sup_approve = 1
-// SELECT *, COUNT(m_suppliers.id) AS total_suppliers 
-// FROM m_suppliers WHERE m_suppliers.del_flg = 0 AND sup_approve = 1
