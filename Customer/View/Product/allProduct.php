@@ -1,6 +1,7 @@
 <?php
 include "../../Controller/products/brandListController.php";
 include "../../Controller/products/productListsController.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -59,10 +60,12 @@ include "../../Controller/products/productListsController.php";
                 <div class="brands-box p-4 border-custom-grey border-b-2">
                     <h2 class="text-custom-extra-large">Brands</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
-                        <li><input type="checkbox"> Nike</li>
-                        <li><input type="checkbox"> Addids</li>
-                        <li><input type="checkbox"> Stable Edge</li>
-                        <li><input type="checkbox"> Apple</li>
+                        <?php foreach ($brands as $brand) { ?>
+                            <li>
+                                <input id="<?= $brand["band_name"] ?>" type="checkbox"> 
+                                <label for="<?= $brand["band_name"] ?>"><?= $brand["band_name"] ?></label>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
 
@@ -153,15 +156,16 @@ include "../../Controller/products/productListsController.php";
                                 <div class="flex justify-between">
                                     <h2 class="text-md font-bold ">
                                         <a href="../../Controller/products/productDetailsController.php?product_id=<?= $product["id"] ?>">
-                                            <?php if (strlen($product["p_name"]) > 14) {
-                                                echo substr($product["p_name"], 0, 14) . "...";
-                                            } else {
-                                                echo $product["p_name"];
-                                            }
+                                            <?php 
+                                                if (strlen($product["p_name"]) > 14) {
+                                                    echo substr($product["p_name"], 0, 14) . "...";
+                                                } else {
+                                                    echo $product["p_name"];
+                                                }
                                             ?>
                                         </a>
                                     </h2>
-                                    <button>
+                                    <button class="add-wishlist-btn">
                                         <ion-icon name="heart-outline" class="text-red-600 text-lg"></ion-icon>
                                     </button>
                                 </div>
@@ -169,22 +173,24 @@ include "../../Controller/products/productListsController.php";
                                 <!-- start stars -->
                                 <div>
                                     <?php
-                                    $productRating = array_filter($productRatings, function ($rating) {
-                                        global $product;
-                                        return $rating["product_id"] == $product["id"];
-                                    });
-                                    ?>
-                                    <?php for ($i = 0; $i < 5; $i++) { ?>
-                                        <ion-icon class="text-custom-mediu
-                                        <?php
-                                        foreach ($productRating as $rating) {
-                                            if ($i < $rating["average_rating"]) {
-                                                echo "text-[#F68721]";
-                                            } else {
-                                                echo "text-slate-500";
+                                        $currentProductRating = 0;
+                                        $filteredProductRating = [];
+                                        foreach ($productRatings as $rating) {
+                                            if ($rating["product_id"] == $product["id"]) {
+                                                $filteredProductRating[] = $rating;
                                             }
                                         }
-                                        ?>" name="star"></ion-icon>
+
+                                        if(count($filteredProductRating) != 0){
+                                            $currentProductRating = $filteredProductRating[0]["average_rating"];
+                                        }
+                                    ?>
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                        <?php if($i < round($currentProductRating)) { ?>
+                                            <ion-icon class="text-[#F68721]" name="star"></ion-icon>
+                                        <?php } else { ?>
+                                            <ion-icon class="text-slate-500" name="star"></ion-icon>
+                                        <?php } ?>
                                     <?php } ?>
                                 </div>
                                 <!-- end stars -->
@@ -192,12 +198,15 @@ include "../../Controller/products/productListsController.php";
 
                                 <div class="block mb-2">
                                     <div class="text-custom-tiny font-bold">
-                                        <span class="<?php
+                                        <span class="
+                                                    <?php
                                                         if ($product["p_discount"] != 0) {
                                                             echo "text-red-600 line-through";
                                                         } else {
                                                             echo "text-custom-blue text-custom-large font-bold";
-                                                        } ?>">
+                                                        } 
+                                                    ?>
+                                                ">
                                             <?= $product["p_sell_price"] ?> MMK
                                         </span>
                                         <?php if ($product["p_discount"] != 0) { ?>

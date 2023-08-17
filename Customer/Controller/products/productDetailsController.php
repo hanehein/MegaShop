@@ -64,9 +64,29 @@ $sql->bindValue(":product_id",$product_id);
 $sql->execute();
 $averageRating = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+//group rating
+$sql = $pdo->prepare(
+    "SELECT 
+        rating,
+        COUNT(*) AS rate_count
+    FROM 
+        t_product_reviews
+    WHERE
+        product_id = :product_id
+    GROUP BY
+        rating"
+);
+
+$sql->bindValue(":product_id",$product_id);
+$sql->execute();
+$rate_count = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
 $_SESSION["product_detail"] = $product[0];
 $_SESSION["product_reviews"] = $reviews;
 $_SESSION["average_rating"] = $averageRating;
+$_SESSION["rate_count"] = $rate_count;
 
 header("Location: ../../View/product/singleProductDetail.php");
 ?>
+

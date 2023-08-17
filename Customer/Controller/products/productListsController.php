@@ -28,4 +28,3 @@ $sql = $pdo->prepare(
 $sql->execute();
 $productRatings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-?>
