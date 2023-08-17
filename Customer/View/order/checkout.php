@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 include '../../Controller/CheckoutController.php';
-
+include "../../Controller/regionListController.php";
 
 ?>
 
@@ -22,6 +22,8 @@ include '../../Controller/CheckoutController.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/townshipAdd.js" defer></script>
 </head>
 
 <body class="bg-[#F6F6F6] overflow-x-hidden">
@@ -91,22 +93,20 @@ include '../../Controller/CheckoutController.php';
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="region" class="text-sm">State/Division</label>
+                                    <label for="region" class="text-sm">State/Regions</label>
                                     <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
                                         <select name="region" id="region" class="w-48 bg-gray-200 border-none rounded-md text-xs h-10 px-3" required>
-                                            <option value="Yangon">Yangon</option>
-                                            <option value="Bago">Bago</option>
-                                            <option value="Myeik">Myeik</option>
+                                        <?php foreach ($regions as $region) { ?>
+                                            <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
+                                        <?php } ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div>
                                     <label for="township" class="text-sm">Township</label>
-                                    <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md text-xs">
+                                    <div class="md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md text-xs">
                                         <select name="township" id="township" class="w-48 border-none bg-gray-200 rounded-md h-10 px-3" required>
-                                            <option value="a">a</option>
-                                            <option value="b">b</option>
-                                            <option value="c">c</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
