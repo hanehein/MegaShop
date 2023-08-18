@@ -47,13 +47,13 @@ include "../../Controller/regionListController.php";
                 <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
         </div>
-        
+
         <!-- two flexbox start -->
         <div class="w-full container mx-auto md:flex items-start justify-center font-['Poppins'] mt-5 grid-cols-1 grid-rows-2 md:space-x-8 ">
             <!-- left flexbox -->
             <form action="../../Controller/PlaceOrderController.php" method="post" class="flex flex-col md:flex-row md:justify-around">
-            <input type="text" name="cus" value="<?php echo $cus_id; ?>" hidden></input>
-            <input type="text" name="product" value="<?php echo $p_id; ?>" hidden></input>
+                <input type="text" name="cus" value="<?php echo $cus_id; ?>" hidden></input>
+                <input type="text" name="product" value="<?php echo $p_id; ?>" hidden></input>
                 <div class="mid:w-1/2  w-auto h-auto  mid:h-[55rem] mid:flex flex-col items-center justify-center text-gray-500 space-y-5 px-4 py-3 mt-5 ">
                     <div class="">
                         <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 1</a></button>
@@ -96,9 +96,9 @@ include "../../Controller/regionListController.php";
                                     <label for="region" class="text-sm">State/Regions</label>
                                     <div class="  md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md">
                                         <select name="region" id="region" class="w-48 bg-gray-200 border-none rounded-md text-xs h-10 px-3" required>
-                                        <?php foreach ($regions as $region) { ?>
-                                            <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
-                                        <?php } ?>
+                                            <?php foreach ($regions as $region) { ?>
+                                                <option value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -106,7 +106,7 @@ include "../../Controller/regionListController.php";
                                     <label for="township" class="text-sm">Township</label>
                                     <div class="md:w-56 w-48 h-12 flex items-center justify-center bg-gray-200 rounded-md text-xs">
                                         <select name="township" id="township" class="w-48 border-none bg-gray-200 rounded-md h-10 px-3" required>
-                                            
+
                                         </select>
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@ include "../../Controller/regionListController.php";
                                     <p><?php echo $product["p_description"]; ?></p>
                                     <p><?php echo $product["p_sell_price"]; ?> Ks</p>
                                     <input type="text" name="sup" value="<?php echo $product["supplier_id"]; ?>" hidden></input>
-                                    
+
                                 </div>
                                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                                     <p>Subtotal</p>
@@ -174,7 +174,7 @@ include "../../Controller/regionListController.php";
                             <div class="flex flex-col space-y-8 text-sm">
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-center bg-white rounded-md space-x-9 px-4">
-                                        <input type="radio" name="payment" value="Cash On Delivery" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs" >
+                                        <input type="radio" name="payment" value="Cash On Delivery" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs">
                                         <span class="text-gray-500">Cash On Delivery</span>
                                     </div>
                                 </div>

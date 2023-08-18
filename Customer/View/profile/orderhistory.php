@@ -1,9 +1,8 @@
 <?php
 session_start();
-$orders = $_SESSION['profileEdit'];
+$result = $_SESSION['profileEdit'];
 
-$result = $orders;
-
+$orders = $result;
 $rowLimits = 5;
 $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
 
@@ -84,10 +83,10 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
                 <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Order History</p>
                 </a>
                 <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
