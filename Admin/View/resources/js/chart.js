@@ -43,7 +43,15 @@ new Chart(ctx1, config);
 
 //product horizontal bar chart 
 const ctx2 = document.getElementById("productChart");
-const labels = Utils.months({count: 7});
+const today = new Date();
+const labels = [];
+
+for (let i = 6; i >= 0; i--) {
+  const date = new Date(today);
+  date.setMonth(today.getMonth() - i);
+  const monthLabel = date.toLocaleString('default', { month: 'short' });
+  labels.push(monthLabel);
+}
 const data2 = {
   labels: labels,
   datasets: [{
@@ -77,7 +85,7 @@ const config2 = {
   data: data2,
   options: {
     indexAxis: 'y',
-  }
+  },
 };
 new Chart(ctx2, config2);
 
@@ -90,12 +98,12 @@ const data3 = {
     'Yellow'
   ],
   datasets: [{
-    label: 'My First Dataset',
+    label: '',
     data: [300, 50, 100],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
+      '#003366',
+      '#000066',
+      '#006666'
     ],
     hoverOffset: 4
   }]

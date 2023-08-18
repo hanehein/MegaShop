@@ -40,13 +40,13 @@ $plan = $_SESSION["planChart"];
 
 <body class="overflow-x-hidden">
     <!-- main div -->
-    <div class="min-h-screen flex text-gray-800 ">
+    <div class="min-h-screen flex text-gray-800">
         <!-- dashboard div -->
         <?php
         include "../components/menu.php";
         ?>
         <!-- data display div -->
-        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200  font-['Poppins']">
+        <div class="w-5/6 flex flex-col items-center justify-center bg-gray-200  font-['Poppins'] py-4">
             <div class="w-[70rem]  flex items-center justify-between text-md mt-1 font-semibold">
                 <button class="rounded-tr-lg rounded-bl-lg flex items-center justify-center bg-[#003366] w-auto   text-white font-xs  px-4 py-2 space-x-2 mt-3 border-2 hover:bg-[#66CC33]">
                     <p>Welcome Back</p>
@@ -60,7 +60,7 @@ $plan = $_SESSION["planChart"];
             <div class=" flex w-[70rem]  items-center justify-center  h-auto mt-5 space-x-20">
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Suppliers</p>
+                        <p class="text-white text-sm">Verified Suppliers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_suppliers"] ?></p>
@@ -69,7 +69,7 @@ $plan = $_SESSION["planChart"];
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black ">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Customers</p>
+                        <p class="text-white text-sm">Verified Customers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"><?= $customer[0]["total_customers"] ?></p>
@@ -78,7 +78,7 @@ $plan = $_SESSION["planChart"];
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Products</p>
+                        <p class="text-white text-sm">Verified Products</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"><?= $product[0]["total_products"] ?></p>
@@ -107,7 +107,7 @@ $plan = $_SESSION["planChart"];
             <div class=" flex w-[70rem]  items-center justify-center  h-auto mt-5 space-x-20  ">
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Products</p>
+                        <p class="text-white text-sm">Pending Suppliers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"></p>
@@ -116,7 +116,7 @@ $plan = $_SESSION["planChart"];
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Brand</p>
+                        <p class="text-white text-sm">Total Sells</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"></p>
@@ -125,7 +125,7 @@ $plan = $_SESSION["planChart"];
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Category</p>
+                        <p class="text-white text-sm">Pending Products</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"></p>
@@ -134,7 +134,7 @@ $plan = $_SESSION["planChart"];
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm"></p>
+                        <p class="text-white text-sm">Total Orders</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"></p>
@@ -142,7 +142,7 @@ $plan = $_SESSION["planChart"];
                 </div>
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm"></p>
+                        <p class="text-white text-sm">Rating & Review</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold"></p>
@@ -150,7 +150,7 @@ $plan = $_SESSION["planChart"];
                 </div>
             </div>
             <!-- 3rd section -->
-            <div class=" flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black">
+            <div class=" flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black py-2">
                 <div class="barChart mt-5">
                     <div class="w-56  flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md">
                         <p class="text-sm text-white">Daily Numbers of Subscriber</p>
@@ -165,11 +165,17 @@ $plan = $_SESSION["planChart"];
                 </div>
             </div>
             <!-- 4th section -->
-            <div class="flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black">
+            <div class="flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black py-2">
                 <div class="barChart">
+                    <div class="w-40 f flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md mt-3">
+                        <p class="text-sm text-white">Top Brand</p>
+                    </div>
                     <canvas id="productChart"></canvas>
                 </div>
                 <div class="">
+                    <div class="w-40 flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md">
+                        <p class="text-sm text-white">Top Category</p>
+                    </div>
                     <canvas id="donutChart"></canvas>
                 </div>
             </div>

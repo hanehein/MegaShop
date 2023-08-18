@@ -1,3 +1,9 @@
+<?php 
+ ini_set('display_errors', 1);
+ include "../../Controller/shopListController.php";
+print_r($shopLists);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,25 +34,25 @@
         <!-- body box -->
         <div class="w-auto h-auto container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-4   gap-16  place-items-center bg-[#F6F6F6] mt-5 ">
             <div class="w-52 h-20 bg-white rounded-sm shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/fortnite.jpg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[1]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/redfall.jpeg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[2]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/genshin.jpg" alt="" class="rounded-md" width="">
+                <img src="../<?= $shopLists[3]["shopPhoto"]?>" alt="" class="rounded-md" width="">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/EGS_DeadbyDaylight.jpg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[4]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/genshin.jpg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[5]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/minecraft.jpg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[6]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/redfall.jpeg" alt="" class="rounded-md">
+                <img src="../<?= $shopLists[7]["shopPhoto"]?>" alt="" class="rounded-md">
             </div>
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
                 <img src="../resources/img/heroes-of-rome-3.jpg" alt="" class="rounded-md">
@@ -87,21 +93,6 @@
             <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
                 <img src="../resources/img/genshin.jpg" alt="" class="rounded-md">
             </div>
-            <!-- <div class="w-46 h-20 flex items-center justify-center bg-white rounded-md shadow-md shadow-gray-600  hover:cursor-pointer ">
-                <button class="rounded-md shadow-md shadow-gray-600 hover:bg-blue-800 hover:text-white w-28 text-xs text-blue-800 h-10 bg-slate-400 opacity-30 border-2   border-blue-800 font-semibold">Space Availabe</button>
-            </div>
-            <div class="w-46 h-20 flex items-center justify-center bg-white rounded-md shadow-md shadow-gray-600  hover:cursor-pointer ">
-                <button class="rounded-md shadow-md shadow-gray-600 hover:bg-blue-800 hover:text-white w-28 text-xs text-blue-800 h-10 bg-slate-400 opacity-30 border-2   border-blue-800 font-semibold">Space Availabe</button>
-            </div>
-            <div class="w-46 h-20 flex items-center justify-center bg-white rounded-md shadow-md shadow-gray-600  ">
-                <button class="rounded-md shadow-md shadow-gray-600 hover:bg-blue-800 hover:text-white w-28 text-xs text-blue-800 h-10 bg-slate-400 opacity-30 border-2   border-blue-800 font-semibold">Space Availabe</button>
-            </div>
-            <div class="w-46 h-20 flex items-center justify-center bg-white rounded-md shadow-md shadow-gray-600  ">
-                <button class="rounded-md shadow-md shadow-gray-600 hover:bg-blue-800 hover:text-white w-28 text-xs text-blue-800 h-10 bg-slate-400 opacity-30 border-2   border-blue-800 font-semibold">Space Availabe</button>
-            </div>
-            <div class="w-46 h-20 flex items-center justify-center bg-white rounded-md shadow-md shadow-gray-600  ">
-                <button class="rounded-md shadow-md shadow-gray-600 hover:bg-blue-800 hover:text-white w-28 text-xs text-blue-800 h-10 bg-slate-400 opacity-30 border-2   border-blue-800 font-semibold">Space Availabe</button>
-            </div> -->
         </div>
         <!-- footer responsive -->
         <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-12">
