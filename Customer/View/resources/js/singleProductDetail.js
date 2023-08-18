@@ -30,7 +30,3 @@ slideImgs.forEach( (slideImg, idx) => {
         showImg();
     })
 })
-
-showImg();
-
-console.log("hello");

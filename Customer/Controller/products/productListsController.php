@@ -28,3 +28,17 @@ $sql = $pdo->prepare(
 $sql->execute();
 $productRatings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+$customer_id = 1;
+$sql = $pdo->prepare(
+    "SELECT 
+        *
+    FROM 
+        m_wishlist
+    WHERE
+        c_id = :customer_id"
+);
+
+$sql->bindValue(":customer_id", $customer_id);
+$sql->execute();
+$productsInWishlist = $sql->fetchAll(PDO::FETCH_ASSOC);
+
