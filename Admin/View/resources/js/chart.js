@@ -1,13 +1,12 @@
 //daily subscriber display bar chart
 const ctx = document.getElementById("myChart");
-
 new Chart(ctx, {
   type: "bar",
   data: {
     labels: dates,
     datasets: [
       {
-        label: "Daily Numbers of Subscriber",
+        label: "",
         data: totalPerson,
         backgroundColor: "#003366",
         borderWidth: 1,
@@ -22,6 +21,7 @@ new Chart(ctx, {
     },
   },
 });
+
 //plan display chart
 const ctx1 = document.getElementById("planChart");
 const data = {
@@ -35,16 +35,76 @@ const data = {
     },
   ],
 };
-
 const config = {
   type: "pie",
   data: data,
 };
 new Chart(ctx1, config);
 
-// '#003366',
-// '#000066',
-// '#004D99'
-// '#66CC33',
-// '#33CC4C',
-// '#B3CC33'
+//product horizontal bar chart 
+const ctx2 = document.getElementById("productChart");
+const labels = Utils.months({count: 7});
+const data2 = {
+  labels: labels,
+  datasets: [{
+    axis: 'y',
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    fill: false,
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(201, 203, 207, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ],
+    borderWidth: 1
+  }]
+};
+const config2 = {
+  type: 'bar',
+  data: data2,
+  options: {
+    indexAxis: 'y',
+  }
+};
+new Chart(ctx2, config2);
+
+//donutChart
+const ctx3 = document.getElementById("donutChart");
+const data3 = {
+  labels: [
+    'Red',
+    'Blue',
+    'Yellow'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+const config3 = {
+  type: 'doughnut',
+  data: data3,
+};
+new Chart(ctx3, config3);
+
+
+
