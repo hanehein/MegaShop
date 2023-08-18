@@ -53,7 +53,7 @@ foreach ($productsInWishlist as $product) {
 
                 <!-- category -->
                 <!-- <div class="categories-box p-4 border-b-2 border-custom-grey">
-                    <h2 class="text-custom-extra-large">Categories</h2>
+                    <h2 class="text-xl">Categories</h2>
                     <ul class="text-custom-medium text-custom-grey px-2">
                         <li>Fashion</li>
                         <li>Light Bulb</li>
@@ -63,48 +63,39 @@ foreach ($productsInWishlist as $product) {
                 </div> -->
 
                 <!-- brands -->
-                <div class="brands-box p-4 border-custom-grey border-b-2">
-                    <h2 class="text-custom-extra-large">Brands</h2>
-                    <ul class="text-custom-medium text-custom-grey px-2">
-                        <?php foreach ($brands as $brand) { ?>
-                            <li>
-                                <input id="<?= $brand["band_name"] ?>" type="checkbox">
-                                <label for="<?= $brand["band_name"] ?>"><?= $brand["band_name"] ?></label>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-
-                <!-- sizes -->
-                <div class="sizes-box p-4 border-custom-grey border-b-2">
-                    <h2 class="text-custom-extra-large">Sizes</h2>
-                    <ul class="text-custom-medium text-custom-grey px-2">
-                        <li><input type="checkbox"> XXS</li>
-                        <li><input type="checkbox"> XS</li>
-                        <li><input type="checkbox"> S</li>
-                        <li><input type="checkbox"> M</li>
-                        <li><input type="checkbox"> L</li>
-                        <li><input type="checkbox"> XL</li>
-                        <li><input type="checkbox"> XXL</li>
-                    </ul>
-                </div>
-
-                <!-- colors -->
-                <div class="colors-box p-4 border-custom-grey border-b-2">
-                    <h2 class="text-custom-extra-large">Colors</h2>
-                    <ul class="text-custom-medium text-custom-grey px-2">
-                        <li><input type="checkbox"> white</li>
-                        <li><input type="checkbox"> yellow</li>
-                        <li><input type="checkbox"> black</li>
-                        <li><input type="checkbox"> red</li>
-                        <li><input type="checkbox"> blue</li>
-                        <li><input type="checkbox"> green</li>
-                        <li><input type="checkbox"> purple</li>
-                    </ul>
-                </div>
+                <form action="" method="GET">
+                    <div class="brands-box p-4 border-custom-grey border-b-2 flex justify-between">
+                        <h2 class="text-xl">Filter</h2>
+                        <div>
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-md">Search</button>
+                        </div>
+                    </div>
+                    <div class="brands-box p-4 border-custom-grey border-b-2">
+                        <h2 class="text-xl">Brands</h2>
+                        <ul class="text-custom-medium text-custom-grey px-2">
+                            <?php foreach ($brands as $brand) { ?>
+                                <li>
+                                    <input 
+                                        type="checkbox" 
+                                        name="brands[]" 
+                                        id="<?= $brand["id"] ?>" 
+                                        value="<?= $brand["id"] ?>"
+                                        <?php 
+                                        if(isset($filterBrands) && in_array($brand["id"], $filterBrands)) 
+                                        {  
+                                            echo "checked";
+                                        } 
+                                    ?>
+                                    >
+                                    <label for="<?= $brand["id"] ?>"><?= $brand["band_name"] ?></label>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </form>
 
                 <div class="price-box p-4 border-custom-grey border-b-2">
-                    <h2 class="text-custom-extra-large">Price</h2>
+                    <h2 class="text-xl">Price</h2>
                     <div class="flex space-x-2">
                         <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="min">
                         <span> - </span>
@@ -127,23 +118,33 @@ foreach ($productsInWishlist as $product) {
                         </div>
                         <div class="block sm:hidden">
                             <button class="sub-menu-show">
-                                <ion-icon class="text-custom-extra-large" name="menu-outline"></ion-icon>
+                                <ion-icon class="text-xl" name="menu-outline"></ion-icon>
                             </button>
                         </div>
                     </div>
-                    <div>
-                        <small class="mb-3">124 items found</small>
-                        <div class="flex space-x-4 items-center">
-                            <small class="text-custom-grey">Filtered By : </small>
-                            <div class="bg-custom-orange px-3 py-1 rounded-lg text-white">
-                                Nike <ion-icon name="close"></ion-icon>
-                            </div>
-                            <div class="bg-custom-orange px-3 py-1 rounded-lg text-white">
-                                Men's Shoe <ion-icon name="close"></ion-icon>
+                    <?php if(isset($filterBrands)) { ?>
+                        <div>
+                            <small class="mb-3"><?= count($productLists) ?> items found</small>
+                            <div class="flex space-x-4 items-center">
+                                <small class="text-custom-grey">Filtered By : </small>
+                                <?php 
+                                    foreach ($filterBrands as $filterBrandID) :
+                                        $currentBrandName = ""; 
+                                        foreach ($brands as $brand) {
+                                            if($brand["id"] == $filterBrandID) {
+                                                $currentBrandName .= $brand["band_name"];
+                                            }
+                                        }
+                                ?>
+                                    <div class="bg-custom-orange px-3 py-1 rounded-lg text-white">
+                                        <?= $currentBrandName ?>
+                                    </div>
+                                <?php 
+                                    endforeach; 
+                                ?>
                             </div>
                         </div>
-
-                    </div>
+                    <?php } ?>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 px-3 py-5">
@@ -173,7 +174,7 @@ foreach ($productsInWishlist as $product) {
                                     </h2>
                                     <button class="add-wishlist-btn">
                                         <input type="number" class="product-id" value="<?= $product["id"] ?>" hidden>
-                                        <?php if(in_array($product["id"], $productIdsInWishlist)) { ?>
+                                        <?php if (in_array($product["id"], $productIdsInWishlist)) { ?>
                                             <ion-icon name="heart" class="heart-icon text-red-600 text-lg"></ion-icon>
                                         <?php } else { ?>
                                             <ion-icon name="heart-outline" class="heart-icon text-red-600 text-lg"></ion-icon>
@@ -257,54 +258,40 @@ foreach ($productsInWishlist as $product) {
                     <div class="pt-2 pr-2 text-end">
                         <button class="sub-menu-hide"><ion-icon class="text-2xl" name="close"></ion-icon></button>
                     </div>
-                    <div class="categories-box p-4 border-b-2 border-custom-grey">
-                        <h2 class="text-custom-extra-large">Categories</h2>
-                        <ul class="text-custom-medium text-custom-grey px-2">
-                            <li>Fashion</li>
-                            <li>Light Bulb</li>
-                            <li>Books</li>
-                            <li>Fashion</li>
-                        </ul>
-                    </div>
 
-                    <div class="brands-box p-4 border-custom-grey border-b-2">
-                        <h2 class="text-custom-extra-large">Brands</h2>
-                        <ul class="text-custom-medium text-custom-grey px-2">
-                            <li><input type="checkbox"> Nike</li>
-                            <li><input type="checkbox"> Addids</li>
-                            <li><input type="checkbox"> Stable Edge</li>
-                            <li><input type="checkbox"> Apple</li>
-                        </ul>
-                    </div>
-
-                    <div class="sizes-box p-4 border-custom-grey border-b-2">
-                        <h2 class="text-custom-extra-large">Sizes</h2>
-                        <ul class="text-custom-medium text-custom-grey px-2">
-                            <li><input type="checkbox"> XXS</li>
-                            <li><input type="checkbox"> XS</li>
-                            <li><input type="checkbox"> S</li>
-                            <li><input type="checkbox"> M</li>
-                            <li><input type="checkbox"> L</li>
-                            <li><input type="checkbox"> XL</li>
-                            <li><input type="checkbox"> XXL</li>
-                        </ul>
-                    </div>
-
-                    <div class="colors-box p-4 border-custom-grey border-b-2">
-                        <h2 class="text-custom-extra-large">Colors</h2>
-                        <ul class="text-custom-medium text-custom-grey px-2">
-                            <li><input type="checkbox"> white</li>
-                            <li><input type="checkbox"> yellow</li>
-                            <li><input type="checkbox"> black</li>
-                            <li><input type="checkbox"> red</li>
-                            <li><input type="checkbox"> blue</li>
-                            <li><input type="checkbox"> green</li>
-                            <li><input type="checkbox"> purple</li>
-                        </ul>
-                    </div>
+                    <form action="" method="GET">
+                        <div class="brands-box p-4 border-custom-grey border-b-2 flex justify-between">
+                            <h2 class="text-xl">Filter</h2>
+                            <div>
+                                <button class="px-3 py-1 bg-blue-500 text-white rounded-md">Search</button>
+                            </div>
+                        </div>
+                        <div class="brands-box p-4 border-custom-grey border-b-2">
+                            <h2 class="text-xl">Brands</h2>
+                            <ul class="text-custom-medium text-custom-grey px-2">
+                                <?php foreach ($brands as $brand) { ?>
+                                    <li>
+                                        <input 
+                                            type="checkbox" 
+                                            name="brands[]" 
+                                            id="<?= $brand["id"] ?>" 
+                                            value="<?= $brand["id"] ?>"
+                                            <?php 
+                                            if(isset($filterBrands) && in_array($brand["id"], $filterBrands)) 
+                                            {  
+                                                echo "checked";
+                                            } 
+                                        ?>
+                                        >
+                                        <label for="<?= $brand["id"] ?>"><?= $brand["band_name"] ?></label>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </form>
 
                     <div class="price-box p-4 border-custom-grey border-b-2">
-                        <h2 class="text-custom-extra-large">Price</h2>
+                        <h2 class="text-xl">Price</h2>
                         <div class="flex space-x-2">
                             <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="min">
                             <span> - </span>
