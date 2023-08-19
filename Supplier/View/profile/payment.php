@@ -1,6 +1,7 @@
 <?php
 session_start();
 $package = $_SESSION["plan"];
+
 ?>
 <?php
 $hasJsFile = FALSE;
@@ -28,6 +29,8 @@ include "../components/header.php";
                 </div>
                 <div class="container mx-auto">
                     <div class="w-auto h-screen p-5 shadow-lg rounded-lg flex flex-col items-center justify-center space-y-12 bg-white mt-5">
+                        <input type="hidden" name="pack_id">
+                        <!-- <input type="hidden" value="<?= $package["id"] ?>" name="id"> -->
                         <span class="font-semibold">You Chose <?= $package[0]["pack_name"] ?> Plan To Subscribe</span>
                         <span>You will subscribe to our website for <?= $package[0]["pack_duration"] ?> months</span>
                         <span class="text-xs">Total cost : <?= $package[0]["pack_price"] ?> Ks </span>
@@ -41,8 +44,8 @@ include "../components/header.php";
                                 AYApay</button>
                         </div> -->
                         <div class="text-end">
-                            <a href="../../Controller/setting/subscribeController.php">
-                                <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]">
+                            <a href="../../Controller/setting/subscribeController.php?choice_id= <?= $package[0]["id"] ?>">
+                                <button class="border-2 bg-[#66CC33] rounded-lg px-3 py-1 text-white w-[100px]  hover:bg-green-800">
                                     Subscribe</button>
                             </a>
                         </div>

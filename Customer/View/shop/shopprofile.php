@@ -24,12 +24,12 @@ include "../../Controller/shop/shopProfileController.php";
     <!--next bar-->
     <div class="flex flex-col">
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
-        <div class="flex flex-row space-x-2 md:space-x-4">
+        <div class="flex flex-row space-x-2 md:space-x-4">        
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
 
             <div class="flex flex-col">
-                <p class="text-blue-800 text-xl md:text-2xl font-semibold">Trendy Thread</p>
-                <p>235 followers</p>
+                <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
+                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
             </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
@@ -39,7 +39,7 @@ include "../../Controller/shop/shopProfileController.php";
             </div>
             <div class="flex flex-col text-orange-600 justify-center items-center font-semibold">
                 <ion-icon name="person-add-outline"></ion-icon>
-                <p>Follow</p>
+                <a href="../../Controller/setting/followController.php">Follow</a>
             </div>
         </div>
     </div>
@@ -133,8 +133,8 @@ include "../../Controller/shop/shopProfileController.php";
                     <?php foreach ($products as $product) { ?>
                         <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3">
                             <!-- card header -->
-                            <div>
-                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl " alt="product-img" />
+                            <div class="flex justify-center">
+                                <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[180px]" alt="product-img" />
                             </div>
                             <!-- card header -->
                             <!-- card body -->
@@ -143,16 +143,26 @@ include "../../Controller/shop/shopProfileController.php";
                                     <h2 class="text-custom-large font-bold"><?= $product["p_name"] ?></h2>
                                     <ion-icon name="heart-outline" class="text-red-600 text-custom-large"></ion-icon>
                                 </div>
-                                <?php for ($i = 0; $i < 5; $i++) { ?>
-                                    <ion-icon class="text-lg 
-                <?php
-                                    if ($i < $product_ratings["rating"]) {
-                                        echo "text-[#F68721]";
-                                    } else {
-                                        echo "text-slate-500";
-                                    }
-                ?>" name="star"></ion-icon>
-                                <?php } ?>
+                                <div>
+                                    <?php
+                                    $avg= array_filter($avgs, function ($rating) {
+                                        global $product;
+                                        return $rating["product_id"] == $product["id"];
+                                    });
+                                    ?>
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                        <ion-icon class="text-custom-mediu
+                                        <?php
+                                        foreach ($avg as $rating) {
+                                            if ($i < $rating["average_rating"]) {
+                                                echo "text-[#F68721]";
+                                            } else {
+                                                echo "text-slate-500";
+                                            }
+                                        }
+                                        ?>" name="star"></ion-icon>
+                                    <?php } ?>
+                                </div>
 
                                 <!-- <div>
                                     <ion-icon class="text-custom-medium text-custom-orange" name="star"></ion-icon>

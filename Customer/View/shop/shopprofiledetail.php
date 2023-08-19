@@ -28,8 +28,8 @@ include "../../Controller/shop/shopProfileDetailController.php";
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
 
             <div class="flex flex-col">
-                <p class="text-blue-800 text-xl md:text-2xl font-semibold">Trendy Thread</p>
-                <p>235 followers</p>
+            <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
+                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
             </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
@@ -71,7 +71,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
         <div class="flex flex-col justify-between items-center space-y-5">
             <div class="flex flex-col space-y-5 items-center">
                 <div class="flex flex-col space-y-2 items-start">
-                    <h1 class="text-xl font-semibold">94%</h1>
+                    <h1 class="text-xl font-semibold"><?php echo number_format((float)($shop_reviews[0]["avg_rating"] )*(100/3 ), 2, '.', '');  ?> %</h1>
                     <!--Start bar graph-->
                     <div class="rating_graph w-[300px] h-[300px]  md:w-[400px]">
                         <canvas id="myChart"></canvas>
@@ -80,7 +80,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
                 <!--End bar graph-->
 
                 <div class="flex flex-col space-y-2 items-center">
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php $total[0]["countperson"] ?>)</h1>
+                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total[0]["countperson"] ?>)</h1>
                     <div class="flex space-x-16">
                         <ion-icon name="happy-outline"></ion-icon>
                         <ion-icon name="happy-outline"></ion-icon>

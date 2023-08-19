@@ -1,7 +1,7 @@
-<?php 
- ini_set('display_errors', 1);
- include "../../Controller/shopListController.php";
-print_r($shopLists);
+<?php
+ini_set('display_errors', 1);
+include "../../Controller/shopListController.php";
+// print_r($shopLists);
 ?>
 
 <!DOCTYPE html>
@@ -25,74 +25,19 @@ print_r($shopLists);
     <div class="w-full h-screen  flex flex-col items-center">
         <!-- navbar responsive -->
         <?php
-            include "../components/responsiveNav.php";
+        include "../components/responsiveNav.php";
         ?>
         <!-- description -->
         <div class="w-full flex justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-5">
             <p>Shop by Shop Lists and Brands</p>
         </div>
         <!-- body box -->
-        <div class="w-auto h-auto container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-4   gap-16  place-items-center bg-[#F6F6F6] mt-5 ">
-            <div class="w-52 h-20 bg-white rounded-sm shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[1]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[2]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[3]["shopPhoto"]?>" alt="" class="rounded-md" width="">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[4]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[5]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[6]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../<?= $shopLists[7]["shopPhoto"]?>" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/heroes-of-rome-3.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/remains.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/Honkai-Star-Rail.webp" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/sphere3.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/world-turtle.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/callfoduty.png" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/fortnite.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/fortnite.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-sm shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/fortnite.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/redfall.jpeg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/genshin.jpg" alt="" class="rounded-md" width="">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/EGS_DeadbyDaylight.jpg" alt="" class="rounded-md">
-            </div>
-            <div class="w-52 h-20 bg-white rounded-md shadow-md shadow-gray-600 hover:w-44 hover:cursor-pointer">
-                <img src="../resources/img/genshin.jpg" alt="" class="rounded-md">
-            </div>
+        <div class="w-auto h-auto container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-4  gap-16  place-items-center bg-[#F6F6F6] mt-5">
+            <?php foreach ($shopLists as $photo) { ?>
+                <div class="w-auto h-auto bg-white rounded-md shadow-md shadow-gray-400 hover:w-44 hover:cursor-pointer">
+                    <a href="../shop/shopprofile.php?id=<?=$photo["supplierId"]?>"><img src="../<?= $photo["shopPhoto"] ?>" alt="" width="100%" class="rounded-md"></a>
+                </div>
+            <?php } ?>
         </div>
         <!-- footer responsive -->
         <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-12">
@@ -102,16 +47,24 @@ print_r($shopLists);
                 <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
                     <p>Quick Links</p>
                     <ul class="list-disc mt-2">
-                        <a href="../Product/aboutUs.php"><li>About Us</li></a>
-                        <a href="../order/userPrivacy.php"><li>Pricacy & Policy</li></a>
+                        <a href="../Product/aboutUs.php">
+                            <li>About Us</li>
+                        </a>
+                        <a href="../order/userPrivacy.php">
+                            <li>Pricacy & Policy</li>
+                        </a>
                     </ul>
                 </div>
                 <!-- Help -->
                 <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
                     <p>Help?</p>
                     <ul class="list-disc mt-2 cursor-pointer">
-                        <a href="../Product/cusfeedback.php"><li>Feedback</li></a>
-                        <a href="../Product/FAQ.php"><li>FAQ</li></a>
+                        <a href="../Product/cusfeedback.php">
+                            <li>Feedback</li>
+                        </a>
+                        <a href="../Product/FAQ.php">
+                            <li>FAQ</li>
+                        </a>
                     </ul>
                 </div>
                 <!-- Contact Us -->
@@ -134,20 +87,3 @@ print_r($shopLists);
 </body>
 
 </html>
-<!-- blue 800
-    slate-100
-    orange-500
-     primary - #024486
-     secondary - #F68721
-     tertiary - #F6F6F6
-    <ion-icon name="person-circle"></ion-icon>
-    <ion-icon name="cart"></ion-icon>
-    <ion-icon name="ellipse"></ion-icon>
-    <ion-icon name="caret-down"></ion-icon>
-    <ion-icon name="logo-facebook"></ion-icon>
-    <ion-icon name="logo-instagram"></ion-icon>
-    <ion-icon name="logo-twitter"></ion-icon>
-    <ion-icon name="search"></ion-icon>
-    <ion-icon name="phone-portrait"></ion-icon>
-    <ion-icon name="mail"></ion-icon>
--->
