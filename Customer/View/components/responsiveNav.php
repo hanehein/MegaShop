@@ -1,4 +1,4 @@
-<nav class="bg-white border-gray-200 w-full">
+<nav class="bg-white  w-full fixed z-50">
         <div class="w-full flex flex-wrap items-center justify-between mx-auto py-2 px-1">
             <!-- logo -->
             <a href="#" class="flex flex-col items-center justify-center font-['Wallpoet'] text-2xl text-[#024486] leading-none cursor-pointer ml-10">

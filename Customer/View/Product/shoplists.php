@@ -30,7 +30,7 @@ include "../../Controller/shopListController.php";
         include "../components/responsiveNav.php";
         ?>
         <!-- description -->
-        <div class="w-full flex justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-5 space-x-2">
+        <div class="w-full flex justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-[90px] space-x-2">
             <p>Shop by Shop Lists and Brands</p>
         </div>
         <div class="w-full flex flex-col justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-2 space-y-2">

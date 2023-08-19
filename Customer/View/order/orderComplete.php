@@ -24,13 +24,13 @@ include '../../Controller/OrderCompleteController.php';
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#F6F6F6] overflow-x-hidden">
+<body class="bg-white overflow-x-hidden">
     <div class="w-full h-screen  flex flex-col items-center">
         <?php
         include "../components/responsiveNav.php";
         ?>
         <!-- second section -->
-        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3">
+        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3 mt-[80px]">
             <a href="../order/shoppingCart.php"><span class="text-gray-500 text-sm">shopping cart</span></a>
             <ion-icon name="arrow-redo-circle" class="text-[#F68721]"></ion-icon>
             <a href="../order/checkout.php"><span class="text-gray-500 text-sm">checkout</span></a>

@@ -15,92 +15,93 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#F6F6F6] overflow-x-hidden">
+<body class="bg-white overflow-x-hidden">
+
     <div class="w-full h-screen  flex flex-col items-center">
-        <!-- navbar responsive -->
+
+
         <?php
-            include "../components/responsiveNav.php";
+        include "../components/responsiveNav.php";
         ?>
-        <!-- search box -->
-        <div class="w-full h-20 flex flex-col justify-center items-center bg-[#024486] font-['Poppins'] py-3">
-            <p class="text-white text-sm mb-2">How can we help?</p>
-            <div class="md:w-60 w-48 h-8 flex justify-between items-center bg-[#F6F6F6] rounded-md px-1 py-2 shadow-md shadow-black-500">
-                <input type="text" name="search" id="" class="md:w-52 w-36 h-6 text-sm outline-none bg-[#F6F6F6] border-none" placeholder="Search here...">
-                <div class="bg-[#024486] w-7 h-5 mx-auto text-center rounded-md">
-                    <ion-icon name="search" class="text-white"></ion-icon>
-                </div>
-            </div>
-        </div>
         <!-- body box -->
-        <div class="w-[30rem] h-[48rem] container flex flex-col bg-white justify-center items-center my-8 font-['Poppins'] rounded-md shadow-md py-6">
+        <div class="w-full flex flex-col justify-center items-center  font-['Poppins'] px-5 mt-[80px]">
+            <p class="text-[#003366] text-md hover:text-[#F68721] font-semibold">How can we help?</p>
             <!-- policies -->
-            <div class="w-32 h-8 flex items-center justify-center bg-[#F68721] rounded-md px-2 shadow-md shadow-slate-500">
-                <p class="text-white text-sm">General Policies</p>
+            <div class="w-32 h-8 flex items-center justify-center bg-[#F68721] rounded-md px-2 shadow-sm hover:bg-white shadow-slate-500 text-white hover:text-[#F68721] mt-3 ">
+                <p class="text-sm">General Policies</p>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5 mt-8 border-t-2 border-b-2  border-t-blue-700 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm   border-t-2 border-b-2  border-t-gray-200 border-b-gray-200 mt-8">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
 
             <!-- rule -->
-            <div class="w-32 h-8 flex items-center justify-center bg-[#F68721] rounded-md px-2 mt-8 shadow-md shadow-slate-500">
-                <p class="text-white text-sm">Rule&Regulation</p>
+            <div class="w-32 h-8 flex items-center justify-center bg-[#F68721] rounded-md px-2 mt-8 shadow-sm shadow-slate-500 text-white hover:text-[#F68721] hover:bg-white">
+                <p class="text-sm">Rule&Regulation</p>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5 mt-8 border-t-2 border-b-2  border-t-blue-700 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm  mt-8 border-t-2 border-b-2  border-t-gray-200 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-xs space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
-            <div class=" w-96 h-10 flex justify-between items-center text-gray-700 text-sm space-x-5   border-b-2 border-b-blue-800">
-                <p>Terms of Services</p>
-                <ion-icon name="caret-down" class="text-[#F68721]" size="small"></ion-icon>
+            <div class=" w-[30rem] h-14 flex justify-between items-center text-gray-700 text-sm    border-b-2 border-b-gray-200">
+                <p class="hover:text-[#F68721]">Terms of Services</p>
+                <ion-icon name="caret-down" class="text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
             </div>
         </div>
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486]">
+        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-5">
             <!-- first one -->
             <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
                 <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
-                    <p>Quick Links</p>
+                    <p class="hover:text-[#F68721]">Quick Links</p>
                     <ul class="list-disc mt-2">
-                        <a href="../Product/aboutUs.php"><li>About Us</li></a>
-                        <a href="../order/userPrivacy.php"><li>Pricacy & Policy</li></a>
+                        <a href="../Product/aboutUs.php">
+                            <li class="hover:text-[#F68721]">About Us</li>
+                        </a>
+                        <a href="../order/userPrivacy.php">
+                            <li class="hover:text-[#F68721]">Pricacy & Policy</li>
+                        </a>
                     </ul>
                 </div>
                 <!-- Help -->
                 <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
-                    <p>Help?</p>
+                    <p class="hover:text-[#F68721]">Help?</p>
                     <ul class="list-disc mt-2 cursor-pointer">
-                        <a href="../Product/cusfeedback.php"><li>Feedback</li></a>
-                        <a href="../Product/FAQ.php"><li>FAQ</li></a>
+                        <a href="../Product/cusfeedback.php">
+                            <li class="hover:text-[#F68721]">Feedback</li>
+                        </a>
+                        <a href="../Product/FAQ.php">
+                            <li class="hover:text-[#F68721]">FAQ</li>
+                        </a>
                     </ul>
                 </div>
                 <!-- Contact Us -->
                 <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2 border-b-white ">
-                    <p >Contact Us</p>
+                    <p class="hover:text-[#F68721]">Contact Us</p>
                     <ul class="list-disc mt-2 leading-5">
-                        <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
-                        <li><ion-icon name="mail"></ion-icon><span class="ml-2">service@gmail.com</span></li>
+                        <li class="hover:text-[#F68721]"><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
+                        <li class="hover:text-[#F68721]"><ion-icon name="mail"></ion-icon><span class="ml-2">service@gmail.com</span></li>
                     </ul>
                 </div>
             </div>
