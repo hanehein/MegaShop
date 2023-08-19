@@ -18,13 +18,11 @@
 <body class="bg-white overflow-x-hidden">
 
     <div class="w-full h-screen  flex flex-col items-center">
-
-
         <?php
         include "../components/responsiveNav.php";
         ?>
         <!-- body box -->
-        <div class="w-full flex flex-col justify-center items-center  font-['Poppins'] px-5 mt-[80px]">
+        <div class="md:w-full container mx-auto flex flex-col justify-center items-center  font-['Poppins'] px-5 mt-[80px]">
             <p class="text-[#003366] text-md hover:text-[#F68721] font-semibold">How can we help?</p>
             <!-- policies -->
             <div class="w-32 h-8 flex items-center justify-center bg-[#F68721] rounded-md px-2 shadow-sm hover:bg-white shadow-slate-500 text-white hover:text-[#F68721] mt-3 ">
