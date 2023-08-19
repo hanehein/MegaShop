@@ -76,7 +76,7 @@ $signup  = $_SESSION["adminSignup"];
                     <div class="w-[18rem] flex items-center justify-center space-x-5">
                         <!-- login -->
                         <button type="submit" class="w-[8rem] bg-blue-500 rounded-[8px] mx-auto mt-5 flex py-2 justify-center items-center shadow-md shadow-black hover:bg-white hover:text-gray-500 text-white font-semibold text-sm ">
-                            Create
+                            Update
                         </button>
                     </div>
                 </form>

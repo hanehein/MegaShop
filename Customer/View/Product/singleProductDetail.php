@@ -3,12 +3,30 @@ session_start();
 $product = $_SESSION["product_detail"];
 $reviews = $_SESSION["product_reviews"];
 $averageRating = $_SESSION["average_rating"];
-$colors =  explode(",", $product["p_color"]);
-$sizes = explode(",", $product["p_size"]);
+$rate_count = $_SESSION["rate_count"];
 
-echo "<pre>";
-print_r(count($colors));
-die("");
+$total_rate_user = count($reviews);
+
+// colors
+if (strlen($product["p_color"]) == 0) {
+  $colors = [];
+} else {
+  $colors = explode(",", $product["p_color"]);
+}
+
+// sizes
+if (strlen($product["p_size"]) == 0) {
+  $sizes = [];
+} else {
+  $sizes = explode(",", $product["p_size"]);
+}
+
+if (count($averageRating) != 0) {
+  $rating = $averageRating[0]["average_rating"];
+} else {
+  $rating = 0;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +47,8 @@ die("");
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+  <script src="../resources/lib/jquery3.6.0.js"></script>
+  <script src="../resources/js/quantityAmount.js" defer></script>
   <script src="../resources/js/singleProductDetail.js" defer></script>
 </head>
 
@@ -73,24 +93,18 @@ die("");
             <div>
               <!-- stars -->
               <?php for ($i = 0; $i < 5; $i++) { ?>
-                <ion-icon class="text-base 
-                <?php if (count($averageRating) != 0 && $i < ceil($averageRating[0]["average_rating"])) {
-                  echo "text-[#F68721]";
-                } else {
-                  echo "text-slate-500";
-                } ?>
-                " name="star"></ion-icon>
+                <?php if ($i < round($rating)) { ?>
+                  <ion-icon class="text-base text-[#F68721]" name="star"></ion-icon>
+                <?php } else { ?>
+                  <ion-icon class="text-base text-slate-500" name="star"></ion-icon>
+                <?php } ?>
               <?php } ?>
               <!-- stars -->
               <span class="text-base text-slate-500">
-                <?php if (count($averageRating) != 0) { ?>
-                  <?= round($averageRating[0]["average_rating"], 1); ?>
-                <?php } else { ?>
-                  0
-                <?php } ?>
+                <?= number_format($rating, 1) ?>
               </span>
             </div>
-            <h2 class="text-2xl font-bold">
+            <h2 class="text-2xl text-[#1F5BB8] font-bold">
               <?= $product["p_name"] ?>
             </h2>
             <div>
@@ -111,55 +125,44 @@ die("");
 
           <div class="border-b-2 py-2">
             <!-- color box -->
-            <div class="flex space-x-2 items-center mb-3">
-              <span class="text-slate-500">Color : </span>
-              <!-- colors -->
-              <?php if (count($colors) != 0) {
-                foreach ($colors as $color) {
-              ?>
-                  <div 
-                  class="w-[20px] h-[20px] border rounded-full flex justify-center items-center"
-                  style="background-color: <?= "$color"; ?>"></div>
-                <?php }
-              } ?>
-                  
-                  <!-- colors -->
-            </div>
+            <?php if (count($colors) != 0) { ?>
+              <div class="flex space-x-2 items-center mb-3">
+                <span class="text-slate-500">Color : </span>
+                <?php foreach ($colors as $color) { ?>
+                  <div class="w-[20px] h-[20px] border rounded-full flex justify-center items-center" style="background-color: <?= "$color"; ?>"></div>
+                <?php } ?>
+              </div>
+            <?php } ?>
             <!-- color box -->
 
             <!-- size box -->
-            <div class="flex space-x-2 items-center mb-3">
-              <span class="text-slate-500">Size : </span>
-              <!-- sizes -->
-              <div class="w-[35px] h-[20px] rounded-md bg-slate-500 flex justify-center items-center">
-                <span class="text-xs font-bold">S</span>
+            <?php if (!count($sizes) == 0) { ?>
+              <div class="flex space-x-2 items-center mb-3">
+                <span class="text-slate-500">Size : </span>
+                <?php foreach ($sizes as $size) { ?>
+                  <div class="w-[35px] h-[20px] rounded-md bg-slate-500 flex justify-center items-center">
+                    <span class="text-xs font-bold"><?= $size ?></span>
+                  </div>
+                <?php } ?>
               </div>
-              <div class="w-[35px] h-[20px] rounded-md bg-white border-2 border-custom-orange flex justify-center items-center">
-                <span class="text-xs font-bold">M</span>
-              </div>
-              <div class="w-[35px] h-[20px] rounded-md bg-slate-500 flex justify-center items-center">
-                <span class="text-xs font-bold">L</span>
-              </div>
-              <div class="w-[35px] h-[20px] rounded-md bg-slate-500 flex justify-center items-center">
-                <span class="text-xs font-bold">XL</span>
-              </div>
-              <!-- sizes -->
-            </div>
+            <?php } ?>
             <!-- size box -->
 
             <!-- quantity box -->
             <div class="flex space-x-2 items-center mb-5">
               <span class="text-slate-500">Quantity : </span>
-              <div class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center">
+              <div id="reduce-qty" class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center cursor-pointer active:scale-105">
                 <ion-icon class="text-white" name="remove"></ion-icon>
               </div>
               <div class="w-[50px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center bg-transparent">
-                <span class="font-bold">1</span>
+                <span id="qty-amt" class="font-bold">1</span>
               </div>
-              <div class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center">
+              <div id="increase-qty" class="w-[30px] h-[30px] rounded-md bg-slate-500 flex justify-center items-center cursor-pointer active:scale-105">
                 <ion-icon class="text-white" name="add"></ion-icon>
               </div>
               <div>
+                <input id="stock_amt" type="number" value="<?= $product["p_stock"]; ?>" hidden>
+                <small class="text-red-500 text-semibold"><?= $product["p_stock"]; ?> items left</small>
               </div>
             </div>
             <!-- quantity box -->
@@ -216,89 +219,59 @@ die("");
           <div class="mb-5 sm:mb-[0px]">
             <div class="font-bold">
               <p class="mb-4">
-                <span class="text-6xl">5.0</span><span class="text-5xl text-slate-500"> / 5</span>
+                <span class="text-6xl"><?= number_format($rating, 1) ?></span>
+                <span class="text-5xl text-slate-500"> / 5</span>
               </p>
             </div>
             <div>
-              <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
-              <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
-              <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
-              <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
-              <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
+              <?php for ($i = 0; $i < 5; $i++) {  ?>
+                <?php if ($i < round($rating)) { ?>
+                  <ion-icon class="text-3xl text-[#F68721]" name="star"></ion-icon>
+                <?php } else { ?>
+                  <ion-icon class="text-3xl text-slate-500" name="star"></ion-icon>
+                <?php } ?>
+              <?php } ?>
             </div>
           </div>
 
           <div>
-            <div class="flex space-x-5 items-center mb-3">
-              <div>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
+            <?php for ($i = 6; $i > 0; $i--) { ?>
+              <?php
+                $current_star_rate_percent = 0;
+                $current_star_rate_user_count = 0;
+
+                $filtered_rate_count = [];
+                foreach ($rate_count as $rate) {
+                  if ($rate["rating"] == $i-1) {
+                    $filtered_rate_count = $rate;
+                  }
+                }
+
+                if(count($filtered_rate_count) != 0){
+                  $current_star_rate_user_count = $filtered_rate_count["rate_count"];
+                  $current_star_rate_percent = ($filtered_rate_count["rate_count"] * 100) / $total_rate_user;
+                }
+              ?>
+              <div class="flex space-x-2 sm:space-x-5 items-center mb-3">
+                <div>
+                  <?php for ($x = 0; $x < 5; $x++) { ?>
+                    <?php if ($x < $i - 1) { ?>
+                      <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
+                    <?php } else { ?>
+                      <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
+                    <?php } ?>
+                  <?php } ?>
+                </div>
+
+                <div class="w-[150px] sm:w-[200px] h-[17px] bg-slate-500 relative">
+                  <div class="absoulte top-0 left-0 h-[100%] w-[<?= $current_star_rate_percent ?>%] bg-[#F68721]"></div>
+                </div>
+
+                <div><span class="text-base text-slate-500"><?= $current_star_rate_user_count ?></span></div>
               </div>
-
-              <div class="w-[150px] sm:w-[200px] h-[17px] bg-[#F68721]"></div>
-
-              <div><span class="text-base text-slate-500">2</span></div>
-            </div>
-
-            <div class="flex space-x-5 items-center mb-3">
-              <div>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-              </div>
-
-              <div class="w-[150px] sm:w-[200px] h-[17px] bg-slate-500"></div>
-
-              <div><span class="text-base text-slate-500">0</span></div>
-            </div>
-
-            <div class="flex space-x-5 items-center mb-3">
-              <div>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-              </div>
-
-              <div class="w-[150px] sm:w-[200px] h-[17px] bg-slate-500"></div>
-
-              <div><span class="text-base text-slate-500">0</span></div>
-            </div>
-
-            <div class="flex space-x-5 items-center mb-3">
-              <div>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-              </div>
-
-              <div class="w-[150px] sm:w-[200px] h-[17px] bg-slate-500"></div>
-
-              <div><span class="text-base text-slate-500">0</span></div>
-            </div>
-
-            <div class="flex space-x-5 items-center mb-3">
-              <div>
-                <ion-icon class="text-base sm:text-lg text-[#F68721]" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-                <ion-icon class="text-base sm:text-lg text-slate-500" name="star"></ion-icon>
-              </div>
-
-              <div class="w-[150px] sm:w-[200px] h-[17px] bg-slate-500"></div>
-
-              <div><span class="text-base text-slate-500">0</span></div>
-            </div>
+            <?php } ?>
           </div>
+
         </div>
 
         <h2 class="py-3 mb-4 border-t-2 border-b-2 border-custom-grey">
@@ -336,12 +309,6 @@ die("");
           <!-- end review -->
         <?php } ?>
 
-
-        <div class="text-center">
-          <button class="bg-[#F68721] text-white py-2 px-4 text-large rounded-md">
-            Load More Reviews
-          </button>
-        </div>
       </div>
     </div>
   </section>

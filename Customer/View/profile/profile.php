@@ -1,6 +1,7 @@
 <?php
 
 include '../../Controller/ProfileController.php';
+include '../../Controller/regionListController.php';
 
 ?>
 <!DOCTYPE html>
@@ -113,8 +114,8 @@ include '../../Controller/ProfileController.php';
                 <div class="mt-5 cursor-pointer">
                     <input type="email" name="email" id="" value="<?php echo $m_customers["cus_email"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>
                 </div>
-                <div class="w-1/2 ml-2 md:ml-28 mt-5">
-                    <p class="text-xl font-semibold">Location</p>
+                <div class="w-1/2 ml-8 md:ml-32 mt-5">
+                    <p class="text-xl font-semibold">State/Region</p>
                 </div>
                 <div class="mt-5 cursor-pointer">
                     <input type="text" name="address" id="" value="<?php echo $m_customers["cus_address"] ?>" class="w-2/3 md:w-1/3 h-10 rounded-md border-solid border-1  px-4" disabled>

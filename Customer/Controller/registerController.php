@@ -12,7 +12,7 @@ session_start();
 
     //check duplicate email
     $sql = $pdo->prepare(
-        "SELECT * FROM customers WHERE email=:email"
+        "SELECT * FROM m_customers WHERE email=:email"
     );
     $sql->bindValue(":email",$email);
     $sql->execute();
@@ -22,7 +22,7 @@ session_start();
     if(count($resultEmail) == 0){
         // register
         $sql = $pdo->prepare(
-            "INSERT INTO customers
+            "INSERT INTO m_customers
             (
                 email,
                 password,

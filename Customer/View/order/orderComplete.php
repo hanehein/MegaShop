@@ -1,3 +1,10 @@
+<?php 
+
+include '../../Controller/OrderCompleteController.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +93,7 @@
 
 
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-5">
+        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486]  mt-auto">
             <!-- first one -->
             <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
@@ -133,25 +140,3 @@
 </body>
 
 </html>
-<!-- blue 800
-    slate-100
-    orange-500
-     primary - #024486
-     secondary - #F68721
-     tertiary - #F6F6F6
-    <ion-icon name="person-circle"></ion-icon>
-    <ion-icon name="cart"></ion-icon>
-    <ion-icon name="ellipse"></ion-icon>
-    <ion-icon name="caret-down"></ion-icon>
-    <ion-icon name="logo-facebook"></ion-icon>
-    <ion-icon name="logo-instagram"></ion-icon>
-    <ion-icon name="logo-twitter"></ion-icon>
-    <ion-icon name="search"></ion-icon>
-    <ion-icon name="phone-portrait"></ion-icon>
-    <ion-icon name="mail"></ion-icon>
-    <ion-icon name="gift"></ion-icon>
-    class="text-[#F68721]"
-    <ion-icon name="arrow-redo-circle"></ion-icon>
--->
-
-<!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id="> -->

@@ -34,7 +34,7 @@ if (!isset($id)) {
 
     $sql->execute();
 
-    $_SESSION['profileEdit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $orderlists = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -51,11 +51,9 @@ if (!isset($id)) {
     );
     $sql->bindValue(":id", $id);
     $sql->execute();
-    $orderlists = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['profileEdit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    $pageList = ceil(count( $_SESSION['profileEdit']) / $rowLimits);
-
-    print_r($pageList);
+    $pageList = ceil(count( $orderlists) / $rowLimits);
 
     header("Location: ../View/profile/orderHistory.php");
 }

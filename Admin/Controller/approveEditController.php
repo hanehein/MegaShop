@@ -3,7 +3,7 @@ include "./common/supplierPwdHarsh.php";
 include "./common/mailSender.php";
 ini_set('display_errors', 1);
 session_start();
-// print_r($_POST);//ok here
+print_r($_POST);//ok here
 // echo "--------";
 
 if(count($_POST) == 0){
@@ -13,8 +13,7 @@ if(count($_POST) == 0){
     $supplierName = $_POST["supplierName"];
     $shopEmail = $_POST["email"];
     $shopName = $_POST["shopName"];
-    $shopAddress = $_POST["shopAddress"];
-    $township = $_POST["township"];
+    $region = $_POST["region"];
     $plan = $_POST["plan"];
     $bankAcc = $_POST["bankAcc"];
     $phone = $_POST["phone"];
@@ -22,7 +21,7 @@ if(count($_POST) == 0){
 
     include "../Model/model.php";
     $sql = $pdo->prepare("
-        UPDATE m_suppliers SET sup_approve = 1, sup_password = :password where id = :id;
+        UPDATE m_suppliers SET sup_approve = 1, sup_password = :password where m_suppliers.id = :id;
     ");
     $sql->bindValue(":id",$id);
     $sql->bindValue(":password",password_hash($password,PASSWORD_DEFAULT));
@@ -40,7 +39,5 @@ if(count($_POST) == 0){
         $body,
         "../emailTemplate/template/images/undraw_Shopping_Bags_drx3.png"//
     );
-   
-
-    header("Location: ../View/supplierList/approveList.php");
+    echo "<script>window.location.assign('../View/supplierList/approveList.php')</script>";
 }

@@ -18,7 +18,7 @@ session_start();
     <!-- Login container -->
     <div class="min-h-screen flex items-center justify-center container">
         <!-- photo container -->
-        <div class="w-1/2 flex justify-center items-center">
+        <div class="w-1/2 md:flex flex-col hidden justify-center items-center">
             <img src="../resources/img/supplierLogin.jpg" alt=""
                 class="w-[400px] h-[450px] rounded-[50px] border border-[#2C7607] "
                 >

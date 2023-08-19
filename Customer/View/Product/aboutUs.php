@@ -40,8 +40,8 @@
         <p class="text-lg font-medium mt-10">Mega Shop is created by a team of 5 developers.</p>
     </div>
     <!-- pic -->
-    <div class="bg-gray-200 flex items-center justify-center mt-4 py-4">
-        <svg width="955" height="737" viewBox="0 0 955 737" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="bg-gray-200 flex items-center justify-center mt-4 py-4 md:w-full mx-auto w-full">
+        <svg width="955" height="737" viewBox="0 0 955 737" fill="none" xmlns="http://www.w3.org/2000/svg" class>
             <g clip-path="url(#clip0_576_16)">
                 <path d="M953.618 46.4473H1.38206C1.01551 46.4473 0.663979 46.3114 0.404794 46.0695C0.145608 45.8275 0 45.4993 0 45.1571C0 44.815 0.145608 44.4868 0.404794 44.2448C0.663979 44.0029 1.01551 43.8669 1.38206 43.8669H953.618C953.984 43.8669 954.336 44.0029 954.595 44.2448C954.854 44.4868 955 44.815 955 45.1571C955 45.4993 954.854 45.8275 954.595 46.0695C954.336 46.3114 953.984 46.4473 953.618 46.4473Z" fill="#024486" />
                 <path d="M32.4878 28.3844C40.8839 28.3844 47.6904 22.0304 47.6904 14.1922C47.6904 6.35407 40.8839 0 32.4878 0C24.0916 0 17.2852 6.35407 17.2852 14.1922C17.2852 22.0304 24.0916 28.3844 32.4878 28.3844Z" fill="#3F3D56" />

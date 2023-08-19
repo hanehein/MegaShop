@@ -4,6 +4,9 @@ $wishlist = $_SESSION['profileEdit'];
 
 $result = $wishlist;
 
+$rowLimits = 5;
+$pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
+
 
 ?>
 
@@ -128,7 +131,7 @@ $result = $wishlist;
                                     </div>
                                     <p class="text-xs md:text-xl font-semibold md:ml-24 mr-5 md:mr-10"><?php echo $wishlist["p_sell_price"]; ?> MMK</p>
                                     <p class="text-xs md:text-xl font-semibold ml-2 md:ml-5"><?php echo $wishlist["p_stock"]; ?></p>
-                                    <a href="../../Controller/WishlistRemoveController.php?id=<?php echo $wishlist["id"]; ?>"><button class="w-auto text-sm font-semibold bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 ">Remove</button></a>
+                                    <a href="../../Controller/WishlistRemoveController.php?id=<?php echo $wishlist["id"]; ?>"><button class="w-auto text-sm font-semibold bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 hover:bg-[#cbd5e1] hover:text-[#dc2626]">Remove</button></a>
                                 </div>
                             </div>
                         <?php } ?>
@@ -137,6 +140,41 @@ $result = $wishlist;
             </div>
 
         </div>
+        
+    </div>
+    <!-- pagination -->
+    <div class="w-auto flex items-center justify-center h-10 mb-5 md:ml-[44rem]">
+        <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+            <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-[#003366] hover:bg-white enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                <a href="?page=<?= $page - 1 ?>">Previous</a>
+            </li>
+            <?php
+            for ($i = 1; $i <= $pageList; $i++) { ?>
+                <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  hover:text-white hover:bg-[#003366] 
+                        <?php
+                        if ($page == $i) {
+                            echo "active";
+                        }
+                        ?> hover:text-white hover:bg-[#003366]">
+                    <a href="?page=<?= $i ?>"><?= $i ?></a>
+                </li>
+            <?php } ?>
+            <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-[#003366] hover:bg-white
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "disabled";
+                    }
+                    ?>
+                    ">
+                <a href="?page=<?= $page + 1 ?>">Next</a>
+            </li>
+        </ul>
     </div>
 
 

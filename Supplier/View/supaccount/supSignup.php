@@ -21,7 +21,7 @@ session_start();
         <div class="h-screen md:flex flex-col hidden w-1/2 bg-[#EFFFE8] items-center justify-center shadow-xl rounded-tr-[80px] rounded-br-[80px]" style="box-shadow: 0 4px 50px #2C760786;">
             <h3 class="text-[30px] text-center font-extrabold italic text-[#2C7607] pt-7">Welcome to</h3>
             <h1 class="text-[50px] text-center font-extrabold text-[#2C7607] mt-5 tracking-[10px]">MEGA-SHOP</h1>
-            <div class="relative w-2/3 rounded-[100px] overflow-hidden m-10 place-content-center">
+            <div class="relative w-2/3 rounded-[100px] overflow-hidden m-10 place-content-center flex items-center justify-center ">
                 <img src="../resources/img/supplier signup.jpg" alt="" class="w-full h-full object-cover">
                 <div class="absolute inset-0 shadow-inner" style="border-radius: 40px; box-shadow: inset 0 4px 15px 10px rgba(0, 0, 0, 0.2);"></div>
             </div>
