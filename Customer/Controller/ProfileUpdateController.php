@@ -7,12 +7,13 @@ if (count($_POST) == 0) {
     $id = $_POST["id"];
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $address = $_POST["address"];
+    $region = $_POST["region"];
     $phone = $_POST["phone"];
-    $profile = $_POST["profile"];
+
     //get photo
     $profile = $_FILES["profile"]["name"];
     $profiletmp = $_FILES["profile"]["tmp_name"];
+
 
     include '../Model/model.php';
     if (move_uploaded_file($profiletmp, "../../Storage/profile/" .$profile)) {
@@ -20,7 +21,7 @@ if (count($_POST) == 0) {
             " UPDATE m_customers SET
              cus_name = :name,
              cus_email = :email,
-             cus_address = :address,
+             cus_address = :region,
              cus_phone = :phone,
              cus_photo = :profile
             WHERE id = :id
@@ -28,7 +29,7 @@ if (count($_POST) == 0) {
         );
         $sql->bindValue(":name",$name);
         $sql->bindValue(":email",$email);
-        $sql->bindValue(":address",$address);
+        $sql->bindValue(":region",$region);
         $sql->bindValue(":phone",$phone);
         $sql->bindValue(":profile","../../Storage/profile/" . $profile);
         $sql->bindValue(":id",$id);
