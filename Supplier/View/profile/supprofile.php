@@ -1,7 +1,5 @@
 <?php
 include "../../Controller/setting/supplierProfileController.php";
-// echo "<pre>";
-// print_r($profile);
 ?>
 <?php
 $hasJsFile = FALSE;
