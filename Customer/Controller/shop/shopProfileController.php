@@ -1,12 +1,14 @@
 <?php
 ini_set('display_errors', 1);
-//DB connection
-$id = $_GET["id"];
-// print_r($id);
 
-if (!isset($id)) {
+if (!isset($_GET["id"])) {
   header("Location: ../View/errors/error.php");
-} else {
+}
+$id = $_GET["id"];
+
+
+
+ //DB connection
   include "../../Model/model.php";
   $sql = $pdo->prepare(
     "SELECT * FROM m_products 
@@ -22,7 +24,7 @@ if (!isset($id)) {
   );
   $sql->execute();
   $products = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
+
 
 
   //Average rating
