@@ -5,12 +5,25 @@ include "../../Model/model.php";
 
 $product_query = "SELECT * FROM m_products WHERE del_flg = 0 AND p_approved = 1";
 
-if(isset($_GET["brands"])){
+//filter by brand
+if (isset($_GET["brands"])) {
     $filterBrands = $_GET["brands"];
-    $product_query = $product_query." AND p_brand IN (".implode(",", $filterBrands).")";
+    $product_query .= " AND p_brand IN (" . implode(",", $filterBrands) . ")";
 }
 
-
+// filter by price
+$filterByPrice = FALSE;
+if (
+    isset($_GET["min_price"]) &&
+    $_GET["min_price"] != '' &&
+    isset($_GET["max_price"]) &&
+    $_GET["max_price"] != ''
+) {
+    $filterByPrice = TRUE;
+    $min_price = $_GET["min_price"];
+    $max_price = $_GET["max_price"];
+    $product_query .= " AND p_sell_price BETWEEN $min_price AND $max_price";
+}
 
 $sql = $pdo->prepare($product_query);
 $sql->execute();
@@ -41,4 +54,3 @@ $sql = $pdo->prepare(
 $sql->bindValue(":customer_id", $customer_id);
 $sql->execute();
 $productsInWishlist = $sql->fetchAll(PDO::FETCH_ASSOC);
-
