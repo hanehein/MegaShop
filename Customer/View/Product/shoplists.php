@@ -19,6 +19,8 @@ include "../../Controller/shopListController.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <script src="../resources/lib/jquery3.6.0.js"></script>
+    <script src="../resources/js/shoplist.js" defer></script>
 </head>
 
 <body class="bg-[#F6F6F6] overflow-x-hidden">
@@ -28,14 +30,30 @@ include "../../Controller/shopListController.php";
         include "../components/responsiveNav.php";
         ?>
         <!-- description -->
-        <div class="w-full flex justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-5">
+        <div class="w-full flex justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-5 space-x-2">
             <p>Shop by Shop Lists and Brands</p>
         </div>
+        <div class="w-full flex flex-col justify-center items-center font-['Poppins'] text-md font-semibold text-[#024486] mt-2 space-y-2">
+            <button id="down" class="bg-[#003366] px-2 py-2  rounded-md text-white text-xs flex items-center justify-center space-x-1">
+                <span> All Lists </span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+                </ion-icon>
+            </button>
+            <div id="allLists"  class=" w-auto h-auto grid  grid-cols-3 grid-rows-4  gap-5 place-items-start bg-[#F6F6F6] bg-white text-xs rounded-md px-2 py-2 shadow-sm shadow-gray-400">
+                <?php foreach ($shopName as $name) { ?>
+                    <ul class=" w-auto h-auto hover:cursor-pointer list-none">
+                        <a href="../shop/shopprofile.php?id=<?= $name["supplierId"]?>">
+                            <li><?= $name["shopName"] ?></li>
+                        </a>
+                    </ul>
+                <?php } ?>
+            </div>
+        </div>
         <!-- body box -->
-        <div class="w-auto h-auto container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-4  gap-16  place-items-center bg-[#F6F6F6] mt-5">
+        <div class=" w-auto h-auto container mx-auto grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-rows-4  gap-16  place-items-center bg-[#F6F6F6] mt-5">
             <?php foreach ($shopLists as $photo) { ?>
-                <div class="w-auto h-auto bg-white rounded-md shadow-md shadow-gray-400 hover:w-44 hover:cursor-pointer">
-                    <a href="../shop/shopprofile.php?id=<?=$photo["supplierId"]?>"><img src="../<?= $photo["shopPhoto"] ?>" alt="" width="100%" class="rounded-md"></a>
+                <div class="list w-auto h-auto bg-white rounded-md shadow-md shadow-gray-400 hover:w-52 hover:cursor-pointer">
+                    <a href="../shop/shopprofile.php?id=<?= $photo["supplierId"] ?>"><img src="../<?= $photo["shopPhoto"] ?>" alt="" width="100%" class="rounded-md"></a>
                 </div>
             <?php } ?>
         </div>
