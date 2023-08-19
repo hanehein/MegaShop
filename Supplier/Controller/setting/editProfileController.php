@@ -16,7 +16,9 @@ $sql = $pdo->prepare(
         sup_email, 
         sup_phone, 
         sup_shop_name, 
-        sup_photo 
+        sup_photo,
+        shop_photo_path ,
+        update_date
     FROM 
         m_suppliers
     WHERE 

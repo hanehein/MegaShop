@@ -34,11 +34,25 @@ include "../components/header.php";
                             <div class="flex space-x-[200px] justify-center items-center mb-10">
                                 <div>
                                     <span class="mb-1 block text-slate-600">Shop Photo</span>
-                                    <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="shopImg" class="w-[100px]">
+                                    <img 
+                                    <?php if(is_null($supplier["shop_photo_path"])) { ?>
+                                        src="../resources/img/store.png" 
+                                    <?php } else { ?>
+                                        src="../../../Storage/suppliers/<?= $supplier["shop_photo_path"] ?>"
+                                    <?php } ?>
+                                    alt="shop-img"
+                                    class="w-[100px]">
                                 </div>
                                 <div>
                                     <span class="mb-1 block text-slate-600">Supplier Photo</span>
-                                    <img src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" id="shopImg" class="w-[100px]">
+                                    <img 
+                                    <?php if(is_null($supplier["shop_photo_path"])) { ?>
+                                        src="../resources/img/supplier_photo.jpg" 
+                                    <?php } else { ?>
+                                        src="../../../Storage/suppliers/<?= $supplier["sup_photo"] ?>"
+                                    <?php } ?>
+                                    alt="supplier-img"
+                                    class="w-[100px]">
                                 </div>
                             </div>
                             <div class="flex justify-center items-center space-x-64">
