@@ -110,8 +110,9 @@ foreach ($productsInWishlist as $product) {
                         <div>
                             <label for="categories" class="text-custom-grey">Sort By :</label>
                             <select id="categories" class="bg-inherit border border-custom-orange text-custom-orange text-custom-medium px-3 py-1 rounded-md">
-                                <option value="">Price Low To High</option>
-                                <option value="">Price High To Low</option>
+                                <option value="0">Date</option>
+                                <option value="1">Price Low To High</option>
+                                <option value="2">Price High To Low</option>
                             </select>
                         </div>
                         <div class="block sm:hidden">
