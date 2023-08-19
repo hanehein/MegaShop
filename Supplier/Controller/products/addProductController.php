@@ -14,6 +14,11 @@ if (!isset($_POST["from_addproduct"])) {
 session_start();
 $supplier_id = $_SESSION["sup_id"];
 
+echo "<pre>";
+print_r($_POST);
+print_r($_FILES);
+die("");
+
 $p_name = $_POST["product_name"];
 $p_category = $_POST["product_category"];
 $p_brand = $_POST["product_brand"];
