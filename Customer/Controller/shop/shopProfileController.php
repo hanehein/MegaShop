@@ -29,6 +29,31 @@ GROUP BY
 $sql->execute();
 $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+  //Total followers
+  $sql = $pdo->prepare(
+    "SELECT  
+    COUNT(cus_id) AS total_followers
+  FROM 
+    t_follow_stores
+  WHERE sup_id = :supplier_id;"
+  );
+  $sql->bindValue(":supplier_id",12);
+  $sql->execute();
+  $tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+  //Shop Name
+  $sql = $pdo->prepare(
+    "SELECT  
+    *
+  FROM 
+    m_suppliers
+  WHERE id = :supplier_id;"
+  );
+  $sql->bindValue(":supplier_id",12);
+  $sql->execute();
+  $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
+  
+
   // echo "<pre>";
   // print_r($product_ratings);
 // echo "hi";

@@ -28,8 +28,8 @@ include "../../Controller/shop/shopProfileDetailController.php";
             <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
 
             <div class="flex flex-col">
-                <p class="text-blue-800 text-xl md:text-2xl font-semibold">Trendy Thread</p>
-                <p>235 followers</p>
+            <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
+                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
             </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">

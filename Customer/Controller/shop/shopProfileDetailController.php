@@ -3,11 +3,29 @@ ini_set('display_errors', 1);
 //DB connection
 include "../../Model/model.php";
 
+//Shop Name
 $sql = $pdo->prepare(
-  "SELECT * FROM m_suppliers"
+  "SELECT  
+  *
+FROM 
+  m_suppliers
+WHERE id = :supplier_id;"
 );
+$sql->bindValue(":supplier_id",12);
 $sql->execute();
-$supplier = $sql->fetchAll(PDO::FETCH_ASSOC);
+$sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
+
+ //Total followers
+ $sql = $pdo->prepare(
+  "SELECT  
+  COUNT(cus_id) AS total_followers
+FROM 
+  t_follow_stores
+WHERE sup_id = :supplier_id;"
+);
+$sql->bindValue(":supplier_id",12);
+$sql->execute();
+$tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET["page"])){
   $page = $_GET["page"];
@@ -73,6 +91,15 @@ $sql = $pdo->prepare(
 $sql->execute();
 $total = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+//Average rating Percent
+$sql = $pdo->prepare(
+  "SELECT 
+      AVG(rating) AS avg_rating
+  FROM 
+      t_shop_reviews"
+);
+$sql->execute();
+$shop_reviews = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 

@@ -1,13 +1,10 @@
 <?php
 include "../../Controller/setting/planController.php";
-session_start();
-$supplier_id = $_SESSION["sup_id"];
 ?>
 <?php
 $hasJsFile = FALSE;
 include "../components/header.php";
 ?>
-
 <body class="bg-[#F1F2F4]">
     <section class="grid grid-cols-6">
         <?php include "../components/slideMenu.php"; ?>
@@ -31,12 +28,12 @@ include "../components/header.php";
                     <div class="flex justify-between items-center space-x-10">
                         <!--Start card-->
                         <?php foreach ($package as $pack) { ?>
-                            <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg <?php if($pack["id"] == $supplier_id){ echo "border border-red-500 bg-red-800";} ?>">
-                                
+                            <div class="bg-custom-grey w-[300px] h-[400px] shadow-lg p-5 flex flex-col space-y-3 rounded-lg">
+
                                 <span class="font-semibold text-custom-large"><?= $pack["pack_name"] ?></span>
                                 <span><?= $pack["pack_des"] ?></span>
-                                <span><?= $pack["pack_price"] ?>Ks/month for <?= $pack["pack_duration"] ?> months</span>
-                                <a href="../../Controller/setting/choosePlanController.php?plan_id=<?= $pack["id"] ?>" class="border-2 bg-[#66CC33] shadow-lg rounded-lg text-white text-center">Choose <?= $pack["pack_name"] ?> Plan</a>
+                                <span><?= $pack["pack_price"] ?>Ks/ month for <?= $pack["pack_duration"] ?> months</span>
+                                <a href="../../Controller/setting/choosePlanController.php?plan_id=<?= $pack["id"] ?>" class="plan border-2 bg-[#66CC33] hover:bg-green-800 shadow-lg rounded-lg text-white text-center">Choose <?= $pack["pack_name"] ?> Plan</a>
                                 <div class="px-4 py-6 border-b-2">
                                 </div>
                             </div>
