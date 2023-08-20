@@ -25,12 +25,16 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
-            <img src="../../../<?= $sup_datas[0]["sup_shop_photo"] ?>" alt="" class="w-[50px] h-[50px]">
+            <?php foreach ($sup_datas as $sup_data) {  ?>
+                <img src="../../../<?= $sup_data["sup_shop_photo"] ?>" alt="" class="w-[50px] h-[50px]">
 
-            <div class="flex flex-col">
-            <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
-                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
-            </div>
+                <div class="flex flex-col">
+                    <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_data["sup_shop_name"] ?></p>
+                <?php } ?>
+                <?php foreach ($tot_followers as $tot_follower) {  ?>
+                    <p><?= $tot_follower["total_followers"] ?> followers</p>
+                <?php } ?>
+                </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
             <div class="flex flex-col text-blue-800 justify-center items-center font-semibold">
@@ -71,7 +75,9 @@ include "../../Controller/shop/shopProfileDetailController.php";
         <div class="flex flex-col justify-between items-center space-y-5">
             <div class="flex flex-col space-y-5 items-center">
                 <div class="flex flex-col space-y-2 items-start">
-                    <h1 class="text-xl font-semibold"><?php echo number_format((float)($shop_reviews[0]["avg_rating"] )*(100/3 ), 2, '.', '');  ?> %</h1>
+                    <?php foreach($shop_reviews as $shop_review) { ?>
+                    <h1 class="text-xl font-semibold"><?php echo number_format((float)($shop_review["avg_rating"]) * (100 / 3), 2, '.', '');  ?> %</h1>
+                    <?php } ?>
                     <!--Start bar graph-->
                     <div class="rating_graph w-[300px] h-[300px]  md:w-[400px]">
                         <canvas id="myChart"></canvas>
@@ -80,7 +86,9 @@ include "../../Controller/shop/shopProfileDetailController.php";
                 <!--End bar graph-->
 
                 <div class="flex flex-col space-y-2 items-center">
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total[0]["countperson"] ?>)</h1>
+                <?php foreach($total as $total_person) { ?>
+                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total_person["countperson"] ?>)</h1>
+                    <?php } ?>
                     <div class="flex space-x-16">
                         <ion-icon name="happy-outline"></ion-icon>
                         <ion-icon name="happy-outline"></ion-icon>
