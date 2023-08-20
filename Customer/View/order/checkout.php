@@ -27,7 +27,7 @@ include "../../Controller/regionListController.php";
 </head>
 
 <body class="bg-white overflow-x-hidden">
-    <div class="w-full  min-h-screen flex flex-col">
+    <div class="w-full min-h-screen flex flex-col">
         <!-- nav bar -->
         <?php
         include "../components/responsiveNav.php";

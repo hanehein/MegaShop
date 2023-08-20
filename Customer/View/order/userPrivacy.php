@@ -41,7 +41,7 @@
             </div>
             <div class="mid:w-[30rem] w-full h-auto flex flex-col justify-between items-center text-gray-700 text-sm   border-t-2  border-t-gray-200 border-b-gray-200">
                 <div class="w-full h-14 flex justify-between items-center text-gray-700 text-sm  ">
-                    <p class="hover:text-[#F68721]">Use of the Website<</p>
+                    <p class="hover:text-[#F68721]">Use of the Website</p>
                     <ion-icon name="caret-down" id="click2"   class=" text-[#F68721] hover:text-[#003366]" size="small"></ion-icon>
                 </div>
                 <div id="text2" class=" w-full text-sm text-justify">
