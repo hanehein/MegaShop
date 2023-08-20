@@ -25,7 +25,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
-            <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
+            <img src="../../../<?= $sup_datas[0]["sup_shop_photo"] ?>" alt="" class="w-[50px] h-[50px]">
 
             <div class="flex flex-col">
             <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>

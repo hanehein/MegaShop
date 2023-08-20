@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 
 if (!isset($_GET["id"])) {
-  header("Location: ../View/errors/error.php");
+  header("Location: ../../View/errors/error.php");
 }
 $id = $_GET["id"];
 
@@ -64,7 +64,3 @@ $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
   $sql->execute();
   $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
   
-
-  // echo "<pre>";
-  // print_r($product_ratings);
-// echo "hi";

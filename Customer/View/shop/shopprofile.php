@@ -24,12 +24,16 @@ include "../../Controller/shop/shopProfileController.php";
     <!--next bar-->
     <div class="flex flex-col">
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
-        <div class="flex flex-row space-x-2 md:space-x-4">        
-            <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
+        <div class="flex flex-row space-x-2 md:space-x-4">
+           <?php foreach($sup_datas as $sup_data) {  ?>    
+            <img src="../../../<?= $sup_data["sup_shop_photo"] ?>" alt="" class="w-[50px] h-[50px]">
 
             <div class="flex flex-col">
-                <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
-                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
+                <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_data["sup_shop_name"]?></p>
+                <?php } ?>
+                <?php foreach($tot_followers as $tot_follower) {  ?> 
+                <p><?= $tot_follower["total_followers"]?> followers</p>
+                <?php } ?>
             </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
