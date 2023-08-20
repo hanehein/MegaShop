@@ -1,10 +1,10 @@
 <?php
 ini_set('display_errors', 1);
 
-// if (!isset($_GET["id"])) {
-//   header("Location: ../../View/errors/error.php");
-// }
-// $id = $_GET["id"];
+if (!isset($_GET["id"])) {
+  header("Location: ../../View/errors/error.php");
+}
+$id = $_GET["id"];
 
 
 
