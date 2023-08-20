@@ -1,23 +1,23 @@
 <?php
 ini_set('display_errors', 1);
 
-if (!isset($_GET["id"])) {
-  header("Location: ../View/errors/error.php");
-}
-$id = $_GET["id"];
+// if (!isset($_GET["id"])) {
+//   header("Location: ../../View/errors/error.php");
+// }
+// $id = $_GET["id"];
 
 
 
  //DB connection
   include "../../Model/model.php";
-  $sql = $pdo->prepare(
-    "SELECT * FROM m_products 
-    INNER JOIN t_product_reviews 
-    ON m_products.id = t_product_reviews.product_id WHERE supplier_id = :id"
-  );
-  $sql->bindValue(":id",$id);
-  $sql->execute();
-  $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
+  // $sql = $pdo->prepare(
+  //   "SELECT * FROM m_products 
+  //   INNER JOIN t_product_reviews 
+  //   ON m_products.id = t_product_reviews.product_id WHERE supplier_id = :id"
+  // );
+  // $sql->bindValue(":id",$id);
+  // $sql->execute();
+  // $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
   $sql = $pdo->prepare(
     "SELECT * FROM m_products WHERE del_flg=0"
@@ -64,7 +64,3 @@ $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
   $sql->execute();
   $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
   
-
-  // echo "<pre>";
-  // print_r($product_ratings);
-// echo "hi";

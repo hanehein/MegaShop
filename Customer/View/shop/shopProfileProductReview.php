@@ -15,7 +15,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <script src="../resources/lib/jquery3.6.0.js"></script>
     <script src="../resources/js/shopProfileDetail.js" defer></script>
     <script src="../resources/js/searchProductDetail.js" defer></script>
-    
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -25,12 +25,16 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
-            <img src="../resources/images/shopprofileimages/flower.jpg" alt="" class="w-[50px] h-[50px]">
+            <?php foreach ($sup_datas as $sup_data) {  ?>
+                <img src="../../../<?= $sup_data["sup_shop_photo"] ?>" alt="" class="w-[50px] h-[50px]">
 
-            <div class="flex flex-col">
-            <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas[0]["sup_shop_name"]?></p>
-                <p><?= $tot_followers[0]["total_followers"]?> followers</p>
-            </div>
+                <div class="flex flex-col">
+                    <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_data["sup_shop_name"] ?></p>
+                <?php } ?>
+                <?php foreach ($tot_followers as $tot_follower) {  ?>
+                    <p><?= $tot_follower["total_followers"] ?> followers</p>
+                <?php } ?>
+                </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
             <div class="flex flex-col text-blue-800 justify-center items-center font-semibold">
@@ -46,7 +50,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--submenu-->
     <div class="container mx-3 bg-white hidden md:flex flex-row justify-between items-center mt-3 p-2 md:p-3 font-semibold text-xs md:text-lg">
         <div class="flex flex-row space-x-2 md:space-x-5">
-        <a href="./shopProfile.php">
+            <a href="./shopProfile.php">
                 All products
             </a>
             <a href="./shopProfileDetail.php">
@@ -77,9 +81,11 @@ include "../../Controller/shop/shopProfileDetailController.php";
         <!--Start review box-->
         <?php foreach ($p_reviews as $p_review) { ?>
             <div class="flex space-x-6 p-5">
-                <img src="../resources/img/cola.jpg" alt="" class="w-[80px] h-[120px]">
-                <div class="flex flex-col">
-                    <p class="text-blue-600 font-bold text-2xl mb-3">STEP Women Blouse Short Sleeves 007402</p>
+                <?php foreach ($p_datas as $p_data) { ?>
+                    <img src="../../../<?= $p_data["p_photo1"] ?>" alt="" class="w-[80px] h-[120px]">
+                    <div class="flex flex-col">
+                        <p class="text-blue-600 font-bold text-2xl mb-3"><?= $p_data["p_name"] ?></p>
+                    <?php } ?>
                     <div class="flex space-x-1">
                         <?php for ($i = 0; $i < 5; $i++) { ?>
                             <ion-icon class="text-lg 
@@ -99,7 +105,7 @@ include "../../Controller/shop/shopProfileDetailController.php";
                         <p class="text-gray-600 font-thin"><?= $p_review["create_date"] ?> By</p>
                         <p class="text-blue-600 font-semibold"><?= $p_review["cus_name"] ?></p>
                     </div>
-                </div>
+                    </div>
             </div>
             <hr class="w-full px-5 h-5 text-black font-bold text-center mt-4" />
         <?php } ?>
@@ -108,33 +114,33 @@ include "../../Controller/shop/shopProfileDetailController.php";
 
         <!--pagination-->
         <div class="flex justify-center items-center">
-        <div class="pagination flex items-center justify-center">
-                    <!-- Previous button -->
-                    <a href="?page=<?= $page - 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tl-md rounded-bl-md 
+            <div class="pagination flex items-center justify-center">
+                <!-- Previous button -->
+                <a href="?page=<?= $page - 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tl-md rounded-bl-md 
                         <?php if ($page <= 1) {
                             echo "pointer-events-none";
                         } ?>
                         ">
-                        <ion-icon name="chevron-back"></ion-icon>
-                    </a>
+                    <ion-icon name="chevron-back"></ion-icon>
+                </a>
 
-                    <?php for ($i = 1; $i <= $page_lists; $i++) { ?>
-                        <a href="?page=<?= $i ?>" class="<?php if ($i == $page) {
-                                                                echo "active";
-                                                            } ?>
+                <?php for ($i = 1; $i <= $page_lists; $i++) { ?>
+                    <a href="?page=<?= $i ?>" class="<?php if ($i == $page) {
+                                                            echo "active";
+                                                        } ?>
                             px-3 py-1 border border-blue-500 text-bold"><?= $i ?>
-                        </a>
-                    <?php } ?>
+                    </a>
+                <?php } ?>
 
-                    <!-- Next button -->
-                    <a href="?page=<?= $page + 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tr-md rounded-br-md 
+                <!-- Next button -->
+                <a href="?page=<?= $page + 1 ?>" class="px-3 py-1 text-blue-500 bg-white border border-blue-500 rounded-tr-md rounded-br-md 
                         <?php if ($page >= $page_lists) {
                             echo "pointer-events-none";
                         } ?>
                         ">
-                        <ion-icon name="chevron-forward"></ion-icon>
-                    </a>
-                </div>
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </a>
+            </div>
         </div>
     </section>
     <!--Start footer-->

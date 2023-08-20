@@ -3,6 +3,19 @@ ini_set('display_errors', 1);
 //DB connection
 include "../../Model/model.php";
 
+//Product Datas
+$sql = $pdo->prepare(
+  "SELECT  
+  *
+FROM 
+  m_products
+WHERE id = :supplier_id
+AND p_approved = 1;"
+);
+$sql->bindValue(":supplier_id",12);
+$sql->execute();
+$p_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
+
 //Shop Name
 $sql = $pdo->prepare(
   "SELECT  
