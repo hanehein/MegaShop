@@ -9,31 +9,15 @@ foreach ($productsInWishlist as $product) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>all product</title>
-
-    <!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css"> -->
-    <link href="../resources/lib/tailwind/output.css?id=<?= time() ?>" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Wallpoet&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../resources/css/allProduct.css">
-    <link rel="stylesheet" href="../resources/css/home.css">
-    <script src="../resources/lib/jquery3.6.0.js"></script>
-    <script src="../resources/js/addWishlist.js" defer></script>
-    <script src="../resources/js/allProduct.js" defer></script>
-    <script src="../resources/js/home.js" defer></script>
-    <script src="../resources/js/searchProduct.js" defer></script>
-</head>
+<!-- start header -->
+<?php
+$hasCssFile = TRUE;
+$cssFiles = ["home", "allProduct"];
+$hasJsFile = TRUE;
+$jsFiles = ["home", "allProduct", "addWishlist", "searchProduct","productSortBy","addCart"];
+include "../components/header.php";
+?>
+<!-- end header -->
 
 <body>
     <?php include "../components/navbarForHome.php"; ?>
@@ -45,23 +29,23 @@ foreach ($productsInWishlist as $product) {
                 <li><a class="text-custom-grey">Home</a></li>
                 <li><ion-icon class="text-custom-grey" name="chevron-forward"></ion-icon></li>
                 <li><a class="text-custom-grey">Products</a></li>
-                <!-- <li><ion-icon class="text-custom-grey" name="chevron-forward"></ion-icon></li> -->
+                <?php 
+                    if(isset($filterCategory)): 
+                        foreach($categories as $category): 
+                            if($category["id"] == $filterCategory):
+                ?>
+                    <li><ion-icon class="text-custom-grey" name="chevron-forward"></ion-icon></li>
+                    <li class="text-orange-500"><?= $category["cat_name"] ?></li>
+
+                <?php 
+                            endif;
+                        endforeach; 
+                    endif; 
+                ?>
             </ul>
         </div>
         <div class="block sm:grid sm:grid-cols-6 gap-4">
             <div class="hidden md:block border-r-2 border-custom-grey  min-h-screen">
-
-                <!-- category -->
-                <!-- <div class="categories-box p-4 border-b-2 border-custom-grey">
-                    <h2 class="text-xl">Categories</h2>
-                    <ul class="text-custom-medium text-custom-grey px-2">
-                        <li>Fashion</li>
-                        <li>Light Bulb</li>
-                        <li>Books</li>
-                        <li>Fashion</li>
-                    </ul>
-                </div> -->
-
 
                 <form action="" method="GET">
                     <div class="brands-box p-4 border-custom-grey border-b-2 flex justify-between">
@@ -71,18 +55,42 @@ foreach ($productsInWishlist as $product) {
                         </div>
                     </div>
 
+                    <!-- filter by category -->
+                    <?php if(isset($filterCategory)): ?>
+                        <input type="number" name="category" value="<?= $filterCategory ?>" hidden>
+                        <div class="categories-box p-4 border-b-2 border-custom-grey">
+                            <h2 class="text-xl">Category</h2>
+                            <ul class="text-custom-medium px-2">
+                                <?php 
+                                    foreach($categories as $category): 
+                                        if($category["id"] == $filterCategory):
+                                ?>
+                                    <li class="text-orange-500"><?= $category["cat_name"] ?></li>
+                                <?php 
+                                        endif;
+                                    endforeach; 
+                                ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
                     <!-- filter by brand -->
                     <div class="brands-box p-4 border-custom-grey border-b-2">
                         <h2 class="text-xl">Brands</h2>
                         <ul class="text-custom-medium text-custom-grey px-2">
-                            <?php foreach ($brands as $brand) { ?>
+                            <?php foreach ($brands as $brand): ?>
                                 <li>
-                                    <input type="checkbox" name="brands[]" id="<?= $brand["id"] ?>" value="<?= $brand["id"] ?>"
-                                        <?php if(isset($filterBrands) && in_array($brand["id"], $filterBrands)) {  echo "checked"; } ?>
+                                    <input 
+                                        type="checkbox" 
+                                        name="brands[]" 
+                                        id="brand-<?= $brand["id"] ?>" 
+                                        class="brand-checkbox" 
+                                        value="<?= $brand["id"] ?>" 
+                                        <?php if (isset($filterBrands) && in_array($brand["id"], $filterBrands)) { echo "checked"; } ?>
                                     >
-                                    <label for="<?= $brand["id"] ?>"><?= $brand["band_name"] ?></label>
+                                    <label for="brand-<?= $brand["id"] ?>"><?= $brand["band_name"] ?></label>
                                 </li>
-                            <?php } ?>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
@@ -90,17 +98,27 @@ foreach ($productsInWishlist as $product) {
                     <div class="price-box p-4 border-custom-grey border-b-2">
                         <h2 class="text-xl">Price</h2>
                         <div class="flex space-x-2">
-                            <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="min" name="min_price"
-                            value="<?php if($filterByPrice) { echo $min_price; } else { echo ""; } ?>"
+                            <input 
+                                id="min-price" 
+                                class="w-[70px] border border-custom-grey rounded-md px-2" 
+                                type="text" 
+                                placeholder="min" 
+                                name="min_price" \
+                                value="<?php if ($filterByPrice) { echo $min_price; } else { echo ""; } ?>"
                             >
                             <span> - </span>
-                            <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="max" name="max_price"
-                            value="<?php if($filterByPrice) { echo $max_price; } else { echo ""; } ?>">
+                            <input 
+                                id="max-price" 
+                                class="w-[70px] border border-custom-grey rounded-md px-2" 
+                                type="text" placeholder="max" 
+                                name="max_price" 
+                                value="<?php if ($filterByPrice) { echo $max_price; } else { echo ""; } ?>"
+                            >
                         </div>
                     </div>
                 </form>
 
-                
+
 
             </div>
             <div class="col-span-5">
@@ -108,8 +126,8 @@ foreach ($productsInWishlist as $product) {
                     <div class="x-3 flex justify-between items-center mb-4">
                         <h2 class="hidden sm:block text-custom-blue">all products</h2>
                         <div>
-                            <label for="categories" class="text-custom-grey">Sort By :</label>
-                            <select id="categories" class="bg-inherit border border-custom-orange text-custom-orange text-custom-medium px-3 py-1 rounded-md">
+                            <label for="sort-by" class="text-custom-grey">Sort By :</label>
+                            <select id="sort-by" class="bg-inherit border border-custom-orange text-custom-orange text-custom-medium px-3 py-1 rounded-md">
                                 <option value="0">Date</option>
                                 <option value="1">Price Low To High</option>
                                 <option value="2">Price High To Low</option>
@@ -121,25 +139,25 @@ foreach ($productsInWishlist as $product) {
                             </button>
                         </div>
                     </div>
-                    <?php if(isset($filterBrands)) { ?>
+                    <?php if (isset($filterBrands)) { ?>
                         <div>
                             <small class="mb-3"><?= count($productLists) ?> items found</small>
                             <div class="flex space-x-4 items-center">
                                 <small class="text-custom-grey">Filtered By : </small>
-                                <?php 
-                                    foreach ($filterBrands as $filterBrandID) :
-                                        $currentBrandName = ""; 
-                                        foreach ($brands as $brand) {
-                                            if($brand["id"] == $filterBrandID) {
-                                                $currentBrandName .= $brand["band_name"];
-                                            }
+                                <?php
+                                foreach ($filterBrands as $filterBrandID) :
+                                    $currentBrandName = "";
+                                    foreach ($brands as $brand) {
+                                        if ($brand["id"] == $filterBrandID) {
+                                            $currentBrandName .= $brand["band_name"];
                                         }
+                                    }
                                 ?>
                                     <div class="bg-custom-orange px-3 py-1 rounded-lg text-white">
                                         <?= $currentBrandName ?>
                                     </div>
-                                <?php 
-                                    endforeach; 
+                                <?php
+                                endforeach;
                                 ?>
                             </div>
                         </div>
@@ -147,7 +165,7 @@ foreach ($productsInWishlist as $product) {
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 px-3 py-5">
-                    <?php foreach ($productLists as $product) { ?>
+                    <?php foreach ($productLists as $product) : ?>
                         <!-- start card -->
                         <div class="bg-white shadow-md hover:shadow-2xl rounded-xl p-3 cursor-pointer">
                             <!-- card header -->
@@ -156,7 +174,6 @@ foreach ($productsInWishlist as $product) {
                                     <img src="../../../<?= $product["p_photo1"] ?>" class="rounded-xl h-[150px]" alt="product-img" />
                                 </a>
                             </div>
-                            <!-- card header -->
                             <!-- card body -->
                             <div>
                                 <div class="flex justify-between">
@@ -191,7 +208,6 @@ foreach ($productsInWishlist as $product) {
                                             $filteredProductRating[] = $rating;
                                         }
                                     }
-
                                     if (count($filteredProductRating) != 0) {
                                         $currentProductRating = $filteredProductRating[0]["average_rating"];
                                     }
@@ -204,37 +220,31 @@ foreach ($productsInWishlist as $product) {
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
-                                <!-- end stars -->
-
 
                                 <div class="block mb-2">
-                                    <div class="text-custom-tiny font-bold">
-                                        <span class="
-                                                    <?php
-                                                    if ($product["p_discount"] != 0) {
-                                                        echo "text-red-600 line-through";
-                                                    } else {
-                                                        echo "text-custom-blue text-custom-large font-bold";
-                                                    }
-                                                    ?>
-                                                ">
-                                            <?= $product["p_sell_price"] ?> MMK
-                                        </span>
-                                        <?php if ($product["p_discount"] != 0) { ?>
+                                    <?php
+                                    $discountPrice = ($product["p_discount"] * $product["p_sell_price"]) / 100;
+                                    $price = $product["p_sell_price"] - $discountPrice;
+                                    ?>
+                                    <?php if ($product["p_discount"] != 0) : ?>
+                                        <div class="text-custom-tiny font-bold">
+                                            <span class="text-red-600 line-through"><?= $product["p_sell_price"] ?> Ks</span>
                                             <span class="text-red-600">( <?= $product["p_discount"] ?> % off)</span>
-                                        <?php } ?>
-                                    </div>
-                                    <div>
-                                        <?php if ($product["p_discount"] != 0) { ?>
-                                            <span class="text-custom-blue text-custom-large font-bold">
-                                                <?= ($product["p_sell_price"] * (100 - $product["p_discount"])) / 100  ?> MMK
-                                            </span>
-                                        <?php } ?>
-
-                                    </div>
+                                        </div>
+                                        <div>
+                                            <span class="text-custom-blue text-lg font-bold"><?= $price ?> ks</span>
+                                        </div>
+                                    <?php else : ?>
+                                        <div>
+                                            <span class="text-custom-blue text-lg font-bold"><?= $price ?> ks</span>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
+                                
                                 <div class="text-center">
-                                    <button class="text-custom-orange bg-custom-blue w-full rounded py-1">
+                                    <button class="add-cart-btn text-custom-orange bg-custom-blue w-full rounded py-1 hover:scale-105">
+                                        <input class="supplier-id" type="number" value="<?= $product["supplier_id"] ?>" hidden>
+                                        <input class="product-id" type="number" value="<?= $product["id"] ?>" hidden>
                                         <ion-icon class="text-custom-large" name="cart"></ion-icon>
                                         <span class="text-white">Add to Cart</span>
                                     </button>
@@ -243,7 +253,7 @@ foreach ($productsInWishlist as $product) {
                             <!-- card body -->
                         </div>
                         <!-- end card -->
-                    <?php } ?>
+                    <?php endforeach; ?>
 
                 </div>
 
@@ -266,14 +276,37 @@ foreach ($productsInWishlist as $product) {
                             </div>
                         </div>
 
+                        <!-- filter by category -->
+                        <?php if(isset($filterCategory)): ?>
+                            <input type="number" name="category" value="<?= $filterCategory ?>" hidden>
+                            <div class="categories-box p-4 border-b-2 border-custom-grey">
+                                <h2 class="text-xl">Category</h2>
+                                <ul class="text-custom-medium px-2">
+                                    <?php 
+                                        foreach($categories as $category): 
+                                            if($category["id"] == $filterCategory):
+                                    ?>
+                                        <li class="text-orange-500"><?= $category["cat_name"] ?></li>
+                                    <?php 
+                                            endif;
+                                        endforeach; 
+                                    ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
                         <!-- filter by brand -->
                         <div class="brands-box p-4 border-custom-grey border-b-2">
                             <h2 class="text-xl">Brands</h2>
                             <ul class="text-custom-medium text-custom-grey px-2">
                                 <?php foreach ($brands as $brand) { ?>
                                     <li>
-                                        <input type="checkbox" name="brands[]" id="<?= $brand["id"] ?>" value="<?= $brand["id"] ?>"
-                                            <?php if(isset($filterBrands) && in_array($brand["id"], $filterBrands)) {  echo "checked"; } ?>
+                                        <input 
+                                            type="checkbox" 
+                                            name="brands[]" 
+                                            id="<?= $brand["id"] ?>" 
+                                            value="<?= $brand["id"] ?>" 
+                                            <?php if (isset($filterBrands) && in_array($brand["id"], $filterBrands)) { echo "checked"; } ?>
                                         >
                                         <label for="<?= $brand["id"] ?>"><?= $brand["band_name"] ?></label>
                                     </li>
@@ -285,12 +318,21 @@ foreach ($productsInWishlist as $product) {
                         <div class="price-box p-4 border-custom-grey border-b-2">
                             <h2 class="text-xl">Price</h2>
                             <div class="flex space-x-2">
-                                <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="min" name="min_price"
-                                value="<?php if($filterByPrice) { echo $min_price; } else { echo ""; } ?>"
+                                <input 
+                                    class="w-[70px] border border-custom-grey rounded-md px-2" 
+                                    type="text" 
+                                    placeholder="min" 
+                                    name="min_price" 
+                                    value="<?php if ($filterByPrice) { echo $min_price; } else { echo ""; } ?>"
                                 >
                                 <span> - </span>
-                                <input class="w-[70px] border border-custom-grey rounded-md px-2" type="text" placeholder="max" name="max_price"
-                                value="<?php if($filterByPrice) { echo $max_price; } else { echo ""; } ?>">
+                                <input 
+                                    class="w-[70px] border border-custom-grey rounded-md px-2" 
+                                    type="text" 
+                                    placeholder="max" 
+                                    name="max_price" 
+                                    value="<?php if ($filterByPrice) { echo $max_price; } else { echo ""; } ?>"
+                                >
                             </div>
                         </div>
                     </form>

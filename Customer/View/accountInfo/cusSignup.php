@@ -46,7 +46,7 @@ session_start();
                             d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                     </svg>
                 </div>
-                <div class="relative">
+                <!-- <div class="relative">
                     <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-[400px] h-[60px]" type="password" name="confirm_password" placeholder="Confirm Password" required>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#024486"
                         class="bi bi-eye absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-[#024486] transform group-hover:text-[#024486]"
@@ -56,16 +56,18 @@ session_start();
                         <path
                             d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                     </svg>
-                </div>
+                </div> -->
                 <div class="flex items-center">
                     <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                     <label for="privacy_policy" class="ml-2">
                         I agree with <span class="text-red-500">Privacy</span> and <span class="text-red-500">Policy</span>
                     </label>
                 </div>
-                <small class="font-bold text-red-500">
-                                    <?php if(isset($_SESSION["signup_error"])){ echo $_SESSION["signup_error"]; } ?>
-                                </small>
+
+                <?php if(isset($_SESSION["signup_error"])): ?>
+                    <small class="text-red-500"><?= $_SESSION["signup_error"] ?></small>
+                <?php endif; ?>
+                
                 <button class="my-4 bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Sign Up</button>
             </form>
         </div>
@@ -74,4 +76,4 @@ session_start();
 </body>
 
 </html>
-<?php $_SESSION["loginerror"] = "" ?>
+<?php $_SESSION["signup_error"] = "" ?>

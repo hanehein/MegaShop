@@ -1,17 +1,14 @@
-const navMenu = document.querySelector('.nav-menu');
-const mobileNav = document.querySelector('.mobile-nav');
-const menuHide = document.querySelector('.menu-hide');
-const searchBtn = document.querySelector('.search-btn');
-const mobileSearch = document.querySelector('.mobile-search');
-navMenu.addEventListener('click',function(){
-    mobileNav.classList.remove("hidden");
-});
+$(document).ready(function(){
+    $('.nav-menu').click(function(){
+        $('.mobile-nav').removeClass("hidden");
+    });
 
-menuHide.addEventListener('click',function(){
-    mobileNav.classList.add("hidden");
-});
+    $('.menu-hide').click(function(){
+        $('.mobile-nav').addClass("hidden");
+    });
 
+    $('.mobile-search-btn').click(function(){
+        $('.mobile-search-container').toggleClass("hidden");
+    })
 
-searchBtn.addEventListener('click',function(){
-    mobileSearch.classList.toggle('hidden');
 })

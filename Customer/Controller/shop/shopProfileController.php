@@ -1,27 +1,36 @@
 <?php
 ini_set('display_errors', 1);
-//DB connection
+
+if (!isset($_GET["id"])) {
+  header("Location: ../../View/errors/error.php");
+}
 $id = $_GET["id"];
-// print_r($id);
 
-if (!isset($id)) {
-  header("Location: ../View/errors/error.php");
-} else {
+ //DB connection
   include "../../Model/model.php";
-  $sql = $pdo->prepare(
-    "SELECT * FROM m_products 
-    INNER JOIN t_product_reviews 
-    ON m_products.id = t_product_reviews.product_id"
-  );
-  $sql->execute();
-  $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
+  
+  // $sql = $pdo->prepare(
+  //   "SELECT * FROM m_products 
+  //   INNER JOIN t_product_reviews 
+  //   ON m_products.id = t_product_reviews.product_id WHERE supplier_id = :id"
+  // );
+  // $sql->bindValue(":id",$id);
+  // $sql->execute();
+  // $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
   $sql = $pdo->prepare(
-    "SELECT * FROM m_products WHERE del_flg=0"
+    "SELECT * 
+    FROM 
+    m_products 
+    WHERE 
+    del_flg=0 
+    AND supplier_id = :id
+    AND p_approved = 1;"
   );
+  $sql->bindValue(":id",$id);
   $sql->execute();
   $products = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
+
 
 
   //Average rating
@@ -45,7 +54,7 @@ $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
     t_follow_stores
   WHERE sup_id = :supplier_id;"
   );
-  $sql->bindValue(":supplier_id",12);
+  $sql->bindValue(":supplier_id",$id);
   $sql->execute();
   $tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -55,13 +64,9 @@ $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
     *
   FROM 
     m_suppliers
-  WHERE id = :supplier_id;"
+  WHERE id = :supplier_id AND del_flg = 0;"
   );
-  $sql->bindValue(":supplier_id",12);
+  $sql->bindValue(":supplier_id",$id);
   $sql->execute();
   $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
   
-
-  // echo "<pre>";
-  // print_r($product_ratings);
-// echo "hi";
