@@ -39,7 +39,7 @@ $signup  = $_SESSION["adminSignup"];
             <!-- Inner Container section -->
             <div class=" w-96 mx-auto flex  font-['Poppins']  flex-col justify-center items-center py-3 ">
                 <!-- Sign up section -->
-                <p class="text-white text-lg text-center  ">Create New Account</p>
+                <p class="text-white text-lg text-center  ">Edit Profile</p>
 
                 <form action="../../Controller/adminUpdateController.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $signup[0]["admin_id"] ?>">

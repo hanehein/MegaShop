@@ -54,7 +54,7 @@ include '../../Controller/regionListController.php';
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
                 </a>
 
-                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $m_customers["id"]; ?>">
+                <a href="./orderHistory.php?id=<?php echo $m_customers["id"]; ?>">
                     <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
                 </a>
 

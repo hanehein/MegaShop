@@ -1,21 +1,8 @@
 <?php
 ini_set('display_errors', 1);
-session_start();
+include "../../Controller/dashboardController.php";
+
 $today = date("Y-m-d");
-$admin = $_SESSION["admin"];
-$supplier = $_SESSION["totalSuppliers"];
-$customer = $_SESSION["totalCustomers"];
-$product = $_SESSION["totalProducts"];
-$brand = $_SESSION["totalBrand"];
-$category = $_SESSION["totalCategory"];
-$chart = $_SESSION["chart"];
-$plan = $_SESSION["planChart"];
-// print_r($chart);
-// print_r($customer);
-// echo "</br>";
-// print_r($admin);
-// echo "</br>";
-// print_r($supplier);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +50,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Verified Suppliers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $supplier[0]["total_suppliers"] ?></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($supplier == null) {
+                                echo "0";
+                            } else {
+                                echo $supplier[0]["total_suppliers"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
 
@@ -72,7 +67,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Verified Customers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $customer[0]["total_customers"] ?></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($customer == null) {
+                                echo "0";
+                            } else {
+                                echo $customer[0]["total_customers"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
 
@@ -81,7 +84,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Verified Products</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $product[0]["total_products"] ?></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($product == null) {
+                                echo "0";
+                            } else {
+                                echo $product[0]["total_products"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
 
@@ -90,7 +101,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Total Brand</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $brand[0]["total_brand"] ?></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($brand == null) {
+                                echo "0";
+                            } else {
+                                echo $brand[0]["total_brand"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
 
@@ -99,7 +118,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Total Category</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"><?= $category[0]["total_category"] ?></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($category == null) {
+                                echo "0";
+                            } else {
+                                echo $category[0]["total_category"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -110,7 +137,14 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Pending Suppliers</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($pendingSuppliers == null) {
+                                echo "0";
+                            } else {
+                                echo $pendingSuppliers[0]["pending_suppliers"];
+                            }
+                            ?></p>
                     </div>
                 </div>
 
@@ -128,7 +162,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Pending Products</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($pendingProducts == null) {
+                                echo "0";
+                            } else {
+                                echo $pendingProducts[0]["pending_products"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
 
@@ -137,7 +179,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Total Orders</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($order == null) {
+                                echo "0";
+                            } else {
+                                echo $order[0]["total_orders"];
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
@@ -145,7 +195,15 @@ $plan = $_SESSION["planChart"];
                         <p class="text-white text-sm">Rating & Review</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                                if ($feedback == null) {
+                                    echo "0";
+                                } else {
+                                    echo $feedback[0]["total_feedbacks"];
+                                }
+                            ?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -191,7 +249,7 @@ $plan = $_SESSION["planChart"];
         //bar chart
         for (let index = 0; index < serverData.length; index++) {
             dates.push(serverData[index].create_date);
-            totalPerson.push(serverData[index].countPerson)
+            totalPerson.push(serverData[index].countPerson);
         }
         //pie chart
         for (let index = 0; index < serverData1.length; index++) {

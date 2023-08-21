@@ -26,14 +26,14 @@ include "../../Controller/regionListController.php";
     <script src="../resources/js/townshipAdd.js" defer></script>
 </head>
 
-<body class="bg-[#F6F6F6] overflow-x-hidden">
-    <div class="w-full h-screen  flex flex-col items-center">
+<body class="bg-white overflow-x-hidden">
+    <div class="w-full min-h-screen flex flex-col">
         <!-- nav bar -->
         <?php
         include "../components/responsiveNav.php";
         ?>
         <!-- second section -->
-        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3">
+        <div class="w-full h-12 flex md:items-start items-center justify-center  bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3  mt-[80px]">
             <a href="../order/shoppingCart.php"><span class="text-gray-500 text-sm">shopping cart</span></a>
             <ion-icon name="arrow-redo-circle" class="text-[#F68721]"></ion-icon>
             <a href="../order/checkout.php"><span class=" text-blue-800 text-sm">checkout</span></a>
@@ -49,18 +49,18 @@ include "../../Controller/regionListController.php";
         </div>
 
         <!-- two flexbox start -->
-        <div class="w-full container mx-auto md:flex items-start justify-center font-['Poppins'] mt-5 grid-cols-1 grid-rows-2 md:space-x-8 ">
+        <div class="w-full container mx-auto flex items-start justify-center font-['Poppins'] md:mt-5  grid-cols-1 grid-rows-2 md:space-x-8 ">
             <!-- left flexbox -->
             <form action="../../Controller/PlaceOrderController.php" method="post" class="flex flex-col md:flex-row md:justify-around">
                 <input type="text" name="cus" value="<?php echo $cus_id; ?>" hidden></input>
                 <input type="text" name="product" value="<?php echo $p_id; ?>" hidden></input>
-                <div class="mid:w-1/2  w-auto h-auto  mid:h-[55rem] mid:flex flex-col items-center justify-center text-gray-500 space-y-5 px-4 py-3 mt-5 ">
-                    <div class="">
+                <div class="mid:w-1/2  w-full mid:h-[55rem] mid:flex flex-col items-center justify-center text-gray-500 space-y-5 px-4 py-3 mt-5">
+                    <div class="w-full flex flex-col md:items-start items-center justify-center">
                         <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 1</a></button>
                         <p class="text-sm font-semibold mt-3">Billing & Delivery Address
                         </p>
                         <!-- info -->
-                        <div class="w-auto flex items-center justify-center space-x-6 mt-3">
+                        <div class="w-full flex items-center justify-center space-x-6 mt-3">
                             <div class="flex flex-col items-start justify-center space-y-5">
                                 <div>
                                     <label for="name" class="text-sm">Full Name</label>
@@ -112,25 +112,25 @@ include "../../Controller/regionListController.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-5 flex flex-col space-y-5 md:mx-auto ml-5 ">
-                            <div>
+                        <div class="w-full mt-5 flex flex-col items-center justify-center space-y-5">
+                            <div class="">
                                 <label for="address" class="text-sm">Address</label>
-                                <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                    <textarea name="address" id="address" cols="30" rows="5" class="md:w-[28rem] w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs px-3 py-3" placeholder="House number & street address" style="resize: none;" required></textarea>
+                                <div class=" md:w-[29.5rem] w-auto h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <textarea name="address" id="address" cols="30" rows="5" class="md:w-[28rem] w-[25rem] h-10 border-none bg-gray-200 rounded-md text-xs px-3 py-3" placeholder="House number & street address" style="resize: none;" required></textarea>
                                 </div>
                             </div>
                             <div>
                                 <label for="order" class="text-sm">Order Notes (optional)</label>
-                                <div class=" md:w-[29.5rem] w-[20rem] h-12 flex items-center justify-center bg-gray-200 rounded-md">
-                                    <textarea name="order" id="order" cols="30" rows="5" class="md:w-full w-[18rem] h-10 border-none bg-gray-200 rounded-md text-xs px-3 py-3" placeholder="Note about your order!" style="resize: none;" required></textarea>
+                                <div class=" md:w-[29.5rem] w-auto h-12 flex items-center justify-center bg-gray-200 rounded-md">
+                                    <textarea name="order" id="order" cols="30" rows="5" class="md:w-[28rem] w-[25rem] h-10 border-none bg-gray-200 rounded-md text-xs px-3 py-3" placeholder="Note about your order!" style="resize: none;" required></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- right flexbox -->
-                <div class="mid:w-1/3 w-auto bg-[#024486] mid:flex flex-col space-y-5 justify-center items-center rounded-md py-3 mt-5 px-4 md:ml-20">
-                    <div>
+                <div class="mid:w-1/3 w-[25rem] bg-[#024486] flex flex-col space-y-5 justify-center items-center rounded-md py-3 mt-5 px-4 md:ml-20 mx-auto">
+                    <div class="w-full flex flex-col md:items-start items-center justify-center">
                         <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 2</a></button>
                         <p class="text-sm text-white mt-3">Your Order and delivery informations
                         </p>
@@ -139,13 +139,14 @@ include "../../Controller/regionListController.php";
                             <div class="md:w-[23rem] w-auto flex flex-col items-center justify-center bg-white rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 mt-3">
                                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
                                     <p>Product</p>
-                                    <p>Product Description</p>
+                                    <p>Quantity</p>
                                     <p>Subtotal</p>
                                 </div>
                                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
                                     <img src="../<?php echo $product["p_photo1"]; ?>" alt="" width="30%">
-                                    <p><?php echo $product["p_description"]; ?></p>
-                                    <p><?php echo $product["p_sell_price"]; ?> Ks</p>
+                                    <p><?php echo $product["qty"]; ?></p>
+                                    <p><?php echo $product["p_sell_price"] * $product["qty"]; ?> Ks</p>
+                                    <input type="text" name="qty" value="<?php echo $product["qty"]; ?>" hidden></input>
                                     <input type="text" name="sup" value="<?php echo $product["supplier_id"]; ?>" hidden></input>
 
                                 </div>
@@ -165,28 +166,28 @@ include "../../Controller/regionListController.php";
                             </div>
                         <?php } ?>
                         <!-- step 3  -->
-                        <div class="md:w-[23rem] w-[28rem] flex flex-col items-start justify-center  border-t-2 border-orange-400 py-5  space-y-5 mt-5">
-                            <div class="flex flex-col space-y-5">
+                        <div class="md:w-[23rem] w-auto flex flex-col md:items-start items-center justify-center  border-t-2 border-orange-400 py-5  space-y-5 mt-5">
+                            <div class="flex flex-col space-y-5 md:items-start items-center justify-center">
                                 <button class="bg-[#F68721] shadow-md  w-20 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400"><a href="">Step 3</a></button>
                                 <p class="text-sm text-white">Please choose your payment method!
                                 </p>
                             </div>
-                            <div class="flex flex-col space-y-8 text-sm">
+                            <div class="flex flex-col space-y-8 text-sm md:items-start items-center justify-center">
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-center bg-white rounded-md space-x-9 px-4">
-                                        <input type="radio" name="payment" value="Cash On Delivery" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs">
+                                        <input type="radio" name="payment" value="0" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs">
                                         <span class="text-gray-500">Cash On Delivery</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
-                                        <input type="radio" name="payment" value="KBZ Pay" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
+                                        <input type="radio" name="payment" value="1" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
                                         <span class="text-gray-500 ml-10">KBZ Pay</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
-                                        <input type="radio" name="payment" value="AYA Pay" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
+                                        <input type="radio" name="payment" value="2" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
                                         <span class="text-gray-500 ml-10">AYA Pay</span>
                                     </div>
                                 </div>
@@ -205,11 +206,11 @@ include "../../Controller/regionListController.php";
         </div>
 
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-5">
+        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-10">
             <!-- first one -->
-            <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
+            <div class="md:w-full w-full  container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
+                <div class=" md:w-50 w-full flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
                     <p>Quick Links</p>
                     <ul class="list-disc mt-2">
                         <a href="../Product/aboutUs.php">
@@ -221,7 +222,7 @@ include "../../Controller/regionListController.php";
                     </ul>
                 </div>
                 <!-- Help -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
+                <div class=" md:w-50 w-full flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
                     <p>Help?</p>
                     <ul class="list-disc mt-2 cursor-pointer">
                         <a href="../Product/cusfeedback.php">
@@ -233,7 +234,7 @@ include "../../Controller/regionListController.php";
                     </ul>
                 </div>
                 <!-- Contact Us -->
-                <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden ">
+                <div class=" w-50 w-full flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden ">
                     <p>Contact Us</p>
                     <ul class="list-disc mt-2 leading-5">
                         <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
@@ -242,7 +243,7 @@ include "../../Controller/regionListController.php";
                 </div>
             </div>
             <!-- last one -->
-            <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
+            <div class="md:w-[80rem] w-full flex items-center justify-center border-t-2 border-t-white mt-1 py-3">
                 <p class="text-white text-xs">&#64;2023 MEGA SHOP All Rights Reserved.</p>
             </div>
         </div>

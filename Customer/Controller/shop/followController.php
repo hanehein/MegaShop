@@ -1,10 +1,13 @@
 <?php
 ini_set('display_errors', 1);
-session_start();
-print_r($_POST["sup_id"]);
-die("");
-$sup_id = $_POST["sup_id"];
-$cus_id = $_POST["cus_id"];
+
+
+// $sup_id = $_GET["id"];
+// print_r( $_GET["id"]);
+
+// $cus_id = $_GET["cus_id"];
+
+$create_date = date("Y-m-d");
 //DB connection
 include "../../Model/model.php";
 
@@ -18,7 +21,8 @@ $sql = $pdo->prepare(
     :cus_id,
     :create_date)"
 );
-$sql->bindValue(":sup_id", $sup_id);
-$sql->bindValue(":cus_id", $cus_id);
+$sql->bindValue(":sup_id", 12);
+$sql->bindValue(":cus_id", 1);
+$sql->bindValue(":create_date", $create_date);
 
 $sql->execute();

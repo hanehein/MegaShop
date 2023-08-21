@@ -43,31 +43,36 @@ include '../../Controller/FaqController.php';
     </div>
 
 
-
-    <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-36 rounded-lg px-10 py-10 mb-10 ">
-    <form action="" method="post">
-        <?php foreach ($result as $m_faq) { ?>
-        <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full " value="<?php echo $m_faq["faq1"];?>" ></input>
-         
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq2"];?>" ></input>
+    <div class="flex flex-col w-full">
+        <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
 
         </div>
-        <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq3"];?>" ></input>
+        <div class="bg-[#D9D9D9] w-1/2 mx-auto mt-36 rounded-lg px-10 py-10 mb-10 ">
 
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq4"];?>" ></input>
+            <form action="" method="post">
+                <?php foreach ($result as $m_faq) { ?>
+                    <div class="mt-10 mb-10">
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full " value="<?php echo $m_faq["faq1"]; ?>"></input>
 
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq2"]; ?>"></input>
+
+                    </div>
+                    <div class="mt-10 mb-10">
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq3"]; ?>"></input>
+
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq4"]; ?>"></input>
+
+                    </div>
+                    <div class="mt-10 mb-10">
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq5"]; ?>"></input>
+
+                        <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq6"]; ?>"></input>
+
+                    </div>
+                    <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Save</button>
+                <?php } ?>
+            </form>
         </div>
-        <div class="mt-10 mb-10">
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full" value="<?php echo $m_faq["faq5"];?>" ></input>
-        
-            <input class="text-lg font-semibold  py-2 px-2 border-black rounded-lg bg-[#FFFFFF] w-full mt-10" value="<?php echo $m_faq["faq6"];?>" ></input>
-  
-        </div>
-        <button class="bg-[#024486] w-auto px-4 py-2 rounded-lg text-white mt-3 mb-3">Save</button>
-        <?php } ?>
-        </form>
     </div>
 
 
