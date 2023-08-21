@@ -6,10 +6,9 @@ if (!isset($_GET["id"])) {
 }
 $id = $_GET["id"];
 
-
-
  //DB connection
   include "../../Model/model.php";
+  
   // $sql = $pdo->prepare(
   //   "SELECT * FROM m_products 
   //   INNER JOIN t_product_reviews 
@@ -20,8 +19,15 @@ $id = $_GET["id"];
   // $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
   $sql = $pdo->prepare(
-    "SELECT * FROM m_products WHERE del_flg=0"
+    "SELECT * 
+    FROM 
+    m_products 
+    WHERE 
+    del_flg=0 
+    AND supplier_id = :id
+    AND p_approved = 1;"
   );
+  $sql->bindValue(":id",$id);
   $sql->execute();
   $products = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -58,7 +64,7 @@ $avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
     *
   FROM 
     m_suppliers
-  WHERE id = :supplier_id;"
+  WHERE id = :supplier_id AND del_flg = 0;"
   );
   $sql->bindValue(":supplier_id",$id);
   $sql->execute();
