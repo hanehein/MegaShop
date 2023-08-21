@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 include "../../Controller/dashboardController.php";
+
 $today = date("Y-m-d");
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $cusNotify = $_SESSION["cusNotify"];
-print_r($cusNotify);
+// print_r($cusNotify);
 ?>
 <!DOCTYPE html>
 <html lang="en">
