@@ -106,37 +106,38 @@ include '../../Controller/approvedProductsController.php';
                 </table>
             </div>
             <!-- pagination -->
-            <div class="w-auto flex items-start justify-center h-10 mb-5">
-                <div class="w-5 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>1</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>2</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>3</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>4</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>5</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>6</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>7</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>8</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>9</button></a>
-                </div>
-                <div class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold hover:text-white hover:bg-[#003366]">
-                    <a href=""><button>10</button></a>
-                </div>
+            <div class="w-auto flex items-center justify-center h-10 mb-5 ">
+                <ul class="w-auto flex items-center justify-center h-10 mb-5 ">
+                    <li class="w-14 h-6 flex items-center justify-center bg-[#003366] text-white text-xs rounded-l-md font-semibold hover:text-white hover:bg-[#66CC33] enabled
+                    <?php
+                    if ($page <= 1) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page - 1 ?>">Previous</a>
+                    </li>
+                    <?php
+                    for ($i = 1; $i <= $pageList; $i++) { ?>
+                        <li class="w-5 h-6 flex items-center justify-center bg-white text-[#003366] text-xs rounded-sm font-semibold  
+                        <?php
+                        if ($page == $i) {
+                            echo "active";
+                        }
+                        ?> hover:text-white hover:bg-[#003366]">
+                            <a href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php } ?>
+                    <li class="w-14 h-6 flex items-center justify-center rounded-r-md bg-[#003366] text-white text-xs rounded-sm font-semibold hover:text-white hover:bg-[#66CC33]
+                    <?php
+                    if ($page >= $pageList) {
+                        echo "pointer-events-none";
+                    }
+                    ?>
+                    ">
+                        <a href="?page=<?= $page + 1 ?>">Next</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
