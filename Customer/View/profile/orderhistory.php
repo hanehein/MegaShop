@@ -1,10 +1,11 @@
 <?php
 session_start();
+$rowLimits = 5;
+$pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
 $result = $_SESSION['profileEdit'];
 
 $orders = $result;
-$rowLimits = 5;
-$pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
+
 
 
 ?>
