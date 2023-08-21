@@ -61,11 +61,11 @@ print_r($cusNotify);
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="">Township</label>
-                                <input type="text" name="address" value="<?php echo $cusNotify[0]["township_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="township" value="<?php echo $cusNotify[0]["township_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 text-xs space-x-16">
                                 <label class="text-white" for="">Region</label>
-                                <input type="text" name="address" value="<?php echo $cusNotify[0]["region_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                                <input type="text" name="region" value="<?php echo $cusNotify[0]["region_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96  text-white font-semibold text-xs">
                                 <label class="text-white" for="">Gender</label>

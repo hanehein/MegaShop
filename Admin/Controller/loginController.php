@@ -30,7 +30,7 @@ if (count($_POST) == 0) {
             if ($password == $result[0]["admin_password"]) {
                 $_SESSION["adminId"] = $result[0]["admin_id"];
                 $_SESSION["adminName"] = $result[0]["admin_name"];
-                header("Location: ./dashboardController.php");
+                header("Location: ../View/adminDashboard/adminDashboard.php");
             } else {
                 $_SESSION["loginError"] = "Name or Password Incorrect!";
                 header("Location: ../View/adminProfile/adminLogin.php");

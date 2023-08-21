@@ -70,4 +70,4 @@ session_start();
 </body>
 
 </html>
-<?php $_SESSION["loginError"] = "" ?>
+<?php $_SESSION["loginError"] = ""; ?>

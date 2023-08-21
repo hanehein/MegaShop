@@ -45,7 +45,7 @@ include "../../Controller/shopListController.php";
             <div id="allLists" class=" w-auto h-auto grid  grid-cols-3 grid-rows-4  gap-5 place-items-start bg-[#F6F6F6] bg-white text-xs rounded-md px-2 py-2 shadow-sm shadow-gray-400">
                 <?php foreach ($shopName as $name) { ?>
                     <ul class=" w-auto h-auto hover:cursor-pointer list-none">
-                        <a href="../shop/shopprofile.php?id=<?= $name["supplierId"] ?>">
+                        <a href="../shop/shopprofile.php?id=<?=$name["supplierId"]?>">
                             <li><?= $name["shopName"] ?></li>
                         </a>
                     </ul>
