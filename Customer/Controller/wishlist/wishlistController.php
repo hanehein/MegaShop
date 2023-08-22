@@ -1,6 +1,6 @@
 <?php
-
-$customer_id = 1;
+session_start();
+$customer_id = $_SESSION["logined_customer_id"];
 
 // connect database
 include "../../Model/model.php";

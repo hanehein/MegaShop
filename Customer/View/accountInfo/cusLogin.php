@@ -16,25 +16,25 @@ session_start();
 
 <body>
     <!-- signUp container -->
-    <div class="min-h-screen flex items-center justify-center container">
+    <div class="min-h-screen grid grid-cols-1 sm:grid-cols-2">
         <!-- photo container -->
-        <div class="w-1/2 md:flex flex-col hidden  justify-center items-center">
+        <div class="md:flex flex-col hidden  justify-center items-center">
             <img src="../resources/img/cusLogin.jpg" alt=""
                 class="w-[400px] h-[450px] rounded-[50px] border border-[#76BAFF] shadow-xl"
                 style="box-shadow: 0 0 100px 100px rgba(2, 68, 164 ,0.65);">
         </div>
         <!-- input container -->
-        <div class="min-h-screen w-1/2 px-8 md:px-16 flex justify-center items-center relative">
+        <div class="min-h-screen px-2 md:px-16 flex justify-center items-center relative">
             <div class="absolute top-0 right-0 mt-4 mr-4 md:px-8">
                 <img src="../resources/img/Logo-user.png" alt="" class="w-[200px] h-[160px]">
             </div>
-            <div class=" px-8 md:px-16 flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center">
                 <h4 class="my-7 text-center font-extrabold text-[25px] text-[#024486]">Log in</h4>
                 <form class="flex flex-col gap-4" action="../../Controller/account/cusLoginController.php" method="POST">
-                    <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-[400px] h-[60px] relative"
+                    <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-full sm:w-[400px] h-[60px] relative"
                     type="email" name="email" placeholder="Email">
                     <div class="relative">
-                        <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-[400px] h-[60px]"
+                        <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-full sm:w-[400px] h-[60px]"
                             type="password" name="password" placeholder="Password">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#024486"
                             class="bi bi-eye absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-[#024486] transform group-hover:text-[#024486]"

@@ -1,5 +1,13 @@
 <?php
 
+// login check
+session_start();
+if(!isset($_SESSION["logined_customer_id"])){
+    header("Location: ../accountInfo/cusLogin.php");
+}
+
+$customer_id = $_SESSION["logined_customer_id"];
+
 // connect database
 include "../../Model/model.php";
 
@@ -54,7 +62,6 @@ $sql = $pdo->prepare(
 $sql->execute();
 $productRatings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-$customer_id = 1;
 $sql = $pdo->prepare(
     "SELECT 
         *
@@ -67,3 +74,16 @@ $sql = $pdo->prepare(
 $sql->bindValue(":customer_id", $customer_id);
 $sql->execute();
 $productsInWishlist = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = $pdo->prepare(
+    "SELECT 
+        * 
+    FROM
+        t_shopping_cart
+    WHERE
+        customer_id = :customer_id
+    "
+);
+$sql->bindValue(":customer_id",$customer_id);
+$sql->execute();
+$productsInCart = $sql->fetchAll(PDO::FETCH_ASSOC);
