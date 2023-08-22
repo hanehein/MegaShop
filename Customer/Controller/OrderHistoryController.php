@@ -19,14 +19,15 @@ if (!isset($id)) {
     header("Location: ../../View/errors/error.php");
 } else {
 
-    include "../Model/model.php";
+    include "../../Model/model.php";
 
     $sql = $pdo->prepare(
-        " SELECT * FROM `t_orders` 
-        INNER JOIN `m_customers` ON `t_orders`.`cus_id` = `m_customers`.id
-        INNER JOIN `t_c_payment` ON `t_orders`.`cpay_id` = `t_c_payment`.id
-        INNER JOIN `m_suppliers` ON `t_orders`.`sup_id` = `m_suppliers`.id
-        WHERE `t_orders`.`cus_id` = :id;
+        " SELECT * , `t_orders`.`create_date` as create_date FROM `t_c_payment`
+        INNER JOIN `t_orderdetails` ON `t_c_payment`.`order_id` = `t_orderdetails`.`order_id`
+        INNER JOIN `m_products` ON `t_orderdetails`.`p_id` = `m_products`.`id`
+        INNER JOIN `t_orders` ON `t_c_payment`.`order_id` = `t_orders`.`id`
+        INNER JOIN `m_suppliers` ON `t_c_payment`.`sup_id` = `m_suppliers`.`id`
+        WHERE `t_c_payment`.`cus_id` = :id;
         "
     );
 
@@ -42,18 +43,20 @@ if (!isset($id)) {
 
     // normal fetch
     $sql = $pdo->prepare(
-        "  SELECT * FROM `t_orders` 
-        INNER JOIN `m_customers` ON `t_orders`.`cus_id` = `m_customers`.id
-        INNER JOIN `t_c_payment` ON `t_orders`.`cpay_id` = `t_c_payment`.id
-        INNER JOIN `m_suppliers` ON `t_orders`.`sup_id` = `m_suppliers`.id
-        WHERE `t_orders`.`cus_id` = :id LIMIT $pageStart, $rowLimits
+        "  SELECT * , `t_orders`.`create_date` as create_date FROM `t_c_payment`
+        INNER JOIN `t_orderdetails` ON `t_c_payment`.`order_id` = `t_orderdetails`.`order_id`
+        INNER JOIN `m_products` ON `t_orderdetails`.`p_id` = `m_products`.`id`
+        INNER JOIN `t_orders` ON `t_c_payment`.`order_id` = `t_orders`.`id`
+        INNER JOIN `m_suppliers` ON `t_c_payment`.`sup_id` = `m_suppliers`.`id`
+        WHERE `t_c_payment`.`cus_id` = :id LIMIT $pageStart, $rowLimits
     "
     );
     $sql->bindValue(":id", $id);
     $sql->execute();
-    $_SESSION['profileEdit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION['orderlists'] = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    $pageList = ceil(count( $orderlists) / $rowLimits);
+    $pageList = ceil(count($orderlists) / $rowLimits);
 
-    header("Location: ../View/profile/orderHistory.php");
+
+
 }
