@@ -16,8 +16,6 @@ session_start();
     //all data fetch
     $sql = $pdo->prepare("
         SELECT * FROM m_customers 
-        JOIN m_regions ON m_customers.region_id = m_regions.id 
-        JOIN m_townships ON m_customers.township_id = m_townships.id 
         WHERE m_customers.del_flg = 0;
     ");
     $sql->execute();
@@ -51,3 +49,7 @@ session_start();
     //20,10
     //(page -1 ) * rowLimit
 ?>
+<!-- SELECT * FROM m_customers 
+        JOIN m_regions ON m_customers.region_id = m_regions.id 
+        JOIN m_townships ON m_customers.township_id = m_townships.id 
+        WHERE m_customers.del_flg = 0; -->

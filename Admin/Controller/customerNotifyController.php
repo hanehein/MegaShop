@@ -10,14 +10,7 @@ if (!isset($id)) {
     $sql = $pdo->prepare("
         SELECT *, 
         m_customers.id as customer_id, 
-        m_regions.name as region_name,
-        m_regions.id as region_real_id, 
-        m_townships.name as township_name,
-        m_townships.id as township_real_id, 
-        m_townships.region_id as township_region_id 
         FROM m_customers 
-        JOIN m_regions ON m_customers.region_id = m_regions.id
-        JOIN m_townships ON m_customers.township_id = m_townships.id 
         WHERE m_customers.id = :id
     ");
     $sql->bindValue(":id", $id);
@@ -27,4 +20,14 @@ if (!isset($id)) {
 }
 
 
-
+// SELECT *, 
+// m_customers.id as customer_id, 
+// m_regions.name as region_name,
+// m_regions.id as region_real_id, 
+// m_townships.name as township_name,
+// m_townships.id as township_real_id, 
+// m_townships.region_id as township_region_id 
+// FROM m_customers 
+// JOIN m_regions ON m_customers.region_id = m_regions.id
+// JOIN m_townships ON m_customers.township_id = m_townships.id 
+// WHERE m_customers.id = :id

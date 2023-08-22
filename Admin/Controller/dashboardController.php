@@ -108,5 +108,7 @@ if (isset($_SESSION["adminId"])) {
 ");
     $sql8->execute();
     $plan = $sql8->fetchAll(PDO::FETCH_ASSOC);
+    //total sells
+    
 };
-// header("Location: ../View/adminDashboard/adminDashboard.php");
+

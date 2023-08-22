@@ -57,8 +57,8 @@ $today = date("Y-m-d");
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Gender</th>
-                            <th>Region</th>
-                            <th>Township</th>
+                            <!-- <th>Region</th>
+                            <th>Township</th> -->
                             <th>Created Date</th>
                             <th>Promotions</th>
                         </tr>
@@ -83,13 +83,7 @@ $today = date("Y-m-d");
                                         else if ($customer["gender"] == 1) echo "Female";
                                         else echo "Other";
                                         ?></td>
-                                <td> <?php if ($customer["region_id"] == $customer["region_real_id"]) echo $customer["region_name"];
-                                        ?></td>
-                                <td> <?php
-                                        if ($customer["township_id"] == $customer["township_real_id"] && $customer["region_id"] == $customer["township_region_id"]) {
-                                            echo $customer["township_name"];
-                                        }
-                                        ?></td>
+                                <!--  -->
                                 <td> <?= $customer["create_date"] ?></td>
                                 <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["customer_id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>
                             </tr>
