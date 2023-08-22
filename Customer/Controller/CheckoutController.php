@@ -2,7 +2,7 @@
 
 // $p_id = $_GET['id'];
 // $cus_id = $_GET['cus_id'];
-$p_id = 17;
+$p_id = 1;
 $cus_id = 1;
 
 include "../../Model/model.php";
