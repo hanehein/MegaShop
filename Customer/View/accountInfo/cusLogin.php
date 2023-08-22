@@ -54,7 +54,7 @@ session_start();
                         <label for="privacy_policy" class="ml-2">
                             Remember me 
                         </label>
-                        <a href="#" class="text-red-500 ml-24 text-sm font-semibold italic">Forgot Password ?</a>
+                        <a href="./cusOTP1.php" class="text-red-500 ml-24 text-sm font-semibold italic">Forgot Password ?</a>
                     </div>
                     <button class="my-4 bg-[#002D74] rounded-xl text-white text-xl py-5 hover:scale-105 duration-300" name="from_login">Log in</button>
                     <div class="flex items-center">
