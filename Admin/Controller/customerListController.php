@@ -26,7 +26,7 @@ session_start();
     //normal fetch
     $sql = $pdo->prepare("
         SELECT *, 
-        m_customers.id as customer_id, 
+        m_customers.id as customer_id
         FROM m_customers  
         WHERE m_customers.del_flg = 0 LIMIT $pageStart, $rowLimits
     ");
