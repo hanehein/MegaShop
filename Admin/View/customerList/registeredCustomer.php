@@ -56,7 +56,7 @@ $today = date("Y-m-d");
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Gender</th>
+                            <th>Address</th>
                             <!-- <th>Region</th>
                             <th>Township</th> -->
                             <th>Created Date</th>
