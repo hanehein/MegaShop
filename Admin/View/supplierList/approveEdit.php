@@ -1,7 +1,7 @@
 <?php
 session_start();
 $approveEdit = $_SESSION["approveEdit"];
-print_r($approveEdit);
+// print_r($approveEdit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
