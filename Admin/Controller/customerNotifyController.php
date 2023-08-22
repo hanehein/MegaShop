@@ -9,7 +9,7 @@ if (!isset($id)) {
     include "../Model/model.php";
     $sql = $pdo->prepare("
         SELECT *, 
-        m_customers.id as customer_id, 
+        m_customers.id as customer_id 
         FROM m_customers 
         WHERE m_customers.id = :id
     ");
