@@ -8,7 +8,7 @@ $package_id = $_GET["plan_id"];
 include "../../Model/model.php";
 $sql = $pdo->prepare(
 
-    "SELECT * FROM m_package WHERE del_flg=0 AND  id =  :id;"
+    "SELECT * FROM m_package WHERE del_flg=0 AND  pack_id =  :id;"
 );
 $sql->bindValue(":id",$package_id);
 $sql->execute();
