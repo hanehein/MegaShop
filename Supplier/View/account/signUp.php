@@ -49,7 +49,9 @@
                             <div class="w-1/2 px-5">
                                 <label for="email" class="block text-md font-semibold text-[#2C7607]">Email Address</label>
                                 <input type="email" id="email" name="email" class="mt-1 p-2 border rounded-md w-full" placeholder="Enter Email Address" required>
-                                <small class="font-bold text-red-500"><?= $_SESSION["signup_error"] ?></small>
+                                <?php if(isset($_SESSION["signup_error"])): ?>
+                                    <small class="font-bold text-red-500"><?= $_SESSION["signup_error"] ?></small>
+                                <?php endif; ?>
                             </div>
                             <div class="w-1/2 px-5">
                                 <label for="phone" class="block text-md font-semibold text-[#2C7607]">Phone Number</label>
