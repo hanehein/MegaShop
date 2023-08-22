@@ -38,35 +38,10 @@ if(count($_POST) == 0){
 
     $token = substr(gettoken(102),0,6);
 
-    print_r($token);
 
     include '../Model/model.php';
 
-    // $sql = $pdo->prepare(
-    //     " INSERT INTO t_c_payment
-    //     (
-    //        payment_type,
-    //        cus_id,
-    //        sup_id,
-    //        order_id,
-    //        create_date
-    //     )
-    //     VALUES 
-    //     (
-    //         :payment,
-    //         :cus_id,
-    //         :sup_id,
-    //         :token,
-    //         :date
-    //     )
-    //     "
-    // );
-    // $sql->bindValue(":payment",$payment);
-    // $sql->bindValue(":cus_id",$cus_id);
-    // $sql->bindValue(":sup_id",$sup_id);
-    // $sql->bindValue(":token",$token);
-    // $sql->bindValue(":date",$date);
-    // $sql->execute();
+    
 
 
 
@@ -126,11 +101,76 @@ if(count($_POST) == 0){
     $sql->bindValue(":date",$date);
     $sql->execute();
 
-    // $_SESSION["order"] = $token;
-    // $_SESSION["p_id"] = $p_id;
+    $sql = $pdo->prepare(
+        " SELECT id
+        FROM `t_orders` WHERE `order_id` = :token;"
+    );
+    $sql->bindValue(":token",$token);
+    $sql->execute();
+    $getid = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+    $inputid = $getid[0]["id"];
+    print_r($inputid);
 
-    // header("Location: ../View/order/orderComplete.php");    
+    $sql = $pdo->prepare(
+        " INSERT INTO t_c_payment
+        (
+           payment_type,
+           cus_id,
+           sup_id,
+           order_id,
+           del_flg,
+           create_date
+        )
+        VALUES 
+        (
+            :payment,
+            :cus_id,
+            :sup_id,
+            :inputid,
+            :del,
+            :date
+        )
+        "
+    );
+    $sql->bindValue(":payment",$payment);
+    $sql->bindValue(":cus_id",$cus_id);
+    $sql->bindValue(":sup_id",$sup_id);
+    $sql->bindValue(":inputid",$inputid);
+    $sql->bindValue(":del",$del);
+    $sql->bindValue(":date",$date);
+    $sql->execute();
+
+    $sql = $pdo->prepare(
+        " INSERT INTO t_orderdetails
+        (
+           order_id,
+           p_id,
+           qty,
+           amount,
+           del_flg,
+           create_date
+        )
+        VALUES 
+        (
+            :inputid,
+            :p_id,
+            :qty,
+            :amount,
+            :del,
+            :date
+        )
+        "
+    );
+    $sql->bindValue(":inputid",$inputid);
+    $sql->bindValue(":p_id",$p_id);
+    $sql->bindValue(":qty",$qty);
+    $sql->bindValue(":amount",$amount);
+    $sql->bindValue(":del",$del);
+    $sql->bindValue(":date",$date);
+    $sql->execute();
+
+    $_SESSION["order"] = $token;
+    header("Location: ../View/order/orderComplete.php");    
 
 }
-?>

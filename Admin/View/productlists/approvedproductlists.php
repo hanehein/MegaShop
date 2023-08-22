@@ -87,12 +87,11 @@ include '../../Controller/approvedProductsController.php';
                                 <td><?php echo ++$count; ?></td>
                                 <td>
                                     <div class="flex justify-evenly items-center">
-                                        <img src="../<?php echo $m_products["p_photo1"]; ?>" class="w-1/4 rounded-lg h-1/2">
+                                        <img src="../../../<?php echo $m_products["p_photo1"]; ?>" class="w-1/4 rounded-lg h-1/2">
                                         <p><?php echo $m_products["p_name"]; ?></p>
                                     </div>
                                 </td>
                                 <td><?php echo $m_products["supplier_id"]; ?></td>
-
                                 <td><?php echo $m_products["p_category"]; ?></td>
                                 <td><?php echo $m_products["p_brand"]; ?></td>
                                 <td><?php echo $m_products["p_discount"]; ?></td>
