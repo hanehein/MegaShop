@@ -36,7 +36,7 @@ if (isset($_SESSION["adminId"])) {
     // customers
     $sql3 = $pdo->prepare("
     SELECT *,
-    (SELECT COUNT(id) FROM m_customers WHERE del_flg = 0 AND cus_registered = 1) AS total_customers
+    (SELECT COUNT(id) FROM m_customers WHERE del_flg = 0) AS total_customers
     FROM m_customers
     WHERE del_flg = 0;
 ");
