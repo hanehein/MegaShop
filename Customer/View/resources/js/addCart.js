@@ -60,6 +60,8 @@ $(document).ready(function(){
                 "from_addcart_js" : ''
             },
             success: function (results) {
+                let totalProduct = Number($(".total_product_in_cart").text());
+                $(".total_product_in_cart").text(++totalProduct);
                 alert("1 new item have been added to your cart.Check Your Cart!")
             },
             error: function (errors) {

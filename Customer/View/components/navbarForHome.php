@@ -88,7 +88,7 @@
 <!-- END NAVBAR -->
 
 <!-- START category and filter -->
-<div class="bg-custom-blue px-2 md:px-6 py-4">
+<div class="bg-custom-blue px-4 md:px-6 py-4">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <select id="categories" class="bg-inherit text-md sm:text-lg border-2 border-white text-white px-2 py-1">
@@ -124,13 +124,12 @@
         </div>
         <div class="space-x-2">
             <button class="mobile-search-btn inline sm:hidden"><ion-icon class="text-3xl text-white" name="search"></ion-icon></button>
-            <button class="relative">
-                <ion-icon class="text-3xl text-white" name="cart"></ion-icon>
-                <?php if(count($productsInCart) != 0): ?>
-                    <span class="absolute top-[-10px] right-[-10px] w-[18px] h-[18px] bg-custom-orange text-white text-xs rounded-full flex justify-center items-center"><?= count($productsInCart) ?></span>
-                <?php endif; ?>
-                
-            </button>
+            <a href="../order/shoppingCart.php">
+                <button class="relative">
+                    <ion-icon class="text-3xl text-white" name="cart"></ion-icon>
+                    <span class="total_product_in_cart absolute top-[-10px] right-[-10px] w-[18px] h-[18px] bg-custom-orange text-white text-xs rounded-full flex justify-center items-center"><?= count($productsInCart) ?></span>
+                </button>
+            </a>
         </div>
     </div>
     <div class="mobile-search-container hidden sm:hidden mt-4">
