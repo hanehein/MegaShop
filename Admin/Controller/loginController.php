@@ -24,13 +24,13 @@ if (count($_POST) == 0) {
         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
         // print_r($result);
         if (count($result) == 0) {
-            // $_SESSION["loginError"] = "Admin Name not found!";
+            $_SESSION["loginError"] = "Admin Name not found!";
             header("Location: ../View/adminProfile/adminLogin.php");
         } else {
             if ($password == $result[0]["admin_password"]) {
                 $_SESSION["adminId"] = $result[0]["admin_id"];
                 $_SESSION["adminName"] = $result[0]["admin_name"];
-                header("Location: ./dashboardController.php");
+                header("Location: ../View/adminDashboard/adminDashboard.php");
             } else {
                 $_SESSION["loginError"] = "Name or Password Incorrect!";
                 header("Location: ../View/adminProfile/adminLogin.php");

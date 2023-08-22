@@ -60,27 +60,12 @@ $cusNotify = $_SESSION["cusNotify"];
                                 <input type="text" name="phone" value="<?php echo $cusNotify[0]["cus_phone"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Address</label>
-                                <input type="text" name="address" value="<?php echo $cusNotify[0]["cus_address"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 text-xs">
                                 <label class="text-white" for="">Township</label>
-                                <div class="flex  items-center justify-center">
-                                    <select name="region" id="" class="text-[#003366] text-xs w-52 rounded-md">
-                                        <option <?php
-                                                if ($cusNotify[0]["township"] == 1) {
-                                                    echo "Yankin" ?> selected <?php }
-                                                                                ?> value="" name="township">Yankin</option>
-                                        <option <?php
-                                                if ($cusNotify[0]["township"] == 2) {
-                                                    echo "Dagon" ?> selected <?php }
-                                                                                ?> value="" name="township">Dagon</option>
-                                        <option <?php
-                                                if ($cusNotify[0]["township"] == 3) {
-                                                    echo "Kamayut" ?> selected <?php }
-                                                                                ?> value="" name="township">Kamayut</option>
-                                    </select>
-                                </div>
+                                <input type="text" name="township" value="<?php echo $cusNotify[0]["township_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
+                            </div>
+                            <div class="flex items-center justify-between w-96 text-xs space-x-16">
+                                <label class="text-white" for="">Region</label>
+                                <input type="text" name="region" value="<?php echo $cusNotify[0]["region_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96  text-white font-semibold text-xs">
                                 <label class="text-white" for="">Gender</label>

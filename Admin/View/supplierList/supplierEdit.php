@@ -1,7 +1,8 @@
 <?php
 session_start();
+include "../../Controller/regionListController.php";
 $supEdit = $_SESSION["supEdit"];
-print_r($supEdit);
+// print_r($supEdit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,7 @@ print_r($supEdit);
                             <input type="file" id="profile" name="shopPhoto" class="hidden" accept=".png,.jpg" value="">
                         </div>
                         <div class="flex flex-col space-y-5 items-center justify-between w-96 text-xs">
-                            <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["id"] ?>">
+                            <input type="hidden" class="hidden" name="id" value="<?php echo $supEdit[0]["supplierId"] ?>">
                             <input type="hidden" class="hidden" name="password" value="<?php echo $supEdit[0]["sup_password"] ?>">
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <!-- name -->
@@ -67,8 +68,11 @@ print_r($supEdit);
                                 <label class="text-white" for="">Region</label>
                                 <div class="flex  items-center justify-center">
                                     <select name="region" id="region" class="text-[#003366] text-xs w-[13.5rem] rounded-md h-11">
-                                        <?php foreach ($supEdit as $region) { ?>
-                                            <option value="<?= $region[0]["id"] ?>"><?= $region[0]["name"] ?></option>
+                                        <?php foreach ($regions as $region) { ?>
+                                            <option <?php
+                                                    if ($region["name"] == $region["id"]) {
+                                                        echo $region["name"]; ?> selected <?php
+                                                    }?> value="<?= $region["id"] ?>"><?= $region["name"] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -124,13 +128,13 @@ print_r($supEdit);
     <option <?php
             if ($supEdit[0]["township"] == 1) {
                 echo "Yankin" ?> selected <?php }
-                                                                                ?> value="1">Yankin</option>
+                                            ?> value="1">Yankin</option>
     <option <?php
             if ($supEdit[0]["township"] == 2) {
                 echo "Dagon" ?> selected <?php }
-                                                                                ?> value="2">Dagon</option>
+                                            ?> value="2">Dagon</option>
     <option <?php
             if ($supEdit[0]["township"] == 3) {
                 echo "Kamayut" ?> selected <?php }
-                                                                                ?> value="3">Kamayut</option>
+                                            ?> value="3">Kamayut</option>
 </select>

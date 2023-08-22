@@ -25,3 +25,4 @@ $sql->bindValue(":cus_id", $cus_id);
 $sql->bindValue(":create_date", $create_date);
 $sql->execute();
 
+header("Location: ../../View/Product/cusfeedback.php");

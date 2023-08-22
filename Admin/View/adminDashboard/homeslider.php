@@ -44,24 +44,29 @@ include '../../Controller/homeSliderController.php';
         </div>
     </div>
     <!-- nav -->
-    
-    <form action="../../Controller/homeSliderEditController.php" method="post">
-    <div class=" h-full mx-auto flex justify-between items-center bg-[#ffffff] px-7 py-7 mt-10">
-        <p></p>
-        <?php foreach ($result as $m_herosection) { ?>
-            <label for="img1"><img src="../resources/img/<?php echo $m_herosection["hero_photo1"]; ?>"></label>
-            <input type="file" id="img1"  class="hidden" accept=".png,.jpg,.svg">
-            <div class="flex flex-col w-1/2 ml-36">
-                <label for="img2"><img src="../resources/img/<?php echo $m_herosection["hero_photo2"]; ?>" alt="" class="ml-10 mb-10"></label>
-                <input type="file" id="img2"  class="hidden" accept=".png,.jpg,.svg">
-                <label for="img3"><img src="../resources/img/<?php echo $m_herosection["hero_photo3"]; ?>" alt="" class="ml-10 mb-10"></label>
-                <input type="file" id="img3"  class="hidden" accept=".png,.jpg,.svg">
+    <div class="w-full flex flex-col ml-20">
+
+        <div class="w-full flex items-center justify-center h-20 bg-[#00336659] space-x-80">
+
+        </div>
+        <form action="../../Controller/homeSliderEditController.php" method="post" class="">
+            <div class=" h-full mx-auto flex justify-between items-center bg-[#ffffff] px-7 py-7 mt-10">
+                <p>Home Sliders</p>
+                <?php foreach ($result as $m_herosection) { ?>
+                    <label for="img1"><img src="../<?php echo $m_herosection["hero_photo1"]; ?>" class="w=1/3 bg-black"></label>
+                    <input type="file" id="img1" name="img1" class="hidden" accept=".png,.jpg,.svg">
+                    <div class="flex flex-col w-1/2 ml-36">
+                        <label for="img2"><img src="../<?php echo $m_herosection["hero_photo2"]; ?>" alt="" class="w=1/3 ml-10 mb-10"></label>
+                        <input type="file" id="img2" name="img2" class="hidden" accept=".png,.jpg,.svg">
+                        <label for="img3"><img src="../<?php echo $m_herosection["hero_photo3"]; ?>" alt="" class="w=1/3 ml-10 mb-10"></label>
+                        <input type="file" id="img3" name="img3" class="hidden" accept=".png,.jpg,.svg">
+                    </div>
+
+                <?php } ?>
+                <button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button>
             </div>
-            
-        <?php } ?>
-        <a href="../../Controller/homeSliderEditController.php"><button class=" px-5 py-2 bg-custom-blue text-white font-semibold rounded-lg  mt-2 mb-3 hover:bg-[#9ca3af]">Save</button></a>
+        </form>
     </div>
-    </form>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $incomeEdit  = $_SESSION["subIncomeEdit"];
-print_r($incomeEdit);
+// print_r($incomeEdit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,25 +50,6 @@ print_r($incomeEdit);
                             <div class="flex items-center justify-between w-96 space-x-16">
                                 <label class="text-white" for="adname">Shop Email</label>
                                 <input type="email" name="email" value="<?php echo $incomeEdit[0]["sup_email"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 text-xs space-x-16">
-                                <label class="text-white" for="">Township</label>
-                                <div class="flex  items-center justify-center">
-                                    <select name="township" id="" class="text-[#003366] text-xs w-52 rounded-md">
-                                        <option <?php
-                                                if ($incomeEdit[0]["township"] == 1) {
-                                                    echo "Yankin" ?> selected <?php }
-                                                                                ?> value="1">Yankin</option>
-                                        <option <?php
-                                                if ($incomeEdit[0]["township"] == 2) {
-                                                    echo "Dagon" ?> selected <?php }
-                                                                                ?> value="2">Dagon</option>
-                                        <option <?php
-                                                if ($incomeEdit[0]["township"] == 3) {
-                                                    echo "Kamayut" ?> selected <?php }
-                                                                                ?> value="3">Kamayut</option>
-                                    </select>
-                                </div>
                             </div>
                             <div class="flex items-center justify-between w-96  text-white font-semibold text-xs space-x-16">
                                 <label class="text-white" for="">Plan</label>

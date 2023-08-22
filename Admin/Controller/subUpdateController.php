@@ -3,7 +3,7 @@
 // include "./common/mailSender.php";
 ini_set('display_errors', 1);
 session_start();
-print_r($_POST);//ok here
+// print_r($_POST);//ok here
 // echo "--------";
 
 if(count($_POST) == 0){
@@ -15,7 +15,6 @@ if(count($_POST) == 0){
     $plan = $_POST["plan"];
     $duration = $_POST["duration"];
     $bankAcc = $_POST["bankAcc"];
-    $township = $_POST["township"];
     $activatedDate = $_POST["createDate"];
     // $shopPhoto = $_FILES["shopPhoto"]["name"];
 
@@ -25,7 +24,6 @@ if(count($_POST) == 0){
         UPDATE m_suppliers SET 
         pack_id = :plan,
         sup_email = :email,
-        township = :township,
         bank_account = :bankAcc,
         sup_shop_name = :shopName,
         pack_actual_duration = :duration,
@@ -35,7 +33,6 @@ if(count($_POST) == 0){
     $sql->bindValue(":id",$id);
     $sql->bindValue(":email",$shopEmail);
     $sql->bindValue(":shopName", $shopName);
-    $sql->bindValue(":township",$township);
     $sql->bindValue(":plan",$plan);
     $sql->bindValue(":duration",$duration);
     $sql->bindValue(":bankAcc",$bankAcc);

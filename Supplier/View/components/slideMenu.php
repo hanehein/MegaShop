@@ -83,9 +83,26 @@
                     Messages
                 </a>
             </li>
-            <li class="px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
-                <ion-icon class="mr-3 text-[18px]" name="settings-outline"></ion-icon> Setting
+
+            <!-- orders -->
+            <li class="">
+                <div class="capitalize px-3 py-4 font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer">
+                    <span>
+                    <ion-icon class="mr-3 text-[18px]" name="settings-outline"></ion-icon>
+                        Setting
+                    </span>
+                </div>
+
+                <ul class="child-menu">
+                    <li>
+                        <a class="block capitalize pl-[30px] pr-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" 
+                        href="../profile/supprofile.php">
+                            Profile
+                        </a>
+                    </li>
+                </ul>
             </li>
+
             <li class="">
                 <a class="block capitalize px-3 py-4  font-normal hover:bg-[#66CC33] hover:bg-opacity-50 hover:text-white cursor-pointer" href="../../Controller/account/logoutController.php">
                     <ion-icon class="mr-3 text-[18px]" name="log-in-outline"></ion-icon>

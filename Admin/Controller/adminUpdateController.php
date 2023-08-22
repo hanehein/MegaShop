@@ -24,7 +24,7 @@ if(count($_POST) == 0){
         admin_bio = :position,
         phone = :phone,
         image = :img
-        where id = :id
+        where admin_id = :id
     ");
     $sql->bindValue(":id",$id);
     $sql->bindValue(":name",$adminName);

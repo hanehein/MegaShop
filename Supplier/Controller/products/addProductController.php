@@ -36,7 +36,6 @@ if(isset($_POST["size"])){
     $p_sizes = NULL;
 }
 
-
 //move images to storage
 foreach ($_FILES as $key => $value) {
     if ($_FILES[$key]["size"] != 0) {

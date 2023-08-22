@@ -9,6 +9,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../resources/css/cusFeedback.css">
     <script src="../resources/js/cusFeedback.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -110,10 +111,10 @@
         <section class="flex flex-col justify-center items-center space-y-10 p-10">
             <p class="font-semibold text-xl underline">Customer Feedback</p>
             <p>Please rate your experience from 0 to 10, 10 being the highest</p>
-            <!-- <input type="text" name="" id=""> -->
+            
             <input type="number" id="rateVal" name="rateVal" value="0" hidden>
             <div class="flex space-x-1 md:space-x-2">
-                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center" value="1" >1</button>
+                <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full text-center">1</button>
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">2</button>
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">3</button>
                 <button class="rate bg-gray-500 w-[30px] h-[30px] md:w-[50px] md:h-[50px] rounded-full flex justify-center items-center">4</button>

@@ -1,3 +1,10 @@
+<?php
+
+include '../../Controller/OrderCompleteController.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +24,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#F6F6F6] overflow-x-hidden">
-    <div class="w-full h-screen  flex flex-col items-center">
+<body class="w-full bg-white overflow-x-hidden">
+    <div class="w-full min-h-screen flex flex-col">
+
         <?php
         include "../components/responsiveNav.php";
         ?>
         <!-- second section -->
-        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3">
+        <div class="w-full h-12 flex items-center justify-center md:justify-start bg-gray-200 font-['Poppins'] px-2 py-2 space-x-3 mt-[80px]">
             <a href="../order/shoppingCart.php"><span class="text-gray-500 text-sm">shopping cart</span></a>
             <ion-icon name="arrow-redo-circle" class="text-[#F68721]"></ion-icon>
             <a href="../order/checkout.php"><span class="text-gray-500 text-sm">checkout</span></a>
@@ -31,7 +39,7 @@
             <a href="../order/orderComplete.php"><span class="text-blue-800 text-sm ">order complete</span></a>
         </div>
         <!-- third section -->
-        <div class="w-full container mx-auto flex flex-col items-center  justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
+        <div class="w-full container mx-auto flex flex-col items-center justify-center font-['Poppins']  space-y-8 py-2 px-2 mt-5">
             <div class="flex items-center justify-center">
                 <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
@@ -86,11 +94,11 @@
 
 
         <!-- footer responsive -->
-        <div class="w-full  flex flex-col items-center justify-center font-['Poppins'] bg-[#024486] mt-5">
+        <div class="w-full flex flex-col items-center justify-center font-['Poppins'] bg-[#024486]  mt-auto">
             <!-- first one -->
-            <div class="md:w-full w-[28rem] container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
+            <div class="md:w-full w-full container md:flex mx-auto  items-center justify-between sm:justify-center mt-3 py-3 md:space-x-20">
                 <!-- quicklink -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
+                <div class=" md:w-50 w-full flex flex-col  items-center justify-center text-white text-xs px-3 py-2">
                     <p>Quick Links</p>
                     <ul class="list-disc mt-2">
                         <a href="../Product/aboutUs.php">
@@ -102,7 +110,7 @@
                     </ul>
                 </div>
                 <!-- Help -->
-                <div class=" md:w-50 w-[28rem] flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
+                <div class=" md:w-50 w-full flex flex-col  items-center justify-center text-white text-xs px-3 py-2 md:border-hidden border-t-2  border-b-white">
                     <p>Help?</p>
                     <ul class="list-disc mt-2 cursor-pointer">
                         <a href="../Product/cusfeedback.php">
@@ -114,7 +122,7 @@
                     </ul>
                 </div>
                 <!-- Contact Us -->
-                <div class=" w-50 w-[28rem] flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden ">
+                <div class=" md:w-50 w-full flex flex-col items-center justify-center text-white text-xs px-3 py-2 border-t-2 border-b-white  md:border-hidden">
                     <p>Contact Us</p>
                     <ul class="list-disc mt-2 leading-5">
                         <li><ion-icon name="phone-portrait"></ion-icon><span class="ml-2">+95777777777</span></li>
@@ -123,7 +131,7 @@
                 </div>
             </div>
             <!-- last one -->
-            <div class="md:w-[80rem] w-[28rem] flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
+            <div class="md:w-[80rem] w-full flex items-center justify-center border-t-2 border-b-white mt-1 py-3">
                 <p class="text-white text-xs">&#64;2023 MEGA SHOP All Rights Reserved.</p>
             </div>
         </div>
@@ -133,25 +141,3 @@
 </body>
 
 </html>
-<!-- blue 800
-    slate-100
-    orange-500
-     primary - #024486
-     secondary - #F68721
-     tertiary - #F6F6F6
-    <ion-icon name="person-circle"></ion-icon>
-    <ion-icon name="cart"></ion-icon>
-    <ion-icon name="ellipse"></ion-icon>
-    <ion-icon name="caret-down"></ion-icon>
-    <ion-icon name="logo-facebook"></ion-icon>
-    <ion-icon name="logo-instagram"></ion-icon>
-    <ion-icon name="logo-twitter"></ion-icon>
-    <ion-icon name="search"></ion-icon>
-    <ion-icon name="phone-portrait"></ion-icon>
-    <ion-icon name="mail"></ion-icon>
-    <ion-icon name="gift"></ion-icon>
-    class="text-[#F68721]"
-    <ion-icon name="arrow-redo-circle"></ion-icon>
--->
-
-<!-- <link rel="stylesheet" href="../resources/lib/tailwind/output.css?id="> -->

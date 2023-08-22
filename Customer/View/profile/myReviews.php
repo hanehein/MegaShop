@@ -80,13 +80,13 @@ $result = $review;
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
                 <a href="../../Controller/FollowedStoresController.php?id=<?php echo $review[0]["customer_id"]; ?>">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
                 <a href="../../Controller/OrderHistoryController.php?id=<?php echo $review[0]["customer_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
                 <a href="../../Controller/MyReviewsController.php?id=<?php echo $review[0]["customer_id"]; ?>">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
                 <a href="../../Controller/WishlistController.php?id=<?php echo $review[0]["customer_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>

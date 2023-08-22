@@ -39,7 +39,7 @@ $signup  = $_SESSION["adminSignup"];
             <!-- Inner Container section -->
             <div class=" w-96 mx-auto flex  font-['Poppins']  flex-col justify-center items-center py-3 ">
                 <!-- Sign up section -->
-                <p class="text-white text-lg text-center  ">Create New Account</p>
+                <p class="text-white text-lg text-center  ">Edit Profile</p>
 
                 <form action="../../Controller/adminUpdateController.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $signup[0]["admin_id"] ?>">
@@ -76,7 +76,7 @@ $signup  = $_SESSION["adminSignup"];
                     <div class="w-[18rem] flex items-center justify-center space-x-5">
                         <!-- login -->
                         <button type="submit" class="w-[8rem] bg-blue-500 rounded-[8px] mx-auto mt-5 flex py-2 justify-center items-center shadow-md shadow-black hover:bg-white hover:text-gray-500 text-white font-semibold text-sm ">
-                            Create
+                            Update
                         </button>
                     </div>
                 </form>

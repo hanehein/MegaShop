@@ -2,9 +2,7 @@
 session_start();
 include "../../Controller/supplierListController.php";
 $today = date("Y-m-d");
-
-print_r($supLists);
-
+// print_r($supLists);
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +120,7 @@ print_r($supLists);
                                 <td> <?= $supplier["sup_phone"] ?></td>
                                 <th> <?= $supplier["bank_account"] ?></th>
                                 <td> <?= $supplier["create_date"] ?></td>
-                                <td><a href="../../Controller//supplierEditController.php?id=<?= $supplier["id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
+                                <td><a href="../../Controller/supplierEditController.php?id=<?= $supplier["supplierId"]?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-[#003366] hover:bg-white">Edit</button></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
