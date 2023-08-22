@@ -43,8 +43,9 @@ include "../components/header.php"
 
 <body class="bg-body">
     <?php include "../components/responsiveNav.php"; ?>
+    <div class="h-[80px]"></div>
     <!-- START Product detail SECTION -->
-    <section class="py-4 px-[20px] sm:px-[0px]">
+    <section class="py-4 px-[20px] sm:px-[0px] ">
         <div class="container mx-auto">
             <div class="block md:grid md:grid-cols-3 gap-4">
                 <div class="p-3 shadow-lg rounded-md mb-4">

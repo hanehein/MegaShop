@@ -69,6 +69,9 @@ session_start();
                 <?php endif; ?>
                 
                 <button class="my-4 bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Sign Up</button>
+                <div>
+                    <p>Have an account?<a href="./cusLogin.php" class="text-blue-500"> Log in</a></p>
+                </div>
             </form>
         </div>
     </div>

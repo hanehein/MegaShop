@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP page 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 
@@ -19,7 +20,7 @@ session_start();
             <div class="md:flex flex-col hidden w-1/2 py-10 px-10  items-center justify-center">
                 <img class="rounded-[250px] w-[550px] h-[200px] shadow-xl"
                     style="border-radius: 40px; box-shadow: 0 4px 15px 10px rgba(2, 68, 134, 0.5);"
-                    src="../img/forget1.jpg">
+                    src="../resources/img/forget1.jpg">
             </div>
             <!-- input container -->
             <div class="md:w-1/2 relative flex flex-col items-center justify-center">
