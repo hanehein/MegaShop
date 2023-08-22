@@ -60,32 +60,9 @@ $cusNotify = $_SESSION["cusNotify"];
                                 <input type="text" name="phone" value="<?php echo $cusNotify[0]["cus_phone"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <div class="flex items-center justify-between w-96 space-x-16">
-                                <label class="text-white" for="">Township</label>
-                                <input type="text" name="township" value="<?php echo $cusNotify[0]["township_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96 text-xs space-x-16">
-                                <label class="text-white" for="">Region</label>
-                                <input type="text" name="region" value="<?php echo $cusNotify[0]["region_name"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
-                            </div>
-                            <div class="flex items-center justify-between w-96  text-white font-semibold text-xs">
-                                <label class="text-white" for="">Gender</label>
-                                <div class=" flex space-x-3 items-center justify-start">
-                                    <input type="radio" id="" name="gender" class="" value="0" <?php
-                                                                                                if ($cusNotify[0]["gender"] == 0) {
-                                                                                                    echo "Male" ?> checked <?php }
-                                                                                                                            ?>>
-                                    <label for="">Male</label>
-                                    <input type="radio"  name="gender" class="" value="1" <?php
-                                                                                                        if ($cusNotify[0]["gender"] == 1) {
-                                                                                                            echo "Female" ?> checked <?php }
-                                                                                                                                        ?>>
-                                    <label for="">Female</label>
-                                    <input type="radio"  name="gender" class="" value="2" <?php
-                                                                                                        if ($cusNotify[0]["gender"] == 2) {
-                                                                                                            echo "Other" ?> checked <?php }
-                                                                                                                                    ?>>
-                                    <label for="">Other</label>
-                                </div>
+                                <!-- email -->
+                                <label class="text-white" for="adname">Address</label>
+                                <input type="text" name="address" value="<?php echo $cusNotify[0]["cus_address"] ?>" class="shadow shadow-black rounded-md bg-[#F6F6F6] border-none">
                             </div>
                             <button type="submit" name="" class="w-24 h-8 text-white bg-blue-500 rounded-md text-sm hover:bg-white hover:text-blue-500 shadow-md shadow-black mt-3">Notify</button>
                         </div>

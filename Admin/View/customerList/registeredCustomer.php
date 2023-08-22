@@ -75,14 +75,10 @@ $today = date("Y-m-d");
                                 <td>
                                     <img src="../<?= $customer["cus_photo"] ?>" width="100%" class="rounded-full w-10 h-10" alt="profile">
                                 </td>
-                                <td> <?= $customer["cus_name"] ?></td>
-                                <td> <?= $customer["cus_email"] ?></td>
-                                <td> <?= $customer["cus_phone"] ?></td>
-                                <td> <?php
-                                        if ($customer["gender"] == 0) echo "Male";
-                                        else if ($customer["gender"] == 1) echo "Female";
-                                        else echo "Other";
-                                        ?></td>
+                                <td><?= $customer["cus_name"] ?></td>
+                                <td><?= $customer["cus_email"] ?></td>
+                                <td><?= $customer["cus_phone"] ?></td>
+                                <td><?= $customer["cus_address"] ?></td>
                                 <!--  -->
                                 <td> <?= $customer["create_date"] ?></td>
                                 <td><a href="../../Controller/customerNotifyController.php?id=<?= $customer["customer_id"] ?>"><button class="w-16 py-1 rounded-md bg-[#003366] text-white text-xs hover:text-white hover:bg-[#66CC33]">Notify</button></a></td>

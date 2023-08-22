@@ -14,7 +14,7 @@ if(count($_POST) == 0){
     $cusName = $_POST["cusName"];
     $email = $_POST["email"];
     $gender = $_POST["gender"];
-    // $region = $_POST["region"];
+    $address = $_POST["address"];
     // $township = $_POST["township"];
     $phone = $_POST["phone"];
     
