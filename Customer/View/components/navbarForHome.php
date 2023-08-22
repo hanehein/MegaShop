@@ -69,29 +69,47 @@
             <select id="categories" class="bg-inherit text-md sm:text-lg border-2 border-white text-white px-2 py-1">
                 <option value="">Categories</option>
                 <?php foreach ($categories as $category) { ?>
-                    <option value="<?= $category["id"] ?>"><?= $category["cat_name"] ?></option>
+                    <option value="<?= $category["id"] ?>">
+                        <a href="../Product/allProduct.php"><?= $category["cat_name"] ?></a>
+                    </option>
                 <?php } ?>
             </select>
         </div>
         <div class="hidden sm:block">
             <!-- desktop search input -->
-            <div class="flex items-center">
-                <label for="voice-search" class="sr-only">Search</label>
-                <div class="relative w-full">
-                    <input type="text" id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[300px] pl-10 p-2.5" placeholder="Search Products..." required>
+            <div class="relative">
+                <div class="relative">
+                    <form action="../Product/allProduct.php" method="GET" class="w-full flex space-x-2">
+                        <input type="text" name="search_value" id="search-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[300px] pl-10 p-2.5" placeholder="Search Products..." required>
+                        <button class="px-4 py-1 rounded-md bg-custom-orange text-white">Search</button>
+                    </form>
+                </div>
+                <div class="search-lists w-full absolute top-full py-2 z-50 rounded-md overflow-hidden">
+                    <!-- <div class="flex justify-between items-center p-2 bg-slate-300 cursor-pointer border-b-[2px]">
+                        <div>
+                            <img src="../resources/img/callfoduty.png" class="h-[50px]" alt="">
+                        </div>
+                        <p class="text-[#024486]">product name</p>
+                    </div> -->
                 </div>
             </div>
             <!-- desktop search input -->
         </div>
         <div class="space-x-2">
-            <button class="search-btn inline sm:hidden"><ion-icon class="text-3xl text-white" name="search"></ion-icon></button>
+            <button class="mobile-search-btn inline sm:hidden"><ion-icon class="text-3xl text-white" name="search"></ion-icon></button>
             <button><ion-icon class="text-3xl text-white" name="cart"></ion-icon></button>
         </div>
     </div>
-    <div class="mobile-search hidden sm:hidden mt-4">
+    <div class="mobile-search-container hidden sm:hidden mt-4">
         <!-- mobile search input -->
-        <div class="relative w-full">
-            <input type="text" id="mobile-search-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search Products..." required>
+        <div class="relative">
+            <div>
+                <form action="../Product/allProduct.php" method="GET" class="flex space-x-2">
+                    <input type="text" id="mobile-search-input" name="search_value" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search Products..." required>
+                    <button class="px-4 py-1 rounded-md bg-custom-orange text-white">Search</button>
+                </form>
+            </div>
+            <div class="mobile-search-lists w-full absolute top-full py-2 z-50 rounded-md overflow-hidden"></div>
         </div>
         <!-- mobile search input -->
     </div>

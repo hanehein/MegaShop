@@ -30,7 +30,7 @@ session_start();
             </div>
             <div class=" px-8 md:px-16 flex flex-col justify-center items-center">
                 <h4 class="my-7 text-center font-extrabold text-[25px] text-[#024486]">Log in</h4>
-                <form action="" class="flex flex-col gap-4" action="../../account/Controller/cusLoginController.php" method="POST">
+                <form class="flex flex-col gap-4" action="../../Controller/account/cusLoginController.php" method="POST">
                     <input class="p-2 my-2 rounded-xl border border-[#024486] shadow-md w-[400px] h-[60px] relative"
                     type="email" name="email" placeholder="Email">
                     <div class="relative">
@@ -45,6 +45,10 @@ session_start();
                                 d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                         </svg>
                     </div>
+                    <?php if(isset($_SESSION["login_error"])): ?>
+                        <small class="text-red-500"><?= $_SESSION["login_error"] ?></small>
+                    <?php endif; ?>
+
                     <div class="flex items-center">
                         <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
                         <label for="privacy_policy" class="ml-2">
@@ -66,4 +70,4 @@ session_start();
 </body>
 
 </html>
-<?php $_SESSION["loginerror"] = "" ?>
+<?php $_SESSION["login_error"] = "" ?>

@@ -3,7 +3,7 @@
 include "./common/mailSender2.php";
 ini_set('display_errors', 1);
 session_start();
-// print_r($_POST);//ok here
+print_r($_POST);//ok here
 // echo "--------";
 
 if(count($_POST) == 0){
@@ -14,7 +14,7 @@ if(count($_POST) == 0){
     $cusName = $_POST["cusName"];
     $email = $_POST["email"];
     $gender = $_POST["gender"];
-    $address = $_POST["address"];
+    $region = $_POST["region"];
     $township = $_POST["township"];
     $phone = $_POST["phone"];
     

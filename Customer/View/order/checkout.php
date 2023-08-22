@@ -139,13 +139,14 @@ include "../../Controller/regionListController.php";
                             <div class="md:w-[23rem] w-auto flex flex-col items-center justify-center bg-white rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 mt-3">
                                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
                                     <p>Product</p>
-                                    <p>Product Description</p>
+                                    <p>Quantity</p>
                                     <p>Subtotal</p>
                                 </div>
                                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
                                     <img src="../<?php echo $product["p_photo1"]; ?>" alt="" width="30%">
-                                    <p><?php echo $product["p_description"]; ?></p>
-                                    <p><?php echo $product["p_sell_price"]; ?> Ks</p>
+                                    <p><?php echo $product["qty"]; ?></p>
+                                    <p><?php echo $product["p_sell_price"] * $product["qty"]; ?> Ks</p>
+                                    <input type="text" name="qty" value="<?php echo $product["qty"]; ?>" hidden></input>
                                     <input type="text" name="sup" value="<?php echo $product["supplier_id"]; ?>" hidden></input>
 
                                 </div>
@@ -174,19 +175,19 @@ include "../../Controller/regionListController.php";
                             <div class="flex flex-col space-y-8 text-sm md:items-start items-center justify-center">
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-center bg-white rounded-md space-x-9 px-4">
-                                        <input type="radio" name="payment" value="Cash On Delivery" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs">
+                                        <input type="radio" name="payment" value="0" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full text-xs">
                                         <span class="text-gray-500">Cash On Delivery</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
-                                        <input type="radio" name="payment" value="KBZ Pay" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
+                                        <input type="radio" name="payment" value="1" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
                                         <span class="text-gray-500 ml-10">KBZ Pay</span>
                                     </div>
                                 </div>
                                 <div>
                                     <div class=" w-52 h-12 flex items-center justify-start bg-white rounded-md px-4">
-                                        <input type="radio" name="payment" value="AYA Pay" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
+                                        <input type="radio" name="payment" value="2" placeholder="Type your name" class=" border-none bg-gray-200 rounded-full tex-500">
                                         <span class="text-gray-500 ml-10">AYA Pay</span>
                                     </div>
                                 </div>
