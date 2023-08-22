@@ -60,11 +60,11 @@ include '../../Controller/orderListsController.php';
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td>#<?php echo $t_orders["order_id"]; ?></td>
                                 <td><?php echo $t_orders["cus_name"]; ?></td>
-                                <td><?php echo $t_orders["sup_name"];?></td>
-                                <td><?php echo $t_orders["total_quantity"];?></td>
-                                <td><?php echo $t_orders["create_date"];?></td>
+                                <td><?php echo $t_orders["sup_name"]; ?></td>
+                                <td><?php echo $t_orders["total_quantity"]; ?></td>
+                                <td><?php echo $t_orders["create_date"]; ?></td>
                                 <td>COD</td>
-                                <td><?php echo $t_orders["total_amount"];?> MMK</td>
+                                <td><?php echo $t_orders["total_amount"]; ?> MMK</td>
                             </tr>
                         <?php } ?>
 

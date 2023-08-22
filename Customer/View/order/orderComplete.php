@@ -1,5 +1,6 @@
 <?php
 
+include '../../Controller/CheckoutController.php';
 include '../../Controller/OrderCompleteController.php';
 
 ?>
@@ -43,9 +44,10 @@ include '../../Controller/OrderCompleteController.php';
             <div class="flex items-center justify-center">
                 <p class="text-sm text-gray-500 font-semibold">We received your order. Please make your payment.</p>
             </div>
+            <?php foreach ($products as $product) { ?>
             <div class="w-[23rem] flex items-center justify-between border-b-2 border-b-orange-400 py-2">
                 <p class="text-sm text-gray-500">Payable Amount</p>
-                <p class="text-sm text-gray-500">20,000 <span>Ks</span></p>
+                <p class="text-sm text-gray-500"><?php echo $product["p_sell_price"] * $product["qty"]; ?> <span>Ks</span></p>
             </div>
 
             <div class="w-[23rem] flex items-center justify-between">
@@ -57,17 +59,22 @@ include '../../Controller/OrderCompleteController.php';
             <div class="w-[23rem] flex flex-col items-center justify-center bg-gray-200 rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 opacity-35">
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
                     <p>Product</p>
-                    <p>Product Description</p>
+                    <p>Quantity</p>
                     <p>Subtotal</p>
                 </div>
+
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
-                    <img src="../resources/img/fortnite.jpg" alt="" width="30%">
-                    <p>example</p>
-                    <p>20,000 Ks</p>
+                    <img src="../<?php echo $product["p_photo1"]; ?>" alt="" width="30%">
+                    <p><?php echo $product["qty"]; ?></p>
+                    <p><?php echo $product["p_sell_price"] * $product["qty"]; ?> Ks</p>
                 </div>
+                <?php } ?>
+                <?php foreach ($result as $order) { ?>
+
+ 
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Order ID</p>
-                    <p>#112233</p>
+                    <p>#<?php echo $order["order_id"]; ?></p>
                 </div>
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Payment Method</p>
@@ -75,7 +82,7 @@ include '../../Controller/OrderCompleteController.php';
                 </div>
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Subtotal</p>
-                    <p>20,000 Ks</p>
+                    <p><?php echo ($product["p_sell_price"] * $product["qty"]); ?> Ks</p>
                 </div>
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Delivery Fees</p>
@@ -83,12 +90,13 @@ include '../../Controller/OrderCompleteController.php';
                 </div>
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Total</p>
-                    <p>22,000 Ks</p>
+                    <p><?php echo ($product["p_sell_price"] * $product["qty"]) + $order["delivery_fee"]; ?> Ks</p>
                 </div>
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486]  py-2">
                     <p>Date</p>
-                    <p>July 20, 2023</p>
+                    <p><?php echo $order["create_date"];?></p>
                 </div>
+                <?php } ?>
             </div>
         </div>
 
