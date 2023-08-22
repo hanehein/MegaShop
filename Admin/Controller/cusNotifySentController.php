@@ -13,7 +13,6 @@ if(count($_POST) == 0){
     // $image = $_POST["image"];
     $cusName = $_POST["cusName"];
     $email = $_POST["email"];
-    $gender = $_POST["gender"];
     $address = $_POST["address"];
     // $township = $_POST["township"];
     $phone = $_POST["phone"];
