@@ -1,6 +1,11 @@
 <?php
-
+// session_start();
 ini_set('display_errors', 1);
+// include "../../Controller/middleware/loginCheck.php";
+// $adminId = $_SESSION["adminId"];
+
+
+
 include "../../Model/model.php"; //path view from adminSubscriptionIncome
 if (isset($_GET["page"])) {
     $page = $_GET["page"];
@@ -27,11 +32,4 @@ $sql = $pdo->prepare("
     ");
 $sql->execute();
 $subIncome = $sql->fetchAll(PDO::FETCH_ASSOC);
-$pageList =ceil(count($totalRecord)/$rowLimits);
-?>
-
-
-
-<!-- SELECT * FROM m_suppliers 
-        INNER JOIN t_sup_payment ON m_suppliers.id = t_sup_payment.sup_id
-        INNER JOIN m_package ON m_suppliers.pack_id = m_package.pack_id WHERE m_suppliers.del_flg = 0 AND sup_approve = 1  -->
+$pageList = ceil(count($totalRecord) / $rowLimits);
