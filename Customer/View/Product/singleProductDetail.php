@@ -36,7 +36,7 @@ if (count($averageRating) != 0) {
 <?php 
 $hasCssFile = FALSE;
 $hasJsFile = TRUE;
-$jsFiles = ["quantityAmount", "singleProductDetail","addCart"];
+$jsFiles = ["quantityAmount", "singleProductDetail","addCart1"];
 include "../components/header.php" 
 ?>
 <!-- end header -->
