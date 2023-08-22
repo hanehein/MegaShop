@@ -19,12 +19,12 @@ if(count($_POST) == 0){
     
 
     include "../Model/model.php";
-    $sql = $pdo->prepare("
-        UPDATE m_customers SET notify = 1 where id = :id;
-    ");
-    $sql->bindValue(":id",$id);
+    // $sql = $pdo->prepare("
+    //     UPDATE m_customers SET notify = 1 where id = :id;
+    // ");
+    // $sql->bindValue(":id",$id);
     
-    $sql->execute();
+    // $sql->execute();
     //send merchant to register mail
     $domain = $_SERVER['SEVER_NAME'];
     $body = file_get_contents("../notifyEmail/Notify/notify.php");//
