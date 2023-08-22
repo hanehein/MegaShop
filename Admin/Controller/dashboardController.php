@@ -38,7 +38,7 @@ if (isset($_SESSION["adminId"])) {
     SELECT *,
     (SELECT COUNT(id) FROM m_customers WHERE del_flg = 0 AND cus_registered = 1) AS total_customers
     FROM m_customers
-    WHERE del_flg = 0 AND cus_registered = 1;
+    WHERE del_flg = 0;
 ");
     $sql3->execute();
     $customer = $sql3->fetchAll(PDO::FETCH_ASSOC);
