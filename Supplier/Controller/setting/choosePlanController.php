@@ -14,7 +14,7 @@ $sql->bindValue(":id",$package_id);
 $sql->execute();
 
 $_SESSION["plan"] = $sql -> fetchAll(PDO::FETCH_ASSOC);
-print_r($plan);
+
 
 
 header("Location: ../../View/profile/payment.php");
