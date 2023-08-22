@@ -81,7 +81,7 @@ include '../../Controller/approvedProductsController.php';
                     </thead>
                     <tbody class="">
                     <?php $count = 0; ?>
-                        <?php foreach ($result as $m_products) { ?>
+                        <?php foreach ($productlists as $m_products) { ?>
 
                             <tr class="h-14 border-b-2 border-b-white hover:bg-[#00336618]">
                                 <td><?php echo ++$count; ?></td>
@@ -97,7 +97,6 @@ include '../../Controller/approvedProductsController.php';
                                 <td><?php echo $m_products["p_discount"]; ?></td>
                                 <td><?php echo $m_products["p_buy_price"]; ?></td>
                                 <td><?php echo $m_products["p_sell_price"]; ?></td>
-                                
                             </tr>
                         <?php } ?>
                         
@@ -141,5 +140,4 @@ include '../../Controller/approvedProductsController.php';
         </div>
     </div>
 </body>
-
 </html>

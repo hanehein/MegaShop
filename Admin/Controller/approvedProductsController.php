@@ -33,7 +33,7 @@ $sql = $pdo->prepare(
     WHERE `p_approved` = 1 AND `m_products`.`del_flg` = 0 LIMIT $pageStart, $rowLimits
         ");
     $sql->execute();
-    $supLists = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $productlists = $sql->fetchAll(PDO::FETCH_ASSOC);
     
     $pageList = ceil(count($result) / $rowLimits);
 ?>
