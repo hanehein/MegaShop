@@ -70,61 +70,61 @@ if(count($_POST) == 0){
 
 
 
-    // $sql = $pdo->prepare(
-    //     " INSERT INTO t_orders
-    //     (
-    //         order_id,
-    //         cus_id,
-    //         sup_id,
-    //         total_quantity,
-    //         total_amount,
-    //         cus_phone,
-    //         cus_state,
-    //         cus_township,
-    //         cus_address,
-    //         order_note,
-    //         payment_type,
-    //         delivery_fee,
-    //         order_status,
-    //         del_flg,
-    //         create_date
-    //     )
-    //     VALUES 
-    //     (
-    //         :token
-    //         :cus_id,
-    //         :sup_id,
-    //         :qty,
-    //         :amount,
-    //         :phone,
-    //         :region,
-    //         :township,
-    //         :address,
-    //         :order,
-    //         :payment,
-    //         :deli, 
-    //         :status,
-    //         :del,
-    //         :date  
-    //     )
-    //     "
-    // );
-    // $sql->bindValue(":token",$token);
-    // $sql->bindValue(":cus_id",$cus_id);
-    // $sql->bindValue(":sup_id",$sup_id);
-    // $sql->bindValue(":qty",$qty);
-    // $sql->bindValue(":amount",$amount);
-    // $sql->bindValue(":phone",$phone);
-    // $sql->bindValue(":region",$region);
-    // $sql->bindValue(":township",$township);
-    // $sql->bindValue(":address",$address);
-    // $sql->bindValue(":order",$order);
-    // $sql->bindValue(":payment",$payment);
-    // $sql->bindValue(":deli",$deli);
-    // $sql->bindValue(":status",$status);
-    // $sql->bindValue(":del",$del);
-    // $sql->bindValue(":date",$date);
-    // $sql->execute();
+    $sql = $pdo->prepare(
+        " INSERT INTO t_orders
+        (
+            order_id,
+            cus_id,
+            sup_id,
+            total_quantity,
+            total_amount,
+            cus_phone,
+            cus_state,
+            cus_township,
+            cus_address,
+            order_note,
+            payment_type,
+            delivery_fee,
+            order_status,
+            del_flg,
+            create_date
+        )
+        VALUES 
+        (
+            :token,
+            :cus_id,
+            :sup_id,
+            :qty,
+            :amount,
+            :phone,
+            :region,
+            :township,
+            :address,
+            :order,
+            :payment,
+            :deli, 
+            :status,
+            :del,
+            :date  
+        )
+        "
+    );
+    $sql->bindValue(":token",$token);
+    $sql->bindValue(":cus_id",$cus_id);
+    $sql->bindValue(":sup_id",$sup_id);
+    $sql->bindValue(":qty",$qty);
+    $sql->bindValue(":amount",$amount);
+    $sql->bindValue(":phone",$phone);
+    $sql->bindValue(":region",$region);
+    $sql->bindValue(":township",$township);
+    $sql->bindValue(":address",$address);
+    $sql->bindValue(":order",$order);
+    $sql->bindValue(":payment",$payment);
+    $sql->bindValue(":deli",$deli);
+    $sql->bindValue(":status",$status);
+    $sql->bindValue(":del",$del);
+    $sql->bindValue(":date",$date);
+    $sql->execute();
 
     // $_SESSION["order"] = $token;
     // $_SESSION["p_id"] = $p_id;

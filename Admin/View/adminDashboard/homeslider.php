@@ -53,13 +53,13 @@ include '../../Controller/homeSliderController.php';
             <div class=" h-full mx-auto flex justify-between items-center bg-[#ffffff] px-7 py-7 mt-10">
                 <p>Home Sliders</p>
                 <?php foreach ($result as $m_herosection) { ?>
-                    <label for="img1"><img src="../resources/img/<?php echo $m_herosection["hero_photo1"]; ?>"></label>
+                    <label for="img1"><img src="../<?php echo $m_herosection["hero_photo1"]; ?>" class="w=1/3 bg-black"></label>
                     <input type="file" id="img1" name="img1" class="hidden" accept=".png,.jpg,.svg">
                     <div class="flex flex-col w-1/2 ml-36">
-                        <label for="img2"><img src="../resources/img/<?php echo $m_herosection["hero_photo2"]; ?>" alt="" class="ml-10 mb-10"></label>
-                        <input type="file" id="img2"  name="img2" class="hidden" accept=".png,.jpg,.svg">
-                        <label for="img3"><img src="../resources/img/<?php echo $m_herosection["hero_photo3"]; ?>" alt="" class="ml-10 mb-10"></label>
-                        <input type="file" id="img3"  name="img3" class="hidden" accept=".png,.jpg,.svg">
+                        <label for="img2"><img src="../<?php echo $m_herosection["hero_photo2"]; ?>" alt="" class="w=1/3 ml-10 mb-10"></label>
+                        <input type="file" id="img2" name="img2" class="hidden" accept=".png,.jpg,.svg">
+                        <label for="img3"><img src="../<?php echo $m_herosection["hero_photo3"]; ?>" alt="" class="w=1/3 ml-10 mb-10"></label>
+                        <input type="file" id="img3" name="img3" class="hidden" accept=".png,.jpg,.svg">
                     </div>
 
                 <?php } ?>
