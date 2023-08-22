@@ -27,14 +27,7 @@ session_start();
     $sql = $pdo->prepare("
         SELECT *, 
         m_customers.id as customer_id, 
-        m_regions.name as region_name,
-        m_regions.id as region_real_id, 
-        m_townships.name as township_name,
-        m_townships.id as township_real_id, 
-        m_townships.region_id as township_region_id 
-        FROM m_customers 
-        JOIN m_regions ON m_customers.region_id = m_regions.id
-        JOIN m_townships ON m_customers.township_id = m_townships.id  
+        FROM m_customers  
         WHERE m_customers.del_flg = 0 LIMIT $pageStart, $rowLimits
     ");
     $sql->execute();
@@ -53,3 +46,15 @@ session_start();
         JOIN m_regions ON m_customers.region_id = m_regions.id 
         JOIN m_townships ON m_customers.township_id = m_townships.id 
         WHERE m_customers.del_flg = 0; -->
+
+        <!-- SELECT *, 
+        m_customers.id as customer_id, 
+        m_regions.name as region_name,
+        m_regions.id as region_real_id, 
+        m_townships.name as township_name,
+        m_townships.id as township_real_id, 
+        m_townships.region_id as township_region_id 
+        FROM m_customers 
+        JOIN m_regions ON m_customers.region_id = m_regions.id
+        JOIN m_townships ON m_customers.township_id = m_townships.id  
+        WHERE m_customers.del_flg = 0 LIMIT $pageStart, $rowLimits -->
