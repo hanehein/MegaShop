@@ -59,7 +59,7 @@ session_start();
                     <button class="my-4 bg-[#002D74] rounded-xl text-white text-xl py-5 hover:scale-105 duration-300" name="from_login">Log in</button>
                     <div class="flex items-center">
                         <span class="ml-7">Don't have an account ? </span>
-                        <a href="#" class="text-red-500 ml-24 text-sm italic font-semibold">Sign Up</a>
+                        <a href="./cusSignup.php" class="text-blue-500 ml-24 text-sm italic font-semibold">Sign Up</a>
                     </div>
                 </form>
             </div>

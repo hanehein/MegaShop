@@ -9,11 +9,11 @@
         </a>
         <div class="hidden md:block">
             <ul class="flex space-x-6 text-custom-blue font-bold">
-                <li>Home</li>
-                <li>Products</li>
-                <li>Shop Lists</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
+                <li><a href="../home/index.php">Home</a></li>
+                <li><a href="../Product/allProduct.php">Products</a></li>
+                <li><a href="../Product/shoplists.php">Shop Lists</a></li>
+                <li><a href="../Product/aboutUs.php">About Us</a></li>
+                <li><a href="../contact/contactadmin.php">Contact Us</a></li>
             </ul>
         </div>
         <div class="hidden md:block">
@@ -69,9 +69,11 @@
             <select id="categories" class="bg-inherit text-md sm:text-lg border-2 border-white text-white px-2 py-1">
                 <option value="">Categories</option>
                 <?php foreach ($categories as $category) { ?>
-                    <option value="<?= $category["id"] ?>">
-                        <a href="../Product/allProduct.php"><?= $category["cat_name"] ?></a>
-                    </option>
+                    <a href="../Product/allProduct.php">
+                        <option value="<?= $category["id"] ?>">
+                            <?= $category["cat_name"] ?>
+                        </option>
+                    </a>
                 <?php } ?>
             </select>
         </div>
