@@ -1,5 +1,10 @@
 <?php
 ini_set('display_errors', 1);
+
+if (!isset($_GET["id"])) {
+  header("Location: ../../View/errors/error.php");
+}
+$id = $_GET["id"];
 //DB connection
 include "../../Model/model.php";
 
@@ -12,7 +17,7 @@ FROM
 WHERE id = :supplier_id
 AND p_approved = 1;"
 );
-$sql->bindValue(":supplier_id",12);
+$sql->bindValue(":supplier_id",$id);
 $sql->execute();
 $p_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -24,7 +29,7 @@ FROM
   m_suppliers
 WHERE id = :supplier_id;"
 );
-$sql->bindValue(":supplier_id",12);
+$sql->bindValue(":supplier_id",$id);
 $sql->execute();
 $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,7 +41,7 @@ FROM
   t_follow_stores
 WHERE sup_id = :supplier_id;"
 );
-$sql->bindValue(":supplier_id",12);
+$sql->bindValue(":supplier_id",$id);
 $sql->execute();
 $tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
 
