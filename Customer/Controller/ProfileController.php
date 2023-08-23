@@ -4,6 +4,7 @@ session_start();
 
 $cus_id = $_SESSION["logined_customer_id"];
 
+
 if (!isset($cus_id)) {
     header("Location: ../View/errors/error.php");
 } else {

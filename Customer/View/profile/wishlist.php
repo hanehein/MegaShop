@@ -123,7 +123,7 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
                             <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-5 mt-5 ml-3 mr-3 border-solid border-2">
 
                                 <div class="flex items-center justify-between mr-10">
-                                    <img src="../<?php echo $wishlist["p_photo1"]; ?>" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
+                                    <img src="../../../<?php echo $wishlist["p_photo1"]; ?>" alt="" class="w-1/4 md:w-1/6 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
                                     <div class="py-3 text-left px-2 md:px-5 mr-10 ml-5 md:ml-10 md:mr-20">
                                         <p class="font-semibold text-sm md:text-lg mb-2 mt-2 capitalize"><?php echo $wishlist["p_name"]; ?></p>
                                         <p class="mb-2 mt-2 text-xs capitalize"><?php echo $wishlist["p_color"]; ?></p>
