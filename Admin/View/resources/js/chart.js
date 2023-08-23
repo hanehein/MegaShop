@@ -92,14 +92,10 @@ new Chart(ctx2, config2);
 //donutChart
 const ctx3 = document.getElementById("donutChart");
 const data3 = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
+  labels: regionName,
   datasets: [{
     label: '',
-    data: [300, 50, 100],
+    data: orderCount,
     backgroundColor: [
       '#003366',
       '#000066',
