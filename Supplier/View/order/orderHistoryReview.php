@@ -74,8 +74,8 @@ include "../components/header.php";
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     <tr>
                                         <td class="px-6 py-4 ">
-                                            <a href="../../Controller/orders/orderDetailController.php?order_id=<?= $order["order_id"] ?>" 
-                                            class="underline text-blue-500"><?= $order["order_code"] ?></a>
+                                            <a href="../../Controller/orders/orderDetailController.php?order_id=<?= $order["o_id"] ?>" 
+                                            class="underline text-blue-500"><?= $order["order_id"] ?></a>
                                         </td>
                                         <td class="px-6 py-4 ">
                                             <span>Cash On Delivery</span>

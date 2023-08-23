@@ -16,7 +16,7 @@ include "../components/header.php";
         <?php include "../components/slideMenu.php"; ?>
         <div class="col-span-5 relative">
             <?php
-            $currentMenu = "Order Code - ".$order["order_code"];
+            $currentMenu = "Order Code - ".$order["order_id"];
             include "../components/navbar.php";
             ?>
 
@@ -47,7 +47,7 @@ include "../components/header.php";
                         <div class="min-w-[250px]">
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Order ID</span></div>
-                                <div><span><?= $order["order_code"] ?></span></div>
+                                <div><span><?= $order["order_id"] ?></span></div>
                             </div>
                             <div class="grid grid-cols-2 gap-10 mb-3">
                                 <div><span>Payment Method</span></div>

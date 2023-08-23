@@ -49,7 +49,7 @@ include "../components/header.php";
                                         <h2 class="text-[#2C7607] text-center py-1 font-semibold">Order Code</h2>
                                         <div class="line w-[100px] h-[2px] mx-auto bg-[#66CC33]"></div>
                                         <h2 class="text-[#66CC33] text-center py-1">
-                                            <a href="../../Controller/orders/orderDetailController.php?order_id=<?= $order["order_id"] ?>" class="text-blue-500 underline"><?= $order["order_code"] ?></a>
+                                            <a href="../../Controller/orders/orderDetailController.php?order_id=<?= $order["o_id"] ?>" class="text-blue-500 underline"><?= $order["order_id"] ?></a>
                                         </h2>
                                     </div>
                                     <div>
@@ -57,7 +57,7 @@ include "../components/header.php";
                                             <div>Product Names</div>
                                             <div>
                                                 <?php foreach ($orderDetails as $detail) { ?>
-                                                    <?php if ($detail["order_id"] == $order["order_id"]) {  ?>
+                                                    <?php if ($detail["order_id"] == $order["o_id"]) {  ?>
                                                         <p class="text-end mb-2 text-sm"><?= $detail["p_name"] ?></p>
                                                     <?php } ?>
                                                 <?php } ?>
@@ -88,10 +88,10 @@ include "../components/header.php";
                                             <div><?= $order["total_amount"] ?></div>
                                         </div>
                                         <div class="flex justify-between">
-                                            <a href="../../Controller/orders/rejectOrderController.php?order_id=<?= $order["order_id"] ?>">
+                                            <a href="../../Controller/orders/rejectOrderController.php?order_id=<?= $order["o_id"] ?>">
                                                 <button class="w-[160px] py-2 bg-red-500 text-white font-semibold rounded-tr-lg rounded-bl-lg">Reject</button>
                                             </a>
-                                            <a href="../../Controller/orders/confirmOrderController.php?order_id=<?= $order["order_id"] ?>">
+                                            <a href="../../Controller/orders/confirmOrderController.php?order_id=<?= $order["o_id"] ?>">
                                                 <button class="w-[160px] py-2 bg-green-500 text-white font-semibold rounded-tr-lg rounded-bl-lg">Confirm</button>
                                             </a>
                                         </div>

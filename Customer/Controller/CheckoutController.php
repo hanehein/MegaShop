@@ -4,7 +4,7 @@ $p_id = $_SESSION["product"];
 
 // $cus_id = $_GET['cus_id'];
 // $p_id = 17;
-$cus_id = 4;
+$cus_id = $_SESSION["logined_customer_id"];
 
 include "../../Model/model.php";
 

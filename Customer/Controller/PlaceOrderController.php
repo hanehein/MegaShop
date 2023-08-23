@@ -21,7 +21,7 @@ if(count($_POST) == 0){
     $qty = $_POST["qty"];
     $del = 0;
     $deli = 2000;
-    $status = 1;
+    $status = 0;
     // Return date/time info of a timestamp; then format the output
     $mydate=getdate(date("U"));
     $date = "$mydate[year]-$mydate[mon]-$mydate[mday]";

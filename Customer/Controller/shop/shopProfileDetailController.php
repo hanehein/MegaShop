@@ -5,8 +5,7 @@ if (!isset($_GET["id"])) {
   header("Location: ../../View/errors/error.php");
 }
 $id = $_GET["id"];
-print_r($_GET["id"]);
-die("");
+
 //DB connection
 include "../../Model/model.php";
 

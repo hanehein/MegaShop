@@ -36,7 +36,7 @@ $totalRecords = count($sql->fetchAll(PDO::FETCH_ASSOC));
 $sql = $pdo->prepare(
     "SELECT 
         *,
-        t_orders.id AS order_id,
+        t_orders.id AS o_id,
         t_orders.create_date AS order_create_date 
     FROM 
         t_orders 

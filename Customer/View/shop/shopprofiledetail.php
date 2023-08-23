@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../../Controller/shop/shopProfileDetailController.php";
 $followerIds = [];
 foreach ($tot_followers as $follower) {
