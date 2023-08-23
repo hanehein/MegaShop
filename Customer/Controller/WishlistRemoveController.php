@@ -2,8 +2,8 @@
 
 ini_set('display_errors', 1);
 session_start();
-
-$id = $_GET["id"];
+$c_id = $_SESSION["logined_customer_id"];
+$p_id = $_GET["id"];
 
 print_r($id);
 if(!isset($id)){
@@ -11,10 +11,11 @@ if(!isset($id)){
 } else {
     include "../Model/model.php";
     $sql = $pdo->prepare(
-        "UPDATE m_wishlist 
-        SET del_flg = 1 WHERE product_id = :id;
+        "DELETE FROM `m_wishlist` 
+        WHERE `c_id` = :c_id AND `product_id` = :p_id;
     ");
-    $sql->bindValue(":id",$id);
+    $sql->bindValue(":c_id",$c_id);
+    $sql->bindValue(":p_id",$p_id);
     $sql->execute();
 
     header("Location: ../View/profile/wishlist.php");
