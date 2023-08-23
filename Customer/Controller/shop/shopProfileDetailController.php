@@ -1,10 +1,13 @@
 <?php
 ini_set('display_errors', 1);
 
-if (!isset($_GET["id"])) {
-  header("Location: ../../View/errors/error.php");
-}
+// if (!isset($_GET["id"])) {
+//   header("Location: ../../View/errors/error.php");
+// }
+session_start();
 $id = $_GET["id"];
+print_r($_GET["id"]);
+die("");
 //DB connection
 include "../../Model/model.php";
 
