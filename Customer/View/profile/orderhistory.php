@@ -1,12 +1,12 @@
 <?php
-session_start();
-$rowLimits = 5;
-$pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
-$result = $_SESSION['profileEdit'];
 
-$orders = $result;
+include '../../Controller/OrderHistoryController.php';
+// $rowLimits = 5;
+// $pageList = ceil(count($orderlists) / $rowLimits);
+$orders = $_SESSION['orderlists'];
 
-
+// echo "<pre>";
+// print_r($orders);
 
 ?>
 
@@ -100,28 +100,28 @@ $orders = $result;
         <!-- history -->
 
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20">
-            <?php if (count($result) == 0) { ?>
+            <?php if (count($orders) == 0) { ?>
                 <div class="flex flex-col items-center justify-center">
                     <p class="text-lg">You haven't ordered anything yet.</p>
                 </div>
             <?php } else { ?>
-                <div class="flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center justify-center w-full">
                     <p class="text-xl font-semibold">
                         Order History
                     </p>
-                    <?php foreach ($result as $orders) { ?>
-                        <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2">
+                    <?php foreach ($orders as $order) { ?>
+                        <div class="rounded-lg  bg-[#FFFFFF] shadow-2xl mb-3 mt-3 border-solid border-2 w-2/3">
 
                             <div class="bg-[#003366] text-white text-lg md:text-xl font-semibold rounded-tr-lg rounded-tl-lg px-5 py-3">
-                                Traffic Star >>>
+                                <?php echo $order["sup_name"]; ?> >>>
                             </div>
-                            <div class="flex items-center justify-between px-4">
-                                <img src="../resources/img/backpack 1.jpg" alt="" class="w-1/6 md:w-1/12 h-1/3 md:ml-10 mt-3 rounded-lg mb-3">
+                            <div class="flex items-center justify-between px-4 w-full">
+                                <img src="../<?php echo $order["p_photo1"]; ?>" alt="" class="w-1/6 md:w-1/4 h-2/3 md:ml-10 mt-3 rounded-lg mb-3">
 
-                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2 line-clamp-3"> Tucano Backpacks TU-BP01</p>
-                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["sup_name"]; ?></p>
-                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["total_amount"]; ?> MMK</p>
-                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $orders["create_date"]; ?></p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2 line-clamp-3"><?php echo $order["p_name"]; ?></p>
+
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $order["total_amount"]; ?> MMK</p>
+                                <p class="font-semibold text-xs md:text-lg mb-2 mt-2"><?php echo $order["create_date"]; ?></p>
                             </div>
 
                         </div>

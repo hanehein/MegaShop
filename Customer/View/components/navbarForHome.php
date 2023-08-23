@@ -17,8 +17,20 @@
             </ul>
         </div>
         <div class="hidden md:block">
-            <button class="px-6 py-1 text-white bg-blue-800 rounded-xl"><a href="">log in</a></button>
-            <button class="px-6 py-1 text-white bg-blue-800 rounded-xl"><a href="">sign up</a></button>
+            <div class="flex space-x-2 items-center">
+                <div>
+                    <?php if (is_null($_SESSION["logined_customer"]["cus_photo"])) : ?>
+                        <a href="../profile/profile.php">
+                            <img class="w-[30px] h-[30px] rounded-full" src="../resources/img/customer_profile.png" alt="">
+                        </a>
+                    <?php else : ?>
+                        <img class="w-[30px] h-[30px] rounded-full" src="../resources/img/customer_photo.jpg" alt="">
+                    <?php endif; ?>
+                </div>
+                <span class="text-custom-blue font-semibold">
+                    <a href="../profile/profile.php"><?= $_SESSION["logined_customer"]["cus_name"] ?></a>
+                </span>
+            </div>
         </div>
         <div class="block md:hidden">
             <button class="nav-menu">
@@ -38,22 +50,35 @@
             <div>
                 <ul class="text-custom-blue font-bold">
                     <li class="py-2">
-                        <a href="">Home</a>
+                        <a href="../home/index.php">Home</a>
                     </li>
                     <li class="py-2">
-                        <a href="">Products</a>
+                        <a href="../Product/allProduct.php">Products</a>
                     </li>
                     <li class="py-2">
-                        <a href="">Shop Lists</a>
+                        <a href="../Product/shoplists.php">Shop Lists</a>
                     </li>
                     <li class="py-2">
-                        <a href="">About Us</a>
+                        <a href="../Product/aboutUs.php">About Us</a>
                     </li>
                     <li class="py-2">
-                        <a href="">Contact Us</a>
+                        <a href="../contact/contactadmin.php">Contact Us</a>
                     </li>
                     <li class="py-2">
-                        <a href="">Log in</a>
+                        <div class="flex space-x-2 items-center">
+                            <div>
+                                <?php if (is_null($_SESSION["logined_customer"]["cus_photo"])) : ?>
+                                    <a href="../profile/profile.php">
+                                        <img class="w-[30px] h-[30px] rounded-full" src="../resources/img/customer_profile.png" alt="">
+                                    </a>
+                                <?php else : ?>
+                                    <img class="w-[30px] h-[30px] rounded-full" src="../resources/img/customer_photo.jpg" alt="">
+                                <?php endif; ?>
+                            </div>
+                            <span class="text-custom-blue font-semibold">
+                                <a href="../profile/profile.php"><?= $_SESSION["logined_customer"]["cus_name"] ?></a>
+                            </span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -63,7 +88,7 @@
 <!-- END NAVBAR -->
 
 <!-- START category and filter -->
-<div class="bg-custom-blue px-2 md:px-6 py-4">
+<div class="bg-custom-blue px-4 md:px-6 py-4">
     <div class="container mx-auto flex justify-between items-center">
         <div>
             <select id="categories" class="bg-inherit text-md sm:text-lg border-2 border-white text-white px-2 py-1">
@@ -99,7 +124,12 @@
         </div>
         <div class="space-x-2">
             <button class="mobile-search-btn inline sm:hidden"><ion-icon class="text-3xl text-white" name="search"></ion-icon></button>
-            <button><ion-icon class="text-3xl text-white" name="cart"></ion-icon></button>
+            <a href="../order/shoppingCart.php">
+                <button class="relative">
+                    <ion-icon class="text-3xl text-white" name="cart"></ion-icon>
+                    <span class="total_product_in_cart absolute top-[-10px] right-[-10px] w-[18px] h-[18px] bg-custom-orange text-white text-xs rounded-full flex justify-center items-center"><?= count($productsInCart) ?></span>
+                </button>
+            </a>
         </div>
     </div>
     <div class="mobile-search-container hidden sm:hidden mt-4">

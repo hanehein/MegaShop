@@ -14,7 +14,7 @@ foreach ($productsInWishlist as $product) {
 $hasCssFile = TRUE;
 $cssFiles = ["home", "allProduct"];
 $hasJsFile = TRUE;
-$jsFiles = ["home", "allProduct", "addWishlist", "searchProduct","productSortBy","addCart"];
+$jsFiles = ["home", "allProduct", "addWishlist", "searchProduct", "addCart"];
 include "../components/header.php";
 ?>
 <!-- end header -->
@@ -125,14 +125,7 @@ include "../components/header.php";
                 <div class="px-5 py-2 border-custom-grey border-b-2">
                     <div class="x-3 flex justify-between items-center mb-4">
                         <h2 class="hidden sm:block text-custom-blue">all products</h2>
-                        <div>
-                            <label for="sort-by" class="text-custom-grey">Sort By :</label>
-                            <select id="sort-by" class="bg-inherit border border-custom-orange text-custom-orange text-custom-medium px-3 py-1 rounded-md">
-                                <option value="0">Date</option>
-                                <option value="1">Price Low To High</option>
-                                <option value="2">Price High To Low</option>
-                            </select>
-                        </div>
+                        <div></div>
                         <div class="block sm:hidden">
                             <button class="sub-menu-show">
                                 <ion-icon class="text-xl" name="menu-outline"></ion-icon>

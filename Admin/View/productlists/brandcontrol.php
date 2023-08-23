@@ -43,17 +43,11 @@ include '../../Controller/brandController.php';
         </div>
         <!-- data display div -->
         <div class="w-full flex flex-col  items-center justify-start bg-gray-200 space-y-5 font-['Poppins'] ">
-            <div class="w-full flex items-center justify-evenly h-20 bg-[#00336659] space-x-80">
+            <div class="w-full flex items-center h-20 bg-[#00336659] space-x-80">
 
                 <!-- dropdown -->
-                <select name="" id="" class="text-black px-5 font-semibold rounded-lg py-2">
-                    <option value="">Title</option>
-                    <option value="">Created Date</option>
-
-                </select>
-                <div class="flex items-center justify-center space-x-3">
-
-
+            
+                <div class="flex items-center justify-center space-x-3 absolute right-[30rem]">
                     <a href="./brandAdd.php"><button class="w-32 h-10 flex items-center justify-center bg-[#003366] text-white text-xs rounded-md font-semibold hover:text-[#66CC33] hover:bg-white">Add Brand</button></a>
 
                 </div>

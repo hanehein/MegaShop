@@ -3,6 +3,7 @@ $(document).ready(function(){
         $(btn).click(function(){
             const productID = Number($(this).find(".product-id").val());
             const supplierID = Number($(this).find(".supplier-id").val());
+            const productQty = Number($("#qty-amt").text());
             $.ajax({
                 url: "./../../Controller/shoppingcart/productListsController.php",
                 type: "POST",
@@ -23,21 +24,17 @@ $(document).ready(function(){
                             const isInCart = productIDsInCart.includes(productID);
                             if(isInCart){
                                 //increse qty
-                                const currentProduct = productsInCart.filter(product => {
-                                    return product.product_id == productID;
-                                });
-                                let currentProductQty = currentProduct[0].qty;
-                                updateCart(productID, ++currentProductQty);
+                                updateCart(productID, productQty);
                             }else{
                                 //add product into cart
-                                addIntoCart(supplierID, productID);
+                                addIntoCart(supplierID, productID, productQty);
                             }
                         }else{
                             window.alert("This Product can not be added.Please Add product from same stroe (or) Finish buying products from cart.")
                         }
                     }else{
                         //add product into cart
-                        addIntoCart(supplierID, productID);
+                        addIntoCart(supplierID, productID, productQty);
                     }
                 },
                 error: function (errors) {

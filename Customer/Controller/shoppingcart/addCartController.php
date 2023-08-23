@@ -7,9 +7,11 @@ if(!isset($_POST["from_addcart_js"])){
     header("Location: ../../View/errors/error.php");
 }
 
+session_start();
+$customer_id = $_SESSION["logined_customer_id"];
+
 $supplier_id = $_POST["supplier_id"];
 $product_id = $_POST["product_id"];
-$customer_id = 1;
 $qty = $_POST["product_qty"];
 $color = $_POST["product_color"];
 $size = $_POST["product_size"];
@@ -43,7 +45,7 @@ $sql = $pdo->prepare(
     )"
 );
 
-$sql->bindValue(":customer_id",1);
+$sql->bindValue(":customer_id",$customer_id);
 $sql->bindValue(":product_id",$product_id);
 $sql->bindValue(":supplier_id",$supplier_id);
 $sql->bindValue(":qty", $qty);

@@ -31,7 +31,8 @@ if (count($result) == 0) {
     header("Location: ../../View/accountInfo/cusLogin.php");
 } else {
     if (password_verify($password, $result[0]["cus_password"])) {
-        $_SESSION["cus_id"] = $result[0]["id"];
+        $_SESSION["logined_customer_id"] = $result[0]["id"];
+        $_SESSION["logined_customer"] = $result[0];
         header("Location: ../../View/profile/profile.php");
     } else {
         $_SESSION["login_error"] = "Email or password incorrect!";
