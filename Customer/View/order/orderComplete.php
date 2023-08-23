@@ -53,7 +53,7 @@ include '../../Controller/OrderCompleteController.php';
             <div class="w-[23rem] flex items-center justify-between">
                 <a href="../Home/index.php"><button class="bg-[#F68721] shadow-md  w-40 px-2 py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400">Continue Shopping</button></a>
                 <!-- need to add order complete -->
-                <a href=""><button class="bg-[#F68721] shadow-md  w-40 px-2p py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400">Order Complete</button></a>
+                <a href="../Product/cusfeedback.php"><button class="bg-[#F68721] shadow-md  w-40 px-2p py-2 text-sm text-white rounded-bl-lg rounded-tr-lg hover:bg-gray-200 hover:text-orange-400">Order Complete</button></a>
             </div>
             <!-- invoice card -->
             <div class="w-[23rem] flex flex-col items-center justify-center bg-gray-200 rounded-bl-lg rounded-tr-lg py-3 shadow-md space-y-2 opacity-35">
