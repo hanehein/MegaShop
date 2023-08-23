@@ -44,8 +44,6 @@ include "./../components/header.php";
                                             ?>
                                         </h2>
                                         
-                                        <!-- <p class="text-custom-grey">Color : blue</p>
-                                        <p class="text-custom-grey">Size : M</p> -->
                                         <div class="space-x-2 hidden sm:flex">
                                             <div class="items-center">
                                                 <ion-icon class="text-custom-medium" name="trash-bin"></ion-icon>
@@ -99,6 +97,10 @@ include "./../components/header.php";
                                             <span class="text-custom-tiny text-custom-grey"> Add To Wishlists</span>
                                         </div>
                                     </div>
+                                    <div class="items-center">
+                                        <a href="./checkout.php?id=<?php echo $product["product_id"]; ?>"><button class="w-auto px-3 py-1 bg-custom-orange text-white rounded-md">Buy</button></a>
+                                    </div>
+                                    <?php $_SESSION["product"] = $product["product_id"]?>
                                 </div>
                             </div>
                         </div>
@@ -108,44 +110,7 @@ include "./../components/header.php";
 
             </div>
 
-            <div>
-                <div class="order-container bg-custom-blue text-white rounded-md p-4">
-                    <h2 class="text-custom-extra-large font-bold">Total</h2>
-                    <!-- start itemlists -->
-                    <?php $totalPrice = 0; ?>
-                    <div class="itemlists-container mb-4">
-                        <?php foreach($productLists as $product): ?>
-                            <div class="item flex justify-between mb-2">
-                                <?php if (strlen($product["p_name"]) > 20): ?>
-                                    <span><?= substr($product["p_name"], 0, 20) . "..." ?></span>
-                                <?php else: ?>
-                                    <span><?= $product["p_name"] ?></span>
-                                <?php endif; ?>
-                                <?php
-                                    $discountPrice = ( $product["p_discount"] * $product["p_sell_price"] ) / 100;
-                                    $price = ($product["p_sell_price"] - $discountPrice) * $product["qty"];
-                                    $totalPrice = $totalPrice + $price;
-                                ?>
-                                <span><?= $price ?> Ks</span>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <!-- end itemlists -->
-
-                    <div class="line w-full h-[3px] bg-white mb-2"></div>
-
-                    <div class="total flex justify-between font-bold mb-4">
-                        <span>Total</span>
-                        <span><?= $totalPrice ?> Ks</span>
-                    </div>
-
-                    <a href="../order/checkout.php">
-                        <button class="checkout-btn bg-custom-orange w-full rounded-md text-white text-custom-extra-large font-bold uppercase py-1">
-                            go to checkout
-                        </button>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </section>
     <!-- END Shopping Cart SECTION -->
@@ -184,7 +149,6 @@ include "./../components/header.php";
                         </li>
                     </ul>
                 </div>
-
             </div>
             <p class="text-center text-white font-bold">©2023 MEGA SHOP All rights reserved.</p>
         </div>

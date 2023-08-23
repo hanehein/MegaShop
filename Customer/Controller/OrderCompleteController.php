@@ -1,7 +1,7 @@
 <?php
 
-session_start();
 
+$p_id = $_SESSION["product"];
 $order = $_SESSION["order"];
 
 

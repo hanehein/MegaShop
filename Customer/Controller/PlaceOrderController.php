@@ -169,7 +169,7 @@ if(count($_POST) == 0){
     $sql->bindValue(":del",$del);
     $sql->bindValue(":date",$date);
     $sql->execute();
-
+    $_SESSION["product"] = $p_id;
     $_SESSION["order"] = $token;
     header("Location: ../View/order/orderComplete.php");    
 

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include '../../Controller/CheckoutController.php';
 include '../../Controller/OrderCompleteController.php';
 
@@ -64,7 +64,7 @@ include '../../Controller/OrderCompleteController.php';
                 </div>
 
                 <div class="w-[22rem] flex items-center justify-between text-sm text-[#024486] border-b-2 border-b-orange-400 py-2">
-                    <img src="../<?php echo $product["p_photo1"]; ?>" alt="" width="30%">
+                    <img src="../../../<?php echo $product["p_photo1"]; ?>" alt="" width="30%">
                     <p><?php echo $product["qty"]; ?></p>
                     <p><?php echo $product["p_sell_price"] * $product["qty"]; ?> Ks</p>
                 </div>

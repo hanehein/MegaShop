@@ -16,8 +16,7 @@ if(!isset($p_id)){
     ");
     $sql->bindValue(":c_id",$c_id);
     $sql->bindValue(":p_id",$p_id);
-    $sql->execute();
-
+    $sql->execute();     
     header("Location: ../View/profile/wishlist.php");
 }
     

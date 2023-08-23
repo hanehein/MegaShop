@@ -104,17 +104,14 @@ $result = $follow;
                 <div class="flex flex-wrap justify-evenly px-2 md:px-10 mt-8 mb-8 cursor-pointer">
                     <?php foreach ($result as $follow) { ?>
                         <div class="w-40 md:w-1/3 bg-[#024486] rounded-lg ml-1 mr-1 md:ml-5 md:mr-5 items-center justify-center shadow-2xl border-2 border-solid">
-                            <img src="../resources/img/adidas-logo-svgrepo-com.svg" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
+                            <img src="../../../<?php echo $follow["sup_shop_photo"]?>" alt="" class="w-4/5 mx-auto mt-5 rounded-lg">
                             <div class="bg-orange-400 w-full mb-0 mt-8 rounded-br-lg rounded-bl-lg py-5">
                                 <p class="text-white text-2xl font-semibold"><?php echo $follow["sup_name"]; ?></p>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
-
             </div>
-
-
         </div>
     </div>
     <!-- footer -->
