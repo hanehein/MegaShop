@@ -39,9 +39,9 @@ $today = date("Y-m-d");
                     <p>Welcome Back</p>
                     <p><?= $admin[0]["admin_name"] ?></p>
                 </button>
-                <div class="w-32 h-8 flex items-center justify-center bg-white text-[#003366] text-xs rounded-md font-semibold hover:text-white hover:bg-[#003366]">
-                    <input type="date" name="" id="" value="<?= $today ?>" class=" text-xs bg-white text-[#003366] text-xs rounded-tr-lg rounded-bl-lg font-semibold hover:text-white hover:bg-[#003366]">
-                </div>
+                <button class="rounded-tr-lg rounded-bl-lg flex items-center justify-center bg-[#003366] w-auto   text-white font-xs  px-4 py-2 space-x-2 mt-3 border-2 hover:bg-[#66CC33]">
+                    <input type="date"  value="<?= $today ?>" class="h-6 w-[8rem] bg-[#003366] text-xs text-[#003366]">
+                </button>
             </div>
             <!-- 1st sectioin -->
             <div class=" flex w-[70rem]  items-center justify-center  h-auto mt-5 space-x-20">
@@ -150,10 +150,18 @@ $today = date("Y-m-d");
 
                 <div class="w-[15%] h-auto flex flex-col item-center justify-center  rounded-md shadow-md shadow-black">
                     <div class="flex flex-col items-center justify-center w-full h-10 bg-[#003366]  space-y-2 rounded-t-lg">
-                        <p class="text-white text-sm">Total Sells</p>
+                        <p class="text-white text-sm">Total Sales</p>
                     </div>
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
-                        <p class="text-[#003366] text-sm font-semibold"></p>
+                        <p class="text-[#003366] text-sm font-semibold">
+                            <?php
+                            if ($totalSale == null) {
+                                echo "0";
+                            } else {
+                                echo number_format($totalSale[0]["total_order_amount"]);
+                            }
+                            ?>
+                            MMK</p>
                     </div>
                 </div>
 
@@ -197,11 +205,11 @@ $today = date("Y-m-d");
                     <div class="w-full h-12 bg-gray-100 flex flex-col items-center justify-center  space-y-2 rounded-b-lg">
                         <p class="text-[#003366] text-sm font-semibold">
                             <?php
-                                if ($feedback == null) {
-                                    echo "0";
-                                } else {
-                                    echo $feedback[0]["total_feedbacks"];
-                                }
+                            if ($feedback == null) {
+                                echo "0";
+                            } else {
+                                echo $feedback[0]["total_feedbacks"];
+                            }
                             ?>
                         </p>
                     </div>
@@ -231,8 +239,8 @@ $today = date("Y-m-d");
                     <canvas id="productChart"></canvas>
                 </div>
                 <div class="">
-                    <div class="w-40 flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md">
-                        <p class="text-sm text-white">Top Category</p>
+                    <div class="w-auto flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md">
+                        <p class="text-sm text-white">The Most Order Regions [Top 5]</p>
                     </div>
                     <canvas id="donutChart"></canvas>
                 </div>
@@ -243,9 +251,12 @@ $today = date("Y-m-d");
     <script>
         let serverData = <?php echo json_encode($chart) ?>;
         let serverData1 = <?php echo json_encode($plan) ?>;
+        let serverData2 = <?php echo json_encode($region) ?>;
         let dates = [];
         let totalPerson = [];
         let totalPlan = [];
+        let regionName = [];
+        let orderCount = [];
         //bar chart
         for (let index = 0; index < serverData.length; index++) {
             dates.push(serverData[index].create_date);
@@ -255,6 +266,13 @@ $today = date("Y-m-d");
         for (let index = 0; index < serverData1.length; index++) {
             totalPlan.push(serverData1[index].plan);
         }
+        // donut chart
+        for (let index = 0; index < serverData2.length; index++) {
+            regionName.push(serverData2[index].region_name);
+            orderCount.push(serverData2[index].order_count);
+        }
+        console.log(regionName);
+        console.log(orderCount);
     </script>
 </body>
 

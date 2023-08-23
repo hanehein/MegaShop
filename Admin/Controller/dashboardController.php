@@ -7,7 +7,6 @@ $adminId = $_SESSION["adminId"];
 $adminName =  $_SESSION["adminName"];
 if (isset($_SESSION["adminId"])) {
 
-
     include "../../Model/model.php";
     $sql = $pdo->prepare("
         SELECT * FROM m_admin WHERE admin_name=:name
@@ -104,11 +103,32 @@ if (isset($_SESSION["adminId"])) {
     $chart = $sql7->fetchAll(PDO::FETCH_ASSOC);
     //plan 
     $sql8 = $pdo->prepare("
-    SELECT COUNT(id) AS plan, pack_id FROM `m_suppliers` GROUP BY pack_id
+    SELECT COUNT(id) AS plan, pack_id FROM `m_suppliers` WHERE sup_approve = 1 AND del_flg = 0 GROUP BY pack_id;
 ");
     $sql8->execute();
     $plan = $sql8->fetchAll(PDO::FETCH_ASSOC);
-    //total sells
-    
+    //order_region donut chart
+    $sql11 = $pdo->prepare("
+    SELECT
+    m_regions.name AS region_name,
+    COUNT(t_orders.id) AS order_count
+    FROM
+        t_orders
+    JOIN
+        m_regions ON t_orders.cus_state = m_regions.id
+    GROUP BY
+        m_regions.name
+    ORDER BY
+        order_count DESC
+    LIMIT 5;
+");
+    $sql11->execute();
+    $region = $sql11->fetchAll(PDO::FETCH_ASSOC);
 };
-
+//sells
+$sql12 = $pdo->prepare("
+    SELECT SUM(total_amount) AS total_order_amount
+    FROM t_orders;
+");
+$sql12->execute();
+$totalSale = $sql12->fetchAll(PDO::FETCH_ASSOC);
