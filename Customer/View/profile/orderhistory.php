@@ -1,12 +1,9 @@
 <?php
 
 include '../../Controller/OrderHistoryController.php';
-// $rowLimits = 5;
-// $pageList = ceil(count($orderlists) / $rowLimits);
+
 $orders = $_SESSION['orderlists'];
 
-// echo "<pre>";
-// print_r($orders);
 
 ?>
 

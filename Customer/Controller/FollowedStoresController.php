@@ -7,11 +7,8 @@ $id = $_GET["id"];
 print_r($id);
 
 if (!isset($id)) {
-   echo "error";
-    // header("Location: ../../View/errors/error.php");
+    header("Location: ../../View/errors/error.php");
 } else{
-
-    echo "ok";
     include "../Model/model.php";
 
     $sql =$pdo->prepare(

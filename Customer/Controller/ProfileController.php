@@ -1,8 +1,9 @@
 <?php
 
-include '../Controller/middleware/loginCheck.php';
+session_start();
 
 $cus_id = $_SESSION["logined_customer_id"];
+
 if (!isset($cus_id)) {
     header("Location: ../View/errors/error.php");
 } else {
@@ -18,6 +19,5 @@ $sql->execute();
 $result = $sql->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION['profileEdit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
-
 
 ?>
