@@ -1,5 +1,8 @@
 <?php
-$cus_id = 1;
+
+include '../Controller/middleware/loginCheck.php';
+
+$cus_id = $_SESSION["logined_customer_id"];
 if (!isset($cus_id)) {
     header("Location: ../View/errors/error.php");
 } else {
