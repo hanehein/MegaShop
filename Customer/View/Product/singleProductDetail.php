@@ -4,6 +4,7 @@ $product = $_SESSION["product_detail"];
 $reviews = $_SESSION["product_reviews"];
 $averageRating = $_SESSION["average_rating"];
 $rate_count = $_SESSION["rate_count"];
+$orders = $_SESSION["orders"];
 
 $total_rate_user = count($reviews);
 
@@ -33,11 +34,11 @@ if (count($averageRating) != 0) {
 <html>
 
 <!-- start header -->
-<?php 
+<?php
 $hasCssFile = FALSE;
 $hasJsFile = TRUE;
-$jsFiles = ["quantityAmount", "singleProductDetail","addCart1"];
-include "../components/header.php" 
+$jsFiles = ["quantityAmount", "singleProductDetail", "addCart1", "rateStar"];
+include "../components/header.php"
 ?>
 <!-- end header -->
 
@@ -101,7 +102,7 @@ include "../components/header.php"
                         <div>
                             <p class="text-lg text-[#F68721] font-bold">
                                 <?php if ($product["p_discount"] != 0) {
-                                    $discountPrice = ( $product["p_discount"] * $product["p_sell_price"] ) / 100;
+                                    $discountPrice = ($product["p_discount"] * $product["p_sell_price"]) / 100;
                                     $price = $product["p_sell_price"] - $discountPrice;
                                     echo $price;
                                 } else {
@@ -273,11 +274,45 @@ include "../components/header.php"
 
                 </div>
 
+                <?php
+                $productIdsInOrders = [];
+                foreach ($orders as $order) {
+                    $productIdsInOrders[] = $order["p_id"];
+                }
+                ?>
+                <?php if (in_array($product["id"], $productIdsInOrders)) : ?>
+                    <div class="py-3 mb-4 border-t-2 border-custom-grey">
+                        <div>
+                            <form class="w-full bg-white rounded-lg px-4 pt-2" action="../../Controller/reviews/addReviewController.php" method="POST">
+                                <div class="-mx-3 mb-6">
+                                    <input type="number" value="<?= $product["p_id"] ?>" name="product_id" hidden>
+                                    <input type="number" id="star-rate" value="0" name="rating" hidden>
+                                    <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg">Add Ratings and Reviews</h2>
+                                    <div class="ml-2">
+                                        <button><ion-icon class="rate-star-btn text-3xl text-slate-500" name="star"></ion-icon></button>
+                                        <button><ion-icon class="rate-star-btn text-3xl text-slate-500" name="star"></ion-icon></button>
+                                        <button><ion-icon class="rate-star-btn text-3xl text-slate-500" name="star"></ion-icon></button>
+                                        <button><ion-icon class="rate-star-btn text-3xl text-slate-500" name="star"></ion-icon></button>
+                                        <button><ion-icon class="rate-star-btn text-3xl text-slate-500" name="star"></ion-icon></button>
+                                    </div>
+                                    <div class="w-full px-3 mb-2 mt-2">
+                                        <textarea class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  name="review" placeholder='Type Your Comment' required></textarea>
+                                    </div>
+                                    <div class="w-full flex items-end px-3">
+                                        <div class="-mr-1">
+                                            <input type='submit' name="from_single_product_detail" class="bg-white text-gray-700 font-medium py-1 px-4 border border-gray-400 rounded-lg tracking-wide mr-1 hover:bg-gray-100" value='Post'>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
                 <h2 class="py-3 mb-4 border-t-2 border-b-2 border-custom-grey">
                     Product Rating and Reviews (<?= count($reviews) ?>)
                 </h2>
 
-                <?php foreach ($reviews as $review): ?>
+                <?php foreach ($reviews as $review) : ?>
                     <!-- start review -->
                     <div class="p-4 shadow-lg rounded-md border-2 border-custom-blue mb-4">
                         <div class="flex justify-between items-center">
@@ -290,16 +325,16 @@ include "../components/header.php"
                             </div>
                         </div>
                         <div>
-                            <?php 
-                                for ($i = 0; $i < 5; $i++):
-                                    if ($i < $review["rating"]):
+                            <?php
+                            for ($i = 0; $i < 5; $i++) :
+                                if ($i < $review["rating"]) :
                             ?>
-                                <ion-icon class="text-lg text-[#F68721]" name="star"></ion-icon>
-                            <?php else: ?>
-                                <ion-icon class="text-lg text-slate-500" name="star"></ion-icon>
-                            <?php 
-                                    endif;
-                                endfor; 
+                                    <ion-icon class="text-lg text-[#F68721]" name="star"></ion-icon>
+                                <?php else : ?>
+                                    <ion-icon class="text-lg text-slate-500" name="star"></ion-icon>
+                            <?php
+                                endif;
+                            endfor;
                             ?>
                         </div>
                         <p>

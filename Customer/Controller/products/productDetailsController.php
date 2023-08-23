@@ -5,6 +5,9 @@ if(!isset($_GET["product_id"])){
 }
 
 session_start();
+include "../middleware/loginCheck.php";
+$customer_id = $_SESSION["logined_customer_id"];
+
 $product_id = $_GET["product_id"];
 
 //connect database
@@ -79,19 +82,19 @@ $sql->execute();
 $rate_count = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 //order
-// $sql = $pdo->prepare(
-//     "SELECT 
-//         *
-//     FROM 
-//         t_orderdetails
-//     INNER JOIN
-    
-//     GROUP BY
-//         rating"
-// );
-// $sql->bindValue(":product_id",$product_id);
-// $sql->execute();
-// $rate_count = $sql->fetchAll(PDO::FETCH_ASSOC);
+$sql = $pdo->prepare(
+    "SELECT 
+        *
+    FROM 
+        t_orderdetails
+    INNER JOIN t_orders
+    ON t_orderdetails.order_id = t_orders.id
+    WHERE
+        t_orders.cus_id = :customer_id"
+);
+$sql->bindValue(":customer_id",$customer_id);
+$sql->execute();
+$orders = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -99,6 +102,7 @@ $_SESSION["product_detail"] = $product[0];
 $_SESSION["product_reviews"] = $reviews;
 $_SESSION["average_rating"] = $averageRating;
 $_SESSION["rate_count"] = $rate_count;
+$_SESSION["orders"] = $orders;
 
 header("Location: ../../View/product/singleProductDetail.php");
 ?>
