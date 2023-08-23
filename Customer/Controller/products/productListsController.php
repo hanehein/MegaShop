@@ -43,9 +43,6 @@ if (
     $product_query .= " AND p_sell_price BETWEEN $min_price AND $max_price";
 }
 
-// filter by order
-
-
 $sql = $pdo->prepare($product_query);
 $sql->execute();
 $productLists = $sql->fetchAll(PDO::FETCH_ASSOC);

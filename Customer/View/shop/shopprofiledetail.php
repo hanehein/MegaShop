@@ -1,5 +1,9 @@
 <?php
 include "../../Controller/shop/shopProfileDetailController.php";
+$followerIds = [];
+foreach ($tot_followers as $follower) {
+    $followerIds[] = $follower["cus_id"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,26 +29,32 @@ include "../../Controller/shop/shopProfileDetailController.php";
     <!--next bar-->
     <div class="flex flex-row bg-white mt-3 w-[350px] md:w-[500px] p-3 container mx-3 justify-between">
         <div class="flex flex-row space-x-2 md:space-x-4">
-            <?php foreach ($sup_datas as $sup_data) {  ?>
+            <?php if (is_null($sup_data["shop_photo_path"])) : ?>
+                <img src="../resources/img/store.png" alt="" class="w-[50px] h-[50px]">
+            <?php else : ?>
                 <img src="../../../<?= $sup_data["shop_photo_path"] ?>" alt="" class="w-[50px] h-[50px]">
-
-                <div class="flex flex-col">
-                    <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_data["sup_shop_name"] ?></p>
-                <?php } ?>
-                <?php foreach ($tot_followers as $tot_follower) {  ?>
-                    <p><?= $tot_follower["total_followers"] ?> followers</p>
-                <?php } ?>
-                </div>
+            <?php endif; ?>
+            <div class="flex flex-col">
+                <p class="text-blue-800 text-xl md:text-2xl font-semibold"><?= $sup_datas["sup_shop_name"] ?></p>
+                <p><?= count($tot_followers) ?> followers</p>
+            </div>
         </div>
         <div class="flex flex-row space-x-2 md:space-x-8">
             <div class="flex flex-col text-blue-800 justify-center items-center font-semibold">
                 <ion-icon name="chatbox-ellipses-outline"></ion-icon>
                 <p>Chat Now</p>
             </div>
-            <div class="flex flex-col text-orange-600 justify-center items-center font-semibold">
-                <ion-icon name="person-add-outline"></ion-icon>
-                <p>Follow</p>
-            </div>
+            <?php if(in_array($customer_id, $followerIds)):  ?>
+                <div class="flex flex-col text-orange-600 justify-center items-center font-semibold">
+                    <a href="../../Controller/shop/unFollowController.php?supplier_id=<?= $sup_data["id"] ?>"><ion-icon name="person-remove-outline"></ion-icon></a>
+                    <a href="../../Controller/shop/unFollowController.php?supplier_id=<?= $sup_data["id"] ?>">Unfollow</a>
+                </div>
+            <?php else: ?>
+                <div class="flex flex-col text-orange-600 justify-center items-center font-semibold">
+                    <a href="../../Controller/shop/followController.php?supplier_id=<?= $sup_data["id"] ?>"><ion-icon name="person-add-outline"></ion-icon></a>
+                    <a href="../../Controller/shop/followController.php?supplier_id=<?= $sup_data["id"] ?>">Follow</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
     <!--submenu-->
@@ -75,8 +85,8 @@ include "../../Controller/shop/shopProfileDetailController.php";
         <div class="flex flex-col justify-between items-center space-y-5">
             <div class="flex flex-col space-y-5 items-center">
                 <div class="flex flex-col space-y-2 items-start">
-                    <?php foreach($shop_reviews as $shop_review) { ?>
-                    <h1 class="text-xl font-semibold"><?php echo number_format((float)($shop_review["avg_rating"]) * (100 / 3), 2, '.', '');  ?> %</h1>
+                    <?php foreach ($shop_reviews as $shop_review) { ?>
+                        <h1 class="text-xl font-semibold"><?php echo number_format((float)($shop_review["avg_rating"]) * (100 / 3), 2, '.', '');  ?> %</h1>
                     <?php } ?>
                     <!--Start bar graph-->
                     <div class="rating_graph w-[300px] h-[300px]  md:w-[400px]">
@@ -86,8 +96,8 @@ include "../../Controller/shop/shopProfileDetailController.php";
                 <!--End bar graph-->
 
                 <div class="flex flex-col space-y-2 items-center">
-                <?php foreach($total as $total_person) { ?>
-                    <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total_person["countperson"] ?>)</h1>
+                    <?php foreach ($total as $total_person) { ?>
+                        <h1 class="font-semibold text-xl">Seller Ratings and Reviews(<?php echo $total_person["countperson"] ?>)</h1>
                     <?php } ?>
                     <div class="flex space-x-16">
                         <ion-icon name="happy-outline"></ion-icon>

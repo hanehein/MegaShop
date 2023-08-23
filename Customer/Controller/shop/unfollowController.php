@@ -16,19 +16,15 @@ $supplier_id = $_GET["supplier_id"];
 include "../../Model/model.php";
 
 $sql = $pdo->prepare(
-    "INSERT INTO t_follow_stores(
-        sup_id,
-        cus_id,
-        create_date
-    ) VALUES (
-        :sup_id,
-        :cus_id,
-        :create_date
-    )"
+    "DELETE FROM 
+        t_follow_stores 
+    WHERE 
+        sup_id = :sup_id 
+    AND 
+        cus_id = :cus_id"
 );
 $sql->bindValue(":sup_id", $supplier_id);
 $sql->bindValue(":cus_id", $customer_id);
-$sql->bindValue(":create_date", date("Y-m-d"));
 $sql->execute();
 
 header("Location: ../../View/shop/shopprofile.php?id=$supplier_id");

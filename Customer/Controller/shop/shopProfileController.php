@@ -2,71 +2,86 @@
 ini_set('display_errors', 1);
 
 if (!isset($_GET["id"])) {
-  header("Location: ../../View/errors/error.php");
+    header("Location: ../../View/errors/error.php");
 }
-$id = $_GET["id"];
 
- //DB connection
-  include "../../Model/model.php";
-  
-  // $sql = $pdo->prepare(
-  //   "SELECT * FROM m_products 
-  //   INNER JOIN t_product_reviews 
-  //   ON m_products.id = t_product_reviews.product_id WHERE supplier_id = :id"
-  // );
-  // $sql->bindValue(":id",$id);
-  // $sql->execute();
-  // $product_ratings = $sql->fetchAll(PDO::FETCH_ASSOC);
+$supplier_id = $_GET["id"];
 
-  $sql = $pdo->prepare(
-    "SELECT * 
-    FROM 
-    m_products 
-    WHERE 
-    del_flg=0 
-    AND supplier_id = :id
-    AND p_approved = 1;"
-  );
-  $sql->bindValue(":id",$id);
-  $sql->execute();
-  $products = $sql->fetchAll(PDO::FETCH_ASSOC);
+// login check
+session_start();
+if(!isset($_SESSION["logined_customer_id"])){
+    header("Location: ../accountInfo/cusLogin.php");
+}
+$customer_id = $_SESSION["logined_customer_id"];
 
+//DB connection
+include "../../Model/model.php";
 
-
-  //Average rating
 $sql = $pdo->prepare(
-  "SELECT 
-  product_id, 
-  AVG(rating) AS average_rating
-FROM 
-  t_product_reviews
-GROUP BY 
-  product_id;"
+    "SELECT 
+        * 
+    FROM 
+        m_products 
+    WHERE 
+        del_flg = 0 
+    AND 
+        supplier_id = :id
+    AND 
+        p_approved = 1;"
+);
+$sql->bindValue(":id", $supplier_id);
+$sql->execute();
+$products = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+//Average rating
+$sql = $pdo->prepare(
+    "SELECT 
+        product_id, 
+        AVG(rating) AS average_rating
+    FROM 
+        t_product_reviews
+    GROUP BY 
+        product_id"
 );
 $sql->execute();
-$avgs = $sql->fetchAll(PDO::FETCH_ASSOC);
+$productRatings = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-  //Total followers
-  $sql = $pdo->prepare(
+//Total followers
+$sql = $pdo->prepare(
     "SELECT  
-    COUNT(cus_id) AS total_followers
-  FROM 
-    t_follow_stores
-  WHERE sup_id = :supplier_id;"
-  );
-  $sql->bindValue(":supplier_id",$id);
-  $sql->execute();
-  $tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
+        *
+    FROM 
+        t_follow_stores
+    WHERE 
+        sup_id = :supplier_id;"
+);
+$sql->bindValue(":supplier_id", $supplier_id);
+$sql->execute();
+$tot_followers = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-  //Shop Name
-  $sql = $pdo->prepare(
+//supplier
+$sql = $pdo->prepare(
     "SELECT  
-    *
-  FROM 
-    m_suppliers
-  WHERE id = :supplier_id AND del_flg = 0;"
-  );
-  $sql->bindValue(":supplier_id",$id);
-  $sql->execute();
-  $sup_datas= $sql->fetchAll(PDO::FETCH_ASSOC);
-  
+        *
+    FROM 
+        m_suppliers
+    WHERE 
+        id = :supplier_id"
+);
+$sql->bindValue(":supplier_id", $supplier_id);
+$sql->execute();
+$sup_data = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
+
+//products in wishlist
+$sql = $pdo->prepare(
+    "SELECT 
+        *
+    FROM 
+        m_wishlist
+    WHERE
+        c_id = :customer_id"
+);
+
+$sql->bindValue(":customer_id", $customer_id);
+$sql->execute();
+$productsInWishlist = $sql->fetchAll(PDO::FETCH_ASSOC);

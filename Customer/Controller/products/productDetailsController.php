@@ -62,7 +62,6 @@ $sql->bindValue(":product_id",$product_id);
 $sql->execute();
 $averageRating = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-
 //group rating
 $sql = $pdo->prepare(
     "SELECT 
@@ -78,6 +77,22 @@ $sql = $pdo->prepare(
 $sql->bindValue(":product_id",$product_id);
 $sql->execute();
 $rate_count = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+//order
+// $sql = $pdo->prepare(
+//     "SELECT 
+//         *
+//     FROM 
+//         t_orderdetails
+//     INNER JOIN
+    
+//     GROUP BY
+//         rating"
+// );
+// $sql->bindValue(":product_id",$product_id);
+// $sql->execute();
+// $rate_count = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 $_SESSION["product_detail"] = $product[0];

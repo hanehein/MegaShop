@@ -44,8 +44,8 @@ include "./../components/header.php";
                                             ?>
                                         </h2>
                                         
-                                        <p class="text-custom-grey">Color : blue</p>
-                                        <p class="text-custom-grey">Size : M</p>
+                                        <!-- <p class="text-custom-grey">Color : blue</p>
+                                        <p class="text-custom-grey">Size : M</p> -->
                                         <div class="space-x-2 hidden sm:flex">
                                             <div class="items-center">
                                                 <ion-icon class="text-custom-medium" name="trash-bin"></ion-icon>
@@ -79,14 +79,14 @@ include "./../components/header.php";
                                                 <ion-icon class="text-white" name="remove"></ion-icon>
                                             </div>
                                             <div class="w-[50px] h-[30px] rounded-md bg-grey flex justify-center items-center bg-transparent">
-                                                <span class="font-bold">1</span>
+                                                <span class="font-bold"><?= $product["qty"] ?></span>
                                             </div>
                                             <div class="w-[30px] h-[30px] rounded-md bg-custom-grey flex justify-center items-center">
                                                 <ion-icon class="text-white" name="add"></ion-icon>
                                             </div>
                                         </div>
                                         <div>
-                                            <small class="font-custom-tiny">only 12 items left</small>
+                                            <small class="font-custom-tiny">only <?= $product["p_stock"] - $product["qty"] ?> items left</small>
                                         </div>
                                     </div>
                                     <div class="space-x-2 flex sm:hidden">
@@ -139,9 +139,11 @@ include "./../components/header.php";
                         <span><?= $totalPrice ?> Ks</span>
                     </div>
 
-                    <button class="checkout-btn bg-custom-orange w-full rounded-md text-white text-custom-extra-large font-bold uppercase py-1">
-                        go to checkout
-                    </button>
+                    <a href="../order/checkout.php">
+                        <button class="checkout-btn bg-custom-orange w-full rounded-md text-white text-custom-extra-large font-bold uppercase py-1">
+                            go to checkout
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>

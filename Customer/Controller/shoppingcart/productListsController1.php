@@ -1,6 +1,11 @@
 <?php
-
+// login check
 session_start();
+if(!isset($_SESSION["logined_customer_id"])){
+    header("Location: ../accountInfo/cusLogin.php");
+}
+
+
 $customer_id = $_SESSION["logined_customer_id"];
 
 // connect database
