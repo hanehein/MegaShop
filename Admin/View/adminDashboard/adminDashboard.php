@@ -231,7 +231,7 @@ $today = date("Y-m-d");
                 </div>
             </div>
             <!-- 4th section -->
-            <div class="flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black py-2">
+            <!-- <div class="flex w-[70rem] items-center justify-center h-auto mt-5 bg-gray-100 rounded-md space-x-24 shadow-md shadow-black py-2">
                 <div class="barChart">
                     <div class="w-40 f flex items-center justify-start bg-gray-400 px-2 py-2 rounded-md mt-3">
                         <p class="text-sm text-white">Top Brand</p>
@@ -244,19 +244,19 @@ $today = date("Y-m-d");
                     </div>
                     <canvas id="donutChart"></canvas>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- chart_js -->
     <script>
         let serverData = <?php echo json_encode($chart) ?>;
         let serverData1 = <?php echo json_encode($plan) ?>;
-        let serverData2 = <?php echo json_encode($region) ?>;
+        // let serverData2 = <?php echo json_encode($region) ?>;
         let dates = [];
         let totalPerson = [];
         let totalPlan = [];
-        let regionName = [];
-        let orderCount = [];
+        // let regionName = [];
+        // let orderCount = [];
         //bar chart
         for (let index = 0; index < serverData.length; index++) {
             dates.push(serverData[index].create_date);
@@ -266,13 +266,13 @@ $today = date("Y-m-d");
         for (let index = 0; index < serverData1.length; index++) {
             totalPlan.push(serverData1[index].plan);
         }
-        // donut chart
-        for (let index = 0; index < serverData2.length; index++) {
-            regionName.push(serverData2[index].region_name);
-            orderCount.push(serverData2[index].order_count);
-        }
-        console.log(regionName);
-        console.log(orderCount);
+        // // donut chart
+        // for (let index = 0; index < serverData2.length; index++) {
+        //     regionName.push(serverData2[index].region_name);
+        //     orderCount.push(serverData2[index].order_count);
+        // }
+        // console.log(regionName);
+        // console.log(orderCount);
     </script>
 </body>
 
