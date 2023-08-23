@@ -6,7 +6,7 @@ $c_id = $_SESSION["logined_customer_id"];
 $p_id = $_GET["id"];
 
 print_r($id);
-if(!isset($id)){
+if(!isset($p_id)){
     header ("Location: ../View/errors/error.php");
 } else {
     include "../Model/model.php";
