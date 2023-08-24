@@ -4,13 +4,11 @@ session_start();
 
 $id = $_GET["id"];
 
-print_r($id);
-
 if (!isset($id)) {
     header("Location: ../../View/errors/error.php");
 } else{
-    include "../Model/model.php";
-
+    include "../../Model/model.php";
+    $_SESSION["id"] = $id;
     $sql =$pdo->prepare(
         " SELECT * FROM `t_follow_stores` 
         INNER JOIN `m_customers` ON `t_follow_stores`.`cus_id` = `m_customers`.`id`
@@ -24,8 +22,6 @@ if (!isset($id)) {
     $sql->execute();
 
     $_SESSION['profileEdit'] = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-    header("Location: ../View/profile/followedStores.php");
 
 
 }

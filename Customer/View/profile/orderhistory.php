@@ -4,6 +4,7 @@ include '../../Controller/OrderHistoryController.php';
 
 $orders = $_SESSION['orderlists'];
 
+$cus_id = $_SESSION["id"];
 
 ?>
 
@@ -54,19 +55,19 @@ $orders = $_SESSION['orderlists'];
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
-            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./followedStores.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
             </a>
 
-            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./orderHistory.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
-            <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./myReviews.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
             </a>
 
-            <a href="../../Controller/WishlistController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+            <a href="./wishlist.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
             </a>
 
@@ -80,16 +81,16 @@ $orders = $_SESSION['orderlists'];
                 <a href="./profile.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./followedStores.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./orderHistory.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="../../Controller/MyReviewsController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./myReviews.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="../../Controller/WishlistController.php?id=<?php echo $orders[0]["cus_id"]; ?>">
+                <a href="./wishlist.php?id=<?php echo $orders[0]["cus_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>

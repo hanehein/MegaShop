@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../../Controller/FollowedStoresController.php';
 $follow = $_SESSION['profileEdit'];
 
 $result = $follow;
@@ -54,18 +54,18 @@ $result = $follow;
                 <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
             </a>
 
-            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $follow[0]["id"]; ?>">
+            <a href="./followedStores.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Followed Stores</p>
             </a>
 
-            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $follow[0]["id"]; ?>">
+            <a href="./orderHistory.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
             </a>
 
-            <a href="../../Controller/MyReviewsController.php?id=<?php echo $follow[0]["id"]; ?>">
+            <a href="./myReviews.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
             </a>
-            <a href="../../Controller/WishlistController.php?id=<?php echo $follow[0]["id"]; ?>">
+            <a href="./wishlist.php?id=<?php echo $follow[0]["id"]; ?>">
                 <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
             </a>
         </div>
@@ -78,16 +78,16 @@ $result = $follow;
                 <a href="./profile.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $follow[0]["id"]; ?>">
+                <a href="./followedStores.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $follow[0]["id"]; ?>">
+                <a href="./orderHistory.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="../../Controller/MyReviewsController.php?id=<?php echo $follow[0]["id"]; ?>">
+                <a href="./myReviews.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="../../Controller/WishlistController.php?id=<?php echo $follow[0]["id"]; ?>">
+                <a href="./wishlist.php?id=<?php echo $follow[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
@@ -101,6 +101,11 @@ $result = $follow;
 
 
             <div class="block">
+            <?php if (count($result) == 0) { ?>
+                    <div class="flex flex-col items-center justify-center">
+                        <p class="text-lg">You haven't followed any stores yet.</p>
+                    </div>
+                <?php } else { ?>
                 <div class="flex flex-wrap justify-evenly px-2 md:px-10 mt-8 mb-8 cursor-pointer">
                     <?php foreach ($result as $follow) { ?>
                         <div class="w-40 md:w-1/3 bg-[#024486] rounded-lg ml-1 mr-1 md:ml-5 md:mr-5 items-center justify-center shadow-2xl border-2 border-solid">
@@ -111,6 +116,7 @@ $result = $follow;
                         </div>
                     <?php } ?>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>

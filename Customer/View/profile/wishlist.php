@@ -1,11 +1,13 @@
 <?php
-session_start();
+
+include '../../Controller/WishlistController.php';
 $wishlist = $_SESSION['profileEdit'];
 
 $result = $wishlist;
 
 $rowLimits = 5;
 $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
+$cus_id = $_SESSION["id"];
 
 
 ?>
@@ -53,26 +55,25 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
             <?php foreach ($result as $wishlist) { ?>
-            <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
-                <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
-            </a>
+                <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-md py-3 font-light hover:font-semibold cursor-pointer">User Info</p>
+                </a>
 
-            <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
-            </a>
+                <a href="./followedStores.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+                </a>
 
-            <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
-            </a>
+                <a href="./orderHistory.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+                </a>
 
-            <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
-            </a>
+                <a href="./myReviews.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+                </a>
 
-            <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
-                <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
-            </a>
-
+                <a href="./wishlist.php?id=<?php echo $wishlist["c_id"]; ?>">
+                    <p class="text-md py-3 font-semibold cursor-pointer hover:font-semibold">Wishlist</p>
+                </a>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -83,20 +84,20 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
                 <a href="./profile.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="../../Controller/FollowedStoresController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <a href="./followedStores.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="../../Controller/OrderHistoryController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <a href="./orderHistory.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="../../Controller/MyReviewsController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <a href="./myReviews.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="../../Controller/WishlistController.php?id=<?php echo $wishlist["c_id"]; ?>">
+                <a href="./wishlist.php?id=<?php echo $wishlist["c_id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
-            <?php } ?>
+        <?php } ?>
         </div>
         <!-- wishlist -->
         <div class="w-full md:w-1/2 items-center flex mx-auto mt-20 justify-center">
@@ -114,7 +115,7 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
                         <div class="flex justify-around bg-[#003366] w-full rounded-tr-lg rounded-tl-lg px-5 py-5 md:px-10 md:py-10">
 
                             <p class="text-white text-xs md:text-lg font-bold mr-24 md:mr-72">Products</p>
-                            <p class="text-white text-xs md:text-lg font-bold ml-10 md:ml-20">Unit Price</p>
+                            <p class="text-white text-xs md:text-lg font-bold ml-10 md:ml-10">Unit Price</p>
                             <p class="text-white text-xs md:text-lg font-bold">Stock Status</p>
                             <p class="text-white text-xs md:text-lg font-bold">Action</p>
 
@@ -129,9 +130,9 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
                                         <p class="mb-2 mt-2 text-xs capitalize"><?php echo $wishlist["p_color"]; ?></p>
                                         <p class="mb-2 mt-2 text-xs capitalize"><?php echo $wishlist["p_size"]; ?></p>
                                     </div>
-                                    <p class="text-xs md:text-xl font-semibold md:ml-24 mr-5 md:mr-10"><?php echo $wishlist["p_sell_price"]; ?> MMK</p>
+                                    <p class="text-xs md:text-lg font-semibold md:ml-24 mr-5 md:mr-10"><?php echo $wishlist["p_sell_price"]; ?> MMK</p>
                                     <p class="text-xs md:text-xl font-semibold ml-2 md:ml-5"><?php echo $wishlist["p_stock"]; ?></p>
-                                    <a href="../../Controller/WishlistRemoveController.php?id=<?php echo $wishlist["id"]; ?>"><button class="w-auto text-sm font-semibold bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-lg text-white rounded-lg shadow-xl ml-7 hover:bg-[#cbd5e1] hover:text-[#dc2626]">Remove</button></a>
+                                    <a href="../../Controller/WishlistRemoveController.php?id=<?php echo $wishlist["id"]; ?>"><button class="w-auto text-sm font-semibold bg-[#dc2626] px-1 py-1 md:px-2 md:py-2 text-xs md:text-md text-white rounded-lg shadow-xl ml-7 hover:bg-[#cbd5e1] hover:text-[#dc2626]">Remove</button></a>
                                 </div>
                             </div>
                         <?php } ?>
@@ -140,7 +141,7 @@ $pageList = ceil(count($_SESSION['profileEdit']) / $rowLimits);
             </div>
 
         </div>
-        
+
     </div>
     <!-- pagination -->
     <div class="w-auto flex items-center justify-center h-10 mb-5 md:ml-[44rem]">

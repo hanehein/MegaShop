@@ -4,7 +4,6 @@ session_start();
 
 $id = $_GET["id"];
 
-
 if (isset($_GET["page"])) {
     $page = $_GET["page"];
     echo "page";
@@ -20,7 +19,7 @@ if (!isset($id)) {
 } else {
 
     include "../../Model/model.php";
-
+    $_SESSION["id"] = $id;
     $sql = $pdo->prepare(
         " SELECT * , `t_orders`.`create_date` as create_date FROM `t_c_payment`
         INNER JOIN `t_orderdetails` ON `t_c_payment`.`order_id` = `t_orderdetails`.`order_id`

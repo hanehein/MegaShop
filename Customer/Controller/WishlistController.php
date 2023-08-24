@@ -18,8 +18,8 @@ $pageStart = ($pageStart < 0) ? 1 : $pageStart;
 if (!isset($id)) {
     header("Location: ../../View/errors/error.php");
 } else {
-    include "../Model/model.php";
-
+    include "../../Model/model.php";
+    $_SESSION["id"] = $id;
     $sql = $pdo->prepare(
         " SELECT * , `m_wishlist`.`del_flg` as`del_flg`
         FROM `m_wishlist` 
@@ -50,5 +50,4 @@ if (!isset($id)) {
 
     $pageList = ceil(count($wishlist) / $rowLimits);
 
-    header("Location: ../View/profile/wishlist.php");
 }

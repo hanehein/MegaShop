@@ -51,20 +51,26 @@ $profile = $_SESSION['profileEdit'];
 
             <div class="w-full h-1 bg-black hidden md:block"></div>
 
-            <p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p>
+            <a href="./profile.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-md py-3 font-semibold hover:font-semibold cursor-pointer">User Info</p>
+                </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+                <a href="./followedStores.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Followed Stores</p>
+                </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+                <a href="./orderHistory.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Order History</p>
+                </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+                <a href="./myReviews.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">My Reviews</p>
+                </a>
 
-            <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+                <a href="./wishlist.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Wishlist</p>
+                </a>
 
-            <div class="md:flex justify-center items-center hidden">
-                <ion-icon name="log-out-outline" class="text-xl font-light cursor-pointer hover:font-semibold"></ion-icon>
-                <p class="text-md py-3 font-light cursor-pointer hover:font-semibold">Logout</p>
-            </div>
         </div>
         <!-- mobile view -->
         <div class="md:hidden mt-4 mb-4">
@@ -72,19 +78,19 @@ $profile = $_SESSION['profileEdit'];
                 <p class="xl font-bold">My Account</p>
             </div>
             <div class="flex justify-evenly items-center">
-                <a href="./profile.php">
+            <a href="./profile.php?id=<?php echo $profile[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-black px-1 py-1 hover:border-black">My Profile</p>
                 </a>
-                <a href="./followedStores.php">
-                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent  px-1 py-1 hover:border-black">Followed Stores</p>
+                <a href="./followedStores.php?id=<?php echo $profile[0]["id"]; ?>">
+                    <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Followed Stores</p>
                 </a>
-                <a href="./orderHistory.php">
+                <a href="./orderHistory.php?id=<?php echo $profile[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Order History</p>
                 </a>
-                <a href="./myReviews.php">
+                <a href="./myReviews.php?id=<?php echo $profile[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">My Reviews</p>
                 </a>
-                <a href="./wishlist.php">
+                <a href="./wishlist.php?id=<?php echo $profile[0]["id"]; ?>">
                     <p class="text-xs ml-2 mr-2 font-semibold border-b-2 border-transparent px-1 py-1 hover:border-black">Wishlist</p>
                 </a>
             </div>
