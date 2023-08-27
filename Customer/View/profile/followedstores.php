@@ -4,6 +4,7 @@ $follow = $_SESSION['profileEdit'];
 
 $result = $follow;
 
+$cus_id = $_SESSION["id"];
 
 
 ?>
