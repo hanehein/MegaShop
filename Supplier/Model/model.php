@@ -8,9 +8,7 @@ $pwd = "AVNS_GXwfrWR2c0tg20CnL2E";
 //connection
 $pdo = new PDO(
     "mysql:hostname=$hostname; port =$port; dbname=$dbname",
-    $uname,
-    $pwd
-);
+    $uname,$pwd);
 //set error exc
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
